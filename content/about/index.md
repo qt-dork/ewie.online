@@ -1,9 +1,10 @@
+---js
+const eleventyNavigation = {
+	key: "About",
+	order: 3
+};
 ---
-layout: layouts/base.njk
-eleventyNavigation:
-  key: About Me
-  order: 3
----
-# About Me
 
-I am a person that writes stuff.
+# About
+
+This whole site is on fire and you're asking about me? I guess I can consider myself honored.

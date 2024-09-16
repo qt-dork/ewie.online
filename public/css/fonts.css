@@ -1,0 +1,36 @@
+@font-face {
+	src: url("/fonts/FernVariable-Roman-VF.woff2") format("woff2"),
+		url("/fonts/FernVariable-Roman-VF.woff") format("woff");
+	font-family: "Fern Web";
+	font-style: normal;
+	font-weight: 400 800;
+}
+
+@font-face {
+	src: url("/fonts/FernVariable-Italic-VF.woff2") format("woff2"),
+		url("/fonts/FernVariable-Italic-VF.woff") format("woff");
+	font-family: "Fern Web";
+	font-style: italic;
+	font-weight: 400 800;
+}
+
+@font-face {
+	src: url("/fonts/CascadiaMono.woff2") format("woff2");
+	font-family: "Cascadia Mono";
+	font-style: normal;
+	font-weight: 400 800;
+}
+
+@font-face {
+	src: url("/fonts/CascadiaMonoItalic.woff2") format("woff2");
+	font-family: "Cascadia Mono";
+	font-style: italic;
+	font-weight: 400 800;
+}
+
+@font-face {
+	src: url("fonts/FormaDJRVariable[opsz,slnt,wdth,wght].woff2") format("woff2");
+	font-family: "FormaDJRVariable";
+	font-style: normal;
+	font-weight: normal;
+}
