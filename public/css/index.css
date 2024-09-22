@@ -70,6 +70,13 @@ body {
     fill: var(--text-color);
 }
 
+img {
+    margin-left: auto;
+    margin-right: auto;
+    block-size: auto;
+    max-inline-size: 100%;
+}
+
 h1,
 h2,
 h3,
