@@ -1,6 +1,6 @@
-------
-title:Also for y’all wondering...
-description:Comments will come soon dw
+---
+title: Also for y’all wondering...
+description: Comments will come soon dw
 date: 2024-09-27T06:24:53Z
 tags:
  - nonsense
