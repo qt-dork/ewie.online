@@ -376,3 +376,69 @@ header {
 	margin-right: 1em;
 	color: var(--subheader-color);
 }
+
+.comment-form label {
+	display: block;
+	font-weight: 700;
+}
+
+.comment-form label .info {
+	font-weight: normal;
+}
+
+.comment-form .info-wrapper {
+	display: flex;
+	gap: 2rem;
+	width: 80%;
+}
+
+.comment-form textarea {
+	width: 80%;
+}
+
+.comment-form .name,
+.comment-form .url {
+	flex-grow: 1;
+}
+
+.comment-form .name input,
+.comment-form .url input {
+	width: 100%;
+}
+
+.comment-form textarea,
+.comment-form input {
+	margin-top: 0.25rem;
+	color: #0003;
+}
+
+.comment-form textarea {
+	height: 10em;
+}
+
+.comment-form > * + * {
+	margin-top: 1rem;
+}
+
+.comment-icon {
+	fill: var(--favorite-color, #d14d41);
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	vertical-align: middle;
+	position: absolute;
+	left: 0;
+}
+
+.comment {
+	display: flex;
+	flex-direction: column;
+}
+
+.comment > * + * {
+	margin-top: 0.25rem;
+}
+
+.comments > .comment + .comment {
+	margin-top: 1.2rem;
+}

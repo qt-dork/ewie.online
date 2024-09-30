@@ -2,7 +2,7 @@ export default {
 	title: "Evie On-Line",
 	url: "https://ewie.online/",
 	language: "en",
-	description: "Get yer posts here!",
+	description: "A website with posts and stuff",
 	author: {
 		name: "Evie Finch",
 		email: "hey@eviefinch.com",

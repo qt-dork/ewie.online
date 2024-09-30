@@ -34,6 +34,7 @@
 		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
 		{# <style>{% getBundle "css" %}</style> #}
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
+		{# <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 		<link rel="stylesheet" href="/css/index.css?{{ assetHash }}" />
 
 		{#- Add the heading-anchors web component to the JavaScript bundle #}
@@ -72,7 +73,5 @@
 
 		<!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
-		<script data-goatcounter="https://ewie.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
 	</body>
 </html>

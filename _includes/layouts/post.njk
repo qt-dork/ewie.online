@@ -6,6 +6,9 @@ layout: layouts/base.njk
 {%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
 <h1>{{ title }}</h1>
 
+<script src="https://unpkg.com/htmx.org@2.0.2"></script>
+<script>htmx.config.selfRequestsOnly = false</script>
+
 <ul class="post-metadata">
 	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
 	{%- for tag in tags | filterTagList %}
@@ -26,3 +29,35 @@ layout: layouts/base.njk
 </ul>
 {%- endif %}
 {%- endif %}
+
+<section class="comments">
+<h2>Comments</h2>
+<form id="comment-form" hx-post="http://localhost:8787/api/posts/testing/comments" name="comment" class="comment-form">
+	<input type="hidden" name="form-name" value="comment"> <input type="hidden" name="slug" value="static-blog-comments"/>
+	<div class="info-wrapper">
+	<div class="name">
+		<label for="name">
+			Name
+		</label>
+		<input type="text" name="author" id="name" required=""/>
+	</div>
+	<div class="url">
+		<label for="url">Website</label>
+		<input type="url" name="url" id="url">
+	</div>
+	</div>
+	<div>
+		<label for="comment">
+			Comment <span class="info">(You can use <a href="https://www.markdownguide.org/basic-syntax/">Markdown syntax</a> if you wish. It doesn't work yet, but it will eventually.)</span>
+		</label>
+		<textarea name="body" id="comment" required=""></textarea>
+	</div>
+	<div class="color-picker">
+		<label for="color-picker">Also Favorite Color <span class="info">(This is the big one)</label>
+		<input type="color"  placeholder="#000000" id="color-picker">
+	</div>
+	<p>
+		<button type="submit" class="submit-button">Submit</button>
+	</p>
+</form>
+</section>
