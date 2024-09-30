@@ -15,6 +15,6 @@ export default {
 		const month = (td.getMonth() + 1).toString().padStart(2, "0");
 		const day = td.getDate().toString().padStart(2, "0");
 		const slugDate = `${year}${month}${day}`;
-		return `/posts/${slugDate}-${slugBody}`;
+		return `/posts/${slugDate}-${slugBody}/index.html`;
 	},
 };
