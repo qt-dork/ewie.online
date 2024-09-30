@@ -32,7 +32,7 @@ layout: layouts/base.njk
 
 <section class="comments">
 <h2>Comments</h2>
-<form id="comment-form" hx-post="http://localhost:8787/api/posts/testing/comments" name="comment" class="comment-form">
+<form id="comment-form" hx-post="http://api.ewie.online/posts/{{permalinkSlug}}/comments" name="comment" class="comment-form">
 	<input type="hidden" name="form-name" value="comment"> <input type="hidden" name="slug" value="static-blog-comments"/>
 	<div class="info-wrapper">
 	<div class="name">
@@ -60,4 +60,8 @@ layout: layouts/base.njk
 		<button type="submit" class="submit-button">Submit</button>
 	</p>
 </form>
+<hr>
+<div class="comments-list" hx-get="https://api.ewie.online/posts/{{permalinkSlug}}/comments" hx-trigger="load">
+	<span hx-indicator>Loading...</span>
+</div>
 </section>
