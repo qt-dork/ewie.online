@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Evie On-Line</title>
+  <subtitle>Honestly, it&#39;s just posts here.</subtitle>
+  <link href="https://www.ewie.online/feed/feed.xml" rel="self" />
+  <link href="https://www.ewie.online/" />
+  <updated>2024-09-30T02:13:25Z</updated>
+  <id>https://www.ewie.online/</id>
+  <author>
+    <name>Evie Finch</name>
+  </author>
+</feed>

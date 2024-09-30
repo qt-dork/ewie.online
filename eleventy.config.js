@@ -8,10 +8,18 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
-import pluginFilters from "./_config/filters.js";
+import pluginFilters from "./src/_config/filters.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
+	// Drafts, see also _data/eleventyDataSchema.js
+
+	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
+		if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+			return false;
+		}
+	});
+
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig
@@ -25,6 +33,10 @@ export default async function (eleventyConfig) {
 
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
+
+	eleventyConfig.addLayoutAlias("base", "base.njk");
+	eleventyConfig.addLayoutAlias("home", "home.njk");
+	eleventyConfig.addLayoutAlias("posts", "posts.njk");
 
 	// Per-page bundles, see https://github.com/11ty/eleventy-plugin-bundle
 	// Adds the {% css %} paired shortcode
@@ -61,7 +73,7 @@ export default async function (eleventyConfig) {
 		metadata: {
 			language: "en",
 			title: "Evie On-Line",
-			subtitle: "Honestly it's just posts here.",
+			subtitle: "Honestly, it's just posts here.",
 			base: "https://www.ewie.online/",
 			author: {
 				name: "Evie Finch",
@@ -121,10 +133,11 @@ export const config = {
 
 	// These are all optional:
 	dir: {
-		input: "content", // default: "."
-		includes: "../_includes", // default: "_includes" (`input` relative)
-		data: "../_data", // default: "_data" (`input` relative)
+		input: "src", // default: "."
 		output: "_site",
+		includes: "/_includes", // default: "_includes" (`input` relative)
+		layouts: "/_layouts",
+		data: "/_data", // default: "_data" (`input` relative)
 	},
 
 	// -----------------------------------------------------------------

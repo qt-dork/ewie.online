@@ -1,0 +1,6 @@
+{% set item = post | d(collections.all | getCollectionItem(page)) %}
+
+<li class="postlist-item{% if item.url == url %} postlist-item-active{% endif %}">
+		<a href="{{ item.url }}" class="postlist-link">{% if item.data.title %}{{ item.data.title }}{% else %}<code>{{ item.url }}</code>{% endif %}</a>
+		<time class="postlist-date" datetime="{{ item.date | htmlDateString }}">{{ item.date | readableDate("LLLL yyyy") }}</time>
+</li>

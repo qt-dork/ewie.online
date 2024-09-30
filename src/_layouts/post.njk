@@ -1,0 +1,63 @@
+---
+layout: base
+---
+{# Only include the syntax highlighter CSS on blog posts, included with the CSS per-page bundle #}
+{%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
+{%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
+<h1>{{ title }}</h1>
+
+<script src="https://unpkg.com/htmx.org@2.0.2"></script>
+<script>htmx.config.selfRequestsOnly = false</script>
+
+<ul class="post-metadata">
+	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+	{%- for tag in tags | filterTagList %}
+	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+	{%- endfor %}
+</ul>
+
+{{ content | safe }}
+
+{%- if collections.posts %}
+{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<ul class="links-nextprev">
+	{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+	{%- if nextPost %}<li class="links-nextprev-next">Next →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+</ul>
+{%- endif %}
+{%- endif %}
+
+<form id="comment-form" hx-post="http://localhost:8787/api/posts/testing/comments" name="comment">
+	<input type="hidden" name="form-name" value="comment"> <input type="hidden" name="slug" value="static-blog-comments"/>
+	<p>
+		<label for="comment">
+			Comment <span class="info">(You can use <a href="https://www.markdownguide.org/basic-syntax/">Markdown syntax</a> if you wish)</span>
+		</label>
+		<textarea name="body" id="comment" required=""></textarea>
+	</p>
+	<p>
+		<label for="name">
+			Name
+		</label>
+		<input type="text" name="author" id="name" required=""/>
+	</p>
+	{# <p>
+		<label for="url">Website</label>
+		<input type="url" name="url" id="url">
+	</p> #}
+	{# <p class="your-website-here">
+		<label for="url-field">URL</label>
+		<input type="url" name="url-field" id="url-field">
+	</p> #}
+	<p>
+		<button type="submit" class="submit-button">Submit</button>
+	</p>
+</form>
+
+<h2>Comments</h2>
+<div class="comments-list" hx-get="https://api.ewie.online/posts/{{pag.fileslug}}/comments" hx-trigger="load">
+	<span hx-indicator>Loading...</span>
+</div>
