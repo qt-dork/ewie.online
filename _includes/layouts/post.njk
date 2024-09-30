@@ -30,6 +30,7 @@ layout: layouts/base.njk
 {%- endif %}
 {%- endif %}
 
+<section class="comments">
 <h2>Comments</h2>
 <form id="comment-form" hx-post="http://localhost:8787/api/posts/testing/comments" name="comment" class="comment-form">
 	<input type="hidden" name="form-name" value="comment"> <input type="hidden" name="slug" value="static-blog-comments"/>
@@ -47,7 +48,7 @@ layout: layouts/base.njk
 	</div>
 	<div>
 		<label for="comment">
-			Comment <span class="info">(You can use <a href="https://www.markdownguide.org/basic-syntax/">Markdown syntax</a> if you wish)</span>
+			Comment <span class="info">(You can use <a href="https://www.markdownguide.org/basic-syntax/">Markdown syntax</a> if you wish. It doesn't work yet, but it will eventually.)</span>
 		</label>
 		<textarea name="body" id="comment" required=""></textarea>
 	</div>
@@ -59,3 +60,4 @@ layout: layouts/base.njk
 		<button type="submit" class="submit-button">Submit</button>
 	</p>
 </form>
+</section>

@@ -419,3 +419,26 @@ header {
 .comment-form > * + * {
 	margin-top: 1rem;
 }
+
+.comment-icon {
+	fill: var(--favorite-color, #d14d41);
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	vertical-align: middle;
+	position: absolute;
+	left: 0;
+}
+
+.comment {
+	display: flex;
+	flex-direction: column;
+}
+
+.comment > * + * {
+	margin-top: 0.25rem;
+}
+
+.comments > .comment + .comment {
+	margin-top: 1.2rem;
+}
