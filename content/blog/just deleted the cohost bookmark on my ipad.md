@@ -6,5 +6,3 @@ tags:
  - nonsense
  - i miss cohost
 ---
-
-# just deleted the cohost bookmark on my ipad because i kept opening it and realizing there’s no more new posts left to see
