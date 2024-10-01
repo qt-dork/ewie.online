@@ -3,8 +3,8 @@ title: Good morning y’all.
 description: Cohost has now shut down
 date: 2024-10-01T14:27:47Z
 tags:
- - Nonsense
- - Meta
+ - nonsense
+ - meta
 ---
 
 Good morning y’all. Cohost has now shut down and so here’s my inaugural “I am now posting here and only here” post.
