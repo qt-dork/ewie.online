@@ -4,7 +4,7 @@ description: I’ve been seeing some people in my circle doing link roundups, an
 date: 2024-10-03T15:00:50Z
 tags:
  - link roundup
---
+---
 
 I’ve been seeing [some](https://blog.dante.cool/link-roundup-6-a-collection-of-cohost-memoriams/) [people](https://jkap.io/link-roundup-for-923/) in my circle doing link roundups, and I thought it’d be nice to join in. I have such a huge backlog of links to work through and maybe this could be a good way to get through all of them. I’m thinking of only doing five links per roundup, but let me know if you think that’s too many or too few. That’s enough waffling for now, here’s the links:
 
