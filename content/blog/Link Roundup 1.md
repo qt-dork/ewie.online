@@ -30,4 +30,4 @@ This one is for everyone who’s hosting their blog with Eleventy. Version 3.0 j
 
 ## That’s all!
 
-Anyways
+I had a great time doing this, and I’m really looking forward to the next one. Feel free to leave a comment below, or email me at my new website-specific email at [evie@ewie.online](mailto:evie@ewie.online). Don’t worry, it just goes straight into my normal mailbox I didn’t pay anything for this. I also now have a special email for asks at [ask@ewie.online](mailto:ask@ewie.online), which is an idea I stole from [nex3](https://nex-3.com). If you send any questions in to that email, I will answer them on the site! Just like cohost.
