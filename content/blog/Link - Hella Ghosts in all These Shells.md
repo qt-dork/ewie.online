@@ -1,9 +1,9 @@
 ---
-title:Link - Hella Ghosts in all These Shells
+title: Link - Hella Ghosts in all These Shells
 description: netrunner mentioned!!!
 date: 2024-10-04T21:59:59Z
 tags:
- - link
+ - links
  - netrunner
 ---
 
