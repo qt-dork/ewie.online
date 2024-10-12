@@ -7,8 +7,6 @@ tags:
  - link roundup
 ---
 
-# Some links you might like 2
-
 Hey! It’s time for another link roundup! But first, some housekeeping.
 
 ## Cohost Minnesota Wake at Minnehaha Falls at 3pm
