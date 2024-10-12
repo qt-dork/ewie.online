@@ -40,3 +40,7 @@ As the saying goes, the cloud is just somebody else’s computer. This essay exp
 ## Blake Watson: [HTML for People](https://htmlforpeople.com/)
 
 It is an indisputable fact that cohost shutting down meant that a larger portion of the people in my feeds are going to be computer touchers, and that’s really sad. I don’t really know what to do to help with that, but at the bare minimum, here’s a guide on HTML made for people who aren’t computer touchers. I wanna see more of y’all in my feeds! Share your links! The website section in my comments form isn’t for nothing! I actually do check the websites in there!
+
+## Thanks for checking this stuff out!
+
+Once again, come to the cohost wake at 3 pm, and please leave a comment below, or email me at [evie@ewie.online](mailto:evie@ewie.online). And I have a special email for asks at [ask@ewie.online](mailto:ask@ewie.online). Feel free to send some asks and they'll probably show up on the site unless you ask me to not put it there! Just like cohost! See y'all!
