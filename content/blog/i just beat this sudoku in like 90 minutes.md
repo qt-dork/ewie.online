@@ -10,4 +10,4 @@ I don’t know how hard it was but I felt smart doing it
 
 ![Yey, Congrats! You solved the puzzle!The solution is correct. Time: 94:13 ](https://cdn.ewie.online/SCR-20241017-ommx.png)
 
-Here’s the link to it: <https://sudokupad.app/jeyw4ftg8q>
+Here’s the link to it: https://sudokupad.app/jeyw4ftg8q (also here’s the cracking the cryptic video where they solve it: https://www.youtube.com/watch?v=sGeS7Io-EUc i hope you like it)
