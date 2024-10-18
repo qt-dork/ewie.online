@@ -421,13 +421,24 @@ header {
 }
 
 .comment-icon {
-	fill: var(--favorite-color, #d14d41);
-	display: inline-block;
+	color: var(--favorite-color, #d14d41);
 	width: 1.5rem;
 	height: 1.5rem;
+	display: inline-block;
 	vertical-align: middle;
 	position: absolute;
 	left: 0;
+}
+
+.comment .name-time {
+	display: flex;
+	gap: 0.25rem;
+	margin-top: 0;
+	line-height: 1.2;
+}
+
+.comment .name-time > * {
+	padding-inline-start: 1.2rem;
 }
 
 .comment {
@@ -435,10 +446,23 @@ header {
 	flex-direction: column;
 }
 
-.comment > * + * {
-	margin-top: 0.25rem;
+.comment-name {
+	font-weight: bold;
+}
+
+.comment > .comment-content {
+	margin-top: 0.3rem;
 }
 
 .comments > .comment + .comment {
 	margin-top: 1.2rem;
+}
+
+ul.comments {
+	position: relative;
+	padding-left: 0.6rem;
+}
+
+.comment-content {
+	padding-inline-start: 1.2rem;
 }
