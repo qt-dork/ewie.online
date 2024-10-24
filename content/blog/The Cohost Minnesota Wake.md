@@ -53,7 +53,7 @@ Once we reached the beach, we got ready for the most important part of the meetu
 <figure>
 <img alt="Everyone walking down to the beach. Their footing looks uneven." src="https://cdn.ewie.online/SAM_2326.JPG">
 <img alt="They’re a bit further down the beach now." src="https://cdn.ewie.online/SAM_2327.JPG">
-<figcaption>Image taken by Fran</figcaption>
+<figcaption>Images taken by Fran</figcaption>
 </figure>
 
 We did a photoshoot for Eggbug on the rock! I think he looks very handsome and majestic in these photos.
@@ -77,12 +77,12 @@ Then it started getting late. We all decided it was time to wrap up and head out
 <figure style="--areas: 'a' 'b' 'f'">
 <img alt="The plaza of the park. People are walking around." src="https://cdn.ewie.online/IMG_0216.jpeg">
 <img alt="The training home group eating food together. The focus of the image is on the food. We’re eating some curry, falafel, and fries." src="https://cdn.ewie.online/IMG_0217.jpeg">
-<figcaption>Image taken by me! Goodbye!</figcaption>
+<figcaption>Images taken by me! Goodbye!</figcaption>
 </figure>
 
 It was a really nice trip! You’d think I would wrap up a post like this with a segment about how much cohost meant to me, but what I really learned is that it’s really nice to meet up with people in real life. Almost everyone was a new face that I didn’t see on cohost at all, but we all had something in common, and I had a really good time meeting them. I really want to see them all again some time soon.
 
-In a way, it’s fitting the the real cohost, and the only cohost I have left now (besides all the blogs! I love you guys!), is the friends we made along the way. Although I mostly didn’t make any of these friends along the way, and I only made them in real life after the site shut down and we all touched grass together.
+In a way, it’s fitting that the real cohost, and the only cohost I have left now (besides all the blogs! I love you guys!), is the friends we made along the way. Although I mostly didn’t make any of these friends along the way, and I only made them in real life after the site shut down and we all touched grass together.
 
 <style>
 figure {

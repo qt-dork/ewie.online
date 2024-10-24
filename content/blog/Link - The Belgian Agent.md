@@ -7,7 +7,7 @@ tags:
  - netrunner
 ---
 
-![](https://belarius.neocities.org/bulletin-board-nonsense/media/posts/36/gallery/BulletinBoardNonsense-628.jpg)
+![](https://belarius.neocities.org/bulletin-board-nonsense/media/posts/54/gallery/BulletinBoardNonsense-701.jpg)
 
 from <https://belarius.neocities.org/bulletin-board-nonsense/post/the-belgian-agent/>
 
