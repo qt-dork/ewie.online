@@ -1,56 +1,41 @@
 @font-face {
-    src:
-        url("/fonts/RoslindaleVariable.woff2") format("woff2"),
-        url("/fonts/RoslindaleVariable.woff") format("woff");
-    font-family: "Roslindale Variable";
-    font-display: swap;
-    font-style: normal;
-    font-weight: 200 900;
-    font-stretch: 75% 100%;
+	src: url("/fonts/RoslindaleVariable.woff2") format("woff2"),
+		url("/fonts/RoslindaleVariable.woff") format("woff");
+	font-family: "Roslindale Variable";
+	font-display: swap;
+	font-style: normal;
+	font-weight: 200 900;
+	font-stretch: 75% 100%;
 }
 
 @font-face {
-    font-family: "Lato";
-    src: url("/fonts/Lato-Regular.woff2");
-    font-display: swap;
-    font-style: normal;
+	font-family: "Lato";
+	src: url("/fonts/Lato3Variable.woff2");
+	font-display: swap;
+	font-style: normal;
+	font-weight: 100 900;
 }
 
 @font-face {
-    font-family: "Lato";
-    src: url("/fonts/Lato-Italic.woff2");
-    font-display: swap;
-    font-style: italic;
+	font-family: "Lato";
+	src: url("/fonts/Lato3VariableItalic.woff2");
+	font-display: swap;
+	font-style: italic;
+	font-weight: 100 900;
 }
 
 @font-face {
-    font-family: "Lato";
-    src: url("/fonts/Lato-Bold.woff2");
-    font-display: swap;
-    font-style: normal;
-    font-weight: bold;
+	src: url("/fonts/CascadiaMono.woff2") format("woff2");
+	font-family: "Cascadia Mono";
+	font-display: swap;
+	font-style: normal;
+	font-weight: 400 800;
 }
 
 @font-face {
-    font-family: "Lato";
-    src: url("/fonts/Lato-BoldItalic.woff2");
-    font-display: swap;
-    font-style: italic;
-    font-weight: bold;
-}
-
-@font-face {
-    src: url("/fonts/CascadiaMono.woff2") format("woff2");
-    font-family: "Cascadia Mono";
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400 800;
-}
-
-@font-face {
-    src: url("/fonts/CascadiaMonoItalic.woff2") format("woff2");
-    font-family: "Cascadia Mono";
-    font-display: swap;
-    font-style: italic;
-    font-weight: 400 800;
+	src: url("/fonts/CascadiaMonoItalic.woff2") format("woff2");
+	font-family: "Cascadia Mono";
+	font-display: swap;
+	font-style: italic;
+	font-weight: 400 800;
 }
