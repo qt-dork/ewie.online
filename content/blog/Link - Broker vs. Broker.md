@@ -12,5 +12,3 @@ tags:
 from <https://belarius.neocities.org/bulletin-board-nonsense/post/broker-vs-broker/>
 
 netrunner mentioned!!!
-
-i wonder if belarius is ever gonna use jeitinho in one of these
