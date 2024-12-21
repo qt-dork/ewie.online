@@ -1,7 +1,7 @@
 ---
 title: Link - It's Fiber Optic Friday!
 description: netrunner mentioned!!!
-date: 2024-12-10T22:01:19Z
+date: 2024-12-21T19:57:22Z
 tags:
  - links
  - netrunner
