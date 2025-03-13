@@ -1,0 +1,61 @@
+---
+layout: layouts/base.vto
+title: Welcome!
+draft: false
+---
+<h1>Posts</h1>
+<div>
+  {{ for post of search.pages("type=post", "order date=desc") }}
+    <article class="post h-entry">
+      <div class="attribution">
+        <div class="metadata">
+          <div class="p-author h-card">
+            <span class="profile-pic">
+              <img class="u-photo" src="{{ post.author_image }}">
+            </span>
+            <span class="author p-name">
+              @{{ post.author_handle }}
+            </span>
+          </div>
+          <div class="timestamp">
+            <a class="u-url" href="{{ post.url }}" rel="canonical">
+              <time class="dt-published" datetime="{{ post.date }}" title="{{ post.date }}">{{ post.date }}</time>
+            </a>
+          </div>
+          <data class="p-url" value="https://ewie.online/"></data>
+          <data class="p-logo" value="ewielogo.jpg"></data>
+        </div>
+      </div>
+      {{ if post.title }}
+        <h1 class="title p-name"><a href="{{post.url}}">{{ post.title }}</a></h2>
+      {{ /if }}
+      {{ if post.content }}
+        <div class="postbody e-content">
+          {{# if post.tags contains complete or something then show content without truncation #}}
+          {{ if (post.content.split("\n---\n").length > 1) }}
+            {{ post.content |> trimToLineBreak |> md }}
+            <a href="{{post.url}}" class="read-more">Read more</a>
+          {{ else }}
+            {{ set post_content = post.content |> md }}
+            {{ set truncated_post_content = post.content |> md |> truncate }}
+            {{ truncated_post_content }}
+            {{ if post_content !== truncated_post_content }}
+              <a href="{{post.url}}" class="read-more">Read more</a>
+            {{ /if }}
+          {{ /if }}
+        </div>
+      {{ /if }}
+      {{ if post.tags }}
+        <div class="tags">
+          <ol>
+            {{ for tag of post.tags }}
+              <li>
+                <a class="p-category" href="">#{{ tag }}</a>
+              </li>
+            {{ /for }}
+          </ol>
+        </div>
+      {{ /if }}
+    </article>
+  {{ /for }}
+</div>

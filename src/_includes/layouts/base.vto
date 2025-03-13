@@ -1,0 +1,120 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="light dark" name="supported-color-schemes">
+
+  {{# <meta property="og:type" content="website">
+  {{ if title }}
+    <title>{{ title }} - pixeldesu</title>
+    <meta property="og:title" content="{{ title }} - pixeldesu">
+    <meta name="twitter:title" content="{{ title }} - pixeldesu">
+  {{ else }}
+    <title>pixeldesu</title>
+    <meta property="og:title" content="pixeldesu">
+    <meta name="twitter:title" content="pixeldesu">
+  {{ /if }}
+  {{ if description }}
+    <meta name="description" content="{{ description |> replace("\n", " ") |> trim }}">
+    <meta property="og:description" content="{{ description |> replace("\n", " ") |> trim }}">
+    <meta name="twitter:description" content="{{ description |> replace("\n", " ") |> trim }}">
+  {{ else }}
+    <meta name="description" content="Personal homepage of pixeldesu, a professional web developer and open source tinkerer from Germany.">
+    <meta property="og:description" content="Personal homepage of pixeldesu, a professional web developer and open source tinkerer from Germany.">
+    <meta name="twitter:description" content="Personal homepage of pixeldesu, a professional web developer and open source tinkerer from Germany.">
+  {{ /if }}
+  <meta property="og:image" content="https://pixelde.su/assets/img/avatar.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@pixeldesu">
+  {{ if (index === false) || (post_draft === true) }}
+    <meta name="robots" content="noindex,nofollow">
+  {{ /if }}
+  <link rel="me" href="https://desu.social/@pixel">
+  {{ if type === "blog" || type === "talk" }}
+    <meta property="fediverse:creator" content="@pixel@desu.social">
+  {{ /if }} #}}
+  {{# <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.dataset.theme =="dark";
+    }
+    else if (localStorage.getItem("theme") === "light") {
+      document.documentElement.dataset.theme == "light";
+    }
+  </script> #}}
+  <!-- he does some links here -->
+  <!-- <link
+    rel="preload"
+    href="/fonts/Brix-Sans-Web-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/Brix-Sans-Web-Regular-Italic.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/Brix-Sans-Web-Black.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/FjallaOne-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  /> -->
+  <!-- TODO: Remember to add favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+  <!-- <link rel="canonical" href="https://daniel-saunders.com{{ url }}" /> -->
+  
+  <!-- What's up with the css -->
+  <!-- <link rel="stylesheet" href="/styles/critical.css" inline /> -->
+  <link rel="stylesheet" href="/styles/main.css" />
+  
+  <!-- Pagefind UI -->
+  {{#
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script src="/pagefind/pagefind-ui.js"></script>
+  #}}
+  
+  <!-- Page CSS -->
+  {{ if it.page_css }}
+  <link rel="stylesheet" href="/styles/pages/{{ page_css }}" />
+  {{ /if }}
+  <link rel="sitemap" href="/sitemap.xml" />
+  
+  {{# {{ if url === '/' }} #}}
+  <!-- htmx stuff -->
+  <script
+    src="https://unpkg.com/htmx.org@1.9.5"
+    <!-- integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" -->
+    <!-- crossorigin="anonymous" -->
+  ></script>
+  <!-- <meta name="htmx-config" content='{"selfRequestsOnly":"true"}' async /> -->
+  {{# {{ /if }} #}}
+  
+  <!-- prettier-ignore -->
+  {{ if it.page_script }}
+  <script src="/js/{{ page_script }}" type="module" async></script>
+  {{ /if }}
+</head>
+<body>
+  {{# {{ include "partials/site-header.vto" }} #}}
+  <main>{{ content }}</main>
+  {{# {{ include "partials/site-footer.vto" }} #}}
+  {{#
+  <script src="/js/postSearch.js" async></script>
+  #}}
+  </body>
+</body>
+</html>

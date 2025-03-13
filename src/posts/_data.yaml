@@ -1,0 +1,9 @@
+type: post
+layout: layouts/base.vto
+index: true
+
+author_image: https://profiles.cache.lol/ewie/picture?v=1736662496
+author_handle: ewie
+
+metas:
+  title: "=title"
