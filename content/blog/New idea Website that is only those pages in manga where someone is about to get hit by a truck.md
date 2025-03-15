@@ -1,5 +1,5 @@
 ---
-title: New idea\: Website that is only those pages in manga where someone is about to get hit by a truck
+title: "New idea: Website that is only those pages in manga where someone is about to get hit by a truck"
 description: I’ll go first
 date: 2025-03-15T21:00:07Z
 tags:
