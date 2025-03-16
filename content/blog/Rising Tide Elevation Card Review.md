@@ -32,6 +32,15 @@ _The waters begin to roil, and bit by bit they swell._
 
 </card-frame>
 
+Wooo! I'm excited to be back to doing card reviews, and now I can do everything
+with regular css and js without any hacks (rip cohost ;-;). I'm planning to
+review every single card in
+[Elevation](https://nullsignal.games/blog/welcome-to-elevation/), the newest set
+for Netrunner, which is coming out in April 24th of this year. Now that there's
+a functioning card element, I'm also planning on backporting my previous
+Netrunner card reviews over to this site when I can find the time. Either way, I
+hope you're excited! This is gonna be a lot of hype!
+
 We are entering a post-FFG world, and this makes card reviews really tricky. You
 can’t exactly compare cards to the current meta, since so many staple cards are
 going to disappear. According to some searches on NetrunnerDB, the card pool
