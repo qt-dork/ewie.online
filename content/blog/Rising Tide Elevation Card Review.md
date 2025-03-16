@@ -6,7 +6,7 @@ description: >
    review every single card in
    Elevation, the newest set
    for Netrunner, which is coming out in April 24th of this year.
-date: 2025-03-16T04:42:45Z
+date: 2025-03-16T17:37:22Z
 tags:
  - netrunner
  - elevation
