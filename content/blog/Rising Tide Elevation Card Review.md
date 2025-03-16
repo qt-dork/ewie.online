@@ -1,10 +1,11 @@
 ---
 title: Rising Tide
-description: |
-	We are entering a post-FFG world, and this makes card reviews really tricky. You
-	can’t exactly compare cards to the current meta, since so many staple cards are
-	going to disappear. According to some searches on NetrunnerDB, the card pool
-	will shrink from...
+description: >
+   Wooo! I'm excited to be back to doing card reviews, and now I can do everything
+   with regular css and js without any hacks (rip cohost ;-;). I'm planning to
+   review every single card in
+   Elevation, the newest set
+   for Netrunner, which is coming out in April 24th of this year.
 date: 2025-03-16T04:42:45Z
 tags:
  - netrunner
