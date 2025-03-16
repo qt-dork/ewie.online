@@ -57,6 +57,7 @@ class CardFrame extends Component {
 
 		.card, .card img {
 			aspect-ratio: 0.718;
+			border-radius: 4.55% / 3.5%;
 			width: 320px;
 		}
 

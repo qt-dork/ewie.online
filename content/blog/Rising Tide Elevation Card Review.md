@@ -1,7 +1,11 @@
 ---
 title: Rising Tide
-description: Cohost has now shut down
-date: 2025-03-16T04:04:14Z
+description: |
+	We are entering a post-FFG world, and this makes card reviews really tricky. You
+	can’t exactly compare cards to the current meta, since so many staple cards are
+	going to disappear. According to some searches on NetrunnerDB, the card pool
+	will shrink from...
+date: 2025-03-16T04:42:45Z
 tags:
  - netrunner
  - elevation
@@ -10,7 +14,7 @@ tags:
 
 <script type="module" src="/js/card-frame.js"></script>
 
-<card-frame side="runner" stars="5" src="https://nullsignal.games/wp-content/uploads/2025/02/L2PCards_Web_1_2926222077-1098x1536.png">
+<card-frame side="runner" stars="5" src="https://cdn.ewie.online/nsg-rising-tide.jpeg">
 
 Anarch Program: Icebreaker – Fracter
 
