@@ -83,7 +83,7 @@ class CardFrame extends Component {
 		.stars {
 			display: flex;
 			justify-content: center;
-      font-size: 3.5em;
+      font-size: 3em;
 
 			.visible {
 				animation: jumpin 0.9s linear(0, 0.03 1.5%, 0.121 3.2%, 0.851 13%, 0.99 16.4%, 1.063 20.2%, 1.076 22.3%, 1.075 24.8%, 1.013 35.9%, 0.995 43.4%, 1) backwards;
