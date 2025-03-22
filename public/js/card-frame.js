@@ -1,4 +1,4 @@
-import { Component, html, css, signal } from 'https://unpkg.com/minne';
+import { Component, html, css, signal } from 'https://unpkg.com/minne@0.2.3/dist/index.js';
 
 class CardFrame extends Component {
 	/** @type { "runner" | "corp" } */
