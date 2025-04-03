@@ -1,0 +1,23 @@
+<div class="attribution">
+  <div class="metadata">
+    <div class="p-author h-card">
+      <span class="profile-pic">
+        <img class="u-photo" src="{{ post.author_image }}">
+      </span>
+      <span class="author p-name">
+        @{{ post.author_handle }}
+      </span>
+    </div>
+    <div class="timestamp">
+      <a class="u-url" href="{{ post.url }}" rel="canonical">
+        <time class="dt-published"
+          datetime="{{ post.date |> date('ISO') }}"
+          title="{{ post.date |> date('TITLE') }}">
+          {{ post.date |> date('HUMAN') }}
+        </time>
+      </a>
+    </div>
+    <data class="p-url" value="https://ewie.online/"></data>
+    <data class="p-logo" value="ewielogo.jpg"></data>
+  </div>
+</div>

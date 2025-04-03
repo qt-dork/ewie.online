@@ -7,7 +7,7 @@
 
   /* tints & shades */
   --0: 100% 0 h;
-  --50: 99% calc(c / 16) h;
+  --50: 99% calc(c / 8) h;
   --100: 94% calc(c / 4) h;
   --200: 88% calc(c / 2) h;
   --300: 70% c h;
@@ -16,29 +16,29 @@
   --500: 50% c h;
   --600: 40% c h;
   --700: 30% c h;
-  --800: 20% calc(c / 1.5) h;
-  --900: 15% calc(c / 2) h;
+  --800: 20% calc(c / 2) h;
+  --900: 15% calc(c / 4) h;
 
   /* source colors */
   --neutral: oklch(80% 0.01 210);
-  --primary: oklch(30% 0.16 210);
+  /* --primary: oklch(30% 0.16 210);  */
   --secondary: oklch(70% 0.11 20);
+  /* --clay: oklch(79% 0.004 67.77); */
+  --pink: oklch(94.16% 0.0363 25.27);
+  --blue: oklch(94.67% 0.0569 212.16);
+  --green: oklch(95.72% 0.0647 164.21);
+  --purple: oklch(93.31% 0.0436 332.17);
+  --gray: oklch(88.51% 0.0327 91.16);
+  --white: oklch(96.42% 0 89.88);
+
+  --primary: var(--white);
 
   /* preset colors */
-  --color-text: light-dark(
-    var(--primary),
-    white
-  );
+  --color-text: light-dark(var(--primary), white);
 
   /* preset colors */
-  --color-text: light-dark(
-    var(--primary),
-    white
-  );
-  --color-bg: light-dark(
-    white,
-    oklch(from var(--primary) var(--800))
-  );
+  --color-text: light-dark(var(--primary), white);
+  --color-bg: light-dark(white, oklch(from var(--primary) var(--800)));
   --color-accent: var(--secondary);
   --color-border: light-dark(
     var(--neutral),
@@ -50,7 +50,33 @@
   );
   --color-shadow: black;
 
-  --font-base: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
+  --color-text: light-dark(
+    oklch(from var(--primary) var(--800)),
+    oklch(from var(--primary) var(--100))
+  );
+  --color-bg-post: light-dark(
+    oklch(from var(--primary) var(--50)),
+    oklch(from var(--primary) var(--800))
+  );
+  --color-bg: light-dark(
+    oklch(from var(--primary) var(--100)),
+    oklch(from var(--primary) var(--900))
+  );
+  --color-shadow: light-dark(
+    oklch(from var(--primary) var(--600)),
+    oklch(from var(--primary) var(--900))
+  );
+  --color-border: light-dark(
+    oklch(from var(--primary) var(--400)),
+    oklch(from var(--primary) var(--600))
+  );
+  --color-subtle: light-dark(
+    oklch(from var(--primary) var(--500)),
+    oklch(from var(--primary) var(--300))
+  );
+
+  --font-base:
+    "Lato", "Lucida Grande", Tahoma, -apple-system, system-ui, Sans-Serif;
   --font-display: "Roslindale Variable", "Georgia Pro", Georgia, serif;
 
   /* ------------------------------------------------------------
@@ -84,9 +110,11 @@
   /* font properties */
   --font-mono: 0;
   --font-weight: 400;
+  --title-font-weight: 500;
 
   @media (--dark) {
     --font-weight: 350;
+    --title-font-weight: 450;
   }
 
   /* font size */
@@ -103,4 +131,8 @@
   --size-step--2: clamp(0.875rem, 0.8414rem + 0.1678vi, 1rem);
   --size-step--3: clamp(0.8125rem, 0.7957rem + 0.0839vi, 0.875rem);
   --size-step--4: clamp(0.625rem, 0.7043rem + -0.0839vi, 0.6875rem);
+}
+
+.home-link > svg {
+  fill: var(--color-text);
 }

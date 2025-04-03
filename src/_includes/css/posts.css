@@ -1,0 +1,255 @@
+#logo {
+  fill: var(--color-text);
+}
+
+body {
+  overflow-x: clip;
+}
+
+main {
+  max-width: 40em;
+  margin-inline: auto;
+  padding-inline: var(--space-s);
+}
+
+.blog-posts {
+  --post-padding: var(--space-m);
+
+  max-width: 40em;
+  list-style-type: none;
+  padding: 0;
+
+  & > * + * {
+    margin-top: var(--space-l);
+  }
+
+  & > li {
+    min-width: 300px;
+
+    /* border: 1px solid var(--color-border); */
+    border-radius: 0.5rem;
+    background-color: var(--color-bg-post);
+
+    box-shadow: 0 calc(var(--space-2xs) / 2) calc(var(--space-xs) / 2) 0.1em
+      var(--color-shadow);
+
+    &:first-child {
+      /* Define the widths and heights of the source images */
+
+      --width: 25em;
+      --top-height: 19.625em;
+      --bottom-height: 25.4375em;
+
+      /* Top overlap = distance from the visual bottom of top image and the actual bottom */
+      --top-overlap: 1.625em;
+      /* Bottom overlap = distance from the visual top of the bottom image and the actual top */
+      --bottom-overlap: 2.5em;
+
+      /* Offset to the right of the post */
+      --sideways-offset: -8em;
+
+      --top-position: calc(var(--top-height) * -1 + var(--top-overlap));
+      --bottom-position: calc(var(--bottom-overlap) * -1);
+
+      position: relative;
+      /* margin-top: clamp(12em, 8em + 11vw, var(--top-height)); */
+
+      &::before,
+      &::after {
+        /* Pseudo-elements always need `content` defined, even if that's set to nothing. */
+        content: "";
+        display: block;
+        font-size: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
+        mix-blend-mode: luminosity;
+
+        /* Define the sizes of the images */
+        width: var(--width);
+
+        /* Position relative to the .post */
+        position: absolute;
+        right: var(--sideways-offset);
+
+        /* Background image handling */
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+
+        /* Prevent the one on top from preventing click through to content beneath it */
+        pointer-events: none;
+      }
+
+      &::before {
+        background-image: url("https://cdn.ewie.online/evie_mouse_girl_top_overhang.png");
+        height: var(--top-height);
+        top: var(--top-position);
+        z-index: 1;
+      }
+
+      &::after {
+        background-image: url("https://cdn.ewie.online/evie_mouse_girl_bottom_overhang.png");
+        height: var(--bottom-height);
+        top: var(--bottom-position);
+        z-index: -1;
+      }
+    }
+  }
+
+  .metadata {
+    padding-inline: var(--post-padding);
+    padding-block: var(--space-s);
+    /* background-color: ok; */
+    border-bottom: 1px dashed var(--color-border);
+
+    &,
+    .p-author {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .author {
+        font-weight: bold;
+      }
+
+      time {
+        color: var(--color-subtle);
+      }
+
+      img {
+        aspect-ratio: 1/1;
+        height: 2em;
+        border-radius: 1em;
+      }
+    }
+
+    a {
+      color: var(--color-text);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .title {
+    font-weight: var(--title-font-weight, 450);
+    padding: var(--post-padding);
+    text-decoration: none;
+    margin: 0;
+    text-spacing-trim: trim-both;
+    text-wrap: pretty;
+
+    /* &.solo {
+      font-size: var(--size-step-4);
+    } */
+
+    .title-link {
+      color: var(--color-text);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .postbody {
+    padding-inline: var(--post-padding);
+    padding-block-end: var(--post-padding);
+
+    & > :first-child {
+      margin-block-start: 0;
+    }
+
+    & > * + * {
+      margin-block-start: var(--space-m);
+
+      &:is(h1, h2, h3, h4, h5, h6) {
+        margin-block-start: var(--space-xl);
+      }
+    }
+  }
+
+  .tags {
+    /* padding: var(--space-s); */
+    padding-inline: var(--post-padding);
+    padding-block-end: var(--post-padding);
+
+    font-size: smaller;
+
+    ol {
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      gap: var(--space-xs);
+
+      .p-category {
+        color: var(--color-subtle);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.post {
+  .read-more {
+    margin-top: var(--space-m);
+  }
+}
+
+header {
+  width: 100%;
+  font-size: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--space-2xs);
+  /* margin-block-start: calc(var(--space-2xl)); */
+  margin-block-start: calc(clamp(6em, 4em + 11vw, 8em));
+
+  grid-template-areas:
+    "a a ."
+    "b b .";
+
+  & > a {
+    grid-area: a;
+    align-self: start;
+  }
+
+  & > nav {
+    grid-area: b;
+    align-self: start;
+    font-size: 1rem;
+
+    ul.nav {
+      display: flex;
+      gap: 0.5rem;
+      /* grid-template-columns: repeat(3, 1fr); */
+      justify-content: space-between;
+
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      font-family: var(--font-display);
+      font-size: var(--size-step-3);
+
+      /* & li:nth-child(1) {
+        justify-self: start;
+      }
+      & li:nth-child(2) {
+        justify-self: center;
+      }
+      & li:nth-child(3) {
+        justify-self: end;
+      } */
+    }
+  }
+}
+
+.u-photo {
+  mix-blend-mode: luminosity;
+}

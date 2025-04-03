@@ -6,11 +6,6 @@ tags:
  - nonsense
 ---
 
-This whole time I’ve imagined him looking like a weird bald sweaty white guy
-with a face that’s too red for his own good.
+This whole time I’ve imagined him looking like a weird bald sweaty white guy with a face that’s too red for his own good.
 
----
-
-This is right on the heels of me being completely mistaken with how I imagined
-Tim Walz looking. I basically just imagined Tim Walz as looking like Matt
-Mullenwag and Matt Mullenwag as looking like Tim Walz.
+This is right on the heels of me being completely mistaken with how I imagined Tim Walz looking. I basically just imagined Tim Walz as looking like Matt Mullenwag and Matt Mullenwag as looking like Tim Walz.

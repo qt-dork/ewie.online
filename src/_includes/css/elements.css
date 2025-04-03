@@ -1,8 +1,27 @@
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-box: trim-both cap alphabetic;
+  font-weight: var(--title-font-weight);
+  font-stretch: 90%;
+  font-variation-settings: "opsz" 72;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+pre,
+blockquote {
   width: 100%;
   margin-inline: auto;
   overflow-wrap: break-word;
@@ -16,29 +35,34 @@ body {
 }
 
 h1 {
-  font-size: var(--size-step-6);
-}
-
-h2 {
   font-size: var(--size-step-5);
 }
 
-h3 {
+h2 {
   font-size: var(--size-step-4);
 }
 
-h4 {
+h3 {
   font-size: var(--size-step-3);
 }
 
-h5 {
+h4 {
   font-size: var(--size-step-2);
 }
 
-h6 {
+h5 {
   font-size: var(--size-step-1);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h6 {
+  font-size: var(--size-step-0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
 }

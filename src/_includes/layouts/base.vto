@@ -76,37 +76,38 @@
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
   <!-- <link rel="canonical" href="https://daniel-saunders.com{{ url }}" /> -->
-  
+
   <!-- What's up with the css -->
   <!-- <link rel="stylesheet" href="/styles/critical.css" inline /> -->
   <link rel="stylesheet" href="/styles/main.css" />
-  
+
   <!-- Pagefind UI -->
   {{#
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/pagefind/pagefind-ui.js"></script>
   #}}
-  
+
   <!-- Page CSS -->
   {{ if it.page_css }}
   <link rel="stylesheet" href="/styles/pages/{{ page_css }}" />
   {{ /if }}
   <link rel="sitemap" href="/sitemap.xml" />
-  
+
   {{# {{ if url === '/' }} #}}
   <!-- htmx stuff -->
-  <script
+  {{# <script
     src="https://unpkg.com/htmx.org@1.9.5"
     <!-- integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" -->
     <!-- crossorigin="anonymous" -->
-  ></script>
+  ></script> #}}
   <!-- <meta name="htmx-config" content='{"selfRequestsOnly":"true"}' async /> -->
   {{# {{ /if }} #}}
-  
+
   <!-- prettier-ignore -->
   {{ if it.page_script }}
   <script src="/js/{{ page_script }}" type="module" async></script>
   {{ /if }}
+  <!-- <script type="module" src="/assets/js/components/card-frame.js"></script> -->
 </head>
 <body>
   {{# {{ include "partials/site-header.vto" }} #}}
