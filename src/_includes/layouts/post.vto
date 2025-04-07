@@ -1,0 +1,48 @@
+{{ layout "layouts/base.vto" }}
+
+<header class="header-logo">
+  {{ comp.logo() }}
+	{{# <nav>
+		<ul class="nav">
+			<li class="nav-item">
+				<a href="#">Ask</a>
+			</li>
+			<li class="nav-item">
+				<a href="#">About</a>
+			</li>
+			<li class="nav-item">
+				<a href="#">Archive</a>
+			</li>
+		</ul>
+	</nav> #}}
+</header>
+
+<div class="post-wrapper mouse" >
+  <article class="post h-entry stack">
+    {{ comp.attribution({ author: { image: author_image, handle: author_handle }, url: url, date: date }) }}
+    {{ if title }}
+        {{ comp.title({ title: title, url: url }) }}
+    {{ /if }}
+    {{ if content }}
+        <div class="postbody e-content stack">
+        {{# if post.tags contains complete or something then show content without truncation #}}
+        {{ content }}
+        </div>
+    {{ /if }}
+    {{ if tags }}
+        {{ comp.tags({ tags: tags }) }}
+    {{ /if }}
+  </article>
+</div>
+
+<section class="post-wrapper stack">
+  <h2>Leave a comment</h2>
+
+  <div class="comments">
+    {{ comp.comments() }}
+  </div>
+</section>
+
+<section class="stack">
+  {{ comp.comments_list({ url: url }) }}
+</section>

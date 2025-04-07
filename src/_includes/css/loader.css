@@ -1,0 +1,28 @@
+.viewer {
+  width: 70px;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.animation {
+  margin: 0;
+  padding: 0;
+  height: 70px;
+  aspect-ratio: calc(255 / 65);
+  /* width: auto; */
+  margin-left: calc(70px * -3 + 6px);
+  animation: runcycle calc(1s / 30 * 4) steps(4) infinite reverse;
+  image-rendering: crisp-edges;
+  max-width: unset;
+}
+
+@keyframes runcycle {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

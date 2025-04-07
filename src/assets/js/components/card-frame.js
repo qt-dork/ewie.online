@@ -6,7 +6,7 @@ export class CardFrame extends LitElement {
     src: { type: String },
     stars: { type: Number },
     side: { type: String },
-    flipped: {}
+    flipped: {},
   };
 
   flipped = signal(false);
@@ -48,7 +48,11 @@ export class CardFrame extends LitElement {
     }
 
     .wrapper {
-      filter: drop-shadow(.125rem .25rem 4px var(--color-shadow));
+      /* filter: drop-shadow(.125rem .25rem 4px var(--color-shadow)); */
+      filter: drop-shadow( 0.3px 0.5px 0.7px oklch(from var(--color-shadow) l c h / 0.36))
+        drop-shadow(0.8px 1.6px 2px -0.8px oklch(from var(--color-shadow) l c h / 0.36))
+        drop-shadow(2.1px 4.1px 5.2px -1.7px oklch(from var(--color-shadow) l c h / 0.36))
+        drop-shadow(5px 10px 12.6px -2.5px oklch(from var(--color-shadow) l c h / 0.36));
       cursor: pointer;
     }
 
@@ -143,7 +147,7 @@ export class CardFrame extends LitElement {
 			color: #171A1E;
 		}
 
-		#card-name {
+		.visually-hidden {
 			clip: rect(0 0 0 0);
 			clip-path: inset(50%);
 			height: 1px;
@@ -152,15 +156,14 @@ export class CardFrame extends LitElement {
 			white-space: nowrap;
 			width: 1px;
 		}
-  `
+  `;
 
   render() {
     return html`
       <span aria-hidden="true" class="disclaimer">(This card is interactive! Click or tap on it!)</span>
       <div aria-describedby="card-name" class="flip-card">
         <div class="wrapper" id="transformer">
-          <div class="card flipped-${
-        watch(this.flipped)}" @click=${this._flip}>
+          <div class="card flipped-${watch(this.flipped)}" @click=${this._flip}>
             <img class="side front" src="${this.src}"/>
             <img class="side back" src="https://cdn.ewie.online/nsg-${this.side}.png"/>
           </div>
@@ -168,25 +171,25 @@ export class CardFrame extends LitElement {
       </div>
       <div aria-hidden="true" class="stars">
         ${
-        [...Array(5).keys()].map((x) => {
-          return html`
+      [...Array(5).keys()].map((x) => {
+        return html`
           <div class="star ${x < this.stars ? "gold" : "gray"} visible-${
-            watch(this.flipped)
-          }">★</div>
+          watch(this.flipped)
+        }">★</div>
           `;
-        })
-      }
+      })
+    }
       </div>
-      <div id="card-name">
+      <div class="visually-hidden" id="card-name">
         <slot></slot>
       </div>
-    `
+    `;
   }
 
-  _flip(e) {
+  _flip(_e) {
     console.log(this.flipped);
     this.flipped.value = !this.flipped.value;
   }
 }
 
-customElements.define('card-frame', CardFrame);
+customElements.define("card-frame", CardFrame);

@@ -6,4 +6,10 @@
 @import "css/reset.css" layer(composition.reset);
 @import "css/globals.css" layer(composition.globals);
 @import "css/elements.css" layer(composition);
+@import "css/utilities.css" layer(utility);
 @import "css/posts.css" layer(block);
+@import "css/post.css" layer(block);
+@import "css/comments.css" layer(block);
+@import "css/navigation.css" layer(block);
+@import "css/footer.css" layer(block);
+@import "css/loader.css" layer(exception);

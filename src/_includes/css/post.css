@@ -1,0 +1,119 @@
+.post > * + * {
+  padding-inline: var(--space-m);
+}
+.post-wrapper {
+  /* view-transition-name: post; */
+  margin-block: var(--space-m);
+  /* border: 1px solid var(--color-border); */
+  border-radius: var(--space-xs);
+  background-color: var(--color-bg-post);
+
+  /* box-shadow: 0 calc(var(--space-2xs) / 2) calc(var(--space-xs) / 2) 0.1em
+    var(--color-shadow); */
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.post-wrapper.stack {
+  h2 {
+    margin-block-start: 0;
+    padding-block-end: var(--space-m);
+    border-bottom: 1px dashed var(--color-border);
+  }
+
+  & > * {
+    padding-inline: var(--space-m);
+  }
+
+  & > *:first-child {
+    padding-block-start: var(--space-m);
+  }
+
+  & > *:last-child {
+    padding-block-end: var(--space-m);
+  }
+}
+
+.post-wrapper .metadata {
+  background-color: var(--color-bg-post);
+  /* border: 1px solid var(--color-border); */
+  border-bottom: 1px dashed var(--color-border);
+  border-radius: var(--space-xs) var(--space-xs) 0 0;
+  /* padding: var(--space-xs); */
+}
+
+.metadata {
+  padding-inline: var(--space-m);
+  padding-block: var(--space-s);
+  border-bottom: 1px dashed var(--color-border);
+
+  &,
+  .p-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+
+    .author {
+      font-weight: bold;
+    }
+
+    time {
+      color: var(--color-subtle);
+    }
+
+    img {
+      aspect-ratio: 1/1;
+      height: 2em;
+      border-radius: 1em;
+    }
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.title {
+  font-weight: var(--title-font-weight, 450);
+  /* padding-inline: var(--post-padding); */
+  text-decoration: none;
+  text-spacing-trim: trim-both;
+
+  .title-link {
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.tags {
+  /* padding-inline: var(--post-padding); */
+  padding-block-end: var(--space-m);
+
+  font-size: smaller;
+
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    display: flex;
+    gap: var(--space-xs);
+
+    .p-category {
+      color: var(--color-subtle);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

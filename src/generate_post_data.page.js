@@ -1,14 +1,19 @@
 export const layout = "layouts/posts.vto";
 
+/**
+ * Paginates posts
+ */
 export default function* ({ search, paginate }) {
+  // this is all from the documentation but uh
+  // grabs all the posts
   const posts = search.pages("type=post", "date=desc");
   const options = {
-    url: (n) => n === 1 ? `/posts/` : `/posts/${n}/`,
+    url: (n) => n === 1 ? `/` : `/${n}/`, // page 1 gets the index
     size: 10,
   };
 
-  for (const page of paginate(posts, options))
+  // dumps everything out
+  for (const page of paginate(posts, options)) { // paginates that shit
     yield page;
+  }
 }
-
-// {{> const pages = ({ search, paginate }) => { const posts = search.pages("type=post", "order date=desc"); const options = { url: (n) => `/posts/page/${n}`, size: 10 }; for (const page of paginate(posts, options)) { yield page; } } }}

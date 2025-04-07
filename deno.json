@@ -7,11 +7,10 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "deno task lume",
     "serve": "deno task lume -s",
-    "cms": "deno task lume cms"
+    "cms": "deno task lume cms",
+    "debug": "echo \"import 'lume/cli.ts'\" | deno run --inspect-wait --unstable -A -"
   },
   "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ]
+    "types": ["lume/types.ts"]
   }
 }

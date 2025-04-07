@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="light dark" name="supported-color-schemes">
 
-  {{# <meta property="og:type" content="website">
+  <meta property="og:type" content="website">
   {{ if title }}
-    <title>{{ title }} - pixeldesu</title>
-    <meta property="og:title" content="{{ title }} - pixeldesu">
-    <meta name="twitter:title" content="{{ title }} - pixeldesu">
+    <title>{{ title }} - Evie On-line</title>
+    <meta property="og:title" content="{{ title }} - Evie On-Line">
+    <meta name="twitter:title" content="{{ title }} - Evie On-Line">
   {{ else }}
-    <title>pixeldesu</title>
-    <meta property="og:title" content="pixeldesu">
-    <meta name="twitter:title" content="pixeldesu">
+    <title>Evie On-line</title>
+    <meta property="og:title" content="Evie On-line">
+    <meta name="twitter:title" content="Evie On-line">
   {{ /if }}
+  {{#
   {{ if description }}
     <meta name="description" content="{{ description |> replace("\n", " ") |> trim }}">
     <meta property="og:description" content="{{ description |> replace("\n", " ") |> trim }}">
@@ -92,16 +93,127 @@
   <link rel="stylesheet" href="/styles/pages/{{ page_css }}" />
   {{ /if }}
   <link rel="sitemap" href="/sitemap.xml" />
+  {{ if (url.toString().includes("post")) }}
+    <script src="https://unpkg.com/htmx.org@2.0.4"
+      integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="htmx-config" content='{"selfRequestsOnly":"true"}' async />
+  {{ /if }}
 
-  {{# {{ if url === '/' }} #}}
-  <!-- htmx stuff -->
-  {{# <script
-    src="https://unpkg.com/htmx.org@1.9.5"
-    <!-- integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" -->
-    <!-- crossorigin="anonymous" -->
-  ></script> #}}
-  <!-- <meta name="htmx-config" content='{"selfRequestsOnly":"true"}' async /> -->
-  {{# {{ /if }} #}}
+  <script>
+  // Create on the global for use by the theme picker
+  window.theme = {
+    appearance: {
+      /**
+       * @returns {string}
+       */
+      get: () => {
+        let appearance = localStorage.getItem("theme-appearance") || "";
+        if (!["system", "light", "dark"].includes(appearance)) {
+          appearance = "system";
+        }
+        return appearance;
+      },
+      /**
+       * @param {string} value
+       */
+      set: (value) => {
+        localStorage.setItem("theme-appearance", value);
+        if (value === "system") {
+          // TODO remove
+
+          document.documentElement.setAttribute(
+            "data-theme-appearance",
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+          );
+        } else {
+          document.documentElement.setAttribute("data-theme-appearance", value);
+        }
+
+        updateMeta();
+      },
+    },
+    color: {
+      get: () => {
+        let color = localStorage.getItem("theme-color") || "";
+        if (!color) {
+          color = "blue";
+        }
+        return color;
+      },
+      /**
+       * @param {string} color
+       */
+      set: (color) => {
+        localStorage.setItem("theme-color", color);
+        document.documentElement.style.setProperty(
+          `--c-theme-h`,
+          `var(--c-${color}-h)`
+        );
+        document.documentElement.style.setProperty(
+          `--c-theme-s`,
+          `var(--c-${color}-s)`
+        );
+        document.documentElement.style.setProperty(
+          `--c-theme-l`,
+          `var(--c-${color}-l)`
+        );
+        updateMeta();
+      },
+    },
+  };
+
+  // create this <meta name="theme-color" content="#4285f4" />
+  function updateMeta() {
+    /** @type {HTMLMetaElement | null} */
+    let $el = document.querySelector("meta[name=theme-color]");
+
+    // Use the root element's background color
+    const themeBgColor = getComputedStyle(
+      document.documentElement
+    ).backgroundColor;
+
+    // If it's already in the DOM, update it. Otherwise create and insert it.
+    if ($el) {
+      $el.content = themeBgColor;
+    } else {
+      $el = document.createElement("meta");
+      $el.name = "theme-color";
+      $el.content = themeBgColor;
+      document.head.appendChild($el);
+    }
+  }
+
+  // Initialization
+
+  // Set the initial theme
+  window.theme.appearance.set(window.theme.appearance.get());
+  window.theme.color.set(window.theme.color.get());
+
+  // Watch for system changes
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      if (window.theme.appearance.get() === "system") {
+        document.documentElement.setAttribute(
+          "data-theme-appearance",
+          e.matches ? "dark" : "light"
+        );
+      }
+    });
+
+  // Handle 'back' button if you came from the menu and changed something
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      // Page loaded from bfcache (back/forward button)
+      window.theme.appearance.set(window.theme.appearance.get());
+      window.theme.color.set(window.theme.color.get());
+    }
+  });
+  </script>
 
   <!-- prettier-ignore -->
   {{ if it.page_script }}
@@ -110,12 +222,13 @@
   <!-- <script type="module" src="/assets/js/components/card-frame.js"></script> -->
 </head>
 <body>
+  {{ comp.header() }}
   {{# {{ include "partials/site-header.vto" }} #}}
-  <main>{{ content }}</main>
+  <main class="center">{{ content }}</main>
   {{# {{ include "partials/site-footer.vto" }} #}}
   {{#
   <script src="/js/postSearch.js" async></script>
   #}}
-  </body>
+  {{ comp.footer() }}
 </body>
 </html>
