@@ -1,0 +1,574 @@
+/**
+ * Taken from [Picali.li](https://piccalil.li/blog/a-more-modern-css-reset/) for the blocks included below
+ * Taken from [Jake Lazaroff](https://jakelazaroff.com/words/my-modern-css-reset/)
+ * Taken from [Mayank](https://www.npmjs.com/package/@acab/reset.css)
+ * Taken from [TODS](https://clagnut.com/blog/2433)
+ * Study all this more! this is all quite good stuff
+ */
+
+/* Import into `@layer reset` or just wrap it all. */
+
+/* Picali.li start */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	/* Mayank start */
+	/*margin: 0;*/
+	/*padding: 0;*/
+	/* Mayank end */
+	box-sizing: border-box;
+}
+
+/* Picali.li end */
+
+/* TODS start */
+
+/* Probably supplanted by picali.li's block margin 0 */
+/*body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div, table, caption, form, fieldset {
+	margin: 0;
+}*/
+
+/* TODS end */
+
+/* Mayank start */
+
+/*:where([hidden]:not([hidden='until-found'])) {*/
+	/*display: none !important; /* ??? What's this doing */*/
+/*}*/
+
+/*:where(html) {
+	tab-size: 2;
+	scrollbar-gutter: stable;
+}*/
+
+/*:where(html:has(dialog:modal[open])) {
+	overflow: clip;
+}*/
+
+/* Super sus about all this */
+/*@media (prefers-reduced-motion: no preference) {
+	:where(html:focus-within) {
+		scroll-behavior: smooth;
+	}
+}*/
+
+:where(button, label, select, summary, [role='button'], [role='option']) {
+	cursor: pointer;
+}
+
+:where(:disabled) {
+	cursor: not-allowed;
+}
+
+:where(label:has(> input:disabled), label:has(+ input:disabled)) {
+	cursor: not-allowed;
+}
+/* Mayank end */
+
+/**
+ * Pretty self explanatory, but it sets all elements and 
+ * pseudo-elements to use the `border-box` [rather than the default `content-box` for sizing](https://web.dev/learn/css/box-model/).
+ * Not as relevant today as it once was, since we focus 
+ * more on letting the browser do more work with flexible 
+ * layouts and fluid type and space, but there's always 
+ * gonna be explicit sizing somewhere, so you can never 
+ * really get rid of it.
+ */
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+/**
+ * The [best explainer for this is by Kilian](https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/),
+ * of Polypane fame. He also explains why we need those 
+ * ugly prefixes too.
+ */
+ 
+/* Remove default margin in favor of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+	margin-block-end: 0;
+}
+
+/**
+ * Strips out user agent styles for margin in favor of
+ * defining flow and space at a more macro level.
+ * We're using logical `margin-block-end` instead of 
+ * `margin` to remove the end margin instead of all sides.
+ * It seems to work well enough for Andy Bell.
+ */
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default stying will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/**
+ * In Safari, if you set list-style to none, Voiceover 
+ * will not announce a list for a group of links. The
+ * Safari team says this is an intentional change due to
+ * rampant "list"-itis by web developers, and that it
+ * differenctiates layout lists from data lists.
+ *
+ * > Basically, if you remove all default visible indication of the list, there is no indication to a sighted user or screen reader user that the content is a list. If you want to override this heuristic for accessibility, you can always add an explicit ARIA role="list".
+ * 
+ * This makes sure that you always add a role to lists.
+ */
+ 
+/* Set core body defaults */
+body {
+	/*min-height: 100vh;*/
+	min-height: 100svh;
+	line-height: 1.5;
+}
+
+/**
+ * Sets a nice legible line height that gets inherited.
+ * I don't want to get into the weeds on vh vs dvh vs svh
+ * since I'm not qualified enough to talk about it, so
+ * I'm just leaving it to the source of this part of my
+ * reset, Andy Bell.
+ * [Read his reasoning here.](https://piccalil.li/blog/a-more-modern-css-reset/)
+ */
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+	line-height: 1.1;
+}
+
+/**
+ * Modify if fonts have large ascenders or descenders.
+ */
+ 
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+	text-wrap: balance;
+}
+
+/**
+ * Makes headings look nicer, but might not be appropriate 
+ * for some projects.
+ */
+
+ /* A elements that don't have a class get default styles */
+ a:not([class]) {
+	 text-decoration-skip-ink: auto;
+	 color: currentColor;
+ }
+ 
+/**
+ * Ensures text decorations don't interfere with 
+ * ascenders and descenders. Andy Bell likes the way 
+ * currentColor looks, but I might remove it if I don't 
+ * like it.
+ */
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	
+	/* JakeLazaroff start */
+	font: inherit; /* What's the value of this over the above properties */
+	letter-spacing: inherit;
+	word-spacing: inherit;
+	color: currentColor;
+	/* JakeLazaroff end */
+}
+
+/**
+ * Lets form elements inherit some font properties.
+ * Mostly affects `<textarea>` elements, but there's
+ * no harm in applying it to other form elements too.
+ */
+ 
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+/**
+ * By default, if a `<textarea> element doesn't have a
+ * rows attribute, they can be tiny. This isn't great
+ * for fingers, and `<textarea> elements tend to be used
+ * for multiple lines of text anyways.
+ */
+ 
+/* Anything not anchored to should have extra scroll margin */
+:target {
+	scroll-margin-block: 5ex;
+}
+
+/**
+ * If an element is anchored, it makes sense to add a bit
+ * more space above it with `scroll-margin`, which is
+ * only accounted for if that element is targeted. Adjust
+ * if you have a fixed header.
+ */
+ 
+/* Picali.li end */
+
+/* Jakelazaroff start */
+
+img, picture, video, canvas, svg {
+	display: block;
+	max-inline-size: 100%;
+}
+
+/**
+ * Avoids weird extra vertical space and sets max-width.
+ */
+
+:not([class]) {
+	/* Selects every element without a class. You use nesting to target specific elements. Lets you add a base set of styles without forcing you to "zero out" those styles */
+	
+	h1&, h2&, h3&, h4&, h5&, h6& {
+		margin-block: 0.75em;
+		line-height: 1.25;
+		text-wrap: balance;
+		letter-spacing: -0.05ch;
+	}
+	/**
+	 * Equivalent to selecting `h1:not([class]), etc.
+	 */
+	
+	p&, ol&, ul& {
+		margin-block: 1em; /* Note the stack element. use that */
+		/* Daily reminder that [margin collapse](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing) exists :) */
+	}
+	
+	ol&, ul& {
+		padding-inline-start: 1.5em;
+		/*list-style: revert;*/
+	}
+	
+	li& {
+		margin-block: 0.5em;
+	}
+}
+
+/* JakeLazaroff end */
+
+/* TODS start */
+
+/* Web fonts */
+@font-face {
+	font-family: 'Name';
+	src: url('/relative/location-var.woff2') format('woff2') tech(variations),
+		 url('/relative/location-var.woff2') format('woff2-variations');
+	font-weight: 1 1000; /* Match real font */
+	font-stretch: 50% 200%; /* Match real font */
+	font-style: normal;
+	font-display: fallback;
+}
+
+/**
+ * Include full possible weight range to avoid unintended 
+ * synthesis of variable fonts with a weight axis. Same 
+ * applies to stretch for variable fonts with a width 
+ * axis. (Note: test that myself)
+ *
+ * For main body fonts, use `fallback` for how the 
+ * browser should behave while the webfont is loading. 
+ * This gives the font an extremely small block period 
+ * and a short swap period, providing the best chance for 
+ * text to render.
+ */
+
+@font-face {
+	font-family: 'Name';
+	src: url('/relative/location-italic-var.woff2') format('woff2') tech(variations),
+		 url('/relative/location-italic-var.woff2') format('woff2-variations');
+	font-weight: 1 1000; /* Match real font */
+	font-stretch: 50% 200%; /* Match real font */
+	font-style: italic;
+	font-display: swap;
+}
+
+/**
+ * For italics use `swap` for an extremely small block
+ * period. This means italics can be synthesized and
+ * swapped in once loaded.
+ */
+
+@font-face {
+	font-family: 'Monospace';
+	src: url('/relative/location-var.woff2') format('woff2') tech(variations),
+		 url('/relative/location-var.woff2') format('woff2-variations');
+	font-weight: 1 1000;
+	font-stretch: 50% 200%;
+	font-style: normal;
+	font-display: fallback;
+	size-adjust: 105%; /* Make monospace slightly bigger to match body text. Adjust to suit - you might need to make them smaller */
+}
+
+body {
+	/*line-height: 1.5;*/
+	/*text-decoration-skip-ink: auto;*/
+	font-optical-sizing: auto;
+	font-variant-ligatures: common-ligatures no-discretionary-ligatures no-historical-ligatures contextual;
+	font-kerning: normal;
+}
+
+/**
+ * The `font-` properties are set to default css and
+ * OpenType settings, however they are still worth
+ * setting specifically just in case.
+ */
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}
+/**
+ * Reinstate block margins we removed in the reset 
+ * section. We're setting consistent spacing based on 
+ * primary elements within 'flow' contexts. The entire 
+ * 'prose' area is a flow context, but so might be other 
+ * parts of the page.
+ */
+
+.prose {
+	--flow-space: 1.5em;
+}
+/**
+ * Set generous spacing between primary block events. You 
+ * could also choose a value from a fluid spacing scale, 
+ * if you are going down the fluid typography route. See 
+ * Utopia.fyi for more details.
+ */
+
+/* OpenType utility classes */
+.dlig { font-variant-ligatures: discretionary-ligatures; }
+.hlig { font-variant-ligatures: historical-ligatures; }
+.dlig.hlig {font-variant-ligatures: discretionary-ligatures historical-ligatures; } /* Apply both historic and discretionary */
+
+.pnum { font-variant-numeric: proportional-nums; }
+.tnum { font-variant-numeric: tabular-nums; }
+.lnum { font-variant-numeric: lining-nums; }
+.onum { font-variant-numeric: oldstyle-nums; }
+.zero { font-variant-numeric: slashed-zero; }
+.pnum.zero { font-variant-numeric: proportional-nums slashed-zero; } /* Apply slashed zeroes to proportional numerals */
+.tnum.zero { font-variant-numeric: tabular-nums slashed-zero; }
+.lnum.zero { font-variant-numeric: lining-nums slashed-zero; }
+.onum.zero { font-variant-numeric: oldstyle-nums slashed-zero; }
+.tnum.lnum.zero { font-variant-numeric: tabular-nums lining-nums slashed-zero; }
+.frac { font-variant-numeric: diagonal-fractions; }
+.afrc { font-variant-numeric: stacked-fractions; }
+.ordn { font-variant-numeric: ordinal; }
+
+.smcp { font-variant-caps: small-caps; }
+.c2sc { font-variant-caps: unicase; }
+.hist { font-variant-alternates: historical-forms; }
+
+/**
+ * There are more features that you can engage with, but
+ * I'm not really gonna bother right now. Here's a link
+ * to the exact part where it comes up so you can always
+ * check what's worth going for:
+ * https://clagnut.com/blog/2433/#:~:text=Helper%20utilities%20matching%20on/off%20Opentype%20layout%20features%20available%20through%20high%20level%20CSS%20properties.
+ */
+ 
+/* Generic helper classes */
+
+.centered {
+	text-align: center;
+	text-wrap: balanced;
+}
+
+.uppercase {
+	text-transform: uppercase;
+	--opentype-case: "case" on;
+}
+/**
+ * When fully capitalizing text, ensure punctuation 
+ * designed to be used within caps is turned on where 
+ * available, using the Opentype 'case' feature.
+ */
+ 
+.smallcaps {
+	font-variant-caps: all-small-caps;
+	font-variant-numeric: oldstyle-nums;
+}
+/**
+ * Transform both upper and lowercase letters to small 
+ * caps, and use old style-numerals within runs of small 
+ * caps so they match size-wise.
+ */
+
+/* Prose styling defaults */
+
+/**
+ * Assign a `.prose` class to your running text, that is 
+ * to say an entire piece of prose such as the full text 
+ * of an article or blog post.
+ */
+
+.prose {
+	text-wrap: pretty;
+	font-variant-numeric: oldstyle-nums proportional-nums;
+	font-size-adjust: 0.507;
+}
+
+/**
+ * Better widow/orphan control, aiming for blocks of text 
+ * to not end with a line containing a word on its own. 
+ * Also proportional old-style numerals in running text.
+ *
+ * Also adjust the size of fallback fonts to match the 
+ * webfont to maintain legibility with fallback fonts and 
+ * reduce visible reflowing. The `font-size-adjust` 
+ * number is the aspect ratio of the webfont, which you 
+ * can calculate using this tool:
+ * https://clagnut.com/sandbox/font-size-adjust-ex.html
+ */
+ 
+strong, b, th {
+	font-weight: bold;
+	font-size-adjust: 0.514;
+}
+/**
+ * Apply a different adjustment to elements which are 
+ * typically emboldened by default, as bold weights often 
+ * have a different aspect ratio-check for the different 
+ * weights you may be using, including numeric semi-bolds 
+ * (eg. 650). Headings are dealt with separately as the 
+ * aspect ratio may be affected by optical sizing.
+ */
+
+h1, h2, h3, h4 {
+	line-height: 1.1;
+	font-size-adjust: 0.514;
+	font-variant-numeric: lining-nums;
+}
+/**
+ * Set shorter line heights on your main headings. Set an 
+ * aspect ratio for fallback fonts – check for different 
+ * weights of headings. Use lining numerals in headings, 
+ * especially when using Title Case.
+ */
+ 
+h1 {
+	font-variant-ligatures: discretionary-ligatures;
+	font-size-adjust: 0.521;
+}
+/*Turn on fancy ligatures for main headings. If the font has an optical sizing axis, you might need to adjust the aspect ratio accordingly.*/
+
+h1.uppercase {
+	font-variant-caps: titling-caps;
+}
+/*When setting a heading in all caps, use titling capitals which are specially designed for setting caps at larger sizes.*/
+
+@supports ( font-variant-position: sub ) {
+	sub, .sub {
+		vertical-align: baseline;
+		font-size: 100%;
+		line-height: inherit;
+		font-variant-position: sub;
+	}
+}
+
+@supports ( font-variant-position: super ) {
+	sup, .sup {
+		vertical-align: baseline;
+		font-size: 100%;
+		line-height: inherit;
+		font-variant-position: super;
+	}
+}
+/*If font-variant-position is not specified, browsers will synthesise sub/superscripts, so we need to manually turn off the synthesis. This is the only way to use a font’s proper sub/sup glyphs, however it’s only safe to use this if you know your font has glyphs for all the characters you are sub/superscripting. If the font lacks those characters (most only have sub/superscript numbers, not letters), then only Firefox (correctly) synthesises sup and sub – all other browsers will display normal characters in the regular way as we turned the synthesis off.*/
+
+.chemical {
+	--opentype-sinf: "sinf" on;
+}
+/*For chemical formulae like H20, use scientific inferiors instead of sub.*/
+
+/*Tables and numbers*/
+
+td, math, time[datetime*=":"] {
+	font-variant-numeric: tabular-nums lining-nums slashed-zero;
+}
+/*Make sure all numbers in tables are lining tabular numerals, adding slashed zeroes for clarity. This could usefully apply where a time is specifically marked up, as well as in mathematics.*/
+
+/*Quotes*/
+:lang(en) > * { quotes: '“' '”' '‘' '’' ; } /* “Generic English ‘style’” */
+:lang(en-GB) > * { quotes: '‘' '’' '“' '”'; } /* ‘British “style”’ */
+:lang(fr) > * { quotes: '«0202F' '0202F»' '“' '”'; } /* « French “style” » */
+/*Set punctuation order for inline quotes. Quotes are language-specific, so set a lang attribute on your HTML element or send the language via a server header. Note the narrow non-breaking spaces encoded in the french example.*/
+
+q::before { content: open-quote; }
+q::after  { content: close-quote; }
+/*Insert quotes before and after q element content*/
+
+.quoted, .quoted q {
+    quotes: '“' '”' '‘' '’';
+}
+/*Punctuation order for blockquotes, using a utility class to surround with double-quotes*/
+
+.quoted p:first-of-type::before {
+    content: open-quote;
+}
+.quoted p:last-of-type::after  {
+    content: close-quote;
+}
+/*Append quotes to first and last paragraphs in the blockquote.*/
+
+.quoted p:first-of-type::before {
+    margin-inline-start: -0.87ch; /* Adjust according to font */
+}
+.quoted p {
+    hanging-punctuation: first last;
+}
+@supports(hanging-punctuation: first last) {
+    .quoted p:first-of-type::before {
+        margin-inline-start: 0;
+    }
+}
+/*Hang the punctuation outside of the blockquote. Firstly manually hang punctuation witha a negative margin, then remove the manual intervention and use hanging-punctuation if supported.*/
+
+/*Hyphenation*/
+/*See: https://clagnut.com/blog/2433/#:~:text=Turn%20on%20hyphenation%20for%20prose.%20Language%20is%20required%20in%20order%20for%20the%20browser%20to%20use%20the%20correct%20hyphenation%20dictionary.*/
+.prose {
+    -webkit-hyphens: auto;
+    -webkit-hyphenate-limit-before: 4;
+    -webkit-hyphenate-limit-after: 3;
+    -webkit-hyphenate-limit-lines: 2;
+
+    hyphens: auto;
+    hyphenate-limit-chars: 7 4 3;
+    hyphenate-limit-lines: 2;    
+    hyphenate-limit-zone: 8%;
+    hyphenate-limit-last: always;
+}
+
+.prose pre, .prose code, .prose var, .prose samp, .prose kbd,
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
+
+/*Dark mode/inverted text*/
+
+:root {
+  --vf-grad: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --vf-grad: -50;
+  }
+}
+
+* {
+  font-variation-settings: "GRAD" var(--vf-grad, 0);
+}

@@ -1,0 +1,171 @@
+/** picali.li
+ * Use border-box by default, globally.
+ * See: https://web.dev/learn/css/box-model/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/** cssremedy
+ * Consistent line-spacing, even when inline elements have 
+ * different line-heights.
+ * 
+ * Note: This is a draft. It doesn't do anything yet.
+ */
+html {
+  line-sizing: normal;
+}
+
+/** cssremedy
+ * Remove the tiny space around the edge of the page*/
+body {
+  margin: 0;
+}
+
+/** cssremedy
+ * Maintain `hidden` behavior when overriding `display` values. */
+[hidden] {
+  display: none;
+}
+
+/** cssremedy
+ * Block display is usually what we want.
+ * The `vertical-align` removes strange space-below in case the display value is overrided.
+ * Responsive by default
+ * Audio without `[controls]` remains hidden by default
+ */
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+audio:not([controls]) {
+  display: none;
+}
+
+/** cssremedy
+ * Picture and source display inline by default, but that's not 
+ * the expected behavior for either one. This can interfere with 
+ * proper layout and aspect-ratio handling.
+ * 1. Remove the unnecessary wrapping `picture` while maintaining contents
+ * 2. Source elements have nothing to display, so we hide them entirely
+ */
+picture {
+  display: contents;
+}
+source {
+  display: none;
+}
+
+/** cssremedy
+ * Maintain intrinsic aspect ratios when `max-width` is applied.
+ * `iframe`, `embed`, and `object` are also embedded, but have
+ * no intrinsic ratio, so their `height` needs to be set explicitly.
+ */
+img, svg, video, canvas {
+  height: auto;
+}
+
+/** cssremedy
+ * There's no good reason elements default to 300px, and audio
+ * files are unlikely to ocme with a width attribute.
+ */
+audio {
+  width: 100%;
+}
+
+/** mayank
+ * Indicates buttons are clickable
+ */
+button, label, select, summary, [role="button"], [role="option"] {
+  cursor: pointer;
+}
+
+/** mayank
+ * Indicates all forms of disabled elements as non-interactive
+ */
+:disabled {
+  cursor: not-allowed;
+}
+label:has(> input:disabled), label:has(+ input:disabled) {
+  cursor: not-allowed;
+}
+
+/** picali.li
+ * Prevent font size inflation.
+ * See: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+ */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/** picali.li
+ * Remove default margin in favor of better control in authored CSS.
+ */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/** picali.li
+ * Remove list styles on ul, ol elements with a list role, which
+ * suggests default styling will be removed
+ */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/** picali.li
+ * Set core body defaults */
+body {
+  /* min-height: 100vh;*/
+  min-height: 100svh;
+  line-height: 1.5;
+}
+
+/** picali.li
+ * Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4, button, input, label {
+  line-height: 1.1;
+}
+
+/** picali.li
+ * Balance text wrapping on headings */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+/** picali.li
+ * `a` elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/** picali.li
+ * Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+
+  /** Jake Lazaroff */
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: currentColor;
+}
+
+/** picali.li
+ * Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/** picali.li
+ * Anything not anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}

@@ -1,5 +1,6 @@
-_site/
-node_modules/
-package-lock.json
-.cache
+_site
+_cache
 .DS_Store
+.zed
+.vscode
+deno.lock

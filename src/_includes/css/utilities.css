@@ -1,0 +1,17 @@
+.stack {
+  --stack-space: var(--space-m, 1.5rem);
+
+  & > * + * {
+    margin-block-start: var(--stack-space);
+  }
+}
+
+.center {
+  --measure: 70ch;
+  --center-padding: var(--space-s);
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--measure);
+  padding-inline-start: var(--center-padding);
+  padding-inline-end: var(--center-padding);
+}

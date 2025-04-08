@@ -1,0 +1,90 @@
+@font-face {
+  src:
+    url("/fonts/RoslindaleVariable-Sub.woff2")
+      format("woff2 supports variations"),
+    url("/fonts/RoslindaleVariable-Sub.woff2") format("woff2-variations");
+  font-family: "Roslindale Variable";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 200 900;
+  font-stretch: 75% 100%;
+  unicode-range:
+    U+0020-007F, U+00A0-00FF, U+20AC, U+2010, U+2013, U+2014, U+2018, U+2019,
+    U+201A, U+201C, U+201D, U+201E, U+2039, U+203A, U+2026, U+2022;
+}
+
+@font-face {
+  font-family: "Lato";
+  src:
+    url("/fonts/Lato3-variable-subset.woff2")
+      format("woff2 supports variations"),
+    url("/fonts/Lato3-variable-subset.woff2") format("woff2-variations");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 900;
+  unicode-range:
+    U+0020-007E, U+00A0-00FF, U+2000-2010, U+2012-2022, U+2026, U+202F-2030,
+    U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F;
+}
+
+font-face {
+  font-family: "Lato";
+  src:
+    url("/fonts/Lato3-variable.woff2") format("woff2 supports variations"),
+    url("/fonts/Lato3-variable.woff2") format("woff2-variations");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Lato";
+  src:
+    url("/fonts/Lato3-variable-italic-subset.woff2")
+      format("woff2 supports variations"),
+    url("/fonts/Lato3-variable-italic-subset.woff2") format("woff2-variations");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 100 900;
+  unicode-range:
+    U+0020-007E, U+00A0-00FF, U+2000-2010, U+2012-2022, U+2026, U+202F-2030,
+    U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F;
+}
+
+@font-face {
+  font-family: "Lato";
+  src:
+    url("/fonts/Lato3-variable-italic.woff2")
+      format("woff2 supports variations"),
+    url("/fonts/Lato3-variable-italic.woff2") format("woff2-variations");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 100 900;
+}
+
+@font-face {
+  src:
+    url("/fonts/CascadiaMono-Sub.woff2") format("woff2 supports variations"),
+    url("/fonts/CascadiaMono-Sub.woff2") format("woff2-variations");
+  font-family: "Cascadia Mono";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400 800;
+  unicode-range:
+    U+0020-007F, U+00A0-00FF, U+20AC, U+2010, U+2013, U+2014, U+2018, U+2019,
+    U+201A, U+201C, U+201D, U+201E, U+2039, U+203A, U+2026, U+2022;
+}
+
+@font-face {
+  src:
+    url("/fonts/CascadiaMonoItalic-Sub.woff2")
+      format("woff2 supports variations"),
+    url("/fonts/CascadiaMonoItalic-Sub.woff2") format("woff2-variations");
+  font-family: "Cascadia Mono";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400 800;
+  unicode-range:
+    U+0020-007F, U+00A0-00FF, U+20AC, U+2010, U+2013, U+2014, U+2018, U+2019,
+    U+201A, U+201C, U+201D, U+201E, U+2039, U+203A, U+2026, U+2022;
+}

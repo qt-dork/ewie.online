@@ -1,0 +1,58 @@
+{{ layout "layouts/base.vto" }}
+{{ set postlist = results }}
+
+<header class="header-logo">
+  {{ comp.logo() }}
+	{{# <nav>
+		<ul class="nav">
+			<li class="nav-item">
+				<a href="#">Ask</a>
+			</li>
+			<li class="nav-item">
+				<a href="#">About</a>
+			</li>
+			<li class="nav-item">
+				<a href="#">Archive</a>
+			</li>
+		</ul>
+	</nav> #}}
+</header>
+
+<div>
+  <ul class="blog-posts stack">
+    {{ for post of postlist }}
+      <li class="post-wrapper">
+        <article class="post h-entry stack">
+          {{ comp.attribution({ author: { image: post.author_image, handle: post.author_handle }, url: post.url, date: post.date }) }}
+          {{ if post.title }}
+            {{ comp.title({ title: post.title, url: post.url }) }}
+          {{ /if }}
+          {{ if post.content }}
+            <div class="postbody e-content stack">
+              {{# if post.tags contains complete or something then show content without truncation #}}
+              {{ if (post.content.split("\n---\n").length > 1) }}
+                {{ post.content |> trimToLineBreak |> md }}
+                {{ comp.read_more({ url: post.url }) }}
+              {{ else }}
+                {{ set post_content = post.content |> md }}
+                {{ set truncated_post_content = post.content |> md |> truncate }}
+                {{ truncated_post_content }}
+                {{ if post_content !== truncated_post_content }}
+                  {{ comp.read_more({ url: post.url }) }}
+                {{ /if }}
+              {{ /if }}
+            </div>
+          {{ /if }}
+          {{ if post.tags }}
+            {{ comp.tags({ tags: post.tags }) }}
+          {{ /if }}
+        </article>
+      </li>
+
+
+
+    {{ /for }}
+  </ul>
+
+  {{ comp.navigation({ pagi: page.data.pagination })}}
+</div>

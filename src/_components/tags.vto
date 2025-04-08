@@ -1,0 +1,9 @@
+<div class="tags">
+  <ol>
+    {{ for tag of tags }}
+      <li>
+        <a class="p-category" href="/tags/{{tag |> slugify}}">#{{ tag }}</a>
+      </li>
+    {{ /for }}
+  </ol>
+</div>

@@ -1,0 +1,25 @@
+<article class="post h-entry stack">
+  {{ comp.attribution({ author: { image: post.author_image, handle: post.author_handle }, url: post.url, date: post.date }) }}
+  {{ if post.title }}
+    {{ comp.title({ title: post.title, url: post.url }) }}
+  {{ /if }}
+  {{ if post.content }}
+    <div class="postbody e-content stack">
+      {{# if post.tags contains complete or something then show content without truncation #}}
+      {{ if (post.content.split("\n---\n").length > 1) }}
+        {{ post.content |> trimToLineBreak |> md }}
+        {{ comp.read_more({ url: post.url }) }}
+      {{ else }}
+        {{ set post_content = post.content |> md }}
+        {{ set truncated_post_content = post.content |> md |> truncate }}
+        {{ truncated_post_content }}
+        {{ if post_content !== truncated_post_content }}
+          {{ comp.read_more({ url: post.url }) }}
+        {{ /if }}
+      {{ /if }}
+    </div>
+  {{ /if }}
+  {{ if post.tags }}
+    {{ comp.tags({ tags: post.tags }) }}
+  {{ /if }}
+</article>

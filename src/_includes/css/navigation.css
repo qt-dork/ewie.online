@@ -1,0 +1,10 @@
+nav.pagination {
+  padding-block: var(--space-m);
+  padding-inline: var(--space-m);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xs);
+  /* margin-block: 0; */
+}
