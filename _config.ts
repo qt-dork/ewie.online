@@ -29,7 +29,18 @@ site.use(date({
   },
 }));
 site.use(esbuild());
-site.use(feed());
+site.use(feed({
+  output: ["/feed/feed.xml", "/feed/feed.json"],
+  query: "type=post",
+  info: {
+    title: "=site.title",
+    description: "=site.description",
+  },
+  items: {
+    title: "=title",
+    description: "=excerpt",
+  },
+}));
 site.use(fff());
 site.use(lightningcss(
   // {
