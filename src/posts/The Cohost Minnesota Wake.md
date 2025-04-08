@@ -9,6 +9,47 @@ tags:
 
 Also, just to let you know, this post is going to be mostly pictures, with some minor commentary attached. Enjoy!
 
+<style>
+.post figure {
+  margin-inline: 0;
+  display: grid;
+  gap: var(--space-s);
+  grid-template-areas: var(--areas);
+
+  &:has(picture:nth-of-type(1)),
+  &:has(img:nth-of-type(1)) {
+    --areas: "a" "f";
+  }
+  &:has(picture:nth-of-type(2)),
+  &:has(img:nth-of-type(2)) {
+    --areas: "a b" "f f";
+  }
+  &:has(picture:nth-of-type(3)),
+  &:has(img:nth-of-type(3)) {
+    --areas: "a b" "c c" "f f";
+  }
+
+  & > picture:nth-of-type(1),
+  & > img:nth-of-type(1) {
+    grid-area: a;
+  }
+  & > picture:nth-of-type(2),
+  & > img:nth-of-type(2) {
+    grid-area: b;
+  }
+  & > picture:nth-of-type(3),
+  & > img:nth-of-type(3) {
+    grid-area: c;
+  }
+
+  figcaption {
+    grid-area: f;
+    font-size: smaller;
+    color: var(--color-subtle);
+  }
+}
+</style>
+
 I arrived about 30 minutes early. I left early because I wasn’t certain if things would go wrong on the train. (Things went wrong with taking the train.) Since I had some time, I took photos around the park while waiting.
 
 <figure>
@@ -83,35 +124,3 @@ Then it started getting late. We all decided it was time to wrap up and head out
 It was a really nice trip! You’d think I would wrap up a post like this with a segment about how much cohost meant to me, but what I really learned is that it’s really nice to meet up with people in real life. Almost everyone was a new face that I didn’t see on cohost at all, but we all had something in common, and I had a really good time meeting them. I really want to see them all again some time soon.
 
 In a way, it’s fitting that the real cohost, and the only cohost I have left now (besides all the blogs! I love you guys!), is the friends we made along the way. Although I mostly didn’t make any of these friends along the way, and I only made them in real life after the site shut down and we all touched grass together.
-
-<style>
-figure {
-  display: grid;
-  gap: 0.5rem;
-  grid-template-areas: var(--areas);
-  
-  &:has(picture:nth-of-type(1)) {
-    --areas: "a" "f";
-  }
-  &:has(picture:nth-of-type(2)) {
-    --areas: "a b" "f f";
-  }
-  &:has(picture:nth-of-type(3)) {
-    --areas: "a b" "c c" "f f";
-  }
-  
-  & > picture:nth-of-type(1) {
-    grid-area: a;
-  }
-  & > picture:nth-of-type(2) {
-    grid-area: b;
-  }
-  & > picture:nth-of-type(3) {
-    grid-area: c;
-  }
-
-  figcaption {
-    grid-area: f;
-  }
-}
-</style>

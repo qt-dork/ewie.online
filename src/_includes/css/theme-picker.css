@@ -1,0 +1,82 @@
+main:has(.theme-picker) {
+  width: 100%;
+}
+
+.theme-picker {
+  margin-block-start: var(--space-xl);
+
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  gap: var(--space-m);
+  width: 100%;
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 2px solid var(--color-border);
+    border-radius: var(--space-xs);
+  }
+
+  input:checked + label {
+    background-color: light-dark(
+      oklch(from var(--primary) 90% calc(c * 1) h),
+      oklch(from var(--primary) 30% calc(c) h)
+    );
+
+    /* needed because labels and inputs are next to each other */
+    &:nth-child(2) {
+      border-radius: var(--space-xs) 0 0 var(--space-xs);
+    }
+
+    &:last-child {
+      border-radius: 0 var(--space-xs) var(--space-xs) 0;
+    }
+  }
+
+  label {
+    height: 100%;
+    text-indent: -9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--space-2xl);
+  }
+
+  label[for^="color"] {
+    width: 20%;
+    /* display: grid;
+    place-content: center; */
+  }
+
+  label[for^="appearance"] {
+    width: calc(100% / 3);
+  }
+
+  label[for^="color"] span {
+    width: 2rem;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    background-color: light-dark(
+      oklch(from var(--primary) 70% calc(c * 2) h),
+      oklch(from var(--primary) 50% calc(c * 2) h)
+    );
+    border-radius: 25%;
+  }
+
+  label[for^="appearance"] svg {
+    width: 2.25rem;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+  }
+
+  fieldset {
+    display: flex;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+}

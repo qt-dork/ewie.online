@@ -12,4 +12,7 @@
 @import "css/comments.css" layer(block);
 @import "css/navigation.css" layer(block);
 @import "css/footer.css" layer(block);
+@import "css/theme-picker.css" layer(block);
+/* Make search in exception block once i can layer the default styles */
+@import "css/search.css";
 @import "css/loader.css" layer(exception);

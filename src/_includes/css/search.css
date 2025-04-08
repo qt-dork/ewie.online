@@ -1,0 +1,21 @@
+main:has(#search) {
+  width: 100%;
+}
+
+#search {
+  margin-block-start: var(--space-xl);
+}
+
+:root {
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: var(--color-border);
+  --pagefind-ui-text: var(--color-text);
+  --pagefind-ui-background: var(--color-bg-post);
+  --pagefind-ui-border: var(--color-border);
+  --pagefind-ui-tag: var(--color-subtle);
+  --pagefind-ui-border-width: 2px;
+  --pagefind-ui-border-radius: var(--space-xs);
+  --pagefind-ui-image-border-radius: var(--space-xs);
+  --pagefind-ui-image-box-ratio: 3 / 2;
+  --pagefind-ui-font: var(--font-base);
+}

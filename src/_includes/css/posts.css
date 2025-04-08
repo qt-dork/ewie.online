@@ -136,3 +136,9 @@ header.header-logo {
 .u-photo {
   mix-blend-mode: luminosity;
 }
+
+.body-wrapper {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
+}

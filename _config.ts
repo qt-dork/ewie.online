@@ -5,6 +5,7 @@ import esbuild from "lume/plugins/esbuild.ts";
 import feed from "lume/plugins/feed.ts";
 import fff from "lume/plugins/fff.ts";
 import lightningcss from "lume/plugins/lightningcss.ts";
+import pagefind from "lume/plugins/pagefind.ts";
 import remark from "lume/plugins/remark.ts";
 import robots from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
@@ -40,6 +41,7 @@ site.use(lightningcss(
   //   }
   // }
 ));
+site.use(pagefind(/* Options */));
 site.use(remark());
 site.use(robots());
 site.use(sitemap());

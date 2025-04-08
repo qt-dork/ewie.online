@@ -150,16 +150,8 @@
       set: (color) => {
         localStorage.setItem("theme-color", color);
         document.documentElement.style.setProperty(
-          `--c-theme-h`,
-          `var(--c-${color}-h)`
-        );
-        document.documentElement.style.setProperty(
-          `--c-theme-s`,
-          `var(--c-${color}-s)`
-        );
-        document.documentElement.style.setProperty(
-          `--c-theme-l`,
-          `var(--c-${color}-l)`
+          `--primary`,
+          `var(--${color})`
         );
         updateMeta();
       },
@@ -222,13 +214,15 @@
   <!-- <script type="module" src="/assets/js/components/card-frame.js"></script> -->
 </head>
 <body>
-  {{ comp.header() }}
-  {{# {{ include "partials/site-header.vto" }} #}}
-  <main class="center">{{ content }}</main>
-  {{# {{ include "partials/site-footer.vto" }} #}}
-  {{#
-  <script src="/js/postSearch.js" async></script>
-  #}}
-  {{ comp.footer() }}
+  <div class="body-wrapper">
+    {{ comp.header({ menu_open: menu_open}) }}
+    {{# {{ include "partials/site-header.vto" }} #}}
+    <main class="center">{{ content }}</main>
+    {{# {{ include "partials/site-footer.vto" }} #}}
+    {{#
+    <script src="/js/postSearch.js" async></script>
+    #}}
+    {{ comp.footer() }}
+  </div>
 </body>
 </html>

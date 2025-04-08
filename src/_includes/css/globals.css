@@ -3,6 +3,15 @@
   color
   ------------------------------------------------------------ */
   color-scheme: light dark;
+
+  &[data-theme-appearance="light"] {
+    color-scheme: light;
+  }
+
+  &[data-theme-appearance="dark"] {
+    color-scheme: dark;
+  }
+
   interpolate-size: allow-keywords;
 
   /* tints & shades */
@@ -28,27 +37,10 @@
   --blue: oklch(94.67% 0.0569 212.16);
   --green: oklch(95.72% 0.0647 164.21);
   --purple: oklch(93.31% 0.0436 332.17);
-  --gray: oklch(88.51% 0.0227 91.16);
+  --clay: oklch(88.51% 0.0227 91.16);
   --white: oklch(96.42% 0 89.88);
 
   --primary: var(--white);
-
-  /* preset colors */
-  --color-text: light-dark(var(--primary), white);
-
-  /* preset colors */
-  --color-text: light-dark(var(--primary), white);
-  --color-bg: light-dark(white, oklch(from var(--primary) var(--800)));
-  --color-accent: var(--secondary);
-  --color-border: light-dark(
-    var(--neutral),
-    oklch(from var(--primary) var(--600))
-  );
-  --color-subtle: light-dark(
-    oklch(from var(--neutral) var(--50)),
-    oklch(from var(--primary) var(--900))
-  );
-  --color-shadow: black;
 
   --color-text: light-dark(
     oklch(from var(--primary) var(--800)),

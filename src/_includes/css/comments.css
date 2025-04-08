@@ -62,7 +62,10 @@
 
   input:not(#color-picker),
   textarea {
-    /* background-color: inheit; */
+    background-color: light-dark(
+      oklch(from var(--primary) var(--100)),
+      oklch(from var(--primary) var(--700))
+    );
     border: 2px solid var(--color-border);
     border-radius: var(--space-xs);
     padding: var(--space-xs);

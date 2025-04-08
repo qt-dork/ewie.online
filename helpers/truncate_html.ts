@@ -1,5 +1,5 @@
 import { rehypeStringify, unified } from "lume/deps/remark.ts";
-import rehypeParse from "https://esm.sh/rehype-parse@9";
+import rehypeParse from "https://esm.sh/rehype-parse@9.0.1";
 
 interface RehypeTruncateParameters {
   disable?: boolean;
@@ -17,12 +17,14 @@ function rehypeTruncate({
 }: RehypeTruncateParameters) {
   return truncator;
 
+  // deno-lint-ignore no-explicit-any
   function truncator(tree: any) {
     if (!disable) {
       truncateNode(tree);
     }
   }
 
+  // deno-lint-ignore no-explicit-any
   function truncateNode(node: any, tf = 0) {
     let foundText = tf;
 
@@ -66,7 +68,19 @@ export default function truncate(
     .use(rehypeParse)
     .use(rehypeTruncate, {
       maxChars: 1000,
-      ignoreTags: ["h1", "h2", "h3", "h4", "h5", "h6"],
+      ignoreTags: [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "style",
+        "figure",
+        "figcaption",
+        "img",
+        "picture",
+      ],
       ellipses: ellipses,
     })
     .use(rehypeStringify)
