@@ -30,16 +30,41 @@ site.use(date({
 }));
 site.use(esbuild());
 site.use(feed({
-  output: ["/feed/feed.xml", "/feed/feed.json"],
-  query: "type=post",
+  // output: ["/posts.rss", "/posts.json"], // The file or files that must be generated
+  // query: "type=post", // Select only pages of type=post
+  sort: "date=desc", // To sort by date in descending order
+  limit: 10, // To show only the 10 first results
   info: {
-    title: "=site.title",
-    description: "=site.description",
+    title: "Evie On-Line", // The feed title
+    description: "Just some posts and stuff", // The feed subtitle
+    published: new Date(), // The publishing date
+    lang: "en", // The language of the feed
+    // hubs: undefined, // The WebSub hubs for the feed
+    generator: true, // Set `true` to automatically generate the "Lume {version}"
+    authorName: "Evie Finch", // The author of the site
+    authorUrl: "https://evie.online/", // The URL of the author
   },
   items: {
-    title: "=title",
-    description: "=excerpt",
+    title: "=title", // The title of every item
+    description: "=excerpt", // The description of every item
+    published: "=date", // The publishing date of every item
+    // updated: undefined, // The last update of every item
+    content: "=children", // The content of every item
+    // lang: "=lang", // The language of every item
+    image: "=cover", // The image of the item
+    authorName: "=author.name", // The author of the article
+    authorUrl: "=author.url", // The URL of the author
   },
+  output: ["/feed/feed.xml", "/feed/feed.json"],
+  query: "type=post",
+  // info: {
+  //   title: "=site.title",
+  //   description: "=site.description",
+  // },
+  // items: {
+  //   title: "=title",
+  //   description: "=excerpt",
+  // },
 }));
 site.use(fff());
 site.use(lightningcss(
