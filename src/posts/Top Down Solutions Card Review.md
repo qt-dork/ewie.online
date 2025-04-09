@@ -2,7 +2,7 @@
 title: Top-Down Solutions
 description: >
   I really don’t know how to feel about this card. It’s exceptional on turn 1, giving you the entire turn in one click, but I think it’s kind of dogshit outside of turns 1 or 2. I’d ask myself, “Would people be willing to run three copies of this card to maximize their chance of getting a free turn in turn 1?” but the answer is immediately and obviously “Yes”. We’ve seen time and time again in multiple card games that people are willing to trade a lot to get a really strong first turn.
-
+permalink: /posts/20250407-topdown-solutions/
 date: 2025-04-07T04:06:54Z
 tags:
   - netrunner

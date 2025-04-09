@@ -188,7 +188,6 @@ export class CardFrame extends LitElement {
   }
 
   _flip(_e) {
-    console.log(this.flipped);
     this.flipped.value = !this.flipped.value;
   }
 }
