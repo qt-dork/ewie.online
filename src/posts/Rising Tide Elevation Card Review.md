@@ -13,7 +13,9 @@ tags:
  - card reviews
 ---
 
-<card-frame side="runner" stars="5" src="https://cdn.ewie.online/nsg-rising-tide.jpeg">
+<card-frame name="rising-tide" side="runner" stars="5" src="https://cdn.ewie.online/nsg-rising-tide.jpeg">
+
+<div class="visually-hidden" id="card-name-rising-tide">
 
 Anarch Program: Icebreaker – Fracter
 
@@ -28,6 +30,8 @@ Interface → **1 credit:** Break 1 **barrier** subroutine.
 _The waters begin to roil, and bit by bit they swell._
 
 5 stars
+
+</div>
 
 </card-frame>
 

@@ -9,7 +9,9 @@ tags:
  - card reviews
 ---
 
-<card-frame side="corp" stars="3" src="https://cdn.ewie.online/nsg-syailendra.jpeg">
+<card-frame name="syailendra" side="corp" stars="3" src="https://cdn.ewie.online/nsg-syailendra.jpeg">
+
+<div class="visually-hidden" id="card-name-syailendra">
 
 Weyland Ice: Code Gate – AP
 
@@ -27,6 +29,8 @@ counters, place 1 advancement counter on an installed card you can advance.
 **sub** Do 1 net damage.
 
 3 stars
+
+</div>
 
 </card-frame>
 

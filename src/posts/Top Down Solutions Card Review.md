@@ -10,7 +10,9 @@ tags:
   - card reviews
 ---
 
-<card-frame side="corp" stars="2" src="https://cdn.ewie.online/nsg-top-down-solutions.jpeg">
+<card-frame name="top-down" side="corp" stars="2" src="https://cdn.ewie.online/nsg-top-down-solutions.jpeg">
+
+<div class="visually-hidden" id="card-name-top-down">
 
 Haas-Bioroid Operation
 
@@ -24,6 +26,8 @@ better-equipped. A human braintape could be working beside an octopus for weeks
 and never have an inkling.”—Maía Mínervudóttir, R&D_
 
 2 stars
+
+</div>
 
 </card-frame>
 

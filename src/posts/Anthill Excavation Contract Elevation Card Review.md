@@ -10,7 +10,9 @@ tags:
  - card reviews
 ---
 
-<card-frame side="corp" stars="4" src="https://cdn.ewie.online/nsg-anthill-excavation-contract.jpeg">
+<card-frame name="anthill" side="corp" stars="4" src="https://cdn.ewie.online/nsg-anthill-excavation-contract.jpeg">
+
+<div class="visually-hidden" id="card-name-anthill">
 
 Weyland Asset: Industrial
 
@@ -25,6 +27,8 @@ _“If you lived here, you’d be at work by now!”_
 _— Weyland recruiter_
 
 4 stars
+
+</div>
 
 </card-frame>
 

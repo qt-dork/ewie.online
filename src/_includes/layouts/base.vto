@@ -15,34 +15,27 @@
     <meta property="og:title" content="Evie On-line">
     <meta name="twitter:title" content="Evie On-line">
   {{ /if }}
-  {{#
   {{ if description }}
     <meta name="description" content="{{ description |> replace("\n", " ") |> trim }}">
     <meta property="og:description" content="{{ description |> replace("\n", " ") |> trim }}">
     <meta name="twitter:description" content="{{ description |> replace("\n", " ") |> trim }}">
   {{ else }}
-    <meta name="description" content="Personal homepage of pixeldesu, a professional web developer and open source tinkerer from Germany.">
-    <meta property="og:description" content="Personal homepage of pixeldesu, a professional web developer and open source tinkerer from Germany.">
-    <meta name="twitter:description" content="Personal homepage of pixeldesu, a professional web developer and open source tinkerer from Germany.">
+    <meta name="description" content="gay plural trans lesbian disaster. i've done some cursed programming stuff but i'm hoping that if i can just get better and hotter then maybe i can make something even worse">
+    <meta property="og:description" content="gay plural trans lesbian disaster. i've done some cursed programming stuff but i'm hoping that if i can just get better and hotter then maybe i can make something even worse">
+    <meta name="twitter:description" content="gay plural trans lesbian disaster. i've done some cursed programming stuff but i'm hoping that if i can just get better and hotter then maybe i can make something even worse">
   {{ /if }}
+  {{#
   <meta property="og:image" content="https://pixelde.su/assets/img/avatar.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@pixeldesu">
+  #}}
   {{ if (index === false) || (post_draft === true) }}
     <meta name="robots" content="noindex,nofollow">
   {{ /if }}
-  <link rel="me" href="https://desu.social/@pixel">
-  {{ if type === "blog" || type === "talk" }}
-    <meta property="fediverse:creator" content="@pixel@desu.social">
-  {{ /if }} #}}
-  {{# <script>
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.dataset.theme =="dark";
-    }
-    else if (localStorage.getItem("theme") === "light") {
-      document.documentElement.dataset.theme == "light";
-    }
-  </script> #}}
+  <link rel="me" href="https://social.lol/@ewie">
+  {{ if type === "post"}}
+    <meta property="fediverse:creator" content="@ewie@social.lol">
+  {{ /if }}
   <!-- he does some links here -->
   <!-- <link
     rel="preload"
@@ -98,7 +91,7 @@
       integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
       crossorigin="anonymous"
     ></script>
-    <meta name="htmx-config" content='{"selfRequestsOnly":"true"}' async />
+    <meta name="htmx-config" content='{"selfRequestsOnly":"false"}' async/>
   {{ /if }}
 
   <script>
@@ -140,7 +133,7 @@
       get: () => {
         let color = localStorage.getItem("theme-color") || "";
         if (!color) {
-          color = "blue";
+          color = "white";
         }
         return color;
       },
@@ -214,7 +207,7 @@
   <!-- <script type="module" src="/assets/js/components/card-frame.js"></script> -->
 </head>
 <body>
-  <div class="body-wrapper">
+  {{# <div class="body-wrapper"> #}}
     {{ comp.header({ menu_open: menu_open}) }}
     {{# {{ include "partials/site-header.vto" }} #}}
     <main class="center">{{ content }}</main>
@@ -223,6 +216,6 @@
     <script src="/js/postSearch.js" async></script>
     #}}
     {{ comp.footer() }}
-  </div>
+  {{# </div> #}}
 </body>
 </html>

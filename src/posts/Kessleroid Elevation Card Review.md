@@ -10,7 +10,9 @@ tags:
  - card reviews
 ---
 
-<card-frame side="corp" stars="4" src="https://cdn.ewie.online/nsg-kessleroid.jpeg">
+<card-frame name="kessleroid" side="corp" stars="4" src="https://cdn.ewie.online/nsg-kessleroid.jpeg">
+
+<div class="visually-hidden" id="card-name-kessleroid">
 
 Weyland Ice: Barrier
 
@@ -28,6 +30,8 @@ in the server’s metagravity well.”_\
 _—_ _Moira Virtue, Ice Engineering, KKU_
 
 4 stars
+
+</div>
 
 </card-frame>
 

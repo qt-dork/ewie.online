@@ -3,6 +3,7 @@ import { signal, watch } from "npm:@lit-labs/preact-signals";
 
 export class CardFrame extends LitElement {
   static properties = {
+    name: { type: String},
     src: { type: String },
     stars: { type: Number },
     side: { type: String },
@@ -161,7 +162,7 @@ export class CardFrame extends LitElement {
   render() {
     return html`
       <span aria-hidden="true" class="disclaimer">(This card is interactive! Click or tap on it!)</span>
-      <div aria-describedby="card-name" class="flip-card">
+      <div aria-describedby="card-name-${this.name}" class="flip-card">
         <div class="wrapper" id="transformer">
           <div class="card flipped-${watch(this.flipped)}" @click=${this._flip}>
             <img class="side front" src="${this.src}"/>
@@ -180,9 +181,9 @@ export class CardFrame extends LitElement {
       })
     }
       </div>
-      <div class="visually-hidden" id="card-name">
+      <!-- <div class="visually-hidden" id="card-name"> -->
         <slot></slot>
-      </div>
+      <!-- </div> -->
     `;
   }
 

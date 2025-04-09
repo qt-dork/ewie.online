@@ -7,8 +7,17 @@ main:has(.theme-picker) {
 
   display: grid;
   grid-template-columns: 0.6fr 0.4fr;
-  gap: var(--space-m);
+  grid-template-rows: 1fr;
+  gap: var(--space-s-m);
   width: 100%;
+
+  container-name: theme-picker;
+  container-type: inline-size;
+
+  /* @container theme-picker (inline-size <= 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  } */
 
   fieldset {
     margin: 0;
@@ -39,7 +48,7 @@ main:has(.theme-picker) {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: var(--space-2xl);
+    height: var(--space-xl-2xl);
   }
 
   label[for^="color"] {
@@ -53,7 +62,7 @@ main:has(.theme-picker) {
   }
 
   label[for^="color"] span {
-    width: 2rem;
+    width: var(--space-m-l);
     aspect-ratio: 1;
     display: grid;
     place-content: center;
@@ -65,7 +74,7 @@ main:has(.theme-picker) {
   }
 
   label[for^="appearance"] svg {
-    width: 2.25rem;
+    width: var(--space-m-l);
     aspect-ratio: 1;
     display: grid;
     place-content: center;

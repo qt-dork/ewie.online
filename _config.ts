@@ -16,6 +16,10 @@ import truncate from "./helpers/truncate_html.ts";
 const site = lume(
   {
     src: "./src",
+    location: new URL("https://ewie.online/"),
+    // server: {
+    //   page404: "/404/",
+    // },
   },
 );
 
@@ -29,11 +33,12 @@ site.use(date({
   },
 }));
 site.use(esbuild());
+console.log(site.url("", true));
 site.use(feed({
-  // output: ["/posts.rss", "/posts.json"], // The file or files that must be generated
-  // query: "type=post", // Select only pages of type=post
+  output: ["/feed/feed.xml", "/feed/feed.json"], // The file or files that must be generated
+  query: "type=post", // Select only pages of type=post
   sort: "date=desc", // To sort by date in descending order
-  limit: 10, // To show only the 10 first results
+  limit: 20, // To show only the 10 first results
   info: {
     title: "Evie On-Line", // The feed title
     description: "Just some posts and stuff", // The feed subtitle
@@ -55,16 +60,6 @@ site.use(feed({
     authorName: "=author.name", // The author of the article
     authorUrl: "=author.url", // The URL of the author
   },
-  output: ["/feed/feed.xml", "/feed/feed.json"],
-  query: "type=post",
-  // info: {
-  //   title: "=site.title",
-  //   description: "=site.description",
-  // },
-  // items: {
-  //   title: "=title",
-  //   description: "=excerpt",
-  // },
 }));
 site.use(fff());
 site.use(lightningcss(

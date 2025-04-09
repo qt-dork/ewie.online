@@ -7,7 +7,7 @@
 }
 
 .center {
-  --measure: 70ch;
+  --measure: 60ch;
   --center-padding: var(--space-s);
   box-sizing: content-box;
   margin-inline: auto;
