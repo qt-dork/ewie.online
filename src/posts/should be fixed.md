@@ -16,3 +16,5 @@ y'all really like the new site design!
 
 also sorry for breaking comments on top down solutions i fixed them so i hope
 that's all good ty bye
+
+Edit: I swear i fixed the comments for real now this is it they should all actually be working now

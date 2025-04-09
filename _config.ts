@@ -33,7 +33,6 @@ site.use(date({
   },
 }));
 site.use(esbuild());
-console.log(site.url("", true));
 site.use(feed({
   output: ["/feed/feed.xml", "/feed/feed.json"], // The file or files that must be generated
   query: "type=post", // Select only pages of type=post
@@ -97,6 +96,9 @@ site.preprocess([".md"], (pages) => {
           ),
       ).substring(0, 20);
       page.data.url = `/posts/${slugDate}-${slugBody}/`;
+      if (page.data.permalink) {
+        page.data.url = page.data.permalink;
+      }
     }
   }
 });
