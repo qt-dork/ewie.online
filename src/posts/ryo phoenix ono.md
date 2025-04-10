@@ -9,7 +9,7 @@ tags:
  - card reviews
 ---
 
-<card-frame name="ryo-ono" side="corp" stars="3" src="https://cdn.ewie.online/nsg-ryo-phoenix-ono.jpeg">
+<card-frame name="ryo-ono" side="runner" stars="3" src="https://cdn.ewie.online/nsg-ryo-phoenix-ono.jpeg">
 
 <div class="visually-hidden" id="card-name-ryo-ono">
 
