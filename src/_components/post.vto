@@ -1,5 +1,5 @@
 <article class="post h-entry stack">
-  {{ comp.attribution({ author: { image: post.author_image, handle: post.author_handle }, url: post.url, date: post.date }) }}
+  {{ comp.posts.attribution({ author: { image: post.author_image, handle: post.author_handle }, url: post.url, date: post.date }) }}
   {{ if post.title }}
     {{ comp.title({ title: post.title, url: post.url }) }}
   {{ /if }}

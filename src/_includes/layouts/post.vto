@@ -19,7 +19,7 @@
 
 <div class="post-wrapper mouse" >
   <article class="post h-entry stack">
-    {{ comp.attribution({ author: { image: author_image, handle: author_handle }, url: url, date: date }) }}
+    {{ comp.posts.attribution({ author: { image: author_image, handle: author_handle }, url: url, date: date }) }}
     {{ if title }}
         {{ comp.title({ title: title, url: url }) }}
     {{ /if }}
