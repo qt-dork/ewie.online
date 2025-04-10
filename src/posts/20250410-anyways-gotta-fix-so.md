@@ -1,6 +1,6 @@
 ---
 
-description:
+description: anyways, gotta fix some bugs with the attribution at the top of a post. I'm getting the cohost pill avatar on accident.
 date: 2025-04-10T04:29:38.181Z
 tags: 
  - hoping to one day get to the point of no longer posting about my blog on my blog
