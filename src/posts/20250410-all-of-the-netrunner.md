@@ -1,6 +1,6 @@
 ---
 title: "All of the netrunner mentioneds i missed from before"
-description:
+description: that's right, i've been following these the whole time. every time belarius posted a bulletin board nonsense with netrunner, i've been collecting them in a folder to post when i am back on my website bullshit. i am truly undefeatable.
 date: 2025-04-10T12:09:19.817Z
 tags: 
  - links
