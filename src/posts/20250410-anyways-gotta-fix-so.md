@@ -3,8 +3,8 @@
 description:
 date: 2025-04-10T04:29:38.181Z
 tags: 
- - and instead posting about cool stuff on my blog
  - hoping to one day get to the point of no longer posting about my blog on my blog
+ - and instead posting about cool stuff on my blog
  - meta
 
 ---
