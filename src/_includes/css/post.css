@@ -1,5 +1,5 @@
 .post > * + * {
-  padding-inline: var(--space-m);
+  padding-inline: var(--space-s-m);
 }
 .post-wrapper {
   /* view-transition-name: post; */
@@ -21,7 +21,7 @@
   }
 
   & > * {
-    padding-inline: var(--space-m);
+    padding-inline: var(--space-s-m);
   }
 
   & > *:first-child {
@@ -42,7 +42,7 @@
 }
 
 .metadata {
-  padding-inline: var(--space-m);
+  padding-inline: var(--space-s-m);
   padding-block: var(--space-s);
   border-bottom: 1px dashed var(--color-border);
 
@@ -93,9 +93,12 @@
   }
 }
 
+.post > *:last-child {
+  padding-block-end: var(--space-m);
+}
+
 .tags {
   /* padding-inline: var(--post-padding); */
-  padding-block-end: var(--space-m);
 
   font-size: smaller;
 

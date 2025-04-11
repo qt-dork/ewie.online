@@ -43,7 +43,7 @@
               {{ /if }}
             </div>
           {{ /if }}
-          {{ if post.tags }}
+          {{ if post.tags.length > 0 }}
             {{ comp.tags({ tags: post.tags }) }}
           {{ /if }}
         </article>

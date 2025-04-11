@@ -29,7 +29,7 @@
         {{ content }}
         </div>
     {{ /if }}
-    {{ if tags }}
+    {{ if tags.length > 0 }}
         {{ comp.tags({ tags: tags }) }}
     {{ /if }}
   </article>
