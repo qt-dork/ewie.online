@@ -27,11 +27,14 @@ blockquote {
   overflow-wrap: break-word;
 }
 
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
 body {
   font-family: var(--font-base);
   font-size: var(--size-step-0);
-  background: var(--color-bg);
-  color: var(--color-text);
 }
 
 h1 {
