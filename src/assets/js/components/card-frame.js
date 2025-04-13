@@ -7,7 +7,8 @@ export class CardFrame extends LitElement {
     src: { type: String },
     stars: { type: Number },
     side: { type: String },
-    flipped: {},
+    back: { type: String },
+    // flipped: {},
   };
 
   flipped = signal(false);
@@ -15,6 +16,7 @@ export class CardFrame extends LitElement {
   constructor() {
     super();
     this.stars = 0;
+    this.back = "";
   }
 
   static styles = css`
@@ -192,23 +194,31 @@ export class CardFrame extends LitElement {
             <img class="side front" src="${this.src}" />
             <img
               class="side back"
-              src="https://cdn.ewie.online/nsg-${this.side}.png"
+              src="${
+      this.back === ""
+        ? `https://cdn.ewie.online/nsg-${this.side}.png`
+        : this.back
+    }"
             />
           </div>
         </div>
       </div>
       <div aria-hidden="true" class="stars">
-        ${[...Array(5).keys()].map((x) => {
-          return html`
+        ${
+      [...Array(5).keys()].map((x) => {
+        return html`
             <div
-              class="star ${x < this.stars ? "gold" : "gray"} visible-${watch(
-                this.flipped
-              )}"
+              class="star ${x < this.stars ? "gold" : "gray"} visible-${
+          watch(
+            this.flipped,
+          )
+        }"
             >
               ★
             </div>
           `;
-        })}
+      })
+    }
       </div>
       <!-- <div class="visually-hidden" id="card-name"> -->
       <slot></slot>

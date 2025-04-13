@@ -6,10 +6,12 @@ main:has(.theme-picker) {
   margin-block-start: var(--space-xl);
 
   display: grid;
-  grid-template-columns: 0.6fr 0.4fr;
-  grid-template-rows: 1fr;
+  /* grid-template-columns: 0.6fr 0.4fr;
+  grid-template-rows: 1fr; */
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
   gap: var(--space-s-m);
-  width: 100%;
+  /* width: 100%; */
 
   container-name: theme-picker;
   container-type: inline-size;

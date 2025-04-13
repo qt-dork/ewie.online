@@ -2,7 +2,7 @@
 {{ set postlist = results }}
 
 <header class="header-logo">
-  {{ comp.logo() }}
+  {{ comp.logo({ url: url }) }}
 	{{# <nav>
 		<ul class="nav">
 			<li class="nav-item">
@@ -21,11 +21,12 @@
 <div>
   <ul class="blog-posts stack">
     {{ for post of postlist }}
-      <li class="post-wrapper">
+      {{set hash = post.url |> hash}}
+      <li class="post-wrapper" style="view-transition-name: post-{{ hash }};">
         <article class="post h-entry stack">
           {{ comp.posts.attribution({ author: { image: post.author_image, handle: post.author_handle }, url: post.url, date: post.date }) }}
           {{ if post.title }}
-            {{ comp.title({ title: post.title, url: post.url }) }}
+            {{ comp.title({ title: post.title, url: post.url}) }}
           {{ /if }}
           {{ if post.content }}
             <div class="postbody e-content stack">
