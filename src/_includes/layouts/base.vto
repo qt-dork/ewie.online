@@ -24,7 +24,13 @@
     <meta property="og:description" content="gay plural trans lesbian disaster. i've done some cursed programming stuff but i'm hoping that if i can just get better and hotter then maybe i can make something even worse">
     <meta name="twitter:description" content="gay plural trans lesbian disaster. i've done some cursed programming stuff but i'm hoping that if i can just get better and hotter then maybe i can make something even worse">
   {{ /if }}
-  <meta property="og:image" content="https://cdn.ewie.online/ewie-pfp.png">
+  
+  {{# TODO: Make more complex og image handler that shows the first image and then falls back to profile picture #}}
+  {{ if author_image }}
+    <meta property="og:image" content="{{ author_image }}">
+  {{ else }}
+    <meta property="og:image" content="https://cdn.ewie.online/ewie-pfp.png">
+  {{ /if }} 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@ewie">
   {{ if (index === false) || (post_draft === true) }}
