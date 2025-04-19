@@ -1,6 +1,15 @@
+{{ if author.handle !== "ewie" }}
+  {{ set not_evie = true }}
+{{ /if }}
+
 <div class="attribution">
   <div class="metadata">
-    <div class="p-author h-card">
+    {{# bad code here #}}
+    {{ if not_evie }}
+      <div class="p-author h-card not-evie">
+    {{ else }}
+      <div class="p-author h-card">
+    {{ /if }}
       <span class="profile-pic">
         <img class="u-photo" src="{{ author.image }}">
       </span>

@@ -138,6 +138,10 @@ header.header-logo {
   mix-blend-mode: luminosity;
 }
 
+.not-evie .u-photo {
+  mix-blend-mode: unset;
+}
+
 body {
   display: grid;
   /* min-height: 100; */
