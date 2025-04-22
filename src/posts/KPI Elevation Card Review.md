@@ -34,4 +34,4 @@ Resolve 2 of the following in any order:
 
 I don’t think it’s a bold prediction to say that I think almost every Weyland deck will want to run 3 copies of Key Performance Indicators. It is such a cheap and flexible card that even the weakest KPI will still do something for you, and that something will be good.
 
-Also, it can be pulled out of the grave by [Plutus](/posts/20250421-plutus/) to fast advance a 4/2, as if Plutus wasn't already good enough.
+Also, it can be pulled out of the grave by [Plutus](/posts/20250422-plutus/) to fast advance a 4/2, as if Plutus wasn't already good enough.
