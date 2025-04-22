@@ -2,7 +2,7 @@
 title: Key Performance Indicators
 description: >
   I don’t think it’s a bold prediction to say that I think almost every Weyland deck will want to run 3 copies of Key Performance Indicators. It is such a cheap and flexible card that even the weakest KPI will still do something for you, and that something will be good.
-date: 2025-04-22T04:12:39Z
+date: 2025-04-22T04:19:49Z
 tags:
  - netrunner
  - elevation
