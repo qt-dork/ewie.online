@@ -14,6 +14,17 @@
 }
 
 @font-face {
+  src:
+    url("/fonts/RoslindaleVariable.woff2") format("woff2 supports variations"),
+    url("/fonts/RoslindaleVariable.woff2") format("woff2-variations");
+  font-family: "Roslindale Variable";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 200 900;
+  font-stretch: 75% 100%;
+}
+
+@font-face {
   font-family: "Lato";
   src:
     url("/fonts/Lato3-variable-subset.woff2")
