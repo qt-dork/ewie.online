@@ -1,7 +1,7 @@
 ---
 title: Transfer of Wealth
 description: >
-  Probably a niche utility card? Derezzing an ice seems good, but I don’t think it’s worth a click, a credit, and a successful run on HQ. It’s one of those cards whose effect is terrible on its own, but gets upgraded to becoming merely okay once you have other cards to extract value from derezzing or rezzing ice.
+  All joking aside, I think Transfer of Wealth is even better than the card it's nearprinting, Diversion of Funds. DooF is a 2 click 9 credit swing (net of 4 for you, and net of -5 for corp), while Transfer of Wealth is a 2-ish click 7 credit swing (net of 4-ish for you when factoring in tag removal, and net of -3 for corp) that also lets you access cards.
 date: 2025-04-24T10:02:58Z
 tags:
  - netrunner
