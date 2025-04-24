@@ -9,7 +9,7 @@ tags:
  - card reviews
 ---
 
-<card-frame name="maglectric" side="runner" stars="2" src="https://cdn.ewie.online/nsg-maglectric.jpg">
+<card-frame name="maglectric" side="runner" stars="2" src="https://cdn.ewie.online/20250424115344-Image.jpeg">
 
 <div class="visually-hidden" id="card-name-maglectric">
 
