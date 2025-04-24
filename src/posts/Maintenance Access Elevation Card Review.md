@@ -1,17 +1,18 @@
 ---
 title: Maintenance Access
 description: >
-  It’s a free 1 or 2 influence. You’d be dumb not to run it in every non-Jinteki deck that runs Mavirus.
-date: 2025-04-22T21:56:46Z
+  Wow, this card looks extremely underwhelming doesn’t it!
+date: 2025-04-24T11:47:57Z
 author_handle: mezzie
 author_image: "https://cdn.ewie.online/pfp-mezzie.jpeg"
+
 tags:
  - netrunner
  - elevation
  - card reviews
 ---
 
-<card-frame name="maintenance-access" side="corp" stars="5" src="https://cdn.ewie.online/nsg-flyswatter.jpeg">
+<card-frame name="maintenance-access" side="runner" stars="5" src="https://cdn.ewie.online/nsg-maintenance.jpg">
 
 <div class="visually-hidden" id="card-name-maintenance-access">
 
@@ -35,24 +36,29 @@ _—"G0ph3r" O'Ryan_
 <script type="module" src="/assets/js/components/card-frame.js"></script>
 
 Wow, this card looks extremely underwhelming doesn’t it!
+
 A *WHOLE* double just to access a single card from HQ!
-I’ve seen a lot of people lamenting the loss of sneakdoor beta. A classic card from core set, gone from standard. Its gonna leave some people upset that the effect they got was non repeating. However, the context in which sneakdoor was printed in and modern netrunner are just vastly different. That 2 MU that you see on sneakdoor? In early days netrunner, there were not a lot of great utility programs worth playing besides sneakdoor beta, so that 2 mu was not a massive cost. Maybe a datasucker or a parasite.
 
-Nowadays, Crim is flush with great programs. You have Cezve, recurring 2 credits, a giant economy card if you can leverage it. You have cupellation, the legwork on a stick you want to keep and then use at the right time. You also have Malandragem, a sort of expensive card that’s sometimes an inside job that you want to keep around, although its a niche include.
+I’ve seen a lot of people lamenting the loss of [Sneakdoor Beta](https://netrunnerdb.com/en/card/31023). A classic card from core set, now gone from standard. It's gonna sting for some people to see that its replacement is single-use. However, the Netrunner that Sneakdoor was printed in is vastly different to current Netrunner. That 2 MU that you see on Sneakdoor? At most it would be filled with a Datasucker or a Parasite, but in early days Netrunner, there were not a lot of great utility programs worth playing besides Sneakdoor Beta, so that 2 MU was not a massive cost.
 
-...and also datasucker is still in Crim sometimes.
+Nowadays, Crim is flush with great programs. You have [Cezve](https://netrunnerdb.com/en/card/33017), providing a recurring 2 credits, making it a giant economy card, if you can leverage it. You have [Cupellation](https://netrunnerdb.com/en/card/34080), the [Legwork](https://netrunnerdb.com/en/card/31019) on a stick you want to keep and then use at the right time. You also have [Malandragem](https://netrunnerdb.com/en/card/34081), a niche and mildly expensive card that’s sometimes an [Inside Job](https://netrunnerdb.com/en/card/31018).
 
-Enter maintenance access. Not only are you saving your 2 mu and your juicy 4 credits, installing and using sneakdoor beta was going to be a double anyway! and with the pace of the game increasing and multi access effects being more plentiful, such as twinning and cupellation, you’re going to see three, four, maybe 5 cards in a single maintenance access. that’s on top of the money you would save from surprising your opponent and cheating the HQ ice.
-See, in the old context of sneakdoor, you could feasibly click sneakdoor a few times in a single turn to see every card in HQ for 4 credits. not a bad deal! Nowadays, though, single accesses like that are not efficient if you need to contest a fast paced remote too.
+...And also Datasucker is still in Crim sometimes.
 
-Now we have a much more deck building friendly version of sneakdoor beta in the pool that doesn’t potentially overlap with other important utility cards.  Seems good.
+Enter Maintenance Access. Not only are you saving your 2 MU and your juicy 4 credits, installing and using Sneakdoor Beta is basically a double anyway! And as the game becomes faster and multi-access effects become more plentiful, such as [Twinning](https://netrunnerdb.com/en/card/33010) and Cupellation, you’re going to see three, four, maybe five cards in a single Maintenance Access. And that’s on top of the money you would save from surprising your opponent and cheating the HQ ice.
+
+See, in the old context of Sneakdoor, you could feasibly click Sneakdoor a few times in a single turn to see every card in HQ for 4 credits. not a bad deal! Nowadays, though, single accesses like that are not efficient if you also need to contest a fast paced remote.
+
+Now we have a much more deck-building friendly version of Sneakdoor Beta in the pool that doesn’t potentially overlap with other important utility cards. Seems good.
 
 But wait, there’s more!!
 
-The whole suit of cards that Crim loves and feeds off of are powered by this effect. It has a natural synergy with Sable, with the success of the HQ run mitigating the cost to play a double. Wake Implant also is a multi access card that feeds off of HQ accesses. You can charge it up and then let it go onto RND, generating a lot of pressure from a two card combo. Ice and credits the corp is using on central servers is ice and credits they are not using for their juicy remotes.
+The whole suite of cards that Crim loves and feeds off of are powered by this effect. It has a natural synergy with [Sable](https://netrunnerdb.com/en/card/33011), with successful HQ run refunding the extra click needed to play a double. [WAKE Implant](https://netrunnerdb.com/en/card/33078) is also a multi access card that feeds off of HQ accesses. You can charge it up and then let it rip into R&D, generating a lot of pressure from a two card combo. Ice and credits the corp is using for central servers is ice and credits they are not using for their juicy remotes.
 
-The floor of this card is that it saves you potentially a nasty face check, maybe 3/4/5 credits for a single ice on HQ if you don’t have the right breaker or a boomerang. Not bad!
-The ceiling of this card is an absolute knockout blow out of nowhere, when the corp thought they were most safe, you strike and snag an agenda, get a wake implant trigger, pop your cupellation and just clean HQ for the win.
+The floor of this card is that it saves you potentially a nasty face check, maybe 3/4/5 credits for a single ice on HQ, if you don’t have the right breaker or a [Boomerang](https://netrunnerdb.com/en/card/26075). Not bad!
+
+The ceiling of this card is an absolute knockout blow out of nowhere. Just when the corp thought they were most safe, you strike and snag an agenda, get a WAKE Implant trigger, pop your Cupellation and just clean HQ for the win.
 
 It’s not flashy. It’s not Sneakdoor beta. It’s the most boring card that you think you’ve seen a million times over,
-and every corp is still never going to respect it.
+
+And every corp is still never going to respect it.
