@@ -1,15 +1,15 @@
 ---
 title: Dewi Subrotroputri
-description: DESCRIPTION
-date: 2025-04-23T00:39:13Z
-draft: true
+description: >
+  We got it y'all. The platonic shaper ID: "Oops! All Kickflips!" And just like all Shaper kickflip engines, it’ll probably be meh to bad and everyone will continue playing Lat I guess.
+date: 2025-04-25T00:10:11Z
 tags:
  - netrunner
  - elevation
  - card reviews
 ---
 
-<card-frame name="dewi-subrotroputri" side="runner" stars="3" src="https://cdn.ewie.online/nsg-dewi-back.jpeg" back="https://cdn.ewie.online/nsg-dewi-front.jpeg">
+<card-frame name="dewi-subrotroputri" side="runner" stars="2" src="https://cdn.ewie.online/nsg-dewi-back.jpeg" back="https://cdn.ewie.online/nsg-dewi-front.jpeg">
 
 <div class="visually-hidden" id="card-name-dewi-subrotroputri">
 
@@ -37,10 +37,12 @@ Whenever you make a successful run, if you have at least 1 unused MU, you may fl
 
 _We can’t leave the corps’ dirty deeds in the shadows._
 
-3 stars
+2 stars
 
 </div>
 
 </card-frame>
 
 <script type="module" src="/assets/js/components/card-frame.js"></script>
+
+We got it y'all. The platonic shaper ID: "Oops! All Kickflips!" And just like all Shaper kickflip engines, it’ll probably be meh to bad and everyone will continue playing [Lat](https://netrunnerdb.com/en/card/26019) I guess.

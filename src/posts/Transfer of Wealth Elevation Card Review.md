@@ -13,7 +13,7 @@ tags:
 
 <div class="visually-hidden" id="card-name-transfer-of-wealth">
 
-Criminal Event: Run
+Criminal Event: Run
 
 Play cost: 0 – Influence cost: 4
 

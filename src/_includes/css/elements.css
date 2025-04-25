@@ -70,3 +70,28 @@ h5,
 h6 {
   font-family: var(--font-display);
 }
+
+blockquote {
+  border-inline-start: solid var(--color-border);
+  padding-inline-start: var(--space-s-m);
+  /* padding-block: var(--space-xs); */
+
+  & > *:first-child {
+    margin-block-start: 0;
+  }
+
+  /* &::after {
+    content: "”";
+    font-size: var(--size-step-2);
+    font-family: var(--font-display);
+
+    position: relative;
+    right: calc(var(--space-s-m) / 2);
+    bottom: 0;
+  } */
+}
+
+cite::before {
+  content: "—";
+  padding-inline-end: 0.5ch;
+}

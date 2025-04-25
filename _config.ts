@@ -11,6 +11,9 @@ import robots from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 
+import withShiki from "npm:@leafac/rehype-shiki";
+import { codeToHtml } from "npm:shiki";
+
 import truncate from "./helpers/truncate_html.ts";
 
 const site = lume(
@@ -72,7 +75,13 @@ site.use(lightningcss(
   // }
 ));
 site.use(pagefind(/* Options */));
-site.use(remark());
+
+// const highlighter = await codeToHtml;
+// site.use(remark({
+//   rehypePlugins: [
+//     [withShiki, { highlighter }],
+//   ],
+// }));
 site.use(robots());
 site.use(sitemap());
 site.use(slugifyUrls());
