@@ -77,11 +77,8 @@ site.use(lightningcss(
 site.use(pagefind(/* Options */));
 
 // const highlighter = await codeToHtml;
-// site.use(remark({
-//   rehypePlugins: [
-//     [withShiki, { highlighter }],
-//   ],
-// }));
+
+site.use(remark());
 site.use(robots());
 site.use(sitemap());
 site.use(slugifyUrls());
