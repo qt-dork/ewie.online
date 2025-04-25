@@ -1,7 +1,7 @@
 ---
 
 description: |
-  More contributors would be good. I really enjoyed seeing other people's opinions on the cards, and i
+  Okay! That's a wrap! Unfortunately, I didn't write as much as last time (65 reviews to 40 reviews, and I didn't write almost all of the reviews this time), but I still had a great time. My big lesson from this session of reviewing Netrunner cards? Get more contributors and/or bunch things up. There were way too many cards and I didn't have enough to say about all of them.
 date: 2025-04-25T04:05:00.194Z
 tags: 
  - netrunner
