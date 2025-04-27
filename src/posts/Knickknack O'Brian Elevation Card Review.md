@@ -4,7 +4,7 @@ description: >
   With all the FFG cards going out, there was one in particular that I desperately wanted to see get a great reprint. We're saying goodbye to the goat, the OG, a piece of cardboard that my heart can't live without. Aesop’s Pawnshop is, in this girl's eyes, just the best. A real and true mf. Everything from mechanics and viability, to character, vibes and soul—this 1 credit Shaper staple is cut above everything. My absolute favorite card in the entire game.
   
 author_handle: Eris
-author_image: "<https://cdn.ewie.online/20250427005215-137710-d08b495a-2f53-4aab-94c8-058519df4ed1-profile.png>"
+author_image: "https://cdn.ewie.online/pfp-eris.png"
 date: 2025-04-27T00:52:47Z
 tags:
  - netrunner
