@@ -1,13 +1,15 @@
 ---
 title: "Some links you might like 4"
 description: |
-  Heydon’s doing this series where they write an article on every single html element, in alphabetical order. This one’s on the `<body>` element, the one element that anyone who’s ever touched html knows about. This isn’t the most educational resource, but it is heaps of fun, and I think that’s something you can easily forget about when you’re diving into web development. It’s fun!
+  More links! These link roundups are something I really enjoy because I have a good collection of new articles I have stolen from other link roundups, and old articles I have stolen from other link roundups. Okay, only some of these links are stolen from other link roundups, some of them I've found myself. Anyways, I hope you enjoy them all! Please comment if you do because I really genuinely love reading these comments. It gives me real joy to know my comment system hasn't broken yet.
 date: 2025-05-02T14:05:40.020Z
 tags: 
  - links
  - link roundup
  - weblogpomo
 ---
+
+More links! These link roundups are something I really enjoy because I have a good collection of new articles I have stolen from other link roundups, and old articles I have stolen from other link roundups. Okay, only some of these links are stolen from other link roundups, some of them I've found myself. Anyways, I hope you enjoy them all! Please comment if you do because I really genuinely love reading these comments. It gives me real joy to know my comment system hasn't broken yet.
 
 ## Heydon Pickering: [The Body Element](https://heydonworks.com/article/the-body-element/)
 
