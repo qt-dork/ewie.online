@@ -3,7 +3,10 @@
 description: |
   i'm playing umineko for the first time today. when does this happen!["Hahahahahahahaha!!!! Battler! 
 date: 2025-05-05T07:09:55.814Z
-tags: 
+tags:
+ - "umineko: when they cry"
+ - nonsense
+ - weblogpomo
 
 ---
 i'm playing umineko for the first time today. when does this happen
