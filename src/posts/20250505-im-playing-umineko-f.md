@@ -1,7 +1,7 @@
 ---
 
 description: |
-  i'm playing umineko for the first time today. when does this happen!["Hahahahahahahaha!!!! Battler! 
+  i'm playing umineko for the first time today. when does this happen
 date: 2025-05-05T07:09:55.814Z
 tags:
  - "umineko: when they cry"
