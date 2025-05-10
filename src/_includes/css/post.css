@@ -119,6 +119,7 @@
     list-style-type: none;
 
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-xs);
 
     .p-category {
