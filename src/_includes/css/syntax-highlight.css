@@ -1,0 +1,154 @@
+code {
+  /* font-family: var(--font-mono); */
+  font-family: "MonoLisa";
+  font-family: var(--font-mono);
+  /* font-size: calc(var(--size-step-0) * 0.9); */
+  font-weight: normal;
+}
+
+pre,
+code {
+  --color-code-text: light-dark(oklch(from var(--tone-one) var(--b3)),
+      oklch(from var(--tone-two) var(--b4)));
+
+  --size-code: var(--size-step--1);
+}
+
+pre:has(> code) {
+  overflow-x: auto;
+  padding: var(--space-xs);
+  border-radius: var(--space-xs);
+
+  background: var(--color-code-bg);
+  color: var(--color-code-text);
+  font-size: var(--size-code);
+}
+
+code:not(pre > code) {
+  --code-pad: calc(var(--space-xs) * 0.5);
+  padding-inline: var(--code-pad);
+  padding-block: calc(var(--code-pad) / 2);
+  border-radius: var(--code-pad);
+
+  background: var(--color-code-bg);
+  color: var(--color-code-text);
+  font-size: var(--size-code);
+}
+
+[data-theme-appearance="light"] pre:has(> code),
+[data-theme-appearance="light"] code:not(pre > code) {
+  border: 1px dashed var(--color-border);
+}
+
+pre,
+code {
+  --shift: l c calc(h - 135);
+  --tone-one: light-dark(oklch(from var(--primary) var(--shift)),
+      var(--primary));
+
+  /* TODO: Make chroma a function of the input */
+  /* h is 295.4 at a0 */
+  --a0: 0.2806 0.0238 h;
+  --a1: 0.3294 0.0264 h;
+  --a2: 0.4454 0.0358 h;
+  --a3: 0.5288 0.0438 h;
+  --a4: 0.5709 0.046 h;
+  --a5: 0.6454 0.372 h;
+  --a6: 0.7171 0.0288 h;
+  --a7: 0.7888 0.0211 h;
+  /* h is 292.04 at a7 */
+
+  /* hue is shifted a little bit i think. by like 10 */
+  /* h is 284.48 at b0 */
+  --b0: 0.548 0.2145 h;
+  --b1: 0.5954 0.2005 h;
+  --b2: 0.6434 0.1845 h;
+  --b3: 0.6909 0.1702 h;
+  --b4: 0.7555 0.1334 h;
+  --b5: 0.8191 0.0966 h;
+  --b6: 0.8834 0.0605 h;
+  --b7: 0.9483 0.0269 h;
+  /* h is 292.77 at b7 */
+
+  --tone-two: light-dark(var(--primary),
+      oklch(from var(--primary) var(--shift)));
+
+  /* hue shift seems to be about 5/8 up (or 3/8 back) */
+  /* h is 67.55 at c0 */
+  --c0: 0.566 0.0137 h;
+  --c1: 0.6289 0.0161 h;
+  --c2: 0.6874 0.0147 h;
+  --c3: 0.745 0.0128 h;
+  --c4: 0.8013 0.0119 h;
+  --c5: 0.8643 0.0123 h;
+  --c6: 0.9272 0.0097 h;
+  --c7: 0.9856 0.0017 h;
+  /* h is 67.8 at c7 */
+
+  /* h is 63.09 at d0 */
+  --d0: 0.6158 0.1099 h;
+  --d1: 0.6698 0.1248 h;
+  --d2: 0.7231 0.1335 h;
+  --d3: 0.7884 0.1538 h;
+  --d4: 0.8121 0.1364 h;
+  --d5: 0.8345 0.1212 h;
+  --d6: 0.8561 0.1044 h;
+  --d7: 0.8782 0.0877 h;
+  /* h is 66.27 at d7 */
+
+  --color-code-bg: light-dark(oklch(from var(--tone-two) var(--c7)),
+      oklch(from var(--tone-one) var(--a0)));
+
+  .tok-punctuation,
+  .tok-comment {
+    color: light-dark(oklch(from var(--tone-two) var(--c4)),
+        oklch(from var(--tone-one) var(--a3)));
+  }
+
+  .tok-variableName,
+  .tok-typeName {
+    color: light-dark(oklch(from var(--tone-two) var(--d0)),
+        oklch(from var(--tone-one) var(--b7)));
+  }
+
+  .tok-propertyName {
+    color: light-dark(oklch(from var(--tone-two) var(--d2)),
+        oklch(from var(--tone-one) var(--b3)));
+  }
+
+  .tok-number {
+    /* d2 & b0 */
+    color: light-dark(oklch(from var(--tone-one) var(--b0)),
+        oklch(from var(--tone-two) var(--d2)));
+  }
+
+  .tok-keyword,
+  .tok-literal {
+    color: light-dark(oklch(from var(--tone-one) var(--b3)),
+        oklch(from var(--tone-two) var(--d7)));
+  }
+
+  /* .tok-atom {
+    color: light-dark(
+      oklch(from var(--tone-two) var(--c0)),
+      oklch(from var(--tone-one) var(--a7))
+    );
+  } */
+
+  .tok-string,
+  .tok-string2,
+  .tok-atom {
+    color: light-dark(oklch(from var(--tone-one) var(--b2)),
+        oklch(from var(--tone-two) var(--d7)));
+  }
+
+  .tok-operator {
+    color: light-dark(oklch(from var(--tone-one) var(--b0)),
+        oklch(from var(--tone-two) var(--d2)));
+  }
+
+  .tok-className {
+    color: light-dark(oklch(from var(--tone-two) var(--d0)),
+        oklch(from var(--tone-one) var(--b7)));
+  }
+}

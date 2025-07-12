@@ -15,3 +15,22 @@
   padding-inline-start: var(--center-padding);
   padding-inline-end: var(--center-padding);
 }
+
+.shadow-med {
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+
+  img {
+    width: 88px;
+    height: 31px;
+  }
+}
+
+.pixel {
+  image-rendering: pixelated;
+}

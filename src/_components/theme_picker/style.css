@@ -1,6 +1,6 @@
-main:has(.theme-picker) {
-  width: 100%;
-}
+/* main:has(.theme-picker) { */
+/* width: 100%; */
+/* } */
 
 .theme-picker {
   margin-block-start: var(--space-xl);
