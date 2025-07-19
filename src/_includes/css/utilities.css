@@ -1,7 +1,7 @@
 .stack {
   --stack-space: var(--space-m, 1.5rem);
 
-  & > * + * {
+  &>*+* {
     margin-block-start: var(--stack-space);
   }
 }
@@ -23,14 +23,28 @@
 .button-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-xs);
+}
 
-  img {
-    width: 88px;
-    height: 31px;
-  }
+.eightyeight-by-thirtyone img {
+  width: 88px;
+  height: 31px;
+  image-rendering: pixelated;
 }
 
 .pixel {
+  width: 88px;
+  height: 31px;
   image-rendering: pixelated;
 }
+
+.float\:inline-end {
+  float: inline-end;
+}
+
+.no-list {
+  list-style-type: none;
+}
+
+/* flex */

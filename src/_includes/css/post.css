@@ -1,4 +1,4 @@
-.post>*+* {
+.post > * + * {
   padding-inline: var(--space-s-m);
 }
 
@@ -21,15 +21,15 @@
     border-bottom: 1px dashed var(--color-border);
   }
 
-  &>* {
+  & > * {
     padding-inline: var(--space-s-m);
   }
 
-  &>*:first-child {
+  & > *:first-child {
     padding-block-start: var(--space-m);
   }
 
-  &>*:last-child {
+  & > *:last-child {
     padding-block-end: var(--space-m);
   }
 }
@@ -122,11 +122,11 @@ footer.bottom {
   }
 }
 
-.post>*:last-child {
+.post > *:last-child {
   padding-block-end: var(--space-m);
 }
 
-.post .postbody>p:has(> img) {
+.post .postbody > p:has(> img) {
   display: grid;
   place-content: center;
 }

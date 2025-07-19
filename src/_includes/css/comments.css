@@ -11,6 +11,10 @@
   --stack-space: var(--space-xs);
 }
 
+textarea {
+  max-width: 100%;
+}
+
 .loading span {
   display: inline-block;
   /* --loading-length: 1s; */
@@ -27,6 +31,7 @@
   0% {
     transform: translateY(10%);
   }
+
   100% {
     transform: translateY(-10%);
   }
@@ -44,6 +49,7 @@
     & > * {
       display: block;
     }
+
     & > * + * {
       margin-block-start: var(--space-xs);
     }
