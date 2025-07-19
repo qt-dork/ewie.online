@@ -1,7 +1,3 @@
-main:has(#search) {
-  width: 100%;
-}
-
 #search {
   margin-block-start: var(--space-xl);
 }

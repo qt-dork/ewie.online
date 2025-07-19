@@ -9,10 +9,9 @@ import pagefind from "lume/plugins/pagefind.ts";
 import remark from "lume/plugins/remark.ts";
 import robots from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
-import slugifyUrls from "lume/plugins/slugify_urls.ts";
+// import slugifyUrls from "lume/plugins/slugify_urls.ts";
 
-import withShiki from "npm:@leafac/rehype-shiki";
-import { codeToHtml } from "npm:shiki";
+import slugifyUrls from "https://raw.githubusercontent.com/lumeland/lume/refs/heads/main/plugins/slugify_urls.ts";
 
 import truncate from "./helpers/truncate_html.ts";
 
@@ -26,7 +25,10 @@ const site = lume(
   },
 );
 
-site.copy("static", ".");
+site.add("static", ".");
+// site.add("_include/css");
+site.add("styles");
+site.add("assets/js");
 
 site.use(date({
   formats: {
@@ -78,7 +80,20 @@ site.use(pagefind(/* Options */));
 
 // const highlighter = await codeToHtml;
 
-site.use(remark());
+import { rehypeLezer } from "./helpers/rehype-lezer/highlight.js";
+import { parser as javascriptParser } from "npm:@lezer/javascript";
+import { parser as cssParser } from "npm:@lezer/css";
+import { parser as htmlParser } from "npm:@lezer/html";
+
+site.use(remark({
+  rehypePlugins: [[rehypeLezer, {
+    parsers: [
+      { lang: "js", parser: javascriptParser },
+      { lang: "css", parser: cssParser },
+      { lang: "html", parser: htmlParser },
+    ],
+  }]],
+}));
 site.use(robots());
 site.use(sitemap());
 site.use(slugifyUrls());

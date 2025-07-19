@@ -8,7 +8,6 @@ export class CardFrame extends LitElement {
     stars: { type: Number },
     side: { type: String },
     back: { type: String },
-    // flipped: {},
   };
 
   flipped = signal(false);
@@ -51,18 +50,6 @@ export class CardFrame extends LitElement {
 
     .wrapper {
       filter: drop-shadow(0.125rem 0.25rem 4px var(--color-shadow));
-      /* filter: drop-shadow(
-          0.3px 0.5px 0.7px oklch(from var(--color-shadow) l c h / 0.36)
-        )
-        drop-shadow(
-          0.8px 1.6px 2px -0.8px oklch(from var(--color-shadow) l c h / 0.36)
-        )
-        drop-shadow(
-          2.1px 4.1px 5.2px -1.7px oklch(from var(--color-shadow) l c h / 0.36)
-        )
-        drop-shadow(
-          5px 10px 12.6px -2.5px oklch(from var(--color-shadow) l c h / 0.36)
-        ); */
       cursor: pointer;
     }
 
@@ -118,8 +105,7 @@ export class CardFrame extends LitElement {
             1.013 35.9%,
             0.995 43.4%,
             1
-          )
-          backwards;
+          ) backwards;
         animation-delay: 0.5s;
       }
 
@@ -185,44 +171,37 @@ export class CardFrame extends LitElement {
 
   render() {
     return html`
-      <span aria-hidden="true" class="disclaimer"
-        >(This card is interactive! Click or tap on it!)</span
-      >
+      <span aria-hidden="true" class="disclaimer">
+        (This card is interactive! Click or tap on it!)
+      </span>
       <div aria-describedby="card-name-${this.name}" class="flip-card">
         <div class="wrapper" id="transformer">
-          <div class="card flipped-${watch(this.flipped)}" @click=${this._flip}>
+          <div class="card flipped-${watch(this.flipped)}" @click="${this
+            ._flip}">
             <img class="side front" src="${this.src}" />
             <img
               class="side back"
-              src="${
-      this.back === ""
-        ? `https://cdn.ewie.online/nsg-${this.side}.png`
-        : this.back
-    }"
+              src="${this.back === ""
+                ? `https://cdn.ewie.online/nsg-${this.side}.png`
+                : this.back}"
             />
           </div>
         </div>
       </div>
       <div aria-hidden="true" class="stars">
-        ${
-      [...Array(5).keys()].map((x) => {
-        return html`
+        ${[...Array(5).keys()].map((x) => {
+          return html`
             <div
-              class="star ${x < this.stars ? "gold" : "gray"} visible-${
-          watch(
-            this.flipped,
-          )
-        }"
+              class="star ${x < this.stars ? "gold" : "gray"} visible-${watch(
+                this.flipped,
+              )}"
             >
               ★
             </div>
           `;
-      })
-    }
+        })}
       </div>
-      <!-- <div class="visually-hidden" id="card-name"> -->
       <slot></slot>
-      <!-- </div> -->
     `;
   }
 

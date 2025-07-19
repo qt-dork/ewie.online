@@ -1,24 +1,27 @@
 ---
 layout: "layouts/base.vto"
-menu_open: true
 ---
-
-{{ comp.theme_picker() }}
-
-<div class="stack">
+<style>
+#buttoncode {
+  font-size: var(--size-step--1);
+  min-height: unset;
+  margin-block-start: calc(var(--space-xs)/2);
+  width: 88px;
+  height: 31px;
+}
+</style>
 <section class="stack post-wrapper">
-  <h3 style="margin-block-start: 0">Website</h3>
-  <ul class="no-list" style="margin-block-end: 0">
-    <li><a href="/">Home</a></li>
-    <li><a href="/tags">Tags</a></li>
-    <li><a href="/links">Links</a></li>
-    <li><a href="/ask">Ask</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/feed">Feed</a></li>
-  </ul>
+  <h2>Embed my button</h2>
+  <div class="flex float:inline-end">
+    <img decoding="async" loading="lazy" src="https://cdn.ewie.online/88x31-evie.png" title="evie on-line" alt="evie on-line" class="pixel">
+    <textarea id="buttoncode" content-editable="false" name="buttoncode" aria-label="Button code" style="resize:none;" onclick="this.select()" spellcheck="false">&lt;a href="https://ewie.online" title="Evie On-Line"&gt;
+  &lt;img src="https://cdn.ewie.online/88x31-evie.png" alt="Evie On-Line" style="image-rendering:pixelated;" /&gt;
+&lt;/a&gt;</textarea>
+  </div>
+  <p>If I know you and you have a button, let me know and I'll embed it in my list. Here's mine by the way (made by <a href="https://shadenexus.com/">Gwyn</a>!)</p>
 </section>
-
 <section class="stack post-wrapper">
+  <h2>Buttons!</h2>
   <div class="button-list eightyeight-by-thirtyone">
     <a href="https://auratriolo.com/blog/" target="_blank" rel="noopener" title="Aura!">
       <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/aura-pixelbanner.gif" title="Aura!" alt="Aura!">
@@ -87,6 +90,5 @@ menu_open: true
         src="https://wavebeem.com/button.webp"
       />
     </a>
- </div>
+  </div>
 </section>
-</div>
