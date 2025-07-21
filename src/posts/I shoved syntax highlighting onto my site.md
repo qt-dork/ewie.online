@@ -19,6 +19,8 @@ There's a well-known graph about how many blog posts you make about your blog vs
 
 There's a number of syntax highlighting solutions out there. In fact, here's a table of all of them:
 
+<div style="overflow:scroll;">
+
 |                                        | [Prism](https://github.com/PrismJS/prism) | [Highlight.js](https://github.com/highlightjs/highlight.js) | [Shiki](https://github.com/shikijs/shiki) | [starry-night](https://github.com/wooorm/starry-night) | [tree-sitter](https://tree-sitter.github.io/tree-sitter/) | [lezer](https://lezer.codemirror.net/) |
 | -------------------------------------- | ----------------------------------------- | ----------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------- | -------------------------------------- |
 | Fast?                                  | ✅                                         | ✅                                                           | ❌                                         | ❌                                                      | ✅                                                         | ✅                                      |
@@ -29,6 +31,8 @@ There's a number of syntax highlighting solutions out there. In fact, here's a t
 | Feature filled?                        | ✅                                         | ✅                                                           | ✅                                         | ✅                                                      | ❌[^3]                                                     | ❌[^4]                                  |
 | Satisfies my need to be a weird freak? | ❌                                         | ❌                                                           | ❌                                         | ❌                                                      | ❌                                                         | ✅                                      |
 | Miscellaneous                          | Kinda weird?[^1]                          | Really basic                                                |                                           | [^2]                                                   | Would need to be WASM                                     |                                        |
+
+</div>
 
 You’ll generally see a lot of Prism[^6], Shiki[^7], and Highlight.js[^8], which is great! They’re all good options for syntax highlighting, but they all have their flaws (notably, they all run on RegEx). I wanted something without those flaws. Something that had other flaws that would result in me having to put in a ton of work to get the bare minimum instead of installing a basic plugin.
 
