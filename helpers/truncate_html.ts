@@ -80,6 +80,11 @@ export default function truncate(
         "figcaption",
         "img",
         "picture",
+        "table",
+        "thead",
+        "tbody",
+        "tr",
+        "td",
       ],
       ellipses: ellipses,
     })

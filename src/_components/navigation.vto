@@ -1,8 +1,8 @@
-<nav class="post-wrapper pagination">
+<nav class="post-wrapper pagination shadow-med">
   {{ if pagi.previous }}
     <a href="{{ pagi.previous}}">Prev</a>
   {{ /if }}
-  <span>( {{pagi.page}} of {{pagi.totalPages}} )</span>
+  <span>( {{ pagi.page }} of {{ pagi.totalPages }} )</span>
   {{ if pagi.next }}
     <a href="{{ pagi.next}}">Next</a>
   {{ /if }}
