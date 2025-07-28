@@ -1,5 +1,5 @@
 ---
-title: "#A brief overview of three of my site's dependencies"
+title: "A brief overview of three of my site's dependencies"
 description: |
   They say “great artists steal”, and I wanted to showcase how I’ve solved some problems I’ve run into
 date: 2025-07-28T15:26:01.964Z
