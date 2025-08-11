@@ -45,11 +45,7 @@ I go to all of these but this time I wanted to share some pictures of the games
 </style>
 
 <figure style="grid-template">
-
-![](https://cdn.ewie.online/20250811045055-IMG_2015.jpeg)
-
-![](https://cdn.ewie.online/20250811045148-IMG_2016.jpeg)
-
+<img src="https://cdn.ewie.online/20250811045055-IMG_2015.jpeg"/>
+<img src="https://cdn.ewie.online/20250811045148-IMG_2016.jpeg"/>
 <figcaption>Mercury versus AU Co. I died.</figcaption>
-
 </figure>
