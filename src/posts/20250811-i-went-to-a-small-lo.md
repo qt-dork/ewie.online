@@ -1,7 +1,7 @@
 ---
 title: "I went to a small local Netrunner tournament"
 description: |
-  I go to all of these but this time I wanted to share some pictures of the games<style>.post figure {
+  I go to all of these but this time I wanted to share some pictures of the games
 date: 2025-08-11T05:44:52.484Z
 tags: 
  - netrunner
