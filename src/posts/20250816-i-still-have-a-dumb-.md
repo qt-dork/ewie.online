@@ -8,4 +8,4 @@ tags:
  - nonsense
 
 ---
-i still have a dumb article i could write about debunking some old cohost discourse back in that era where people just lied to make up reasons why you shouldn't use cohost but if it it's too late or too drama to post
+i still have a dumb article i could write about debunking some old cohost discourse back in that era where people just lied to make up reasons why you shouldn't use cohost but idk if it's too late or too drama to post
