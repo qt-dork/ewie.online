@@ -9,7 +9,7 @@ tags:
 
 ![A screenshot of an archive of the Blaseball home page as of season 11](https://cdn.ewie.online/SCR-20250807-schd.jpeg)
 
-Years ago, I worked on a concept for a video breaking down an iceberg meme[^1] for Blaseball,[^10] a roguelike[^11] incremental[^11] management[^11] horror[^11] game with creative story prompting elements[^11] that I was deep into for basically its entire runtime. While this project never saw the light of day, I think it'd be fun to share some of the stories from it that I enjoyed writing. This is one of those stories.
+Years ago, I worked on a concept for a video breaking down an [iceberg meme(https://cdn.ewie.online/Iceberg%28Iceberg%29.png)[^1] for Blaseball,[^10] a roguelike[^11] incremental[^11] management[^11] horror[^11] game with creative story prompting elements[^11] that I was deep into for basically its entire runtime. While this project never saw the light of day, I think it'd be fun to share some of the stories from it that I enjoyed writing. This is one of those stories.[^12]
 
 ## WhAT
 
@@ -90,3 +90,5 @@ All wins are historical. Wins don’t happen in the present.
 [^10]: Specifically for the [Society of Internet Blaseball Research](https://sibr.dev/), or SIBR for short. This was a community of very dedicated fans devoted to unraveling the mysteries behind the game.
 
 [^11]: In a sense.
+
+[^12]: Specifically, this is the WAR/WhAT entry on the iceberg meme.
