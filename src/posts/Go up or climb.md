@@ -13,6 +13,8 @@ Here's another piece where I'm publishing work I did years ago explaining entrie
 
 Since the start of season 2 of Blaseball,[^2] there has been a section of the website titled "The Book of Blaseball" (located under the book tab of the website, of course). Inside is what is supposedly the rules of the game, although they are heavily redacted. Of note is section 5b, which reads "If a team wins three championships, they, and Blaseball, shall ascend." This was noticed by the Society for Internet Blaseball Research, who decided to tweet about this topic at the Blaseball commissioner, at the time Parker Macmillan III, on September 26th, 2020.
 
+---
+
 {{> const dateTime = (timestamp) => (new Date(timestamp).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' })) }}
 {{> const date = (timestamp) => (new Date(timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' })) }}
 
