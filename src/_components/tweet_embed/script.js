@@ -190,7 +190,7 @@ class MainTweet extends LitElement {
         }
 
         &:has(.icon[data-visible="visible"]) {
-          grid-template-columns: 1fr 36px;
+          grid-template-columns: 1fr 24px;
           grid-template-areas:
             "name icon"
             "handle icon";
@@ -258,7 +258,7 @@ class MainTweet extends LitElement {
 
       .icon {
         grid-area: icon;
-        height: 36px;
+        width: 100%;
         aspect-ratio: 1;
         display: grid;
         grid-template-areas: "a";
@@ -272,11 +272,17 @@ class MainTweet extends LitElement {
           fill: currentColor;
         }
 
+        slot {
+          display: grid;
+          place-content: center;
+        }
+
         slot::slotted(a) {
-          height: 36px;
+          width: 100%;
           aspect-ratio: 1;
           overflow: hidden;
           opacity: 0;
+          transform: scale(1.5);
         }
       }
 
