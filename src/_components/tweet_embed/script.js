@@ -48,6 +48,11 @@ class SharedTweet extends LitElement {
         display: flex;
         align-items: center;
         gap: 4px;
+
+        & > span {
+          height: 1.2em;
+          align-self: center;
+        }
       }
 
       .header .name {
@@ -101,6 +106,14 @@ class SharedTweet extends LitElement {
       ::slotted(*) {
         margin: unset;
       }
+
+      slot[name="icon"] {
+        margin-inline-end: auto;
+
+        &:has(::slotted([data-source="mastodon"])) {
+          background-image: url('/mastodon.svg');
+        }
+      }
     `;
     render() {
       return html`
@@ -113,6 +126,7 @@ class SharedTweet extends LitElement {
             <span class="metadata subtle">
               <slot name="time">
             </span>
+            <slot name="icon"></slot>
           </div>
 
           <div class="body">
@@ -127,6 +141,12 @@ class SharedTweet extends LitElement {
 }
 
 class MainTweet extends LitElement {
+  static properties = {
+    _dataSource: {
+      state: true,
+    },
+  };
+  
   static styles = css`
 
     .post {
@@ -155,9 +175,31 @@ class MainTweet extends LitElement {
       .header {
         grid-area: header;
 
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+
+        display: grid;
+        grid-template-rows: 16px 16px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "name" "handle";
+        
         gap: 4px;
+
+        .icon[data-visible="invisible"] {
+          display: none;
+        }
+
+        &:has(.icon[data-visible="visible"]) {
+          grid-template-columns: 1fr 36px;
+          grid-template-areas:
+            "name icon"
+            "handle icon";
+        }
+
+        & > span {
+          height: 1.2em;
+          align-self: center;
+        }
       }
 
       .header, .footer {
@@ -166,6 +208,14 @@ class MainTweet extends LitElement {
 
       .header .name {
         font-weight: bold;
+      }
+
+      span:has(> [name="name"]) {
+        grid-area: name;
+      }
+      
+      span:has(> [name="handle"]) {
+        grid-area: handle;
       }
 
       .subtle {
@@ -205,8 +255,56 @@ class MainTweet extends LitElement {
         overflow: hidden;
         text-overflow: ellipsis;
       }
-      `
-      
+
+      .icon {
+        grid-area: icon;
+        height: 36px;
+        aspect-ratio: 1;
+        display: grid;
+        grid-template-areas: "a";
+        color: var(--color-subtle);
+
+        & > * {
+          grid-area: a;
+        }
+
+        svg {
+          fill: currentColor;
+        }
+
+        slot::slotted(a) {
+          height: 36px;
+          aspect-ratio: 1;
+          overflow: hidden;
+          opacity: 0;
+        }
+      }
+
+      svg[data-visible="visible"] {
+        display: unset;
+      }
+
+      svg[data-visible="invisible"] {
+        display: none;
+      }
+    `;
+
+    
+
+    firstUpdated() {
+      const socials = ["mastodon", "bluesky", "twitter"];
+      const dataSources = socials.map((social) => {
+        const hasSocial = this.querySelector(`[slot="icon"][data-source="${social}"]`) !== null ? true : false;
+        return {
+          social: social,
+          exists: hasSocial
+        }
+      });
+      const exists = dataSources.find((data) => (data.exists));
+      this._dataSource = exists !== undefined ? exists.social : "";
+    }
+
+   
     render() {
       return html`
         <div class="post">
@@ -215,16 +313,21 @@ class MainTweet extends LitElement {
             <span class="metadata name overflow-ellipsis"><slot
               name="name"
             ></slot></span>
-          <span class="metadata subtle overflow-ellipsis">
-            <slot name="handle"></slot>
-          </span>
-        </div>
+            <span class="metadata subtle overflow-ellipsis">
+              <slot name="handle"></slot>
+            </span>
+            <div data-visible="${this._dataSource !== "" ? "visible" : "invisible"}" class="icon">
+              <slot name="icon"></slot>
 
-        <div class="body">
-          <slot></slot>
-        </div>
+              <svg data-visible="${this._dataSource === "mastodon" ? "visible" : "invisible"}" data-source="mastodon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zM357.9 304.3l-46.6 0 0-114.2c0-49.7-64-51.6-64 6.9l0 62.5-46.3 0 0-62.5c0-58.5-64-56.6-64-6.9l0 114.2-46.7 0c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175l0 0z"/></svg>
+            </div>
+          </div>
 
-          <slot class="metadata footer subtle" name="time">
+          <div class="body">
+            <slot></slot>
+          </div>
+
+          <slot class="metadata footer subtle" name="time"></slot>
       </div>
     `;
 }
@@ -356,8 +459,99 @@ class ExpandableTweet extends LitElement {
   }
 }
 
+class MediaCard extends LitElement {
+  static properties = {
+    href: { type: String },
+  }
+
+  static styles = css`
+    a.media-card {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      max-width: 80%;
+      overflow: hidden;
+      
+      border-radius: var(--space-s);
+      border: 1px solid var(--color-border);
+
+      text-decoration: none;
+      color: var(--color-text);
+      margin-block-start: 8px;
+    }
+
+    a:visited {
+      --primary: #551A8B;
+    }
+
+    a.media-card:hover, a.media-card:focus {
+      --color-border: light-dark(oklch(from var(--primary) 40% calc(c * 2) h), oklch(from var(--primary) 70% calc(c * 2) h));
+      box-shadow: 0 0 0 2px light-dark(oklch(from var(--primary) 40% calc(c * 2) h / 0.33), oklch(from var(--primary) 70% calc(c * 2) h / 0.33));
+    }
+
+    a.media-card > div:first-child {
+      border-block-end: 1px solid var(--color-border);
+    }
+
+    .meta-container {
+      padding: 8px;
+      min-width: 0;
+    }
+
+    p.meta {
+      margin: 0;
+    }
+
+    .subtle {
+      color: var(--color-subtle);
+      font-size: smaller;
+    }
+    
+    [name="domain"] {
+      color: light-dark(oklch(from var(--primary) 40% calc(c * 2) h),
+      oklch(from var(--primary) 70% calc(c * 2) h));
+    }
+
+    .body, [name="title"] {
+      display: -webkit-box;
+      display: box;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: balance;
+    }
+
+    ::slotted(*) {
+      margin: 0;
+    }
+  `;
+
+  render() {
+    return html`
+      <a href="${this.href}" target="_blank" rel="nofollow noopener" class="media-card">
+        <div>
+          <slot name="img"></slot>
+        </div>
+        <div class="meta-container">
+          <p class="meta subtle">
+            <slot name="domain"></slot>
+            ·
+            <slot name="time"></slot>
+          </p>
+          <slot name="title"></slot>
+          <slot class="body subtle"></slot>
+        </div>
+      </a>
+    `;
+  }
+}
+
 customElements.define("tweet-embed", TweetEmbed);
 customElements.define("shared-tweet", SharedTweet);
 customElements.define("main-tweet", MainTweet);
 customElements.define("media-container", MediaContainer);
+customElements.define("media-card", MediaCard);
 customElements.define("expandable-tweet", ExpandableTweet);

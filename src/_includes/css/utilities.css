@@ -1,6 +1,10 @@
 .stack {
   --stack-space: var(--space-m, 1.5rem);
 
+  &>*:first-child {
+    margin: 0;
+  }
+
   &>*+* {
     margin-block-start: var(--stack-space);
   }

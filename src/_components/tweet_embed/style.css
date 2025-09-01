@@ -1,7 +1,3 @@
-/* main:has(.theme-picker) { */
-/* width: 100%; */
-/* } */
-
 shared-tweet,
 main-tweet {
   display: block;
@@ -20,12 +16,6 @@ main-tweet [slot="avatar"] {
   height: 36px;
 }
 
-/* main-tweet img { */
-/* aspect-ratio: 1; */
-/* border-radius: 50%; */
-/* height: 36px; */
-/* } */
-
 tweet-embed a {
   color: light-dark(oklch(from var(--primary) 40% calc(c * 2) h),
       oklch(from var(--primary) 70% calc(c * 2) h));
@@ -34,6 +24,18 @@ tweet-embed a {
 
   &:hover {
     text-decoration: underline;
+  }
+
+  span.invisible {
+    display: none;
+  }
+
+  span.ellipsis::after {
+    content: "…";
+  }
+
+  &:visited {
+    --primary: #551A8B;
   }
 }
 
