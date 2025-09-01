@@ -51,7 +51,7 @@ class SharedTweet extends LitElement {
 
         & > span {
           height: 1.2em;
-          align-self: center;
+          align-self: start;
         }
       }
 
@@ -465,19 +465,30 @@ class MediaCard extends LitElement {
   }
 
   static styles = css`
+    :host {
+      display: block;
+      container-type: inline-size;
+    }
     a.media-card {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      max-width: 80%;
       overflow: hidden;
-      
+
+      container: inline-size;
+
       border-radius: var(--space-s);
       border: 1px solid var(--color-border);
 
       text-decoration: none;
       color: var(--color-text);
       margin-block-start: 8px;
+    }
+
+    @container (width >= 430px) {
+      a.media-card {
+        max-width: 80%;
+      }
     }
 
     a:visited {
