@@ -9,7 +9,7 @@ tags:
 
 ![A screenshot of an archive of the Blaseball home page as of season 11](https://cdn.ewie.online/SCR-20250807-schd.jpeg)
 
-Years ago, I worked on a concept for a video breaking down an [iceberg meme(https://cdn.ewie.online/Iceberg%28Iceberg%29.png)[^1] for Blaseball,[^10] a roguelike[^11] incremental[^11] management[^11] horror[^11] game with creative story prompting elements[^11] that I was deep into for basically its entire runtime. While this project never saw the light of day, I think it'd be fun to share some of the stories from it that I enjoyed writing. This is one of those stories.[^12]
+Years ago, I worked on a concept for a video breaking down an [iceberg meme](https://cdn.ewie.online/Iceberg%28Iceberg%29.png)[^1] for Blaseball,[^10] a roguelike[^11] incremental[^11] management[^11] horror[^11] game with creative story prompting elements[^11] that I was deep into for basically its entire runtime. While this project never saw the light of day, I think it'd be fun to share some of the stories from it that I enjoyed writing. This is one of those stories.[^12]
 
 ## WhAT
 
