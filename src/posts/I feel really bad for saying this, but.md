@@ -76,3 +76,5 @@ Evie Finch
 [^3]: I checked how much a comparable model of computer would cost to rent on Hetzner, and it was roughly €200/month. Perhaps he's getting access to these servers through one of the [two](https://pumas.ai/company#OurTeam) [different](https://juliahub.com/company/about-us) AI companies he's a major part of, through MIT since he instructs there, or maybe he's paying for it out of pocket. Who knows.
 
 [^4]: I think submitting your own post is a bit of a HackerNews faux pas? Can anyone in the comments let me know if I'm right or not? 
+
+[^5]: Which is a common talking point for AI boosters, who say, “Well it may not be the *smartest*, but it’s like a cheap version of paying for junior developers”, when they’re not saying that it’s a frighteningly smart super genius that will take over the world.
