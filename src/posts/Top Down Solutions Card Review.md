@@ -31,7 +31,7 @@ and never have an inkling.”—Maía Mínervudóttir, R&D_
 
 </card-frame>
 
-<script type="module" src="/js/card-frame.js"></script>
+<script type="module" src="/assets/js/components/card-frame.js"></script>
 
 I really don’t know how to feel about this card. It’s exceptional on turn 1,
 giving you the entire turn in one click, but I think it’s kind of dogshit

@@ -97,7 +97,6 @@ site.use(remark({
 site.use(robots());
 site.use(sitemap());
 site.use(slugifyUrls());
-// site.use(cache_busting());
 
 // Bad code here
 import createSlugifier, {

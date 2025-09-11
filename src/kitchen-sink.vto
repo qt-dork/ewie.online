@@ -4,42 +4,42 @@ title: Kitchen Sink
 index: false
 ---
 
-{{> const date = (timestamp) => (new Date(timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' })) }}
-{{> const dateTime = (timestamp) => (new Date(timestamp).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' })) }}
+{{>
+  const date = (
+    timestamp,
+  ) => (new Date(timestamp).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "America/Los_Angeles",
+  }))
+}}
+{{>
+  const dateTime = (
+    timestamp,
+  ) => (new Date(timestamp).toLocaleString("en-US", {
+    dateStyle: "medium",
+    timeStyle: "short",
+    timeZone: "America/Los_Angeles",
+  }))
+}}
+
+<script type="module" src="/assets/js/components/quote-back.js"></script>
+
+<quote-back url="https://www.joshwcomeau.com/svg/interactive-guide-to-paths/">
+  <p>
+    Over the years, my blog has become a surprisingly complex application. It’s
+    over <span class="spicy">100,000 lines of code</span>, not counting the
+    content. Migrating everything over was a big project, but super educational.
+    I’ll share my honest thoughts on all of the new technology I used for this
+    blog.
+  </p>
+  <span slot="author">Josh W. Comeau</span>
+  <span slot="title">How I Built My Blog</span>
+</quote-back>
 
 <section class="grid pb-lg">
   <h1>Heading level 1</h1>
-
-  {{ comp tweet_embed }}
-    <main-tweet>
-      <img
-        slot="avatar"
-        src="https://cdn.ewie.online/20250901015851-Image.jpeg"
-      >
-      <span slot="name">David Gerard</span>
-      <span slot="handle">@davidgerard@circumstances.run</span>
-      <time slot="time" datetime="2025-08-29T19:11:05.000Z"
-      >{{ dateTime("2025-08-29T19:11:05.000Z") }}</time>
-      <a slot="icon" href="https://circumstances.run/@davidgerard/115113634383702124" data-source="mastodon">Link to post</a>
-  
-      the extremely bottlenecked project lead for the Julia language tries out Claude Code. you'll be shocked to hear it's not very good. 
-  
-      <a href="https://discourse.julialang.org/t/the-use-of-claude-code-in-sciml-repos/131009/8"><span class="invisible">https://</span><span class="ellipsis">discourse.julialang.org/t/the-</span><span class="invisible">use-of-claude-code-in-sciml-repos/131009/8</span></a>
-      
-      "Claude can only solve simple problems that a first year undergrad can do, it can’t do anything more, it’s pretty bad."
-  
-      <media-card href="https://circumstances.run/@davidgerard/115113634383702124">
-        <img src="https://cdn.ewie.online/20250901021140-Image.jpeg" width="662" height="348" loading="lazy" slot="img" />
-        <span slot="domain">discourse.julialang.org</span>
-        <time slot="time" datetime="2025-07-25T04:06:10.000Z" title="7/24/2025, 11:06:10 PM">{{ date("2025-07-25T04:06:10.000Z") }}</time>
-        <p slot="title" title="The use of Claude Code in SciML repos">The use of Claude Code in SciML repos</p>
-        <p title="So it’s pretty public that for about a month now I’ve had 32 processes setup on one of the 64 core 128gb RAM servers to just ssh in, tmux to a window, and tell it to slam on some things non-stop. And it has been really successful!.. with the right definition of success. Let me explain.   I think the first will answer the others. Basically, Claude is really not smart at all. There is no extensive algorithm implementation that has come from AI. I know some GSoCers and SciML Small Grants applicants...">So it’s pretty public that for about a month now I’ve had 32 processes setup on one of the 64 core 128gb RAM servers to just ssh in, tmux to a window, and tell it to slam on some things non-stop. And it has been really successful!.. with the right definition of success. Let me explain.   I think the first will answer the others. Basically, Claude is really not smart at all. There is no extensive algorithm implementation that has come from AI. I know some GSoCers and SciML Small Grants applicants...</p>
-      </media-card>
-  
-    </main-tweet>
-  {{ /comp }}
-
-  
 
   <p>
     These are links: <a href="#">link 1</a>, <a href="#">link 2</a>. Mouse hover

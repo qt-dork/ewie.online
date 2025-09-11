@@ -198,7 +198,7 @@ class MainTweet extends LitElement {
 
         & > span {
           height: 1.2em;
-          align-self: center;
+          align-self: start;
         }
       }
 
