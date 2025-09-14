@@ -99,6 +99,7 @@ footer.bottom {
 
     time {
       color: var(--color-subtle);
+      font-size: var(--size-step--1);
     }
   }
 

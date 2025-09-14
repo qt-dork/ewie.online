@@ -32,7 +32,7 @@ site.add("assets/js");
 
 site.use(date({
   formats: {
-    "ISO": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+    "ISO": "yyyy-MM-dd'T'HH:mm:ss.SSSxxx",
     "TITLE": "iii, MMM d, y, ppp",
     "HUMAN": "MMMM d, y 'at' h:mm aaa",
   },
