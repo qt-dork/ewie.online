@@ -51,4 +51,25 @@
   list-style-type: none;
 }
 
-/* flex */
+/*
+ * clamps the box to 1 line. you can change the number of lines
+ * by adjusting the `--line-clamp` variable from 1 to 2 or more
+ */
+.line-clamp {
+  --line-clamp: 1;
+
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: var(--line-clamp);
+  line-clamp: var(--line-clamp);
+  overflow: hidden;
+  text-overflow: ellpsis;
+  text-wrap: balance;
+}
+
+.spicy {
+  font-family: "Recursive", sans-serif;
+  font-variation-settings: "MONO" 0, "CASL" 1, "slnt" -13, "CRSV" 1;
+}

@@ -18,12 +18,14 @@
       </span>
     </div>
     <div class="timestamp">
-      <a class="u-url" href="{{ url }}" rel="canonical">
-        <time class="dt-published"
-          datetime="{{ date |> date('ISO') }}"
-          title="{{ date |> date('TITLE') }}">
-          {{ date |> date('HUMAN') }}
-        </time>
+      <a class="u-url line-clamp" href="{{ url }}" rel="canonical">
+        <relative-time update="1" format-style="short">
+          <time class="dt-published"
+            datetime="{{ date |> date('ISO') }}"
+            title="{{ date |> date('TITLE') }}">
+            {{ date |> date('HUMAN') }}
+          </time>
+        </relative-time>
       </a>
     </div>
     <data class="p-url" value="https://ewie.online/"></data>

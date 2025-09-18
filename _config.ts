@@ -32,7 +32,7 @@ site.add("assets/js");
 
 site.use(date({
   formats: {
-    "ISO": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+    "ISO": "yyyy-MM-dd'T'HH:mm:ss.SSSxxx",
     "TITLE": "iii, MMM d, y, ppp",
     "HUMAN": "MMMM d, y 'at' h:mm aaa",
   },
@@ -109,7 +109,6 @@ site.use(remark({
 site.use(robots());
 site.use(sitemap());
 site.use(slugifyUrls());
-// site.use(cache_busting());
 
 // Bad code here
 import createSlugifier, {
