@@ -36,11 +36,19 @@ body {
  * Responsive by default
  * Audio without `[controls]` remains hidden by default
  */
-img, svg, video, canvas, audio, iframe, embed, object {
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block;
   vertical-align: middle;
   max-width: 100%;
 }
+
 audio:not([controls]) {
   display: none;
 }
@@ -55,6 +63,7 @@ audio:not([controls]) {
 picture {
   display: contents;
 }
+
 source {
   display: none;
 }
@@ -64,7 +73,10 @@ source {
  * `iframe`, `embed`, and `object` are also embedded, but have
  * no intrinsic ratio, so their `height` needs to be set explicitly.
  */
-img, svg, video, canvas {
+img,
+svg,
+video,
+canvas {
   height: auto;
 }
 
@@ -79,7 +91,12 @@ audio {
 /** mayank
  * Indicates buttons are clickable
  */
-button, label, select, summary, [role="button"], [role="option"] {
+button,
+label,
+select,
+summary,
+[role="button"],
+[role="option"] {
   cursor: pointer;
 }
 
@@ -89,7 +106,9 @@ button, label, select, summary, [role="button"], [role="option"] {
 :disabled {
   cursor: not-allowed;
 }
-label:has(> input:disabled), label:has(+ input:disabled) {
+
+label:has(> input:disabled),
+label:has(+ input:disabled) {
   cursor: not-allowed;
 }
 
@@ -106,7 +125,16 @@ html {
 /** picali.li
  * Remove default margin in favor of better control in authored CSS.
  */
-body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin-block-end: 0;
 }
 
@@ -129,13 +157,22 @@ body {
 
 /** picali.li
  * Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4, button, input, label {
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
 /** picali.li
  * Balance text wrapping on headings */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -148,7 +185,10 @@ a:not([class]) {
 
 /** picali.li
  * Inherit fonts for inputs and buttons */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
 

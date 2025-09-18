@@ -1,0 +1,65 @@
+shared-tweet,
+main-tweet {
+  display: block;
+}
+
+shared-tweet:not(:first-child),
+main-tweet:not(:first-child),
+expandable-tweet>*:first-child {
+  padding-top: 8px;
+}
+
+shared-tweet [slot="avatar"],
+main-tweet [slot="avatar"] {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  height: 36px;
+}
+
+tweet-embed a {
+  color: light-dark(oklch(from var(--primary) 40% calc(c * 2) h),
+      oklch(from var(--primary) 70% calc(c * 2) h));
+
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  span.invisible {
+    display: none;
+  }
+
+  span.ellipsis::after {
+    content: "…";
+  }
+
+  &:visited {
+    --primary: #551A8B;
+  }
+}
+
+media-container {
+  display: block;
+
+  margin-block-start: 8px;
+
+  overflow: hidden;
+
+  &>* {
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+
+  }
+
+  &:has(:nth-child(1))>* {
+    width: 80%;
+    height: auto;
+  }
+
+  &:has(:nth-child(2))>* {
+    max-height: 400px;
+    width: auto;
+    max-width: unset;
+  }
+}
