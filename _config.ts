@@ -84,15 +84,27 @@ import { rehypeLezer } from "./helpers/rehype-lezer/highlight.js";
 import { parser as javascriptParser } from "npm:@lezer/javascript";
 import { parser as cssParser } from "npm:@lezer/css";
 import { parser as htmlParser } from "npm:@lezer/html";
+import { parser as mdParser } from "npm:@lezer/markdown";
+
+import rehypeSlug from "https://esm.sh/rehype-slug@6";
+import rehypeAutolinkHeadings from "https://esm.sh/rehype-autolink-headings@7";
 
 site.use(remark({
-  rehypePlugins: [[rehypeLezer, {
-    parsers: [
-      { lang: "js", parser: javascriptParser },
-      { lang: "css", parser: cssParser },
-      { lang: "html", parser: htmlParser },
+  rehypePlugins: [
+    [rehypeSlug],
+    [
+      rehypeLezer,
+      {
+        parsers: [
+          { lang: "js", parser: javascriptParser },
+          { lang: "css", parser: cssParser },
+          { lang: "html", parser: htmlParser },
+          { lang: "md", parser: mdParser },
+        ],
+      },
     ],
-  }]],
+    [rehypeAutolinkHeadings],
+  ],
 }));
 site.use(robots());
 site.use(sitemap());

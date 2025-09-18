@@ -13,10 +13,8 @@ pre {
 
 pre,
 code {
-  --color-code-text: light-dark(
-    oklch(from var(--tone-one) var(--b3)),
-    oklch(from var(--tone-two) var(--b4))
-  );
+  --color-code-text: light-dark(oklch(from var(--tone-one) var(--b3)),
+      oklch(from var(--tone-two) var(--b4)));
 
   --size-code: var(--size-step--1);
 }
@@ -47,13 +45,11 @@ code:not(pre > code) {
   border: 1px dashed var(--color-border);
 }
 
-pre,
-code {
+:root {
+
   --shift: l c calc(h - 135);
-  --tone-one: light-dark(
-    oklch(from var(--primary) var(--shift)),
-    var(--primary)
-  );
+  --tone-one: light-dark(oklch(from var(--primary) var(--shift)),
+      var(--primary));
 
   /* TODO: Make chroma a function of the input */
   /* h is 295.4 at a0 */
@@ -62,7 +58,7 @@ code {
   --a2: 0.4454 0.0358 h;
   --a3: 0.5288 0.0438 h;
   --a4: 0.5709 0.046 h;
-  --a5: 0.6454 0.372 h;
+  --a5: 0.6454 0.0372 h;
   --a6: 0.7171 0.0288 h;
   --a7: 0.7888 0.0211 h;
   /* h is 292.04 at a7 */
@@ -79,10 +75,8 @@ code {
   --b7: 0.9483 0.0269 h;
   /* h is 292.77 at b7 */
 
-  --tone-two: light-dark(
-    var(--primary),
-    oklch(from var(--primary) var(--shift))
-  );
+  --tone-two: light-dark(var(--primary),
+      oklch(from var(--primary) var(--shift)));
 
   /* hue shift seems to be about 5/8 up (or 3/8 back) */
   /* h is 67.55 at c0 */
@@ -107,48 +101,36 @@ code {
   --d7: 0.8782 0.0877 h;
   /* h is 66.27 at d7 */
 
-  --color-code-bg: light-dark(
-    oklch(from var(--tone-two) var(--c7)),
-    oklch(from var(--tone-one) var(--a0))
-  );
+}
 
-  .tok-punctuation,
-  .tok-comment {
-    color: light-dark(
-      oklch(from var(--tone-two) var(--c4)),
-      oklch(from var(--tone-one) var(--a3))
-    );
-  }
+pre,
+code {
+
+  --color-code-bg: light-dark(oklch(from var(--tone-two) var(--c7)),
+      oklch(from var(--tone-one) var(--a0)));
+
 
   .tok-variableName,
   .tok-typeName {
-    color: light-dark(
-      oklch(from var(--tone-two) var(--d0)),
-      oklch(from var(--tone-one) var(--b7))
-    );
+    color: light-dark(oklch(from var(--tone-two) var(--d0)),
+        oklch(from var(--tone-one) var(--b7)));
   }
 
   .tok-propertyName {
-    color: light-dark(
-      oklch(from var(--tone-two) var(--d2)),
-      oklch(from var(--tone-one) var(--b3))
-    );
+    color: light-dark(oklch(from var(--tone-two) var(--d2)),
+        oklch(from var(--tone-one) var(--b3)));
   }
 
   .tok-number {
     /* d2 & b0 */
-    color: light-dark(
-      oklch(from var(--tone-one) var(--b0)),
-      oklch(from var(--tone-two) var(--d2))
-    );
+    color: light-dark(oklch(from var(--tone-one) var(--b0)),
+        oklch(from var(--tone-two) var(--d2)));
   }
 
   .tok-keyword,
   .tok-literal {
-    color: light-dark(
-      oklch(from var(--tone-one) var(--b3)),
-      oklch(from var(--tone-two) var(--d7))
-    );
+    color: light-dark(oklch(from var(--tone-one) var(--b3)),
+        oklch(from var(--tone-two) var(--d7)));
   }
 
   /* .tok-atom {
@@ -160,24 +142,30 @@ code {
 
   .tok-string,
   .tok-string2,
-  .tok-atom {
-    color: light-dark(
-      oklch(from var(--tone-one) var(--b2)),
-      oklch(from var(--tone-two) var(--d7))
-    );
+  .tok-atom,
+  .tok-emphasis {
+    color: light-dark(oklch(from var(--tone-one) var(--b2)),
+        oklch(from var(--tone-two) var(--d7)));
   }
 
   .tok-operator {
-    color: light-dark(
-      oklch(from var(--tone-one) var(--b0)),
-      oklch(from var(--tone-two) var(--d2))
-    );
+    color: light-dark(oklch(from var(--tone-one) var(--b0)),
+        oklch(from var(--tone-two) var(--d2)));
   }
 
   .tok-className {
-    color: light-dark(
-      oklch(from var(--tone-two) var(--d0)),
-      oklch(from var(--tone-one) var(--b7))
-    );
+    color: light-dark(oklch(from var(--tone-two) var(--d0)),
+        oklch(from var(--tone-one) var(--b7)));
   }
+
+  .tok-punctuation,
+  .tok-comment,
+  .tok-meta {
+    color: light-dark(oklch(from var(--tone-two) var(--c4)),
+        oklch(from var(--tone-one) var(--a3)));
+  }
+}
+
+pre {
+  tab-size: 2;
 }

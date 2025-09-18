@@ -2,84 +2,349 @@
 layout: "layouts/base.vto"
 ---
 <style>
-#buttoncode {
-  font-size: var(--size-step--1);
-  min-height: unset;
-  margin-block-start: calc(var(--space-xs)/2);
-  width: 88px;
-  height: 31px;
-}
+  #buttoncode {
+    font-size: var(--size-step--1);
+    min-height: unset;
+    margin-block-start: calc(var(--space-xs) / 2);
+    width: 88px;
+    height: 31px;
+  }
 </style>
-<section class="stack post-wrapper">
+<section class="stack post-wrapper shadow-med">
   <h2>Embed my button</h2>
   <div class="flex float:inline-end">
-    <img decoding="async" loading="lazy" src="https://cdn.ewie.online/88x31-evie.png" title="evie on-line" alt="evie on-line" class="pixel">
-    <textarea id="buttoncode" content-editable="false" name="buttoncode" aria-label="Button code" style="resize:none;" onclick="this.select()" spellcheck="false">&lt;a href="https://ewie.online" title="Evie On-Line"&gt;
+    <img
+      decoding="async"
+      loading="lazy"
+      src="https://cdn.ewie.online/88x31-evie.png"
+      title="evie on-line"
+      alt="evie on-line"
+      class="pixel"
+    >
+    <textarea
+      id="buttoncode"
+      content-editable="false"
+      name="buttoncode"
+      aria-label="Button code"
+      style="resize: none"
+      onclick="this.select()"
+      spellcheck="false"
+    >
+&lt;a href="https://ewie.online" title="Evie On-Line"&gt;
   &lt;img src="https://cdn.ewie.online/88x31-evie.png" alt="Evie On-Line" style="image-rendering:pixelated;" /&gt;
 &lt;/a&gt;</textarea>
   </div>
-  <p>If I know you and you have a button, let me know and I'll embed it in my list. Here's mine by the way (made by <a href="https://shadenexus.com/">Gwyn</a>!)</p>
+  <p>
+    If I know you and you have a button, let me know and I'll embed it in my
+    list. Here's mine by the way (made by <a href="https://shadenexus.com/"
+    >Gwyn</a>!)
+  </p>
 </section>
-<section class="stack post-wrapper">
+<section class="stack post-wrapper shadow-med">
   <h2>Buttons!</h2>
   <div class="button-list eightyeight-by-thirtyone">
-    <a href="https://auratriolo.com/blog/" target="_blank" rel="noopener" title="Aura!">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/aura-pixelbanner.gif" title="Aura!" alt="Aura!">
+    <a
+      href="https://auratriolo.com/blog/"
+      target="_blank"
+      rel="noopener"
+      title="Aura!"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/aura-pixelbanner.gif"
+        title="Aura!"
+        alt="Aura!"
+      >
     </a>
-    <a href="https://blog.aurahack.jp/" target="_blank" rel="noopener" title="aurahack">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/aurahack.gif" title="aurahack" alt="aurahack">
+    <a
+      href="https://blog.aurahack.jp/"
+      target="_blank"
+      rel="noopener"
+      title="aurahack"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/aurahack.gif"
+        title="aurahack"
+        alt="aurahack"
+      >
     </a>
-    <a href="https://cereza.zone/" target="_blank" rel="noopener" title="cereza.zone">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/cereza-88x31.gif" title="cereza.zone" alt="cereza.zone">
+    <a
+      href="https://cereza.zone/"
+      target="_blank"
+      rel="noopener"
+      title="cereza.zone"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/cereza-88x31.gif"
+        title="cereza.zone"
+        alt="cereza.zone"
+      >
     </a>
-    <a href="https://cervine.online" target="_blank" rel="noopener" title="cervine.online">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/cervineDotOnline-88x31.png" title="cervine.online" alt="cervine.online">
+    <a
+      href="https://cervine.online"
+      target="_blank"
+      rel="noopener"
+      title="cervine.online"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/cervineDotOnline-88x31.png"
+        title="cervine.online"
+        alt="cervine.online"
+      >
     </a>
-    <a href="https://blog.radicaldream.land/" target="_blank" rel="noopener" title="Dispatch from the Radical Dreamland">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/dispatchblog-banner.gif" title="Dispatch from the Radical Dreamland" alt="Dispatch from the Radical Dreamland">
+    <a
+      href="https://blog.radicaldream.land/"
+      target="_blank"
+      rel="noopener"
+      title="Dispatch from the Radical Dreamland"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/dispatchblog-banner.gif"
+        title="Dispatch from the Radical Dreamland"
+        alt="Dispatch from the Radical Dreamland"
+      >
     </a>
     <a href="https://drac.at" target="_blank" rel="noopener" title="drac.at">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/dracat-now.gif" title="drac.at" alt="drac.at">
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/dracat-now.gif"
+        title="drac.at"
+        alt="drac.at"
+      >
     </a>
-    <a href="https://nex-3.com" target="_blank" rel="noopener" title="House of Nettles">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/house-of-nettles.gif" title="House of Nettles" alt="House of Nettles">
+    <a
+      href="https://nex-3.com"
+      target="_blank"
+      rel="noopener"
+      title="House of Nettles"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/house-of-nettles.gif"
+        title="House of Nettles"
+        alt="House of Nettles"
+      >
     </a>
-    <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/i-was-on-cohost.gif" title="I was on cohost" alt="I was on cohost">
+    <img
+      width="88"
+      height="31"
+      decoding="async"
+      loading="lazy"
+      src="https://damien.zone/buttons/i-was-on-cohost.gif"
+      title="I was on cohost"
+      alt="I was on cohost"
+    >
     <a href="https://jkap.io" target="_blank" rel="noopener" title="jae kaplan">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/jkap.gif" title="jae kaplan" alt="jae kaplan">
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/jkap.gif"
+        title="jae kaplan"
+        alt="jae kaplan"
+      >
     </a>
-    <a href="https://ellen.zone/" target="_blank" rel="noopener" title="kataspace">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/ellenzone.png" title="kataspace" alt="kataspace">
+    <a
+      href="https://ellen.zone/"
+      target="_blank"
+      rel="noopener"
+      title="kataspace"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/ellenzone.png"
+        title="kataspace"
+        alt="kataspace"
+      >
     </a>
-    <a href="https://kokoscript.com/" target="_blank" rel="noopener" title="kokoscript">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/kokoscript.gif" title="kokoscript" alt="kokoscript">
+    <a
+      href="https://kokoscript.com/"
+      target="_blank"
+      rel="noopener"
+      title="kokoscript"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/kokoscript.gif"
+        title="kokoscript"
+        alt="kokoscript"
+      >
     </a>
-    <a href="https://lizard.tools/" target="_blank" rel="noopener" title="lizard.tools">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/lizards-tools.png" title="lizard.tools" alt="lizard.tools">
+    <a
+      href="https://lizard.tools/"
+      target="_blank"
+      rel="noopener"
+      title="lizard.tools"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/lizards-tools.png"
+        title="lizard.tools"
+        alt="lizard.tools"
+      >
     </a>
-    <a href="https://lmnt.me" target="_blank" rel="noopener" title="Louie Mantia">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/lmnt.gif" title="Louie Mantia" alt="Louie Mantia">
+    <a
+      href="https://lmnt.me"
+      target="_blank"
+      rel="noopener"
+      title="Louie Mantia"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/lmnt.gif"
+        title="Louie Mantia"
+        alt="Louie Mantia"
+      >
     </a>
-    <a href="https://renkotsuban.com" target="_blank" rel="noopener" title="Midnight Reading: Renkon's Personal Site">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/renkotsuban.gif" title="Midnight Reading: Renkon's Personal Site" alt="Midnight Reading: Renkon's Personal Site">
+    <a
+      href="https://renkotsuban.com"
+      target="_blank"
+      rel="noopener"
+      title="Midnight Reading: Renkon's Personal Site"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/renkotsuban.gif"
+        title="Midnight Reading: Renkon's Personal Site"
+        alt="Midnight Reading: Renkon's Personal Site"
+      >
     </a>
-    <a href="https://moonbase.lgbt/blog/nes-pictionary-in-memoriam/" target="_blank" rel="noopener" title="NES Pictionary">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/nes-pictionary.png" title="NES Pictionary" alt="NES Pictionary">
+    <a
+      href="https://moonbase.lgbt/blog/nes-pictionary-in-memoriam/"
+      target="_blank"
+      rel="noopener"
+      title="NES Pictionary"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/nes-pictionary.png"
+        title="NES Pictionary"
+        alt="NES Pictionary"
+      >
     </a>
-    <a href="https://nickyflowers.com/" target="_blank" rel="noopener" title="Nicky Flowers' Web Crevice">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/nickyflowers.gif" title="Nicky Flowers' Web Crevice" alt="Nicky Flowers' Web Crevice">
+    <a
+      href="https://nickyflowers.com/"
+      target="_blank"
+      rel="noopener"
+      title="Nicky Flowers' Web Crevice"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/nickyflowers.gif"
+        title="Nicky Flowers' Web Crevice"
+        alt="Nicky Flowers' Web Crevice"
+      >
     </a>
-    <a href="https://pixelde.su" target="_blank" rel="noopener" title="pixeldesu">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/pixeldesu.png" title="pixeldesu" alt="pixeldesu">
+    <a
+      href="https://pixelde.su"
+      target="_blank"
+      rel="noopener"
+      title="pixeldesu"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/pixeldesu.png"
+        title="pixeldesu"
+        alt="pixeldesu"
+      >
     </a>
-    <a href="https://shadenexus.com/" target="_blank" rel="noopener" title="Shade Nexus">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/shadenexus.png" title="Shade Nexus" alt="Shade Nexus">
+    <a
+      href="https://shadenexus.com/"
+      target="_blank"
+      rel="noopener"
+      title="Shade Nexus"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/shadenexus.png"
+        title="Shade Nexus"
+        alt="Shade Nexus"
+      >
     </a>
-    <a href="https://blog.someplace-else.xyz/" target="_blank" rel="noopener" title="someplace elsewhere">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/elsewhere.gif" title="someplace elsewhere" alt="someplace elsewhere">
+    <a
+      href="https://blog.someplace-else.xyz/"
+      target="_blank"
+      rel="noopener"
+      title="someplace elsewhere"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/elsewhere.gif"
+        title="someplace elsewhere"
+        alt="someplace elsewhere"
+      >
     </a>
-    <a href="https://suricrasia.online/" target="_blank" rel="noopener" title="Suricrasia Online">
-      <img width="88" height="31" decoding="async" loading="lazy" src="https://damien.zone/buttons/suricrasia.gif" title="Suricrasia Online" alt="Suricrasia Online">
+    <a
+      href="https://suricrasia.online/"
+      target="_blank"
+      rel="noopener"
+      title="Suricrasia Online"
+    >
+      <img
+        width="88"
+        height="31"
+        decoding="async"
+        loading="lazy"
+        src="https://damien.zone/buttons/suricrasia.gif"
+        title="Suricrasia Online"
+        alt="Suricrasia Online"
+      >
     </a>
     <a href="https://wavebeem.com">
       <img

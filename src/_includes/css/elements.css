@@ -99,3 +99,55 @@ cite::before {
   content: "—";
   padding-inline-end: 0.5ch;
 }
+
+table {
+  border: 1px var(--color-border) solid;
+  max-width: 100%;
+  border-collapse: collapse;
+  overflow: scroll;
+}
+
+th,
+caption {
+  text-align: start;
+}
+
+th:first-child,
+tbody td:first-child {
+  position: sticky;
+  inset-inline-start: 0;
+  border-inline-end: none;
+  background-color: var(--color-bg-post);
+}
+
+td:first-of-type,
+:where(thead, tfoot) th:nth-child(2) {
+  border-inline-start: none;
+}
+
+th:first-child::after,
+tbody td:first-child::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--color-border);
+}
+
+thead th:not(:first-child),
+td {
+  text-align: end;
+}
+
+th,
+td {
+  border: 1px var(--color-border) solid;
+  padding: 0.25rem 0.75rem;
+}
+
+figcaption {
+  font-size: smaller;
+  color: var(--color-subtle);
+}
