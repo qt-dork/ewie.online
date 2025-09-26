@@ -1,34 +1,67 @@
-{{ if author.handle !== "ewie" }}
-  {{ set not_evie = true }}
-{{ /if }}
+{{ set is_evie = author.handle === "ewie" }}
 
-<div class="attribution">
-  <div class="metadata">
-    {{# bad code here #}}
-    {{ if not_evie }}
-      <div class="p-author h-card not-evie">
-    {{ else }}
-      <div class="p-author h-card">
-    {{ /if }}
-      <span class="profile-pic">
-        <img class="u-photo" src="{{ author.image }}" alt="{{ author.handle }}">
-      </span>
-      <span class="author p-name">
+<post-attribution>
+  <post-metadata>
+    <post-author
+      class="p-author h-card"
+      {{ if !is_evie }}data-is-evie="{{ is_evie }}"{{ /if }}
+    >
+      <picture title>
+        <img
+          class="u-photo"
+          src="{{ author.image }}"
+          alt
+          width="42"
+          height="42"
+        >
+      </picture>
+      <b class="p-name">
         @{{ author.handle }}
-      </span>
-    </div>
-    <div class="timestamp">
-      <a class="u-url line-clamp" href="{{ url }}" rel="canonical">
-        <relative-time update="1" format-style="short">
-          <time class="dt-published"
-            datetime="{{ date |> date('ISO') }}"
-            title="{{ date |> date('TITLE') }}">
-            {{ date |> date('HUMAN') }}
-          </time>
-        </relative-time>
-      </a>
-    </div>
+      </b>
+    </post-author>
+    <a class="u-url" href="{{ url }}" rel="canonical">
+      <relative-time update="1" format-style="short">
+        <time
+          class="dt-published"
+          datetime="{{ date |> date('ISO') }}"
+          title="{{ date |> date('TITLE') }}"
+        >
+          {{ date |> date("HUMAN") }}
+        </time>
+      </relative-time>
+    </a>
     <data class="p-url" value="https://ewie.online/"></data>
-    <data class="p-logo" value="ewielogo.jpg"></data>
-  </div>
-</div>
+    <data class="p-logo" value="https://cdn.ewie.online/ewie-pfp.png"></data>
+  </post-metadata>
+</post-attribution>
+
+{{# <div class="attribution"> #}}
+{{# <div class="metadata"> #}}
+{{# bad code here #}}
+{{# {{ if not_evie }} #}}
+{{# <div class="p-author h-card not-evie"> #}}
+{{# {{ else }} #}}
+{{# <div class="p-author h-card"> #}}
+{{# {{ /if }} #}}
+{{# <span class="profile-pic"> #}}
+{{# <img class="u-photo" src="{{ author.image }}" alt="{{ author.handle }}"> #}}
+{{# </span> #}}
+{{# <span class="author p-name"> #}}
+{{# @{{ author.handle }} #}}
+{{# </span> #}}
+{{# </div> #}}
+{{# <div class="timestamp"> #}}
+{{# <a class="u-url line-clamp" href="{{ url }}" rel="canonical"> #}}
+{{# <relative-time update="1" format-style="short"> #}}
+{{# <time class="dt-published" #}}
+{{# datetime="{{ date |> date('ISO') }}" #}}
+{{# title="{{ date |> date('TITLE') }}"> #}}
+{{# {{ date |> date('HUMAN') }} #}}
+{{# </time> #}}
+{{# </relative-time> #}}
+{{# </a> #}}
+{{# </div> #}}
+{{# <data class="p-url" value="https://ewie.online/"></data> #}}
+{{# <data class="p-logo" value="https://cdn.ewie.online/ewie-pfp.png"></data> #}}
+{{# </div> #}}
+{{# </div> #}}

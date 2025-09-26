@@ -2,22 +2,10 @@
 
 <header class="header-logo">
   {{ comp.logo({ url: url }) }}
-	{{# <nav>
-		<ul class="nav">
-			<li class="nav-item">
-				<a href="#">Ask</a>
-			</li>
-			<li class="nav-item">
-				<a href="#">About</a>
-			</li>
-			<li class="nav-item">
-				<a href="#">Archive</a>
-			</li>
-		</ul>
-	</nav> #}}
 </header>
 
 {{ set hash = url |> hash }}
+
 <style>
   ::view-transition-group(post-{{hash}}) {
     box-shadow: var(--shadow-elevation-medium);

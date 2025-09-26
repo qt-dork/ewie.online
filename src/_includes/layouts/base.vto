@@ -215,7 +215,9 @@
     {{# <div class="body-wrapper"> #}}
     {{ comp.header({ menu_open: menu_open }) }}
     {{# {{ include "partials/site-header.vto" }} #}}
-    <main class="center">{{ content }}</main>
+    <div>
+      <main class="center">{{ content }}</main>
+    </div>
     {{# {{ include "partials/site-footer.vto" }} #}}
     {{#
     <script src="/js/postSearch.js" async></script>
