@@ -28,7 +28,7 @@ blockquote {
 }
 
 html {
-  background-color: var(--color-bg);
+  background-color: var(--color-background-darker);
   color: var(--color-text);
 }
 
@@ -76,7 +76,7 @@ blockquote {
   padding-inline-start: var(--space-s-m);
   /* padding-block: var(--space-xs); */
 
-  &>*:first-child {
+  & > *:first-child {
     margin-block-start: 0;
   }
 
@@ -117,7 +117,7 @@ tbody td:first-child {
   position: sticky;
   inset-inline-start: 0;
   border-inline-end: none;
-  background-color: var(--color-bg-post);
+  background-color: var(--color-background-lighter);
 }
 
 td:first-of-type,

@@ -54,15 +54,16 @@ export default class RelativeTime extends HTMLElement {
 
     if (this.enableUpdates && typeof requestAnimationFrame === "function") {
       this.beginUpdateLoop();
-      const { signal } = (this.controller = new AbortController());
-      window.addEventListener(
+      this.controller = new AbortController();
+      const { signal } = this.controller;
+      globalThis.addEventListener(
         "focus",
         () => {
           this.windowFocusHandler();
         },
         { signal },
       );
-      window.addEventListener(
+      globalThis.addEventListener(
         "blur",
         () => {
           this.windowBlurHandler();
@@ -128,7 +129,7 @@ export default class RelativeTime extends HTMLElement {
 
   getDateTime(dateString) {
     const datetime = new Date(dateString);
-    return !isNaN(datetime) ? datetime : null;
+    return !Number.isNaN(datetime) ? datetime : null;
   }
 
   setString() {

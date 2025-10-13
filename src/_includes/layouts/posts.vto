@@ -5,7 +5,7 @@
   {{ comp.logo({ url: url }) }}
 </header>
 
-<div>
+
   <ul class="blog-posts stack">
     {{ for post of postlist }}
       {{set hash = post.url |> hash}}
@@ -54,6 +54,6 @@
   </ul>
 
   {{ comp.navigation({ pagi: page.data.pagination })}}
-</div>
+
 
 {{ /layout }}

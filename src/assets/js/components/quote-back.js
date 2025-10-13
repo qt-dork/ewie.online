@@ -15,7 +15,7 @@ class QuoteBack extends LitElement {
       margin: 0;
       border: 1px solid var(--color-border);
       border-radius: var(--space-s);
-      background-color: var(--color-bg-post);
+      background-color: var(--color-background-lighter);
       transition: 0.2s;
 
       &:hover {

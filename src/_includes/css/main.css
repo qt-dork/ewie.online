@@ -1,0 +1,18 @@
+@layer global, compositions, utilities, blocks, exceptions;
+
+@import "./_globals/_globals.css" layer(global);
+@import "./_compositions/_compositions.css" layer(compositions);
+/*@import "./fonts.css" layer(composition);*/
+@import "./elements.css" layer(composition);
+@import "./syntax-highlight.css" layer(composition);
+@import "./utilities.css" layer(utility);
+@import "./_blocks/_blocks.css" layer(blocks);
+@import "./posts.css" layer(block);
+@import "./post.css" layer(block);
+@import "./comments.css" layer(block);
+@import "./navigation.css" layer(block);
+@import "./footer.css" layer(block);
+@import "./header.css" layer(block);
+/* @import "css/theme-picker.css" layer(block); */
+/* Make search in exception block once i can layer the default styles */
+@import "./search.css";

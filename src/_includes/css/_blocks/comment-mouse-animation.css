@@ -1,4 +1,4 @@
-.viewer {
+mouse-animation-viewport {
   width: 70px;
   height: 70px;
   margin: 0;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.animation {
+mouse-animation-viewport > img {
   margin: 0;
   padding: 0;
   height: 70px;

@@ -4,8 +4,8 @@ class TweetEmbed extends LitElement {
   static styles = css`
     :host {
       display: block;
-      
-      background-color: var(--color-bg-post);
+
+      background-color: var(--color-background-lighter);
       border: 1px solid var(--color-border);
 
       margin-block: 1rem;
@@ -146,7 +146,7 @@ class MainTweet extends LitElement {
       state: true,
     },
   };
-  
+
   static styles = css`
 
     .post {
@@ -180,9 +180,9 @@ class MainTweet extends LitElement {
         display: grid;
         grid-template-rows: 16px 16px;
         grid-template-columns: 1fr;
-        grid-template-areas: 
+        grid-template-areas:
           "name" "handle";
-        
+
         gap: 4px;
 
         .icon[data-visible="invisible"] {
@@ -213,7 +213,7 @@ class MainTweet extends LitElement {
       span:has(> [name="name"]) {
         grid-area: name;
       }
-      
+
       span:has(> [name="handle"]) {
         grid-area: handle;
       }
@@ -295,7 +295,7 @@ class MainTweet extends LitElement {
       }
     `;
 
-    
+
 
     firstUpdated() {
       const socials = ["mastodon", "bluesky", "twitter"];
@@ -310,7 +310,7 @@ class MainTweet extends LitElement {
       this._dataSource = exists !== undefined ? exists.social : "";
     }
 
-   
+
     render() {
       return html`
         <div class="post">
@@ -354,7 +354,7 @@ class MediaContainer extends LitElement {
       </div>
     `;
   }
-  
+
 }
 
 class ExpandableTweet extends LitElement {
@@ -439,7 +439,7 @@ class ExpandableTweet extends LitElement {
       background-image: repeating-linear-gradient(-70deg,transparent,transparent 3px,var(--reply-to-faded-color) 3px,var(--reply-to-faded-color) 4px);
     }
   `;
-  
+
   render() {
     return html`
       <details>
@@ -523,7 +523,7 @@ class MediaCard extends LitElement {
       color: var(--color-subtle);
       font-size: smaller;
     }
-    
+
     [name="domain"] {
       color: light-dark(oklch(from var(--primary) 40% calc(c * 2) h),
       oklch(from var(--primary) 70% calc(c * 2) h));

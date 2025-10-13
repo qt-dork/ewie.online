@@ -4,6 +4,11 @@
   fill: var(--color-text);
 }
 
+#evie-online > svg {
+  fill: var(--color-text);
+  height: auto;
+}
+
 header.header-logo {
   /* width: 100%; */
   font-size: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
@@ -21,7 +26,7 @@ header.header-logo {
   margin-block-start: clamp(10em, 10em + 11vw, 16em);
   padding-inline-start: var(--space-s-m);
 
-  & > .home-link {
+  & > #evie-online {
     grid-area: a;
     align-self: start;
   }
@@ -55,4 +60,8 @@ header.header-logo {
       } */
     }
   }
+}
+
+header + * > *:first-child {
+  margin-block-start: 0;
 }
