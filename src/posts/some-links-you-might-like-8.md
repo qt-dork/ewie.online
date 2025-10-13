@@ -3,7 +3,7 @@ title: Some links you might like 8
 description: I always feel really bad when I procrastinate on the weekly link roundups. They’re relatively easy to put together and yet I still struggle to get one out each week. I’ll continue to try to get at least one roundup a week out, but I’ll likely continue to fail.
 date: 2025-09-26T18:02:16Z
 tags:
- - link
+ - links
  - link roundup
 --- 
 
