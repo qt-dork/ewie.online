@@ -1,6 +1,8 @@
 ---
 title: Some links you might like 9
-created: 2025-10-13T02:16:49Z
+description: >
+  Alternate title: I was sent to another world and all I got for it was these 5 links?!
+date: 2025-10-13T02:16:49Z
 tags:
   - links
   - link roundup

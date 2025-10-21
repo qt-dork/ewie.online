@@ -29,7 +29,7 @@ _Light up, flame out, and burn it all down._
 
 </card-frame>
 
-<script type="module" src="/js/card-frame.js"></script>
+<script type="module" src="/assets/js/components/card-frame.js"></script>
 
 The SBT groundhog saw its shadow and we all know what that means: 2 more years of [Hoshiko](https://netrunnerdb.com/en/card/26066)[^1]!
 
