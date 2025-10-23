@@ -27,6 +27,7 @@ Welcome back to Netrunner scoops season! This one is gonna start low and slow, s
 
 Breaking news from [#NetrunnerWorlds25](https://bsky.app/hashtag/NetrunnerWorlds25) in Edinburgh, the next [#Netrunner](https://bsky.app/hashtag/Netrunner) set has been revealed!
 
+</div>
 <media-card href="https://nullsignal.games/blog/announcing-vantage-point/">
 <img slot="img" src="https://nullsignal.games/wp-content/uploads/2025/10/OWL_N10_Illustration.png">
 <span slot="domain">nullsignal.games</span>
