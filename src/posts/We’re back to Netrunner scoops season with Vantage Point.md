@@ -32,6 +32,8 @@ Breaking news from [#NetrunnerWorlds25](https://bsky.app/hashtag/NetrunnerWorlds
 <span slot="domain">nullsignal.games</span>
 <p slot="title" title="Announcing Vantage Point - Null Signal Games">Announcing Vantage Point - Null Signal Games</p>
 <p title="Announcing Vantage Point, the next expansion compatible with Netrunner from Null Signal Games.">Announcing Vantage Point, the next expansion compatible with Netrunner from Null Signal Games.</p>
+</media-card>
+</main-tweet>
 
 {{ /comp }}
 
