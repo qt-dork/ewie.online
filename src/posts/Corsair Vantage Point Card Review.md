@@ -5,7 +5,7 @@ description: >
 date: 2025-10-23T01:16:49Z
 tags:
  - netrunner
- - elevation
+ - vantage point
  - card reviews
 ---
 
