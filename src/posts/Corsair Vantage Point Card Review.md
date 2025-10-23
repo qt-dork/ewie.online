@@ -1,6 +1,7 @@
 ---
 title: "Corsair"
-description:
+description: >
+  While this can be an interesting breaker that requires support to function, I’m moreso eyeing it as a way to enable ice destruction. Barriers are the most high value targets for Arruaceiras Crew, and Corsair can destroy a Pharos using 3 stealth credits and the tag + 2 credits ability on Crew. Logjam can be even cheaper. All of this depends on the set printing enough stealth support to make that package worth it, since I don’t think *just* Trickster Taka will be good enough to make you run this breaker. I’m not worrying about this. Stealth as a keyword is a tightly coupled bundle of setups and payoffs. Like similar synergy packages, you choose a suboptimal way of building your deck and building your rig for the payoff of getting to use good stealth cards. Obviously, Corsair is total garbage if Vantage Point stealth decks will only get to use the Ashes stealth cards, and I think the review would be uninteresting if I said, “I don’t see any stealth support from the first card spoiled for the set. 0 stars.”
 date: 2025-10-23T01:16:49Z
 tags:
  - netrunner
