@@ -1,7 +1,7 @@
 import lezerHast from "./lezer-hast.js";
 
-import { visit } from "npm:unist-util-visit";
-import { toText } from "npm:hast-util-to-text";
+import { visit } from "npm:unist-util-visit@^5.0.0";
+import { toText } from "npm:hast-util-to-text@^3.0.0";
 // import { toString } from "npm:hast-util-to-string";
 // using js manually cos fuck it
 
@@ -21,6 +21,7 @@ import { toText } from "npm:hast-util-to-text";
  *   List of language names to not highlight (optional);
  *   note you can also add `no-highlight` classes.
  * @property {ReadonlyArray<ParserList>} [parsers=[]]
+ * @property {string | undefined} [prefix]
  * @property {boolean | string | undefined} [inline=false]
  */
 
@@ -29,7 +30,7 @@ const emptyOptions = {};
 /** @type {ReadonlyArray<never>} */
 const emptyPlainText = [];
 
-let languagePrefix = "language-";
+const languagePrefix = "language-";
 
 /**
  * Apply syntax highlighting
@@ -43,6 +44,7 @@ export function rehypeLezer(options) {
   const settings = options || emptyOptions;
   const plainText = settings.plainText || emptyPlainText;
   const parsers = parsersToMap(settings.parsers);
+  const prefix = settings.prefix || languagePrefix;
   const inline = true;
 
   // let name = 'lezer';
@@ -64,7 +66,7 @@ export function rehypeLezer(options) {
       let parsed;
 
       if (node.tagName === "pre") {
-        parsed = preHandler(node);
+        parsed = preHandler(node, prefix);
       } else if (
         node.tagName === "code" && parent.tageName !== "pre" && inline
       ) {
@@ -150,7 +152,7 @@ function inlineHandler(node) {
  *   Language or `undefined`, or `false` when an explicit `no-highlight` class
  *   is used.
  */
-function preHandler(node) {
+function preHandler(node, prefix) {
   const head = node.children[0];
 
   if (
@@ -165,14 +167,14 @@ function preHandler(node) {
   const classes = head.properties.className;
   const languageClass = Array.isArray(classes)
     ? classes.find(
-      (d) => typeof d === "string" && d.startsWith(languagePrefix),
+      (d) => typeof d === "string" && d.startsWith(prefix),
     )
     : undefined;
 
   return {
     type: "pre",
     lang: typeof languageClass === "string"
-      ? languageClass.slice(languagePrefix.length)
+      ? languageClass.slice(prefix.length)
       : undefined,
     code: toText(node, { whitespace: "pre" }),
     meta: head.data?.meta ?? head.properties.metastring?.toString() ?? "",

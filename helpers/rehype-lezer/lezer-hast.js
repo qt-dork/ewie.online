@@ -1,9 +1,9 @@
 /**
- * @import {ElementContent, Root} from 'npm:hast'
- * @import {Tree} from 'npm:@lezer/common'
+ * @import {ElementContent, Root} from 'npm:@types/hast@^3.0.0'
+ * @import {Tree} from 'npm:@lezer/common@^1.0.0'
  */
 
-import { classHighlighter, highlightTree } from "npm:@lezer/highlight";
+import { classHighlighter, highlightTree } from "npm:@lezer/highlight@^1.0.0";
 
 // NOTE: does not wrap spans in spans to make lines of text. there's no way to add line numbers yet.
 /**

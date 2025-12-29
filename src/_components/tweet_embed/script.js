@@ -124,7 +124,7 @@ class SharedTweet extends LitElement {
             <span class="metadata subtle overflow-ellipsis"><slot name="handle"></slot></span>
             <span class="subtle">·</span>
             <span class="metadata subtle">
-              <slot name="time">
+              <slot name="time"></slot>
             </span>
             <slot name="icon"></slot>
           </div>

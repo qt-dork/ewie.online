@@ -5,7 +5,7 @@ main-tweet {
 
 shared-tweet:not(:first-child),
 main-tweet:not(:first-child),
-expandable-tweet>*:first-child {
+expandable-tweet > *:first-child {
   padding-top: 8px;
 }
 
@@ -17,8 +17,10 @@ main-tweet [slot="avatar"] {
 }
 
 tweet-embed a {
-  color: light-dark(oklch(from var(--primary) 40% calc(c * 2) h),
-      oklch(from var(--primary) 70% calc(c * 2) h));
+  color: light-dark(
+    oklch(from var(--primary) 40% calc(c * 2) h),
+    oklch(from var(--primary) 70% calc(c * 2) h)
+  );
 
   text-decoration: none;
 
@@ -35,7 +37,7 @@ tweet-embed a {
   }
 
   &:visited {
-    --primary: #551A8B;
+    --primary: #551a8b;
   }
 }
 
@@ -46,18 +48,17 @@ media-container {
 
   overflow: hidden;
 
-  &>* {
+  & > * {
     border: 1px solid var(--color-border);
     border-radius: 16px;
-
   }
 
-  &:has(:nth-child(1))>* {
+  &:has(:nth-child(1)) > * {
     width: 80%;
     height: auto;
   }
 
-  &:has(:nth-child(2))>* {
+  &:has(:nth-child(2)) > * {
     max-height: 400px;
     width: auto;
     max-width: unset;

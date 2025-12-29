@@ -25,7 +25,7 @@ main {
   padding: 0;
   margin-block: var(--space-m);
 
-  &>li {
+  & > li {
     min-width: 300px;
 
     &.post-wrapper {
@@ -34,7 +34,7 @@ main {
   }
 }
 
-.blog-posts>li:first-child,
+.blog-posts > li:first-child,
 .mouse {
   /* Define the widths and heights of the source images */
 

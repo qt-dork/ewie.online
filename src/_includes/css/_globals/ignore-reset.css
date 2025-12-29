@@ -14,8 +14,8 @@
 
 /* Box sizing rules */
 /**,
-*::before,
-*::after {*/
+ *::before,
+ *::after {*/
 /* Mayank start */
 /*margin: 0;*/
 /*padding: 0;*/
@@ -240,8 +240,8 @@ svg {
   }*/
 
 /**
-   * Equivalent to selecting `h1:not([class])`, etc.
-   */
+ * Equivalent to selecting `h1:not([class])`, etc.
+ */
 
 /*p,
   ol,

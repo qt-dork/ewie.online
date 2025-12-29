@@ -1,11 +1,11 @@
 .stack {
   --stack-space: var(--space-m, 1.5rem);
 
-  &>*:first-child {
+  & > *:first-child {
     margin: 0;
   }
 
-  &>*+* {
+  & > * + * {
     margin-block-start: var(--stack-space);
   }
 }
@@ -74,7 +74,7 @@
   font-variation-settings: "MONO" 0, "CASL" 1, "slnt" -13, "CRSV" 1;
 }
 
- .visually-hidden {
+.visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
