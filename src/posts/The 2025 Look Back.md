@@ -1,7 +1,7 @@
 ---
 title: The 2025 Look Back
 description: >
-	Another year has come and gone, as they say. In this time of reflection, I'd like to look back at 2025, and note what I did, what I liked, and what I'd like to improve on.
+  Another year has come and gone, as they say. In this time of reflection, I'd like to look back at 2025, and note what I did, what I liked, and what I'd like to improve on.
 date: 2026-01-01T17:10:35Z
 tags:
  - look back
