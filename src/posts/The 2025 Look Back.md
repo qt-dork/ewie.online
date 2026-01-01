@@ -23,6 +23,7 @@ To turn all this into a list of deliverables for 2026, it would be:
 - Refine design system (smaller stuff like touch ups and bigger stuff like shares and improved comments)
 - Refine site architecture
 - Self-host site
+- Move site codebase away from Github
 - Add shares
 - Add likes
 - Improve comments (replies)
