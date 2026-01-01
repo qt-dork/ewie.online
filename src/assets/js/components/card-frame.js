@@ -1,5 +1,5 @@
-import { css, html, LitElement } from "npm:lit";
-import { signal, watch } from "npm:@lit-labs/preact-signals";
+import { css, html, LitElement } from "npm:lit@^3.0.0";
+import { signal, watch } from "npm:@lit-labs/preact-signals@^1.0.0";
 
 export class CardFrame extends LitElement {
   static properties = {

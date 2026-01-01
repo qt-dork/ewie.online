@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "npm:lit";
+import { css, html, LitElement } from "npm:lit@^3.0.0";
 
 class QuoteBack extends LitElement {
   static properties = {

@@ -1,14 +1,14 @@
 {{ layout "layouts/base.vto" }}
-{{ set postlist = results }}
+  {{ set postlist = results }}
 
-<header class="header-logo">
-  {{ comp.logo({ url: url }) }}
-</header>
-
+  <header class="header-logo">
+    {{ comp.logo({ url: url }) }}
+  </header>
 
   <ul class="blog-posts stack">
     {{ for post of postlist }}
-      {{set hash = post.url |> hash}}
+      {{ set hash = post.url |> hash }}
+      <!-- deno-fmt-ignore -->
       <li class="post-wrapper" style="view-transition-name: post-{{ hash }};">
         <article class="post h-entry stack shadow-med">
           {{ comp.posts.attribution({ author: { image: post.author_image, handle: post.author_handle }, url: post.url, date: post.date }) }}
@@ -16,7 +16,7 @@
             {{ comp.title({ title: post.title, url: post.url}) }}
           {{ /if }}
           {{ if post.content }}
-            <div class="postbody e-content stack">
+            <post-body class="postbody e-content stack">
               {{# if post.tags contains complete or something then show content without truncation #}}
               {{ if (post.content.split("\n---\n").length > 1) }}
                 {{ post.content |> trimToLineBreak |> md }}
@@ -29,31 +29,15 @@
                   {{ comp.read_more({ url: post.url }) }}
                 {{ /if }}
               {{ /if }}
-            </div>
+            </post-body>
           {{ /if }}
           {{ if post.tags.length > 0 }}
             {{ comp.tags({ tags: post.tags }) }}
           {{ /if }}
-
-  {{# <footer  class="bottom attribution"> #}}
-    {{# <div class="comments"> #}}
-      {{# <a href="{{post.url}}">Comments</a> #}}
-    {{# </div> #}}
-    {{# <div class="controls"> #}}
-    {{# <button> #}}
-      {{# <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="co-action-button"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg> #}}
-      {{# </button> #}}
-    {{# </div> #}}
-  {{# </footer> #}}
         </article>
       </li>
-
-
-
     {{ /for }}
   </ul>
 
-  {{ comp.navigation({ pagi: page.data.pagination })}}
-
-
+  {{ comp.navigation({ pagi: page.data.pagination }) }}
 {{ /layout }}

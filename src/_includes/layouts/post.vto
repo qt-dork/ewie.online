@@ -1,25 +1,25 @@
 {{ layout "layouts/base.vto" }}
+  <header class="header-logo">
+    {{ comp.logo({ url: url }) }}
+  </header>
 
-<header class="header-logo">
-  {{ comp.logo({ url: url }) }}
-</header>
+  {{ set hash = url |> hash }}
 
-{{ set hash = url |> hash }}
+  <style>
+    ::view-transition-group(post-{{ hash }}) {
+      box-shadow: var(--shadow-elevation-medium);
+      z-index: 0;
+    }
+    ::view-transition-group(post-{{ hash }})::before {
+      z-index: 1;
+    }
 
-<style>
-  ::view-transition-group(post-{{hash}}) {
-    box-shadow: var(--shadow-elevation-medium);
-    z-index: 0;
-  }
-  ::view-transition-group(post-{{hash}})::before {
-    z-index: 1;
-  }
-
-  ::view-transition-group(post-{{hash}})::after {
-    z-index: -1;
-  }
-</style>
-<div class="post-wrapper mouse" style="view-transition-name: post-{{hash}};">
+    ::view-transition-group(post-{{ hash }})::after {
+      z-index: -1;
+    }
+  </style>
+  <!-- deno-fmt-ignore -->
+  <div class="post-wrapper mouse" style="view-transition-name: post-{{ hash }};">
   <article class="post h-entry stack shadow-med">
     {{ comp.posts.attribution({ author: { image: author_image, handle: author_handle }, url: url, date: date }) }}
     {{ if title }}
@@ -37,16 +37,18 @@
   </article>
 </div>
 
-<section class="post-wrapper stack shadow-med" style="view-transition-name: comment-box;">
-  <h2>Leave a comment</h2>
+  <section
+    class="post-wrapper stack shadow-med"
+    style="view-transition-name: comment-box"
+  >
+    <h2>Leave a comment</h2>
 
-  <div class="comments">
-    {{ comp.comments({ url: url }) }}
-  </div>
-</section>
+    <div class="comments">
+      {{ comp.comments({ url: url }) }}
+    </div>
+  </section>
 
-<section class="stack">
-  {{ comp.comments_list({ url: url }) }}
-</section>
-
+  <section class="stack">
+    {{ comp.comments_list({ url: url }) }}
+  </section>
 {{ /layout }}

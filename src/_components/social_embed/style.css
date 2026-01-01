@@ -1,22 +1,22 @@
-shared-tweet,
-main-tweet {
+social-threaded-post,
+social-main-post {
   display: block;
 }
 
-shared-tweet:not(:first-child),
-main-tweet:not(:first-child),
-expandable-tweet > *:first-child {
+social-threaded-post:not(:first-child),
+social-main-post:not(:first-child),
+social-collapse-conversation > *:first-child {
   padding-top: 8px;
 }
 
-shared-tweet [slot="avatar"],
-main-tweet [slot="avatar"] {
+social-threaded-post [slot="avatar"],
+social-main-post [slot="avatar"] {
   aspect-ratio: 1;
   border-radius: 50%;
   height: 36px;
 }
 
-tweet-embed a {
+social-embed a {
   color: light-dark(
     oklch(from var(--primary) 40% calc(c * 2) h),
     oklch(from var(--primary) 70% calc(c * 2) h)
@@ -41,7 +41,7 @@ tweet-embed a {
   }
 }
 
-media-container {
+social-media-scroller {
   display: block;
 
   margin-block-start: 8px;

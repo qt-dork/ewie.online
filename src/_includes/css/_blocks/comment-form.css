@@ -1,0 +1,90 @@
+textarea {
+  max-width: 100%;
+}
+
+#comment-form {
+  display: grid;
+  margin: 0;
+
+  &:has(:nth-child(1)) {
+    grid-template-columns: 1fr;
+  }
+
+  &:has(:nth-child(2)) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: var(--space-m);
+    grid-template-areas: "a b" "c c" "d d" "e e";
+  }
+
+  & > * {
+    & > * {
+      display: block;
+    }
+
+    & > * + * {
+      margin-block-start: var(--space-xs);
+    }
+  }
+
+  input:not(#color-picker) {
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 4ex;
+    /* max-width: 100%; */
+    min-width: 100%;
+  }
+
+  input:not(#color-picker),
+  textarea {
+    background-color: light-dark(
+      oklch(from var(--primary) var(--100)),
+      oklch(from var(--primary) var(--700))
+    );
+    border: 2px solid var(--color-border);
+    border-radius: var(--space-xs);
+    padding: var(--space-xs);
+  }
+
+  button {
+    background-color: light-dark(
+      oklch(from var(--primary) var(--100)),
+      oklch(from var(--primary) var(--700))
+    );
+    border: 2px solid var(--color-border);
+    border-radius: var(--space-xs);
+    padding-block: var(--space-s);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: light-dark(
+        oklch(from var(--primary) var(--200)),
+        oklch(from var(--primary) var(--600))
+      );
+    }
+  }
+
+  & > *:nth-child(3) {
+    grid-area: a;
+  }
+
+  & > *:nth-child(4) {
+    grid-area: b;
+  }
+
+  & > *:nth-child(5) {
+    grid-area: c;
+  }
+
+  & > *:nth-child(6) {
+    grid-area: d;
+  }
+
+  & > *:nth-child(7) {
+    grid-area: e;
+  }
+}

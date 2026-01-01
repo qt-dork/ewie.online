@@ -6,11 +6,8 @@
     class="post-wrapper stack htmx-indicator shadow-med"
     hx-indicator
   >
-    <comment-loader-mouse>{{
-      comp.comment_mouse_animation()
-    }}</comment-loader-mouse>
-    <div class="mouse-loader">{{ comp.comment_mouse_animation() }}</div>
-    <div class="loading">
+    <comment-mouse-animation>{{ comp.comment_mouse_animation() }}</comment-mouse-animation>
+    <comment-loading-text>
       <span style="--i: 1">L</span><span style="--i: 2">o</span><span
         style="--i: 3"
       >a</span><span style="--i: 4">d</span><span style="--i: 5">i</span><span
@@ -18,6 +15,6 @@
       >n</span><span style="--i: 7">g</span><span style="--i: 8">.</span><span
         style="--i: 9"
       >.</span><span style="--i: 10">.</span>
-    </div>
+    </comment-loading-text>
   </comment-loader>
 </comment-stack>

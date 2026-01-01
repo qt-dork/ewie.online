@@ -22,36 +22,44 @@
     "debug": "echo \"import 'lume/cli.ts'\" | deno run --inspect-wait --unstable -A -"
   },
   "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ],
+    "types": ["lume/types.ts"],
     "jsx": "react-jsx",
     "jsxImportSource": "lume"
   },
   "lint": {
-    "exclude": [
-      "./_site"
-    ],
+    "exclude": ["./_site", "./src/posts"],
     "rules": {
-      "tags": [
-        "recommended"
-      ],
-      "exclude": [
-        "no-import-prefix"
-      ]
+      "tags": ["recommended"],
+      "exclude": ["no-import-prefix"]
     },
-    "plugins": [
-      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.2/lint.ts"
-    ]
+    "plugins": ["https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.2/lint.ts"]
   },
   "fmt": {
-    "exclude": [
-      "./_site"
-    ]
+    "exclude": ["./_site", "./src/posts"]
   },
-  "unstable": [
-    "temporal",
-    "fmt-component"
-  ],
-  "lock": false
+  "unstable": ["temporal", "fmt-component"],
+  "lock": false,
+  "permissions": {
+    "lume": {
+      "read": true,
+      "write": ["./"],
+      "import": [
+        "cdn.jsdelivr.net:443",
+        "jsr.io:443",
+        "deno.land:443",
+        "esm.sh:443"
+      ],
+      "net": [
+        "0.0.0.0",
+        "jsr.io:443",
+        "cdn.jsdelivr.net:443",
+        "data.jsdelivr.com:443",
+        "registry.npmjs.org:443"
+      ],
+      "env": true,
+      "run": true,
+      "ffi": true,
+      "sys": true
+    }
+  }
 }

@@ -1,0 +1,56 @@
+.blog-posts > li:first-child,
+.mouse {
+  /* Define the width and height of the source images */
+  --width: 25em;
+  --top-height: 19.625em;
+  --bottom-height: 25.4375em;
+
+  /* Top overlap = distance from the visual bottom of top image and the actual bottom */
+  --top-overlap: 1.625em;
+  /* Bottom overlap = distance from the visual top of the bottom image and the actual top */
+  --bottom-overlap: 2.5em;
+  /* Offset to the right of the post */
+  --sideways-offset: -8em;
+
+  --top-position: calc(var(--top-height) * -1 + var(--top-overlap));
+  --bottom-position: calc(var(--bottom-overlap) * -1);
+
+  position: relative;
+
+  &::before,
+  &::after {
+    /* Pseudo-elements always need `content` defined, even if that's set to nothing. */
+    content: "";
+    display: block;
+    font-size: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
+    /*mix-blend-mode: luminosity;*/
+
+    /* Define the sizes of the images */
+    width: var(--width);
+
+    /* Position relative to the .post */
+    position: absolute;
+    right: var(--sideways-offset);
+
+    /* Background image handling */
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    /* Prevent the one on top from preventing click through to the content beneath it */
+    pointer-events: none;
+  }
+
+  &::before {
+    background-image: url("https://cdn.ewie.online/evie_mouse_girl_top_overhang.png");
+    height: var(--top-height);
+    top: var(--top-position);
+    z-index: 1;
+  }
+
+  &::after {
+    background-image: url("https://cdn.ewie.online/evie_mouse_girl_bottom_overhang.png");
+    height: var(--bottom-height);
+    top: var(--bottom-position);
+    z-index: -1;
+  }
+}

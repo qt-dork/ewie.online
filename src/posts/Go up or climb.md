@@ -18,9 +18,9 @@ Since the start of season 2 of Blaseball,[^2] there has been a section of the we
 {{> const dateTime = (timestamp) => (new Date(timestamp).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' })) }}
 {{> const date = (timestamp) => (new Date(timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' })) }}
 
-{{ comp tweet_embed }}
+{{ comp social_embed }}
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
@@ -29,9 +29,9 @@ Since the start of season 2 of Blaseball,[^2] there has been a section of the we
 
 <a href="https://twitter.com/blaseball">@blaseball</a> hey so what does ascension mean exactly
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name"> BLASEBALL COMMISSIONER </span>
@@ -40,24 +40,24 @@ Since the start of season 2 of Blaseball,[^2] there has been a section of the we
 
 what
 
-</shared-tweet>
+</social-threaded-post>
 	
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
 <span slot="handle">@SIBROfficial</span>
 <time slot="time" datetime="2020-09-26T22:00:07.000Z">{{ date("2020-09-26T22:00:07.000Z") }}</time>
 
-<media-container>
+<social-media-scroller>
 
 <img alt="A quote from the Book of Blaseball on ascension." src="https://cdn.ewie.online/20250824075629-Image.jpeg">
 
-</media-container>
+</social-media-scroller>
 
-</shared-tweet>
+</social-threaded-post>
 
-<main-tweet>
+<social-main-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name"> BLASEBALL COMMISSIONER </span>
@@ -66,15 +66,15 @@ what
 
 huh
 
-</main-tweet>
+</social-main-post>
 
 {{ /comp }}
 
 After some debate on whether or not Parker had ever actually read the Forbidden Book, he replied with, “uh they go up or climb”, following up with “or like they rise through the air. ‘we had ascended 3,000 ft’”.
 
-{{ comp tweet_embed }}
+{{ comp social_embed }}
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826055716-Image.jpeg">
 <span slot="name">BLASEBALL NEWS NETWORK</span>
@@ -83,11 +83,11 @@ After some debate on whether or not Parker had ever actually read the Forbidden 
 
 PARKER, HAVE YOU READ THE BOOK.
 
-</shared-tweet>
+</social-threaded-post>
 
-<expandable-tweet>
+<social-collapse-conversation>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
@@ -96,9 +96,9 @@ PARKER, HAVE YOU READ THE BOOK.
 
 in fairness to parker, It is Forbidden
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name">BLASEBALL COMMISSIONER</span>
@@ -107,9 +107,9 @@ in fairness to parker, It is Forbidden
 
 yea
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826061050-Image.jpeg">
 <span slot="name">📱New York Millennials📱</span>
@@ -118,22 +118,22 @@ yea
 
 Yeah wait, you guys have read the book? You know that book is forbidden right?
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
 <time slot="time" datetime="2020-09-26T22:03:18.000Z">{{ date("2020-09-26T22:03:18.000Z") }}</time>
 
-<media-container>
+<social-media-scroller>
 <img alt="Someone tweeting at the Blaseball account saying, “Hey what's in the forbidden book”. Parker responds by saying, “don't know didn't open it's forbidden”" src="https://cdn.ewie.online/20250826061543-Image.jpeg">
-</media-container>
+</social-media-scroller>
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
@@ -142,9 +142,9 @@ Yeah wait, you guys have read the book? You know that book is forbidden right?
 
 okay but that was pre-discipline era surely you peeked once we opened it
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg">
 <span slot="name">Paula 🍳 📚Turnip</span>
@@ -153,8 +153,8 @@ okay but that was pre-discipline era surely you peeked once we opened it
 
 parker has definitely read the book
 
-<tweet-embed>
-<main-tweet>
+<social-embed>
+<social-main-post>
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
@@ -162,11 +162,11 @@ parker has definitely read the book
 
 a. The game of Blaseball should be played between two teams.
 
-</main-tweet>
-</tweet-embed>
-</shared-tweet>
+</social-main-post>
+</social-embed>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
@@ -174,10 +174,10 @@ a. The game of Blaseball should be played between two teams.
 
 I mean I’ve looked at it since
 
-</shared-tweet>
-</expandable-tweet>
+</social-threaded-post>
+</social-collapse-conversation>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
@@ -186,9 +186,9 @@ I mean I’ve looked at it since
 
 parker what do you think happens when a team, and Blaseball, ascends
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name">BLASEBALL COMMISSIONER</span>
@@ -197,9 +197,9 @@ parker what do you think happens when a team, and Blaseball, ascends
 
 uh they go up or climb
 
-</shared-tweet>
+</social-threaded-post>
 
-<main-tweet>
+<social-main-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name">BLASEBALL COMMISSIONER</span>
@@ -208,15 +208,15 @@ uh they go up or climb
 
 or like they rise through the air. "we had ascended 3,000 ft"
 
-</main-tweet>
+</social-main-post>
 
 {{ /comp }}
 
 Paula Turnip—a fan-run twitter account roleplaying as a blaseball player—noticed a potential source for this particular definition, the Google definition for “ascend”.
 
-{{ comp tweet_embed }}
+{{ comp social_embed }}
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg">
 <span slot="name">Paula 🍳 📚Turnip</span>
@@ -225,9 +225,9 @@ Paula Turnip—a fan-run twitter account roleplaying as a blaseball player—not
 
 did you just google the definition of ascend?
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
 <span slot="name">BLASEBALL COMMISSIONER</span>
@@ -236,9 +236,9 @@ did you just google the definition of ascend?
 
 no
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg">
 <span slot="name">Paula 🍳 📚Turnip</span>
@@ -247,13 +247,13 @@ no
 
 so this is just a coincidence
 
-<media-container>
+<social-media-scroller>
 <img alt="A screenshot of a google search for 'ascend'. There is a sponsored entry for a credit union, and below it is the google dictionary entry for 'ascend'. It matches one-to-one with what the blaseball commissioner said." src="https://cdn.ewie.online/20250826063559-Image.jpeg">
-</media-container>
+</social-media-scroller>
 
-</shared-tweet>
+</social-threaded-post>
 
-<shared-tweet>
+<social-threaded-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
@@ -262,9 +262,9 @@ so this is just a coincidence
 
 oh I get it, the championship team becomes a credit union
 
-</shared-tweet>
+</social-threaded-post>
 
-<main-tweet>
+<social-main-post>
 
 <img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg">
 <span slot="name">Paula 🍳 📚Turnip</span>
@@ -273,7 +273,7 @@ oh I get it, the championship team becomes a credit union
 
 thank you for figuring this one out sibr
 
-</main-tweet>
+</social-main-post>
 
 {{ /comp }}
 

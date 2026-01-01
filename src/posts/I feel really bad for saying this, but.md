@@ -20,8 +20,8 @@ So I recently saw a post of yours—attached below—about a post from a lead de
 {{> const date = (timestamp) => (new Date(timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' })) }}
 {{> const dateTime = (timestamp) => (new Date(timestamp).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' })) }}
 
-{{ comp tweet_embed }}
-  <main-tweet>
+{{ comp social_embed }}
+  <social-main-post>
     <img slot="avatar" src="https://cdn.ewie.online/20250901015851-Image.jpeg" >
     <span slot="name">David Gerard</span>
     <span slot="handle">@davidgerard@circumstances.run</span>
@@ -37,15 +37,15 @@ the extremely bottlenecked project lead for the Julia language tries out Claude 
 
 </div>
 
-<media-card href="https://discourse.julialang.org/t/the-use-of-claude-code-in-sciml-repos/131009/8">
+<social-link-card href="https://discourse.julialang.org/t/the-use-of-claude-code-in-sciml-repos/131009/8">
   <img src="https://cdn.ewie.online/20250901021140-Image.jpeg" width="662" height="348" loading="lazy" slot="img" />
   <span slot="domain">discourse.julialang.org</span>
   <time slot="time" datetime="2025-07-25T04:06:10.000Z" title="7/24/2025, 11:06:10 PM">{{ date("2025-07-25T04:06:10.000Z") }}</time>
   <p slot="title" title="The use of Claude Code in SciML repos">The use of Claude Code in SciML repos</p>
-  <p title="So it’s pretty public that for about a month now I’ve had 32 processes setup on one of the 64 core 128gb RAM servers to just ssh in, tmux to a window, and tell it to slam on some things non-stop. And it has been really successful!.. with the right definition of success. Let me explain.   I think the first will answer the others. Basically, Claude is really not smart at all. There is no extensive algorithm implementation that has come from AI. I know some GSoCers and SciML Small Grants applicants...">So it’s pretty public that for about a month now I’ve had 32 processes setup on one of the 64 core 128gb RAM servers to just ssh in, tmux to a window, and tell it to slam on some things non-stop. And it has been really successful!.. with the right definition of success. Let me explain.   I think the first will answer the others. Basically, Claude is really not smart at all. There is no extensive algorithm implementation that has come from AI. I know some GSoCers and SciML Small Grants applicants...</p>
-</media-card>
+  <p slot="description" title="So it’s pretty public that for about a month now I’ve had 32 processes setup on one of the 64 core 128gb RAM servers to just ssh in, tmux to a window, and tell it to slam on some things non-stop. And it has been really successful!.. with the right definition of success. Let me explain.   I think the first will answer the others. Basically, Claude is really not smart at all. There is no extensive algorithm implementation that has come from AI. I know some GSoCers and SciML Small Grants applicants...">So it’s pretty public that for about a month now I’ve had 32 processes setup on one of the 64 core 128gb RAM servers to just ssh in, tmux to a window, and tell it to slam on some things non-stop. And it has been really successful!.. with the right definition of success. Let me explain.   I think the first will answer the others. Basically, Claude is really not smart at all. There is no extensive algorithm implementation that has come from AI. I know some GSoCers and SciML Small Grants applicants...</p>
+</social-link-card>
 
-  </main-tweet>
+  </social-main-post>
 {{ /comp }}
 
 I came into the post imagining from your description, perhaps, an overworked lead developer for the Julia programming language. Lead developers of open source projects are famously overworked and under-appreciated. In my mind, this lead developer, swamped with issues and feeling the crunch, opts to try using Clode to see if it lives up to the hype and if it could make his life easier. This developer finds it to be less than useless, and then writes a scathing critique of it on the Julia language forums. In my opinion, this is how the post is framed. However, it is not that.

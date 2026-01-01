@@ -9,7 +9,6 @@
 @import "./_blocks/_blocks.css" layer(blocks);
 @import "./posts.css" layer(block);
 @import "./post.css" layer(block);
-@import "./comments.css" layer(block);
 @import "./navigation.css" layer(block);
 @import "./footer.css" layer(block);
 @import "./header.css" layer(block);

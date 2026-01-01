@@ -1,1 +1,34 @@
+comment-mouse-animation {
+  display: flex;
+  gap: var(--space-m);
+  align-items: center;
+  justify-content: center;
+}
 
+comment-loading-text {
+  text-align: center;
+  font-weight: bold;
+  --stack-space: var(--space-xs);
+}
+
+comment-loading-text span {
+  display: inline-block;
+  /* --loading-length: 1s; */
+  animation-duration: 1s;
+  animation-name: wave;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  /* text-align: center; */
+  animation-delay: calc((-10 + var(--i)) * 0.1s);
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(-10%);
+  }
+}

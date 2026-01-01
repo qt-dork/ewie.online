@@ -38,6 +38,16 @@ site.use(date({
   },
 }));
 site.use(esbuild());
+site.use(lightningcss(
+  // {
+  //   options: {
+  //     include: Features.Nesting,
+  //     drafts: {
+  //       customMedia: true
+  //     }
+  //   }
+  // }
+));
 site.use(feed({
   output: ["/feed/feed.xml", "/feed/feed.json"], // The file or files that must be generated
   query: "type=post", // Select only pages of type=post
@@ -66,25 +76,16 @@ site.use(feed({
   },
 }));
 site.use(fff());
-site.use(lightningcss(
-  // {
-  //   options: {
-  //     include: Features.Nesting,
-  //     drafts: {
-  //       customMedia: true
-  //     }
-  //   }
-  // }
-));
+
 site.use(pagefind(/* Options */));
 
 // const highlighter = await codeToHtml;
 
 import { rehypeLezer } from "./helpers/rehype-lezer/highlight.js";
-import { parser as javascriptParser } from "npm:@lezer/javascript";
-import { parser as cssParser } from "npm:@lezer/css";
-import { parser as htmlParser } from "npm:@lezer/html";
-import { parser as mdParser } from "npm:@lezer/markdown";
+import { parser as javascriptParser } from "npm:@lezer/javascript@^1.0.0";
+import { parser as cssParser } from "npm:@lezer/css@^1.0.0";
+import { parser as htmlParser } from "npm:@lezer/html@^1.0.0";
+import { parser as mdParser } from "npm:@lezer/markdown@^1.0.0";
 
 import rehypeSlug from "https://esm.sh/rehype-slug@6";
 import rehypeAutolinkHeadings from "https://esm.sh/rehype-autolink-headings@7";
