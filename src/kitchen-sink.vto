@@ -4,28 +4,93 @@ title: Kitchen Sink
 index: false
 ---
 
-{{>
-  const date = (
-    timestamp,
-  ) => (new Date(timestamp).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "America/Los_Angeles",
-  }))
-}}
-{{>
-  const dateTime = (
-    timestamp,
-  ) => (new Date(timestamp).toLocaleString("en-US", {
-    dateStyle: "medium",
-    timeStyle: "short",
-    timeZone: "America/Los_Angeles",
-  }))
-}}
+<script type="module" src="/assets/js/components/hue-shifter.js"></script>
 
 <script type="module" src="/assets/js/components/quote-back.js"></script>
 
+<style>
+  color-list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(11, 1fr);
+    border-radius: .5rem;
+  }
+  color-item: {
+    height: 2em;
+    aspect-ratio: 1;
+    background-color: oklch(from var(--primary) var(--color-item-color));
+  }
+</style>
+
+<color-list>
+    <color-item style="--color-item-color: var(--0);"></color-item>
+    <color-item style="--color-item-color: var(--50);"></color-item>
+    <color-item style="--color-item-color: var(--100);"></color-item>
+    <color-item style="--color-item-color: var(--200);"></color-item>
+    <color-item style="--color-item-color: var(--300);"></color-item>
+    <color-item style="--color-item-color: var(--400);"></color-item>
+    <color-item style="--color-item-color: var(--500);"></color-item>
+    <color-item style="--color-item-color: var(--600);"></color-item>
+    <color-item style="--color-item-color: var(--700);"></color-item>
+    <color-item style="--color-item-color: var(--800);"></color-item>
+    <color-item style="--color-item-color: var(--900);"></color-item>
+</color-list>
+<br>
+<div class="color-list-wrapper">
+<style>
+  .color-list-wrapper {
+    container-type: inline-size;
+  }
+  .color-list {
+    display: grid;
+    grid-template-columns: repeat(30,1fr);
+    & > div {
+      aspect-ratio: 1;
+      display: grid;
+      place-content: center;
+      /* padding: calc(1ch/2); */
+      &:nth-child(-1n + 6) {
+        grid-column: span 5;
+      }
+      &:nth-last-child(-1n + 5) {
+        grid-row-start: 2;
+        grid-column: span 6;
+      }
+    }
+  }
+  @container (400px <= width) {
+    .color-list {
+      grid-template-columns: repeat(11,1fr);
+      & > div {
+        &:nth-child(-1n + 6) {
+          grid-column: span 1;
+        }
+        &:nth-last-child(-1n + 5) {
+          grid-row-start: auto;
+          grid-column: span 1;
+        }
+      }
+    }
+  }
+</style>
+
+<div class="color-list" style=" border-radius: var(--space-xs); overflow:clip;">
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--0)); color: oklch(from var(--primary) var(--800));">0</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--50)); color: oklch(from var(--primary) var(--800));">50</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--100)); color: oklch(from var(--primary) var(--800));">100</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--200)); color: oklch(from var(--primary) var(--800));">200</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--300)); color: oklch(from var(--primary) var(--800));">300</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--400)); color: oklch(from var(--primary) var(--800));">400</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--500)); color: oklch(from var(--primary) var(--100));">500</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--600)); color: oklch(from var(--primary) var(--100));">600</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--700)); color: oklch(from var(--primary) var(--100));">700</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--800)); color: oklch(from var(--primary) var(--100));">800</div>
+  <div style="aspect-ratio: 1; background-color: oklch(from var(--primary) var(--900)); color: oklch(from var(--primary) var(--100));">900</div>
+</div>
+</div>
+<br>
+<hue-shifter></hue-shifter>
+<br>
 <quote-back url="https://www.joshwcomeau.com/svg/interactive-guide-to-paths/">
   <p>
     Over the years, my blog has become a surprisingly complex application. It’s
