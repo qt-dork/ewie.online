@@ -24,6 +24,7 @@ inlayHints.enumMemberValues.enabled = true
 name = "vento"
 auto-format = true
 language-servers = ["deno-lsp"]
+indent = { unit = "  ", tab-width = 2 }
 
 [language-server.vscode-json-language-server.config]
 json = { validate = { enable = true }, format = { enable = true } }

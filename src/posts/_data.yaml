@@ -1,9 +1,0 @@
-type: post
-layout: layouts/post.vto
-index: true
-
-author_image: https://cdn.ewie.online/ewie-pfp.png
-author_handle: ewie
-
-metas:
-  title: "=title"

@@ -1,85 +1,18 @@
 import lume from "lume/mod.ts";
-
-import date from "lume/plugins/date.ts";
-import esbuild from "lume/plugins/esbuild.ts";
-import feed from "lume/plugins/feed.ts";
-import fff from "lume/plugins/fff.ts";
-import lightningcss from "lume/plugins/lightningcss.ts";
-import pagefind from "lume/plugins/pagefind.ts";
-import remark from "lume/plugins/remark.ts";
-import robots from "lume/plugins/robots.ts";
-import sitemap from "lume/plugins/sitemap.ts";
-// import slugifyUrls from "lume/plugins/slugify_urls.ts";
-
-import slugifyUrls from "https://raw.githubusercontent.com/lumeland/lume/refs/heads/main/plugins/slugify_urls.ts";
+import plugins, { Options } from "./plugins.ts";
 
 import truncate from "./helpers/truncate_html.ts";
 
-const site = lume(
-  {
-    src: "./src",
-    location: new URL("https://ewie.online/"),
-    // server: {
-    //   page404: "/404/",
-    // },
-  },
-);
+const site = lume({
+  src: "./src",
+  // server: { page404: "/404/" }
+});
 
 site.add("static", ".");
-// site.add("_include/css");
 site.add("styles");
+// TODO: Set up site to import from there instead
+// site.add("_include/css");
 site.add("assets/js");
-
-site.use(date({
-  formats: {
-    "ISO": "yyyy-MM-dd'T'HH:mm:ss.SSSxxx",
-    "TITLE": "iii, MMM d, y, ppp",
-    "HUMAN": "MMMM d, y 'at' h:mm aaa",
-  },
-}));
-site.use(esbuild());
-site.use(lightningcss(
-  // {
-  //   options: {
-  //     include: Features.Nesting,
-  //     drafts: {
-  //       customMedia: true
-  //     }
-  //   }
-  // }
-));
-site.use(feed({
-  output: ["/feed/feed.xml", "/feed/feed.json"], // The file or files that must be generated
-  query: "type=post", // Select only pages of type=post
-  sort: "date=desc", // To sort by date in descending order
-  limit: 20, // To show only the 10 first results
-  info: {
-    title: "Evie On-Line", // The feed title
-    description: "Just some posts and stuff", // The feed subtitle
-    published: new Date(), // The publishing date
-    lang: "en", // The language of the feed
-    // hubs: undefined, // The WebSub hubs for the feed
-    generator: true, // Set `true` to automatically generate the "Lume {version}"
-    authorName: "Evie Finch", // The author of the site
-    authorUrl: "https://evie.online/", // The URL of the author
-  },
-  items: {
-    title: "=title", // The title of every item
-    description: "=excerpt", // The description of every item
-    published: "=date", // The publishing date of every item
-    // updated: undefined, // The last update of every item
-    content: "=children", // The content of every item
-    // lang: "=lang", // The language of every item
-    image: "=cover", // The image of the item
-    authorName: "=author.name", // The author of the article
-    authorUrl: "=author.url", // The URL of the author
-  },
-}));
-site.use(fff());
-
-site.use(pagefind(/* Options */));
-
-// const highlighter = await codeToHtml;
 
 import { rehypeLezer } from "./helpers/rehype-lezer/highlight.js";
 import { parser as javascriptParser } from "npm:@lezer/javascript@^1.0.0";
@@ -90,51 +23,24 @@ import { parser as mdParser } from "npm:@lezer/markdown@^1.0.0";
 import rehypeSlug from "https://esm.sh/rehype-slug@6";
 import rehypeAutolinkHeadings from "https://esm.sh/rehype-autolink-headings@7";
 
-site.use(remark({
-  rehypePlugins: [
-    [rehypeSlug],
-    [
-      rehypeLezer,
-      {
+const remarkOptions: Options = {
+  remark: {
+    rehypePlugins: [
+      [rehypeSlug],
+      [rehypeLezer, {
         parsers: [
           { lang: "js", parser: javascriptParser },
           { lang: "css", parser: cssParser },
           { lang: "html", parser: htmlParser },
           { lang: "md", parser: mdParser },
         ],
-      },
+      }],
+      [rehypeAutolinkHeadings],
     ],
-    [rehypeAutolinkHeadings],
-  ],
-}));
-site.use(robots());
-site.use(sitemap());
-site.use(slugifyUrls());
+  },
+};
 
-// Bad code here
-import createSlugifier, {
-  defaults as slugifierDefaults,
-} from "lume/core/slugifier.ts";
-import { format } from "lume/deps/date.ts";
-site.preprocess([".md"], (pages) => {
-  const slugify = createSlugifier(slugifierDefaults);
-  for (const page of pages) {
-    if (page.data.type === "post") {
-      const slugDate = format(new Date(page.data.date), "yyyyMMdd");
-      const slugBody = slugify(
-        page.data.title ??
-          ((page.data.content as string | undefined) ?? "undefined").substring(
-            0,
-            40,
-          ),
-      ).substring(0, 20);
-      page.data.url = `/posts/${slugDate}-${slugBody}/`;
-      if (page.data.permalink) {
-        page.data.url = page.data.permalink;
-      }
-    }
-  }
-});
+site.use(plugins(remarkOptions));
 
 site.filter(
   "trimToLineBreak",

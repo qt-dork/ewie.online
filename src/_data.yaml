@@ -1,0 +1,8 @@
+metas:
+  type: website
+  site: Evie On-Line
+  fediverse: "@ewie@social.lol"
+  title: Evie On-Line
+  lang: en
+  icon: "https://cdn.ewie.online/ewie-pfp.png"
+  robots: noai, noimageai

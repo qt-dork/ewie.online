@@ -1,0 +1,18 @@
+{{# Imports: #}}
+{{# is_timeline: boolean #}}
+{{# url: string (url) #}}
+{{# content: string #}}
+
+{{ if is_timeline }}
+  <h2 data-heading-size="h1" class="p-name">
+    <a href="{{ url }}">
+      {{ content }}
+    </a>
+  </h2>
+{{ else }}
+  <h1 class="p-name">
+    <a href="{{ url }}">
+      {{ content }}
+    </a>
+  </h1>
+{{ /if }}

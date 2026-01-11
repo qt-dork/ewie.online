@@ -1,18 +1,39 @@
-<article class="post h-entry stack prose">
-  {{# Structure: #}}
-  	{{# Post wrapper #}}
-   		{{#  #}}
-  {{# Attribution - always #}}
-	{{
-		comp.post.attribution({
-			author: {
-				image: post.author_image,
-				handle: post.author_handle
-			},
-			url: post.url,
-			date: post.date,
-		})
-	}}
-	{{# Post title - if there #}}
+{{# Structure: #}}
+  {{# Post type="initial" #}}
+    {{# Attribution #}}
+    {{# Title (optional) #}}
+    {{# Body (optional) #}}
+    {{# Tags (optional) #}}
+  {{# Post - type: sharing #}}
+    {{# Attribution type="sharing" sharing="prev.handle" #}}
+    {{# Title (optional) #}}
+    {{# Body (optional) #}}
+    {{# Tags (optional) #}}
 
-</article>
+{{ if type === "initial" }}
+	{{ comp.post.attribution({data: data, type: type}) }}
+{{ else }}
+	{{ comp.post.attribution({data: data, type: type, from: prev.handle }) }}
+{{ /if }}
+{{ if title }}
+	{{ comp post.title }}
+{{ /if }}
+{{ if body }}
+	{{ comp post.body }}
+		{{ content }}
+	{{ /comp }}
+{{ /if }}
+{{ if tags }}
+	{{ comp.tags(data: tags) }}
+{{ /if }}
+
+{{#
+  comp.post.attribution({
+    author: {
+      image: post.author_image,
+      handle: post.author_handle,
+    },
+    url: post.url,
+    date: post.date,
+  })
+#}}

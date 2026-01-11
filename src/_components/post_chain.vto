@@ -1,0 +1,39 @@
+{{# Structure: #}}
+  {{# Post wrapper #}}
+    {{# Post type="initial" #}}
+      {{# Attribution #}}
+      {{# Title (optional) #}}
+      {{# Body (optional) #}}
+      {{# Tags (optional) #}}
+    {{# Post - type: sharing #}}
+      {{# Attribution type="sharing" sharing="prev.handle" #}}
+      {{# Title (optional) #}}
+      {{# Body (optional) #}}
+      {{# Tags (optional) #}}
+    {{# Interactibles #}}
+      {{# Comment count="x" #}}
+      {{# Reblog #}}
+      {{# Like #}}
+
+{{ comp post.wrapper }}
+  {{# TODO: make real interface with real variables #}}
+  {{ for index, post of postList}}
+    {{ if i === 0 }}
+      {{ comp.post({ data: postData, type: "initial" }) }}
+    {{ else }}
+      {{ comp.post({ data: postData, type: "addition" }) }}
+    {{ /if }}
+  {{ /for }}
+  {{ comp.post.interactibles({ data: postData }) }}
+{{ /comp }}
+
+{{#
+  comp.post.attribution({
+    author: {
+      image: post.author_image,
+      handle: post.author_handle,
+    },
+    url: post.url,
+    date: post.date,
+  })
+#}}

@@ -1,37 +1,43 @@
-{{ set is_evie = author.handle === "ewie" }}
+{{# imports: #}}
+{{# author: #}}
+{{#   displayName: string #}}
+{{#   username: string #}}
+{{#   avatar: string (url) #}}
+{{# url: string (url) - url to the post #}}
+{{# date: Date - publication date #}}
+
+{{ set is_evie = author.username === "ewie" }}
 
 <post-attribution>
-  <post-metadata>
-    <post-author
-      class="p-author h-card"
-      {{ if !is_evie }}data-is-evie="{{ is_evie }}"{{ /if }}
-    >
-      <picture title>
-        <img
-          class="u-photo"
-          src="{{ author.image }}"
-          alt
-          width="42"
-          height="42"
-        >
-      </picture>
+  <post-metadata class="p-author h-card">
+    <picture {{ if is_evie }}data-is-evie="{{ is_evie }}"{{ /if }}>
+      <img
+        class="u-photo"
+        src="{{ author.avatar }}"
+        alt
+        width="42"
+        height="42"
+      >
+    </picture>
+    <post-text>
       <b class="p-name">
-        @{{ author.handle }}
+        {{ author.displayName }}
       </b>
-    </post-author>
-    <a class="u-url" href="{{ url }}" rel="canonical">
-      <relative-time update="1" format-style="short">
-        <time
-          class="dt-published"
-          datetime="{{ date |> date('ISO') }}"
-          title="{{ date |> date('TITLE') }}"
-        >
-          {{ date |> date("HUMAN") }}
-        </time>
-      </relative-time>
-    </a>
-    <data class="p-url" value="https://ewie.online/"></data>
-    <data class="p-logo" value="https://cdn.ewie.online/ewie-pfp.png"></data>
+      <span class="p-nickname">
+        @{{ author.username }}
+      </span>
+      <a class="u-url" href="{{ url }}" rel="canonical">
+        <relative-time update="1" format-style="short">
+          <time
+            class="dt-published"
+            datetime="{{ date |> date('ISO') }}"
+            title="{{ date |> date('TITLE') }}"
+          >
+            {{ date |> date("HUMAN") }}
+          </time>
+        </relative-time>
+      </a>
+    </post-text>
+    <data class="p-url" value="/"></data>
   </post-metadata>
 </post-attribution>
-<hr/>
