@@ -1,6 +1,7 @@
 _site
 _cache
 .DS_Store
+.env
 .zed
 .vscode
 deno.lock

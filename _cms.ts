@@ -1,9 +1,11 @@
 import lumeCMS from "lume/cms/mod.ts";
-
+import { load } from "jsr:@std/dotenv";
 const cms = lumeCMS();
 
-const user = Deno.env.get("CMS_USER") ?? "admin";
-const pass = Deno.env.get("CMS_PASSWORD") ?? "";
+const env = await load();
+
+const user = env.CMS_USER ?? "admin";
+const pass = env.CMS_PASSWORD ?? "";
 
 cms.auth({
   [user]: pass,
