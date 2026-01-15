@@ -18,6 +18,6 @@ tags:
 
 good news! the `well-known/button` spec already exists, just in a different form. you can find it here: https://codeberg.org/LunarEclipse/well-known-button. i know about this because [beeps](https://beeps.website) uses it, and because it's currently (partially) implemented on the 3.0-ish[^1] branch of my site.
 
-there is a practical difference between v's spec and the well known spec, which is the well known spec uses json while v's spec uses meta tags. i have no idea id that makes a real difference though, lol.
+there is a practical difference between v's spec and the well known spec, which is the well known spec uses json while v's spec uses meta tags. i have no idea if that makes a real difference though, lol.
 
 [^1]: 2.5?
