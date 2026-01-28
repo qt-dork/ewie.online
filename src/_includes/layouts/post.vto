@@ -19,22 +19,27 @@
     }
   </style>
   <!-- deno-fmt-ignore -->
-  <div class="post-wrapper mouse" style="view-transition-name: post-{{ hash }};">
-  <article class="post h-entry stack shadow-med">
-    {{ comp.posts.attribution({ author: { image: author_image, handle: author_handle }, url: url, date: date }) }}
-    {{ if title }}
-        {{ comp.title({ title: title, url: url }) }}
-    {{ /if }}
-    {{ if content }}
-        <div class="postbody e-content stack">
-        {{# if post.tags contains complete or something then show content without truncation #}}
-        {{ content }}
-        </div>
-    {{ /if }}
-    {{ if tags.length > 0 }}
-        {{ comp.tags({ tags: tags }) }}
-    {{ /if }}
-  </article>
+<div class="post-wrapper mouse" style="view-transition-name: post-{{ hash }};">
+
+{{ comp posts.wrapper }}
+  {{ comp.posts.attribution({ author,  url, date }) }}
+  {{ if title }}
+    {{ comp posts.title { url, is_timeline: false } }}
+      {{ title }}
+    {{ /comp }}
+  {{ /if }}
+  {{ if content }}
+    {{ comp posts.body }}
+      {{ content }}
+    {{ /comp }}
+  {{ /if }}
+  {{ if tags }}
+    {{> console.log(tags) }}
+    {{ comp.posts.tags({ tags }) }}
+  {{ /if }}
+  {{ comp.posts.interactibles(url) }}
+{{ /comp }}
+
 </div>
 
   <section
@@ -44,11 +49,11 @@
     <h2>Leave a comment</h2>
 
     <div class="comments">
-      {{ comp.comments({ url: url }) }}
+      {{ comp.comments.form({ url: url }) }}
     </div>
   </section>
 
   <section class="stack">
-    {{ comp.comments_list({ url: url }) }}
+    {{ comp.comments.list({ url: url }) }}
   </section>
 {{ /layout }}

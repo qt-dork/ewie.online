@@ -4,6 +4,7 @@
 <tag-list>
   <ol>
     {{ for tag of tags }}
+      {{> console.log(tag) }}
       <li>
         <!-- `p-category`: https://microformats.org/wiki/h-entry#Core_Properties -->
         <a class="p-category" href="/tags/{{ tag |> slugify }}">#{{ tag }}</a>

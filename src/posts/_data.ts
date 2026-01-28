@@ -15,7 +15,7 @@ let postDescription: string | undefined = undefined;
 interface PostData extends Lume.Data {
 	description: string;
 	type: string;
-	account: {
+	account?: {
 		username: string;
 		displayName: string;
 		avatar: string;
@@ -24,22 +24,27 @@ interface PostData extends Lume.Data {
 }
 
 /// If a post has no description, make one from the content. Strips out all the markdown and html to get only pure plain text.
-const generateDescriptionFromContent = ({ data: { description, content }}: {data: PostData}): string => {
-	console.log(content);
+const generateDescriptionFromContent = ({ description, content }: PostData): string => {
+	// bro wtf is this
 	if (postDescription !== undefined) {
 		return postDescription;
 	}
 	if (description !== undefined) {
 		postDescription = plainText(content as string, plainTextDefaults);
-		console.log(postDescription);
 	} else {
 		postDescription = description;
 	}
 	return postDescription!;
 }
 
-const ogIcon = ({data: {account}}: {data: PostData}): string => {
-	return account.avatar ?? "https://cdn.ewie.online/ewie-pfp.png";
+const ogIcon = (data: PostData): string => {
+	let avatar: string;
+	if (data.account) {
+		avatar = data.account.avatar;
+	} else {
+		avatar = "https://cdn.ewie.online/ewie-pfp.png";
+	}
+	return avatar;
 }
 
 export default {

@@ -1,4 +1,4 @@
-export const layout = "layouts/posts.vto";
+export const layout = "layouts/timeline.vto";
 
 /**
  * Generates a page for each tag. Those pages also support pagination (because I didn't know any other way to make this work.)

@@ -1,0 +1,118 @@
+<form id="comment-form" name="comment">
+  <comment-avatar>
+    <button type="button" popovertarget="positionedElement">
+      <picture>
+        <img
+          class="u-photo"
+          data-avatar-mask="circle"
+          src="https://cdn.ewie.online/ca4719f7af550ea00632.png"
+          alt=""
+          width="42"
+          height="42"
+        >
+      </picture>
+      <comment-editable-icon>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="10"
+          height="10"
+          fill="#000000"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM192,108.68,147.31,64l24-24L216,84.68Z"
+          >
+          </path>
+        </svg>
+      </comment-editable-icon>
+    </button>
+    <avatar-popover popover id="positionedElement" class="box">
+      <label for="authorAvatarSrc">Avatar Url</label>
+      <input type="text" name="authorAvatarSrc" id="authorAvatarSrc" />
+      <fieldset>
+        <input
+          type="radio"
+          name="authorAvatarShape"
+          value="circle"
+          id="shape-circle"
+          checked=""
+        >
+        <label for="shape-circle">Circle
+          <span style="--primary: var(--white)"></span>
+        </label>
+        <input
+          type="radio"
+          name="authorAvatarShape"
+          value="roundrect"
+          id="shape-roundrect"
+          checked=""
+        >
+        <label for="shape-roundrect">Round Rectangle
+          <span style="--primary: var(--white)"></span>
+        </label>
+        <input
+          type="radio"
+          name="authorAvatarShape"
+          value="squircle"
+          id="shape-squircle"
+          checked=""
+        >
+        <label for="shape-squircle">Squircle
+          <span style="--primary: var(--white)"></span>
+        </label>
+        <input
+          type="radio"
+          name="authorAvatarShape"
+          value="egg"
+          id="shape-egg"
+          checked=""
+        >
+        <label for="shape-egg">Egg
+          <span style="--primary: var(--white)"></span>
+        </label>
+        <input
+          type="radio"
+          name="authorAvatarShape"
+          value="capsule-small"
+          id="shape-capsule-small"
+          checked=""
+        >
+        <label for="shape-capsule-small">Small Capsule
+          <span style="--primary: var(--white)"></span>
+        </label>
+        <input
+          type="radio"
+          name="authorAvatarShape"
+          value="capsule-big"
+          id="shape-capsule-big"
+          checked=""
+        >
+        <label for="shape-capsule-big">Large Capsule
+          <span style="--primary: var(--white)"></span>
+        </label>
+      </fieldset>
+    </avatar-popover>
+  </comment-avatar>
+
+  <comment-attribution>
+    <label for="name"> Name </label>
+    <input type="text" name="author" id="name" required="" />
+  </comment-attribution>
+
+  <comment-body class="e-content">
+    <label for="comment">
+      Comment
+      <span class="info"
+      >(Supports
+        <a href="https://www.markdownguide.org/basic-syntax/"
+        >Markdown</a>!)</span>
+    </label>
+    <textarea name="body" id="comment" required=""></textarea>
+  </comment-body>
+
+  <comment-interactibles>
+    <button type="submit">
+      Submit
+    </button>
+  </comment-interactibles>
+</form>

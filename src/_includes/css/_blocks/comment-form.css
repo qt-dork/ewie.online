@@ -1,4 +1,14 @@
-/* TODO: This does not handle the comment being submitted well. Fix it */
+@supports (position-area: end) {
+  [popover] {
+    margin: 0;
+    position-area: end span-end;
+    position-try-fallbacks:
+      flip-block,
+      flip-inline,
+      flip-block flip-inline;
+  }
+}
+
 textarea {
   max-width: 100%;
 }
@@ -8,84 +18,77 @@ textarea {
   margin: 0;
 
   &:has(:nth-child(1)) {
-    grid-template-columns: 1fr;
+    /*grid-template-columns: 1fr;*/
   }
 
   &:has(:nth-child(2)) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-gap: var(--space-m);
-    grid-template-areas: "a b" "c c" "d d" "e e";
+    grid-template-rows: 1.2rem auto max-content auto;
+    grid-template-columns: 48px auto;
+    /*grid-gap: var(--space-m);*/
+    grid-template-areas:
+      "avatar attribution"
+      "avatar body"
+      ". body"
+      ". interactibles";
   }
 
-  & > * {
-    & > * {
-      display: block;
-    }
-
-    & > * + * {
-      margin-block-start: var(--space-xs);
-    }
+  & *:not([popover]) {
+    display: block;
   }
 
-  input:not(#color-picker) {
+  comment-avatar {
+    grid-area: avatar;
+    position: relative;
+    aspect-ratio: 1;
     width: 100%;
-  }
 
-  textarea {
-    resize: vertical;
-    height: 4ex;
-    /* max-width: 100%; */
-    min-width: 100%;
-  }
+    &:has(button) {
+      cursor: pointer;
+    }
 
-  input:not(#color-picker),
-  textarea {
-    background-color: light-dark(
-      oklch(from var(--primary) var(--100)),
-      oklch(from var(--primary) var(--700))
-    );
-    border: 2px solid var(--color-border);
-    border-radius: var(--space-xs);
-    padding: var(--space-xs);
-  }
+    button {
+      all: unset;
+    }
+    img {
+      aspect-ratio: 1;
+      width: 100%;
+      height: 100%;
+    }
 
-  button {
-    background-color: light-dark(
-      oklch(from var(--primary) var(--100)),
-      oklch(from var(--primary) var(--700))
-    );
-    border: 2px solid var(--color-border);
-    border-radius: var(--space-xs);
-    padding-block: var(--space-s);
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-
-    &:hover {
-      background-color: light-dark(
-        oklch(from var(--primary) var(--200)),
-        oklch(from var(--primary) var(--600))
-      );
+    comment-editable-icon {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: lightgray;
+      padding: 2px;
+      border-radius: 9999px;
+      margin: 2px;
     }
   }
 
-  & > *:nth-child(3) {
-    grid-area: a;
+  comment-attribution {
+    grid-area: attribution;
   }
 
-  & > *:nth-child(4) {
-    grid-area: b;
+  comment-body {
+    grid-area: body;
+
+    textarea {
+      resize: vertical;
+      height: 4ex;
+      /* max-width: 100%; */
+      min-width: 100%;
+    }
   }
 
-  & > *:nth-child(5) {
-    grid-area: c;
+  comment-interactibles {
+    grid-area: interactibles;
   }
 
-  & > *:nth-child(6) {
-    grid-area: d;
-  }
-
-  & > *:nth-child(7) {
-    grid-area: e;
+  avatar-popover {
+    border: 1px solid var(--color-border);
+    border-radius: var(--space-xs);
+    margin-block: calc(var(--space-xs) / 2);
+    margin-inline: var(--space-xs);
   }
 }
