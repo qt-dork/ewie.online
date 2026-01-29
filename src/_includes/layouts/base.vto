@@ -58,6 +58,12 @@
     {{ if type === "post" }}
       <meta property="fediverse:creator" content="@ewie@social.lol">
     {{ /if }}
+    <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://ewie.online{{url}}">
+    {{ if tags }}
+      {{ for tag of tags }}
+        <link rel="octo:octothorpes" href="{{ tag |> slugify }}" >
+      {{ /for }}
+    {{ /if }}
 
     <!-- TODO: Remember to add favicon -->
     <link rel="icon" href="/favicon.ico" sizes="32x32">
