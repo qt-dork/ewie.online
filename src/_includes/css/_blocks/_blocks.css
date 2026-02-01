@@ -3,3 +3,7 @@
 @import "./comment-loader.css";
 @import "./comment-form.css";
 @import "./comment-stack.css";
+
+/* Posts */
+@import "./post_wrapper.css";
+@import "./post_attribution.css";

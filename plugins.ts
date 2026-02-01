@@ -5,7 +5,7 @@ import lightningcss from "lume/plugins/lightningcss.ts";
 import metas from "lume/plugins/metas.ts";
 import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
 import remark, { Options as RemarkOptions } from "lume/plugins/remark.ts";
-import robots from "lume/plugins/robots.ts";
+import robots, { Options as RobotsOptions } from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 
@@ -18,6 +18,7 @@ export interface Options {
   feed?: FeedOptions;
   pagefind?: PagefindOptions;
   remark?: RemarkOptions;
+  robots?: RobotsOptions;
 }
 
 export const defaults: Options = {

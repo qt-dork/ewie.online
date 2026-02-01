@@ -1,5 +1,6 @@
 import lume from "lume/mod.ts";
 import plugins, { Options } from "./plugins.ts";
+import { DarkVisitors } from "npm:@darkvisitors/sdk";
 
 import truncate from "./helpers/truncate_html.ts";
 
@@ -23,7 +24,9 @@ import { parser as mdParser } from "npm:@lezer/markdown@^1.0.0";
 import rehypeSlug from "https://esm.sh/rehype-slug@6";
 import rehypeAutolinkHeadings from "https://esm.sh/rehype-autolink-headings@7";
 
-const remarkOptions: Options = {
+const darkVisitors = new DarkVisitors("e60390a4-c432-4619-adde-0fac8bd23f89");
+
+const options: Options = {
   remark: {
     rehypePlugins: [
       [rehypeSlug],
@@ -38,9 +41,10 @@ const remarkOptions: Options = {
       [rehypeAutolinkHeadings],
     ],
   },
+  robots: {},
 };
 
-site.use(plugins(remarkOptions));
+site.use(plugins(options));
 
 site.filter(
   "trimToLineBreak",

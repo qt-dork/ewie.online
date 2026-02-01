@@ -6,9 +6,10 @@
 @import "./elements.css" layer(composition);
 @import "./syntax-highlight.css" layer(composition);
 @import "./utilities.css" layer(utility);
+@import "./_utilities/_utilities.css" layer(utility); 
 @import "./_blocks/_blocks.css" layer(blocks);
 @import "./posts.css" layer(block);
-@import "./post.css" layer(block);
+/* @import "./post.css" layer(block); */
 @import "./navigation.css" layer(block);
 @import "./footer.css" layer(block);
 @import "./header.css" layer(block);

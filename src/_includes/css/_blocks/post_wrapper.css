@@ -1,0 +1,18 @@
+article.post {
+	--padding-article: var(--space-s-m);
+	
+	& > *:first-child {
+		padding-block-start: var(--padding-article)
+	}
+	& > * {
+		display: block;
+		padding-inline: var(--padding-article);
+	}
+	& > *:last-child {
+		padding-block-end: var(--padding-article);
+	}
+
+	margin-block: var(--space-m);
+	border-radius: var(--space-xs);
+	background-color: var(--color-background-lighter);
+}

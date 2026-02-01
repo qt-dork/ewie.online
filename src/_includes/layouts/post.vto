@@ -4,7 +4,13 @@
   </header>
 
   {{ set hash = url |> hash }}
+  
+  <!--
+    Set the hash for the view transition. Every post needs a unique
+    hash, so that way the browser knows to animate between pages.
 
+    I still need to learn more about view transitions.
+  -->
   <style>
     ::view-transition-group(post-{{ hash }}) {
       box-shadow: var(--shadow-elevation-medium);
@@ -18,29 +24,27 @@
       z-index: -1;
     }
   </style>
-  <!-- deno-fmt-ignore -->
-<div class="post-wrapper mouse" style="view-transition-name: post-{{ hash }};">
-
-{{ comp posts.wrapper }}
-  {{ comp.posts.attribution({ author,  url, date }) }}
-  {{ if title }}
-    {{ comp posts.title { url, is_timeline: false } }}
-      {{ title }}
+  
+  <!-- The post itself -->
+  <div class="post-wrapper mouse" style="view-transition-name: post-{{ hash }};">
+    {{ comp posts.wrapper }}
+      {{ comp.posts.attribution({ author,  url, date }) }}
+      {{ if title }}
+        {{ comp posts.title { url, is_timeline: false } }}
+          {{ title }}
+        {{ /comp }}
+      {{ /if }}
+      {{ if content }}
+        {{ comp posts.body }}
+          {{ content }}
+        {{ /comp }}
+      {{ /if }}
+      {{ if tags }}
+        {{ comp.posts.tags({ tags }) }}
+      {{ /if }}
+      {{ comp.posts.interactibles(url) }}
     {{ /comp }}
-  {{ /if }}
-  {{ if content }}
-    {{ comp posts.body }}
-      {{ content }}
-    {{ /comp }}
-  {{ /if }}
-  {{ if tags }}
-    {{> console.log(tags) }}
-    {{ comp.posts.tags({ tags }) }}
-  {{ /if }}
-  {{ comp.posts.interactibles(url) }}
-{{ /comp }}
-
-</div>
+  </div>
 
   <section
     class="post-wrapper stack shadow-med"

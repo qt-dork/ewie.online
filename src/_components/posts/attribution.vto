@@ -1,4 +1,7 @@
 {{# imports: #}}
+{{# replying_to: #}}
+{{#   action: "reply" | "reblog" #}}
+{{#   source: string #}}
 {{# author: #}}
 {{#   displayName: string #}}
 {{#   username: string #}}
@@ -7,27 +10,42 @@
 {{# date: Date - publication date #}}
 
 {{ set is_evie = author.username === "ewie" }}
+{{ set is_reblog = replying_to !== undefined }}
 
-<post-attribution>
+<post-attribution class="p-author h-card">
   <post-metadata class="p-author h-card">
-    <picture {{ if is_evie }}data-is-evie="{{ is_evie }}"{{ /if }}>
-      <img
-        class="u-photo"
-        src="{{ author.avatar }}"
-        alt=""
-        {{# TODO: Add alt value #}}
-        width="42"
-        height="42"
-      >
-    </picture>
-    <post-text>
-      <b class="p-name">
-        {{ author.displayName }}
-      </b>
-      <span class="p-nickname">
-        @{{ author.username }}
-      </span>
-      <a class="u-url" href="{{ url }}" rel="canonical">
+    <post-avatar>
+      <picture {{ if is_evie }}data-is-evie="{{ is_evie }}"{{ /if }}>
+        <img
+          class="u-photo"
+          src="{{ author.avatar }}"
+          alt=""
+          {{# TODO: Add alt value #}}
+          width="42"
+          height="42"
+          data-avatar-mask="circle"
+        >
+      </picture>
+    </post-avatar>
+    {{ if is_reblog }}
+      <post-reblog-metadata>
+        {{ if replying_to.action === "reply" }}
+          Replying to {{ replying_to.source }}
+        {{ else if replying_to.action === "reblog" }}
+          Reblogging {{ replying_to.source }}
+        {{ /if }}
+      </post-reblog-metadata>
+    {{ /if }}
+    <post-metadata-text>
+      <div>
+        <b class="p-name">
+          {{ author.displayName }}
+        </b>
+        <span class="p-nickname">
+          @{{ author.username }}
+        </span>
+      </div>
+      <a class="u-url line-clamp" href="{{ url }}" rel="canonical">
         <relative-time update="1" format-style="short">
           <time
             class="dt-published"
@@ -38,7 +56,7 @@
           </time>
         </relative-time>
       </a>
-    </post-text>
-    <data class="p-url" value="/"></data>
+    </post-metadata-text>
   </post-metadata>
+  <data class="p-url" value="/"></data>
 </post-attribution>

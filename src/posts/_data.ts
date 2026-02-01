@@ -47,6 +47,14 @@ const ogIcon = (data: PostData): string => {
 	return avatar;
 }
 
+const metaRobots = (data: PostData): string[] => {
+	let robots = ["noai, noimageai"];
+	if ((data.index && data.index === false) || (data.post_draft && data.post_draft === true)) {
+		robots.push("noindex, nofollow");
+	}
+	return robots;
+}
+
 export default {
 	type: "post",
 	layout: "layouts/post.vto",
@@ -72,5 +80,7 @@ export default {
 		title: "=title",
 		description: generateDescriptionFromContent,
 		icon: ogIcon,
+		"article:tag": "=tags",
+		robots: metaRobots,
 	},
 };

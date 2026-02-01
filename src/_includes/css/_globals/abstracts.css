@@ -59,6 +59,10 @@
     oklch(from var(--primary) var(--500)),
     oklch(from var(--primary) var(--300))
   );
+  --color-less-subtle: light-dark(
+    oklch(from var(--primary) var(--700)),
+    oklch(from var(--primary) var(--200))
+  );
 
   /* ============
    *  Typography
