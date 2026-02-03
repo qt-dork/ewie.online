@@ -1,0 +1,19 @@
+{{ comp posts.wrapper }}
+  {{ comp.posts.attribution({ author,  url, date }) }}
+  <hr />
+  {{ if title }}
+	  {{ comp posts.title { url, is_timeline } }}
+	    {{ title }}
+	  {{ /comp }}
+  {{ /if }}
+  {{ if content }}
+    {{ comp posts.body }}
+      {{ content }}
+    {{ /comp }}
+  {{ /if }}
+  {{ if tags }}
+    {{ comp.posts.tags({ tags }) }}
+  {{ /if }}
+  <hr />
+  {{ comp.posts.interactibles(url) }}
+{{ /comp }}

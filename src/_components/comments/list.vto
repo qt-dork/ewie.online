@@ -1,20 +1,17 @@
 <comment-stack
   hx-get="https://api.ewie.online{{url}}comments"
   hx-trigger="load"
+  id="comments"
 >
   <comment-loader
     class="post-wrapper stack htmx-indicator shadow-med"
     hx-indicator
   >
-    <comment-mouse-animation>{{ comp.comments.mouse_animation() }}</comment-mouse-animation>
+    <comment-mouse-animation>
+      {{ comp.comments.mouse_animation() }}
+    </comment-mouse-animation>
     <comment-loading-text>
-      <span style="--i: 1">L</span><span style="--i: 2">o</span><span
-        style="--i: 3"
-      >a</span><span style="--i: 4">d</span><span style="--i: 5">i</span><span
-        style="--i: 6"
-      >n</span><span style="--i: 7">g</span><span style="--i: 8">.</span><span
-        style="--i: 9"
-      >.</span><span style="--i: 10">.</span>
+      {{ comp.comments.text_animation() }}
     </comment-loading-text>
   </comment-loader>
 </comment-stack>

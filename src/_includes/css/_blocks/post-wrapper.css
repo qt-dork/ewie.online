@@ -1,0 +1,27 @@
+article.post {
+  --space-article-inline: var(--space-s-m);
+  --space-article-block: var(--space-s);
+
+  & > *:first-child {
+    padding-block-start: var(--space-article-block);
+  }
+  & > * {
+    padding-inline: var(--space-article-inline);
+  }
+  & > *:last-child {
+    padding-block-end: var(--space-article-block);
+  }
+
+  margin-block: var(--space-m);
+  border-radius: var(--space-xs);
+  background-color: var(--color-background-lighter);
+}
+
+/* for the mouse */
+article.post:first-child {
+  margin-block-start: 0;
+}
+
+:where(article.post > *) {
+  display: block;
+}

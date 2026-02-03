@@ -27,23 +27,7 @@
   
   <!-- The post itself -->
   <div class="post-wrapper mouse" style="view-transition-name: post-{{ hash }};">
-    {{ comp posts.wrapper }}
-      {{ comp.posts.attribution({ author,  url, date }) }}
-      {{ if title }}
-        {{ comp posts.title { url, is_timeline: false } }}
-          {{ title }}
-        {{ /comp }}
-      {{ /if }}
-      {{ if content }}
-        {{ comp posts.body }}
-          {{ content }}
-        {{ /comp }}
-      {{ /if }}
-      {{ if tags }}
-        {{ comp.posts.tags({ tags }) }}
-      {{ /if }}
-      {{ comp.posts.interactibles(url) }}
-    {{ /comp }}
+    {{ comp.posts.index({ is_timeline: false, ...it}) }}
   </div>
 
   <section

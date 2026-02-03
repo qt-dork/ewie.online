@@ -59,6 +59,10 @@
     <script src="https://neatstats.net/view.js"></script>
     <script type="module" src="/assets/js/components/relative-time.js"></script>
 
+    {{ if (!url.toString().includes("post")) }}
+      <script type="module" src="/assets/js/components/read-more.js"></script>
+    {{ /if }}
+
     <script>
       // btw thank you to [Jim Nielsen](https://blog.jim-nielsen.com) for the
       // theme picker code, which I stole all of.

@@ -1,0 +1,39 @@
+post-interactibles {
+  inline-size: 100%;
+  padding-block: var(--space-article-block);
+
+  color: var(--color-subtle);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  comment-count a {
+    text-spacing-trim: trim-both;
+    font-size: var(--size-step--1);
+
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+post-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+
+  & > * > button {
+    all: unset;
+    display: grid;
+    place-content: center;
+  }
+
+  svg {
+    height: calc(1 * var(--size-step-3));
+    aspect-ratio: 1;
+  }
+}

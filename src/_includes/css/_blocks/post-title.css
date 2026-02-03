@@ -1,0 +1,17 @@
+.post > h1,
+.post > [data-heading-is="h1"] {
+  font-weight: var(--title-font-weight, 450);
+  text-spacing-trim: trim-both;
+  text-wrap: balance;
+
+  margin-block: var(--space-article-block);
+
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

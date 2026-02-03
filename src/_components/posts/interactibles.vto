@@ -1,9 +1,9 @@
----
+<!-- ---
 dependencies:
   - js/comment-count.js
   - js/button-reblog.js
   - js/button-like.js
----
+--- -->
 
 {{# Structure: #}}
 {{# Comment Count (Wrap in web component to pull count from server when online) #}}
@@ -15,60 +15,64 @@ dependencies:
 <post-interactibles>
   {{# comment count should be web component #}}
   {{# TODO: Make work #}}
-  <comment-count><a href="{{url}}">View Comments</a></comment-count>
+  <comment-count><a href="{{url}}#comments">View Comments</a></comment-count>
 
   <post-buttons>
     {{# TODO: Make work #}}
     <button-reblog>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-        <rect width="256" height="256" fill="none" />
-        <polyline
-          points="168 96 216 96 216 48"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-        />
-        <path
-          d="M216,96,187.72,67.72A88,88,0,0,0,64,67"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-        />
-        <polyline
-          points="88 160 40 160 40 208"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-        />
-        <path
-          d="M40,160l28.28,28.28A88,88,0,0,0,192,189"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-        />
-      </svg>
+      <button title="todo!">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <polyline
+            points="168 96 216 96 216 48"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <path
+            d="M216,96,187.72,67.72A88,88,0,0,0,64,67"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <polyline
+            points="88 160 40 160 40 208"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <path
+            d="M40,160l28.28,28.28A88,88,0,0,0,192,189"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+      </button>
     </button-reblog>
     {{# TODO: Make work #}}
     <button-like>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-        <rect width="256" height="256" fill="none" />
-        <path
-          d="M128,224S24,168,24,102A54,54,0,0,1,78,48c22.59,0,41.94,12.31,50,32,8.06-19.69,27.41-32,50-32a54,54,0,0,1,54,54C232,168,128,224,128,224Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-        />
-      </svg>
+      <button title="todo!">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <path
+            d="M128,224S24,168,24,102A54,54,0,0,1,78,48c22.59,0,41.94,12.31,50,32,8.06-19.69,27.41-32,50-32a54,54,0,0,1,54,54C232,168,128,224,128,224Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+      </button>
     </button-like>
   </post-buttons>
 </post-interactibles>

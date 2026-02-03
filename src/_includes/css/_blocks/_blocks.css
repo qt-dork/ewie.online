@@ -5,5 +5,9 @@
 @import "./comment-stack.css";
 
 /* Posts */
-@import "./post_wrapper.css";
-@import "./post_attribution.css";
+@import "./post-wrapper.css";
+@import "./post-attribution.css";
+@import "./post-title.css";
+@import "./post-body.css";
+@import "./post-tags.css";
+@import "./post-interactibles.css";

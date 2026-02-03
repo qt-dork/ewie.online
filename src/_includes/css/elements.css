@@ -38,27 +38,27 @@ body {
   font-weight: var(--font-weight);
 }
 
-h1 {
+h1, [data-heading-is="h1"] {
   font-size: var(--size-step-5);
 }
 
-h2 {
+h2, [data-heading-is="h2"] {
   font-size: var(--size-step-4);
 }
 
-h3 {
+h3, [data-heading-is="h3"] {
   font-size: var(--size-step-3);
 }
 
-h4 {
+h4, [data-heading-is="h4"] {
   font-size: var(--size-step-2);
 }
 
-h5 {
+h5, [data-heading-is="h5"] {
   font-size: var(--size-step-1);
 }
 
-h6 {
+h6, [data-heading-is="h6"] {
   font-size: var(--size-step-0);
 }
 

@@ -1,5 +1,12 @@
-<post-body class="e-content">
-  {{ content }}
-  {{# TODO: Handle read more #}}
-  {{# TODO: Should also read more on first horizontal rule #}}
-</post-body>
+<read-more data-read-more="none">
+  <post-body class="e-content prose">
+    {{ content }}
+    {{# TODO: Handle read more #}}
+    {{# TODO: Should also read more on first horizontal rule #}}
+  </post-body>
+  <read-more-button>
+    <button>
+      read more
+    </button>
+  </read-more-button>
+</read-more>

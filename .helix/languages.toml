@@ -53,11 +53,11 @@ auto-format = true
 [[language]]
 name = "html"
 language-servers = [ "vscode-html-language-server", "emmet-ls" ]
-formatter = { command = 'prettier', args = ["--parser", "html"] }
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "html"] }
 auto-format = true
 
 [[language]]
 name = "css"
 language-servers = [ "vscode-css-language-server", "emmet-ls" ]
-formatter = { command = 'prettier', args = ["--parser", "css"] }
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "css"] }
 auto-format = true

@@ -2,10 +2,7 @@
   [popover] {
     margin: 0;
     position-area: end span-end;
-    position-try-fallbacks:
-      flip-block,
-      flip-inline,
-      flip-block flip-inline;
+    position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
   }
 }
 
@@ -22,9 +19,9 @@ textarea {
   }
 
   &:has(:nth-child(2)) {
-    grid-template-rows: 1.2rem auto max-content auto;
-    grid-template-columns: 48px auto;
-    /*grid-gap: var(--space-m);*/
+    grid-template-rows: auto auto max-content auto;
+    grid-template-columns: 2em auto;
+    grid-gap: var(--space-xs);
     grid-template-areas:
       "avatar attribution"
       "avatar body"
@@ -32,7 +29,7 @@ textarea {
       ". interactibles";
   }
 
-  & *:not([popover]) {
+  & > *:not([popover]) {
     display: block;
   }
 
@@ -40,7 +37,7 @@ textarea {
     grid-area: avatar;
     position: relative;
     aspect-ratio: 1;
-    width: 100%;
+    height: 2em;
 
     &:has(button) {
       cursor: pointer;
@@ -51,18 +48,24 @@ textarea {
     }
     img {
       aspect-ratio: 1;
-      width: 100%;
-      height: 100%;
+      height: inherit;
     }
 
     comment-editable-icon {
       position: absolute;
-      right: 0;
-      bottom: 0;
+      width: 16px;
+      height: 16px;
+      right: -2px;
+      bottom: -2px;
       background-color: lightgray;
       padding: 2px;
       border-radius: 9999px;
-      margin: 2px;
+      display: grid;
+      place-content: center;
+    }
+    
+    label {
+      font-size: var(--size-step--2);
     }
   }
 
