@@ -1,13 +1,13 @@
 /* logo elements */
 
-#logo {
+/* #logo {
   fill: var(--color-text);
-}
+} */
 
-#evie-online > svg {
+/* #evie-online > svg {
   fill: var(--color-text);
   height: auto;
-}
+} */
 
 header.header-logo {
   /* width: 100%; */

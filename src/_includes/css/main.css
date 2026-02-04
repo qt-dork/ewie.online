@@ -2,8 +2,6 @@
 
 @import "./_globals/_globals.css" layer(global);
 @import "./_compositions/_compositions.css" layer(compositions);
-/*@import "./fonts.css" layer(composition);*/
-@import "./elements.css" layer(compositions);
 @import "./syntax-highlight.css" layer(compositions);
 @import "./utilities.css" layer(utilitie);
 @import "./_utilities/_utilities.css" layer(utilitie); 

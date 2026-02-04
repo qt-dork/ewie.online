@@ -1,10 +1,11 @@
-.post > h1,
-.post > [data-heading-is="h1"] {
-  font-weight: var(--title-font-weight, 450);
+article.post > h1,
+article.post > [data-heading-is="h1"] {
+  font-size: var(--size-step-5);
+  font-weight: var(--display-font-weight, 450);
   text-spacing-trim: trim-both;
   text-wrap: balance;
 
-  margin-block: var(--space-article-block);
+  margin-block: var(--space-m);
 
   a {
     text-decoration: none;
