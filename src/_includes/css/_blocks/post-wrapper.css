@@ -2,6 +2,8 @@ article.post {
   --space-article-inline: var(--space-s-m);
   --space-article-block: var(--space-s);
 
+  box-shadow: var(--shadow-elevation-medium);
+
   & > *:first-child {
     padding-block-start: var(--space-article-block);
   }

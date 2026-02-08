@@ -1,6 +1,6 @@
 import lume from "lume/mod.ts";
 import plugins, { Options } from "./plugins.ts";
-import { DarkVisitors } from "npm:@darkvisitors/sdk";
+import { AgentType, DarkVisitors } from "npm:@darkvisitors/sdk";
 
 import truncate from "./helpers/truncate_html.ts";
 
@@ -24,8 +24,6 @@ import { parser as mdParser } from "npm:@lezer/markdown@^1.0.0";
 import rehypeSlug from "https://esm.sh/rehype-slug@6";
 import rehypeAutolinkHeadings from "https://esm.sh/rehype-autolink-headings@7";
 
-const darkVisitors = new DarkVisitors("e60390a4-c432-4619-adde-0fac8bd23f89");
-
 const options: Options = {
   remark: {
     rehypePlugins: [
@@ -41,8 +39,54 @@ const options: Options = {
       [rehypeAutolinkHeadings],
     ],
   },
-  robots: {},
+  robots: {
+    filename: "/robots.txt",
+    disallow: await generateDisallowedAgents(),
+  },
 };
+
+import { extractMarkers } from "./helpers/parse-markers/mod.ts";
+site.preprocess([".md"], (pages) => {
+  for (const page of pages) {
+    const content = page.data.content;
+    if (content === undefined || content === null) {
+      continue;
+    }
+    const markers = extractMarkers(content as string);
+    if (markers.markers.length === 0) {
+      continue;
+    }
+    page.data.reblogs = markers.markers.map((marker) => {
+      return {
+        data: marker.data,
+        content: marker.value,
+      };
+    });
+    page.content = markers.postBody;
+  }
+});
+
+async function generateDisallowedAgents(): Promise<string[]> {
+  try {
+    const apiKey = Deno.env.get("KNOWN_AGENTS");
+    console.log(apiKey);
+    const darkVisitors = new DarkVisitors(apiKey!);
+    const agents = await darkVisitors.generateRobotsTxt([
+      AgentType.AIAgent,
+      AgentType.AIAssistant,
+      AgentType.AIDataScraper,
+      AgentType.AISearchCrawler,
+      AgentType.UndocumentedAIAgent,
+    ]);
+    const tester = /User-agent: (.+)$/gm;
+    const matches = agents.matchAll(tester);
+    const agentList = matches.map((arr) => (arr[1])).toArray();
+    return agentList;
+  } catch (err) {
+    console.error(err);
+    return [""];
+  }
+}
 
 site.use(plugins(options));
 

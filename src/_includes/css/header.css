@@ -1,14 +1,3 @@
-/* logo elements */
-
-/* #logo {
-  fill: var(--color-text);
-} */
-
-/* #evie-online > svg {
-  fill: var(--color-text);
-  height: auto;
-} */
-
 header.header-logo {
   /* width: 100%; */
   font-size: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
