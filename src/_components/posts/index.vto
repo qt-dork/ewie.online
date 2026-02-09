@@ -1,5 +1,28 @@
+{{> let replying_to = undefined}}
+
 {{ comp posts.wrapper }}
-  {{ comp.posts.attribution({ author,  url, date }) }}
+  {{ if reblogs }}
+    {{ for reblog of reblogs }}
+      {{ comp.posts.attribution({ author: reblog.data.author, url: reblog.data.url, date: reblog.data.date, replying_to }) }}
+      {{> replying_to = { action: "reblog", source: reblog.data.author.displayName } }}
+      <hr />
+      {{ if (reblog.data.title) }}
+	      {{ comp posts.title { url: reblog.data.url, is_timeline } }}
+	        {{ reblog.data.title }}
+	      {{ /comp }}
+      {{ /if }}
+      {{ if reblog.content }}
+        {{ comp posts.body }}
+          {{ reblog.content |> md }}
+        {{ /comp }}
+      {{ /if }}
+      {{ if reblog.data.tags }}
+        {{ comp.posts.tags({ tags: reblog.data.tags }) }}
+      {{ /if }}
+      <hr />
+    {{ /for }}
+  {{ /if }}
+  {{ comp.posts.attribution({ author,  url, date, replying_to }) }}
   <hr />
   {{ if title }}
 	  {{ comp posts.title { url, is_timeline } }}

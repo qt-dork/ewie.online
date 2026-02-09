@@ -20,6 +20,7 @@ post-metadata {
 post-avatar {
   grid-area: avatar;
   margin-inline-end: var(--space-xs);
+  position: relative;
 
   img {
     height: 2em;
@@ -30,12 +31,28 @@ post-avatar {
       mix-blend-mode: luminosity;
     }
   }
+
+  reblog-icon {
+    width: 0.75em;
+    height: 0.75em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+
+    svg .reblog-outer {
+      color: var(--color-subtle);
+    }
+    svg .reblog-arrows {
+      color: var(--color-background-lighter);
+    }
+  }
 }
 
 post-reblog-metadata {
   grid-area: reblog;
   font-size: var(--size-step--2);
-  color: var(--color-less-subtle);
+  color: var(--color-subtle);
   display: flex;
   align-items: center;
 

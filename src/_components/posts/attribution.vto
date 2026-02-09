@@ -16,9 +16,13 @@
   <post-metadata class="p-author h-card">
     <post-avatar>
       <picture {{ if is_evie }}data-is-evie="{{ is_evie }}"{{ /if }}>
+        {{
+          set avatar = author.avatar ??
+            "https://cdn.ewie.online/ca4719f7af550ea00632.png"
+        }}
         <img
           class="u-photo"
-          src="{{ author.avatar }}"
+          src="{{ avatar }}"
           alt=""
           {{# TODO: Add alt value #}}
           width="42"
@@ -26,6 +30,70 @@
           data-avatar-mask="circle"
         >
       </picture>
+      {{ if is_reblog }}
+        <reblog-icon>
+          <svg
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+              fill="currentColor"
+              class="reblog-outer"
+            />
+            <g class="reblog-arrows">
+              <path d="M9.563 6.75h1.874V4.875" />
+              <path
+                d="M9.563 6.75h1.874V4.875"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width=".75"
+                stroke="currentColor"
+              />
+              <path
+                d="m11.438 6.75-1.105-1.105A3.437 3.437 0 0 0 5.5 5.617"
+                style="fill: none"
+                class="fills"
+              />
+              <path
+                d="m11.438 6.75-1.105-1.105A3.437 3.437 0 0 0 5.5 5.617"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width=".75"
+                stroke="currentColor"
+              />
+              <path
+                d="M6.438 9.25H4.563v1.875"
+                style="fill: none"
+                class="fills"
+              />
+              <path
+                d="M6.438 9.25H4.563v1.875"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="currentColor"
+                stroke-width=".75"
+                class="stroke-shape"
+              />
+              <path
+                d="m4.563 9.25 1.104 1.105a3.437 3.437 0 0 0 4.833.028"
+                style="fill: none"
+                class="fills"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.563 9.25 1.104 1.105a3.437 3.437 0 0 0 4.833.028"
+                stroke-width=".75"
+                stroke="currentColor"
+              />
+            </g>
+          </svg>
+        </reblog-icon>
+      {{ /if }}
     </post-avatar>
     {{ if is_reblog }}
       <post-reblog-metadata>
@@ -41,9 +109,11 @@
         <b class="p-name">
           {{ author.displayName }}
         </b>
-        <span class="p-nickname">
-          @{{ author.username }}
-        </span>
+        {{ if author.username }}
+          <span class="p-nickname">
+            @{{ author.username }}
+          </span>
+        {{ /if }}
       </div>
       <a class="u-url line-clamp" href="{{ url }}" rel="canonical">
         <relative-time update="1" format-style="short">

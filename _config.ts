@@ -62,14 +62,14 @@ site.preprocess([".md"], (pages) => {
         content: marker.value,
       };
     });
-    page.content = markers.postBody;
+
+    page.data.content = markers.postBody;
   }
 });
 
 async function generateDisallowedAgents(): Promise<string[]> {
   try {
     const apiKey = Deno.env.get("KNOWN_AGENTS");
-    console.log(apiKey);
     const darkVisitors = new DarkVisitors(apiKey!);
     const agents = await darkVisitors.generateRobotsTxt([
       AgentType.AIAgent,

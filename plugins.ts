@@ -1,3 +1,4 @@
+// import arborium from "./helpers/arborium/mod.ts";
 import date, { Options as DateOptions } from "lume/plugins/date.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
@@ -65,6 +66,7 @@ export default function (userOptions?: Options) {
       // .use(fff())
       .use(pagefind(options.pagefind))
       .use(remark(options.remark))
+      // .use(arborium())
       .use(robots())
       .use(sitemap());
   };

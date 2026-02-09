@@ -79,7 +79,7 @@ width: 1px;
 (For convenience's sake, here's how you'd put it in an html element)
 
 ```html
-style="clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;"
+<span style="clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;"</span>
 ```
 
 Just as one last thing, I'll add that just like the accessible css crime pioneers before me, I don't rely on accessibility tools myself. I made sure to test all this stuff with Voiceover on my computer before putting it out there, but I don't use it on a daily basis. I'm just a weird nerd that saw the incredibly minor drama about fancy text on cohost earlier today (as well as the post resolving it), and thought "Oh there's gotta be a really simple solution". And there was! So that's good. Glad we got that sorted out and we're able to use the power of html to make our text accessible. [It'd be awful if there was a social media website where people had to just constantly complain about how people should never use fancy text while other people ignored the wishes of people just seeking to improve accessibility.](https://twitter.com)
