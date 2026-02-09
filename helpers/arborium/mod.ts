@@ -86,13 +86,19 @@ export function arborium(userOptions?: Options) {
 
     function arborium(page: Page) {
       page.document.querySelectorAll(options.cssSelector!)
-        .forEach(async (element) => {
+        .forEach(async (element: Element) => {
           const lang = language(element);
           if (lang === null) {
             return;
           }
           try {
-            const highlighted = await highlight(lang, element.textContent);
+            const grammar = await loadGrammar(lang);
+            if (grammar === null) {
+              return;
+            }
+            const highlighted = grammar.highlight(
+              element.textContent,
+            ) as string;
             console.log(highlighted);
             element.innerHTML = highlighted;
           } catch (err) {
