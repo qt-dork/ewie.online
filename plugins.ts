@@ -2,6 +2,7 @@ import arborium from "./helpers/arborium/mod.ts";
 import date, { Options as DateOptions } from "lume/plugins/date.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
+import lezer from "./helpers/lezer/mod.ts";
 import lightningcss from "lume/plugins/lightningcss.ts";
 import metas from "lume/plugins/metas.ts";
 import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
@@ -66,7 +67,8 @@ export default function (userOptions?: Options) {
       // .use(fff())
       .use(pagefind(options.pagefind))
       .use(remark(options.remark))
-      .use(arborium())
+      // .use(arborium())
+      .use(lezer())
       .use(robots())
       .use(sitemap());
   };

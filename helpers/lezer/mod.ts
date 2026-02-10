@@ -3,30 +3,28 @@ import { readFile } from "lume/core/utils/read.ts";
 import { insertContent } from "lume/core/utils/page_content.ts";
 import { log } from "lume/core/utils/log.ts";
 
-import {
-  detectLanguage,
-  highlight,
-  loadGrammar,
-  ResolveArgs,
-} from "npm:@arborium/arborium";
-
-import typescript from "npm:@arborium/typescript";
-import html from "npm:@arborium/html";
-import css from "npm:@arborium/css";
-
 import type Site from "lume/core/site.ts";
 import type { Page } from "lume/core/file.ts";
+
+import type { LRParser } from "npm:@lezer/lr";
+
+export type Parsers = Record<string, LRParser | MarkdownParser>;
+
+import { parser as javascriptParser } from "npm:@lezer/javascript@^1.0.0";
+import { parser as cssParser } from "npm:@lezer/css@^1.0.0";
+import { parser as htmlParser } from "npm:@lezer/html@^1.0.0";
+import {
+  type MarkdownParser,
+  parser as mdParser,
+} from "npm:@lezer/markdown@^1.0.0";
+
+import { fromLezer, toHtml } from "./lezer.ts";
 
 export interface Options {
   /** The css selector to apply arborium */
   cssSelector?: string;
 
-  /**
-   * Whether to autoload languages when necessary.
-   * If true, the autoloader plugin will be used and it will automatically load the
-   * languages used in the page when they are not already loaded.
-   */
-  autoloadLanguages?: boolean;
+  parsers?: Parsers;
 
   // /**
   //  * The theme or themes to download
@@ -49,23 +47,21 @@ export interface Options {
 // Default options
 export const defaults: Options = {
   cssSelector: "pre code",
-  autoloadLanguages: false,
-};
 
-let languages: Record<string, unknown> = {
-  "typescript": typescript,
-  "html": html,
-  "css": css,
+  parsers: {
+    javascript: javascriptParser,
+    css: cssParser,
+    html: htmlParser,
+    md: mdParser,
+  },
+  // autoloadLanguages: false,
 };
-
-// @ts-ignore oscar told me to do it
-globalThis.window = globalThis;
 
 /**
- * A plugin to syntax-highlight code using Arborium library
+ * A plugin to syntax-highlight code using Lezer library
  * @see https://lume.land/plugins/prism/
  */
-export function arborium(userOptions?: Options) {
+export function lezer(userOptions?: Options) {
   const options = merge(defaults, userOptions);
 
   // if (options.autoloadLanguages) {
@@ -75,14 +71,14 @@ export function arborium(userOptions?: Options) {
   return (site: Site) => {
     if (site._data.codeHighlight) {
       log.error(
-        `[arborium plugin] The plugin "${site._data.codeHighlight}" is already registered for the same purpose as "arborium". Registering "arborium" may lead to conflicts and unpredictable behavior.`,
+        `[lezer plugin] The plugin "${site._data.codeHighlight}" is already registered for the same purpose as "lezer". Registering "lezer" may lead to conflicts and unpredictable behavior.`,
       );
     }
-    site._data.codeHighlight = "arborium";
+    site._data.codeHighlight = "lezer";
 
-    site.process([".html"], function processArborium(pages) {
+    site.process([".html"], function processLezer(pages) {
       for (const page of pages) {
-        arborium(page);
+        lezer(page);
       }
     });
 
@@ -102,27 +98,27 @@ export function arborium(userOptions?: Options) {
     // }
     // }
 
-    function arborium(page: Page) {
+    function lezer(page: Page) {
       page.document.querySelectorAll(options.cssSelector!)
-        .forEach(async (element: Element) => {
+        .forEach((element: Element) => {
           const lang = language(element);
           if (lang === null) {
             return;
           }
+          if (options.parsers[lang] === undefined) {
+            return;
+          }
+          const parser = options.parsers[lang];
+
+          let fragment;
+
           try {
-            const grammar = await loadGrammar(lang, {
-              resolveJs: resolveJs,
-            });
-            if (grammar === null) {
-              return;
-            }
-            const highlighted = grammar.highlight(
-              element.textContent,
-            ) as string;
-            console.log(highlighted);
-            element.innerHTML = highlighted;
+            const parsedTree = parser.parse(element.textContent);
+            fragment = fromLezer(element.textContent, parsedTree);
+            element.innerHTML = toHtml(fragment);
+            log.info(`Successfully parsed ${page.sourcePath}`);
           } catch (err) {
-            console.error(
+            log.error(
               `Error highlighting code block in ${page.sourcePath}: ${err}`,
             );
           }
@@ -131,7 +127,7 @@ export function arborium(userOptions?: Options) {
   };
 }
 
-export default arborium;
+export default lezer;
 
 function language(element: Element): string | null {
   // @ts-ignore: Just trust me bro
@@ -143,15 +139,8 @@ function language(element: Element): string | null {
   if (classLang !== "") {
     return classLang;
   }
-  return detectLanguage(element.textContent);
+  return null;
 }
-
-const resolveJs = ({ language, baseUrl, path }: ResolveArgs) =>
-  import(/* @vite-ignore */ `npm:@arborium/${language}`);
-
-// const resolveJs = ({ language, baseUrl, path }: ResolveArgs) => {
-//   return @import(`npm:@arborium/${language}`);
-// };
 
 // function getCssUrl(name: string) {
 //   if (name === "default" || name === "prism") {
