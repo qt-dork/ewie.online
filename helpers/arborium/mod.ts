@@ -7,12 +7,14 @@ import {
   detectLanguage,
   highlight,
   loadGrammar,
+  registerGrammar,
   ResolveArgs,
-} from "npm:@arborium/arborium";
+} from "@arborium/arborium";
 
-import typescript from "npm:@arborium/typescript";
-import html from "npm:@arborium/html";
-import css from "npm:@arborium/css";
+import { readFile as nodeReadFile } from "node:fs/promises";
+
+import * as htmlGrammar from "https://cdn.jsdelivr.net/npm/@arborium/html@2.13.0";
+import * as cssGrammar from "https://cdn.jsdelivr.net/npm/@arborium/css@2.13.0";
 
 import type Site from "lume/core/site.ts";
 import type { Page } from "lume/core/file.ts";
@@ -53,13 +55,16 @@ export const defaults: Options = {
 };
 
 let languages: Record<string, unknown> = {
-  "typescript": typescript,
-  "html": html,
-  "css": css,
+  html: htmlGrammar,
+  css: cssGrammar,
 };
 
-// @ts-ignore oscar told me to do it
-globalThis.window = globalThis;
+const wasm: Record<string, unknown> = {
+  html: await nodeReadFile("./helpers/arborium/html_grammar_bg.wasm"),
+  css: await nodeReadFile("./helpers/arborium/css_grammar_bg.wasm"),
+};
+
+// window ;
 
 /**
  * A plugin to syntax-highlight code using Arborium library
@@ -110,19 +115,20 @@ export function arborium(userOptions?: Options) {
             return;
           }
           try {
-            const grammar = await loadGrammar(lang, {
-              resolveJs: resolveJs,
-            });
-            if (grammar === null) {
-              return;
-            }
-            const highlighted = grammar.highlight(
-              element.textContent,
-            ) as string;
-            console.log(highlighted);
+            const grammar = await registerGrammar(
+              languages[lang],
+              wasm[lang] as any,
+              {
+                resolveJs: () => {
+                  return import(`npm:@arborium/${language}`);
+                },
+              },
+            );
+            const highlighted = await grammar.highlight(lang);
             element.innerHTML = highlighted;
+            log.info(highlighted);
           } catch (err) {
-            console.error(
+            log.error(
               `Error highlighting code block in ${page.sourcePath}: ${err}`,
             );
           }
@@ -145,13 +151,6 @@ function language(element: Element): string | null {
   }
   return detectLanguage(element.textContent);
 }
-
-const resolveJs = ({ language, baseUrl, path }: ResolveArgs) =>
-  import(/* @vite-ignore */ `npm:@arborium/${language}`);
-
-// const resolveJs = ({ language, baseUrl, path }: ResolveArgs) => {
-//   return @import(`npm:@arborium/${language}`);
-// };
 
 // function getCssUrl(name: string) {
 //   if (name === "default" || name === "prism") {
