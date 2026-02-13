@@ -1,4 +1,5 @@
 import lume from "lume/mod.ts";
+import type { Page } from "lume/core/file.ts";
 import plugins, { Options } from "./plugins.ts";
 import { AgentType, DarkVisitors } from "npm:@darkvisitors/sdk";
 

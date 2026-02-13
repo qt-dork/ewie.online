@@ -26,7 +26,7 @@ textarea {
       "avatar attribution"
       "avatar body"
       ". body"
-      ". interactibles";
+      ". interactables";
   }
 
   & > *:not([popover]) {
@@ -63,7 +63,7 @@ textarea {
       display: grid;
       place-content: center;
     }
-    
+
     label {
       font-size: var(--size-step--2);
     }
@@ -84,8 +84,8 @@ textarea {
     }
   }
 
-  comment-interactibles {
-    grid-area: interactibles;
+  comment-interactables {
+    grid-area: interactables;
   }
 
   avatar-popover {

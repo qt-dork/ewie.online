@@ -8,15 +8,13 @@ import type { Page } from "lume/core/file.ts";
 
 import type { LRParser } from "npm:@lezer/lr";
 
-export type Parsers = Record<string, LRParser | MarkdownParser>;
-
-import { parser as javascriptParser } from "npm:@lezer/javascript@^1.0.0";
-import { parser as cssParser } from "npm:@lezer/css@^1.0.0";
-import { parser as htmlParser } from "npm:@lezer/html@^1.0.0";
-import {
-  type MarkdownParser,
-  parser as mdParser,
-} from "npm:@lezer/markdown@^1.0.0";
+// import { parser as javascriptParser } from "npm:@lezer/javascript@^1.0.0";
+// import { parser as cssParser } from "npm:@lezer/css@^1.0.0";
+// import { parser as htmlParser } from "npm:@lezer/html@^1.0.0";
+// import {
+//   type MarkdownParser,
+//   parser as mdParser,
+// } from "npm:@lezer/markdown@^1.0.0";
 
 import { fromLezer, toHtml } from "./lezer.ts";
 
@@ -24,7 +22,7 @@ export interface Options {
   /** The css selector to apply arborium */
   cssSelector?: string;
 
-  parsers?: Parsers;
+  parsers: Parsers;
 
   // /**
   //  * The theme or themes to download
@@ -32,6 +30,8 @@ export interface Options {
   //  */
   // theme?: Theme | Theme[];
 }
+
+type Parsers = Record<string, unknown>;
 
 // interface Theme {
 //   /** The name of the theme */
@@ -48,12 +48,7 @@ export interface Options {
 export const defaults: Options = {
   cssSelector: "pre code",
 
-  parsers: {
-    javascript: javascriptParser,
-    css: cssParser,
-    html: htmlParser,
-    md: mdParser,
-  },
+  parsers: {},
   // autoloadLanguages: false,
 };
 
@@ -61,7 +56,7 @@ export const defaults: Options = {
  * A plugin to syntax-highlight code using Lezer library
  * @see https://lume.land/plugins/prism/
  */
-export function lezer(userOptions?: Options) {
+export function lezer(userOptions: Options) {
   const options = merge(defaults, userOptions);
 
   // if (options.autoloadLanguages) {
@@ -108,7 +103,7 @@ export function lezer(userOptions?: Options) {
           if (options.parsers[lang] === undefined) {
             return;
           }
-          const parser = options.parsers[lang];
+          const parser = options.parsers[lang] as LRParser;
 
           let fragment;
 
