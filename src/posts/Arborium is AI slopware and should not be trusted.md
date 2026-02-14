@@ -15,7 +15,7 @@ It would be an understatement to say that I am mildly interested in syntax highl
 Last weekend while scrolling through some quieter feeds in my RSS reader, I came across an article which might be the something better I was looking for.
 
 <media-card href="https://fasterthanli.me/articles/introducing-arborium">
-  <img src="https://cdn.fasterthanli.me/content/articles/introducing-arborium/docsrs-no-colors@2x~90422bc81a3bae50.w1800.jxl" width="662" height="348" loading="lazy" slot="img" />
+  <img src="https://cdn.ewie.online/20260214060035-IMG_0467.jpeg" width="662" height="348" loading="lazy" slot="img" />
   <span slot="domain">fasterthanli.me</span>
   <time slot="time" datetime="2025-12-13T12:00:00.000Z" title="12/13/2025, 12:00:00 PM">Dec 13, 2025</time>
   <p slot="title" title="Introducing arborium, a tree-sitter distribution
