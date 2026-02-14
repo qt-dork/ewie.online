@@ -1,7 +1,7 @@
 ---
 
 description: |
-  btw this site does have an rss feed it's at <https://ewie.online/feed/feed.xml> or <https://ewie.onl
+  btw this site does have an rss feed it's at https://ewie.online/feed/feed.xml or https://ewie.onl
 date: 2026-02-14T22:53:13.359Z
 tags: 
  - blogging about blogging
