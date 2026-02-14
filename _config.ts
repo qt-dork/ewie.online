@@ -97,6 +97,7 @@ site.use(remark({
       {
         parsers: [
           { lang: "js", parser: javascriptParser },
+          { lang: "ts", parser: javascriptParser },
           { lang: "css", parser: cssParser },
           { lang: "html", parser: htmlParser },
           { lang: "md", parser: mdParser },

@@ -110,59 +110,126 @@ code {
       oklch(from var(--tone-one) var(--a0)));
 
 
-  .tok-variableName,
+  /* .tok-variableName, */
   .tok-typeName {
-    color: light-dark(oklch(from var(--tone-two) var(--d0)),
-        oklch(from var(--tone-one) var(--b7)));
-  }
-
-  .tok-propertyName {
-    color: light-dark(oklch(from var(--tone-two) var(--d2)),
-        oklch(from var(--tone-one) var(--b3)));
-  }
-
-  .tok-number {
-    /* d2 & b0 */
-    color: light-dark(oklch(from var(--tone-one) var(--b0)),
-        oklch(from var(--tone-two) var(--d2)));
-  }
-
-  .tok-keyword,
-  .tok-literal {
-    color: light-dark(oklch(from var(--tone-one) var(--b3)),
-        oklch(from var(--tone-two) var(--d7)));
-  }
-
-  /* .tok-atom {
-    color: light-dark(
-      oklch(from var(--tone-two) var(--c0)),
-      oklch(from var(--tone-one) var(--a7))
-    );
-  } */
-
-  .tok-string,
-  .tok-string2,
-  .tok-atom,
-  .tok-emphasis {
     color: light-dark(oklch(from var(--tone-one) var(--b2)),
         oklch(from var(--tone-two) var(--d7)));
   }
 
-  .tok-operator {
-    color: light-dark(oklch(from var(--tone-one) var(--b0)),
-        oklch(from var(--tone-two) var(--d2)));
+  /* .tok-propertyName { */
+    /* color: light-dark(oklch(from var(--tone-two) var(--d2)), */
+        /* oklch(from var(--tone-one) var(--b3))); */
+  /* } */
+
+  /* .tok-number { */
+    /* d2 & b0 */
+    /* color: light-dark(oklch(from var(--tone-one) var(--b0)), */
+        /* oklch(from var(--tone-two) var(--d2))); */
+  /* } */
+
+  .tok-keyword,
+  .tok-literal {
+    color: light-dark(oklch(from var(--tone-two) var(--d0)),
+        oklch(from var(--tone-two) var(--d3)));
   }
 
-  .tok-className {
-    color: light-dark(oklch(from var(--tone-two) var(--d0)),
-        oklch(from var(--tone-one) var(--b7)));
+  /* .tok-string, */
+  /* .tok-string2, */
+  /* .tok-atom, */
+  /* .tok-emphasis { */
+    /* color: light-dark(oklch(from var(--tone-one) var(--b2)), */
+        /* oklch(from var(--tone-two) var(--d7))); */
+  /* } */
+
+  /* .tok-operator { */
+    /* color: light-dark(oklch(from var(--tone-one) var(--b0)), */
+        /* oklch(from var(--tone-two) var(--d2))); */
+  /* } */
+
+  /* .tok-className { */
+    /* color: light-dark(oklch(from var(--tone-two) var(--d0)), */
+        /* oklch(from var(--tone-one) var(--b7))); */
+  /* } */
+
+  /* .tok-punctuation, */
+  /* .tok-comment, */
+  /* .tok-meta { */
+    /* color: light-dark(oklch(from var(--tone-two) var(--c4)), */
+        /* oklch(from var(--tone-one) var(--a3))); */
+  /* } */
+
+  .tok-atom,
+  .tok-number,
+  /* .tok-keyword, */
+  .tok-variableName,
+  .tok-attribute,
+  .tok-quote,
+  .tok-hr,
+  .tok-link {
+    color: light-dark(oklch(from var(--tone-one) var(--b0)),
+      oklch(from var(--tone-one) var(--b6))); /* todo dark */
+  }
+
+  .tok-propertyName {
+    color: light-dark(oklch(from var(--tone-two) var(--d2)),
+      oklch(from var(--tone-one) var(--b3))); /* todo dark */
   }
 
   .tok-punctuation,
-  .tok-comment,
-  .tok-meta {
+  .tok-unit,
+  .tok-negative {
+    color: light-dark(oklch(from var(--tone-one) var(--b0)),
+      oklch(from var(--tone-two) var(--d2))); /* todo dark */
+  }
+
+  .tok-string {
+    color: light-dark(oklch(from var(--tone-two) var(--d2)),
+      oklch(from var(--tone-two) var(--d7)));
+  }
+  
+  .tok-operator {
+    /* b2 */
+    color: light-dark(oklch(from var(--tone-two) var(--c2)),
+      oklch(from var(--tone-two) var(--d2)));
+  }
+
+  .tok-positive {
+    /* d2 */
+    color: light-dark(oklch(from var(--tone-two) var(--d2)),
+      oklch(from var(--tone-one) var(--b3)));
+    /* b3 */
+  }
+
+  .tok-variable2,
+  .tok-variable3,
+  .tok-string2,
+  .tok-url {
+    color: light-dark(oklch(from var(--tone-two) var(--d2)),
+      oklch(from var(--tone-two) var(--d7)));
+  }
+
+  .tok-def,
+  .tok-tag,
+  .tok-builtin,
+  .tok-qualifier,
+  .tok-header,
+  .tok-emphasis {
+    /* d0 */
+    color: light-dark(oklch(from var(--tone-two) var(--d0)),
+      oklch(from var(--tone-one) var(--b7)));
+    /* b7 */
+  }
+
+  .tok-punctuation,
+  .tok-comment {
+    /* c4 */
     color: light-dark(oklch(from var(--tone-two) var(--c4)),
         oklch(from var(--tone-one) var(--a3)));
+    /* a3 */
+  }
+
+  .tok-comment {
+    font-style: italic;
   }
 }
 
