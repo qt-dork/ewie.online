@@ -1,8 +1,7 @@
-import arborium from "./helpers/arborium/mod.ts";
 import date, { Options as DateOptions } from "lume/plugins/date.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
-import lezer from "./helpers/lezer/mod.ts";
+import lezer, { Options as LezerOptions } from "./helpers/lezer/mod.ts";
 import lightningcss from "lume/plugins/lightningcss.ts";
 import metas from "lume/plugins/metas.ts";
 import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
@@ -18,6 +17,7 @@ import "lume/types.ts";
 export interface Options {
   date?: DateOptions;
   feed?: FeedOptions;
+  lezer: LezerOptions;
   pagefind?: PagefindOptions;
   remark?: RemarkOptions;
   robots?: RobotsOptions;
@@ -51,6 +51,9 @@ export const defaults: Options = {
       authorUrl: "https://ewie.online/", // TODO: remove hard reference to site
     },
   },
+  lezer: {
+    parsers: {},
+  },
 };
 
 export default function (userOptions?: Options) {
@@ -67,8 +70,7 @@ export default function (userOptions?: Options) {
       // .use(fff())
       .use(pagefind(options.pagefind))
       .use(remark(options.remark))
-      // .use(arborium())
-      .use(lezer())
+      .use(lezer(options.lezer))
       .use(robots())
       .use(sitemap());
   };
