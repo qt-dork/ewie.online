@@ -9,7 +9,7 @@ tags:
  - card reviews
 ---
 
-<card-frame name="melies-city-luxury-line" side="corp" stars="5" src="https://cdn.ewie.online/20260218151357-Image.png">
+<card-frame name="melies-city-luxury-line" side="corp" stars="5" src="https://cdn.ewie.online/20260218234101-Image.jpeg">
 <div class="visually-hidden" id="card-name-melies-city-luxury-line">
 
 HB Agenda: Expansion
