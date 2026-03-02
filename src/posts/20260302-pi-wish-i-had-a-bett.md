@@ -1,12 +1,11 @@
 ---
-
+title: Some links you might like 10
 description: |
   I wish I had a better process for doing these link roundups. I usually have to scrounge for my li
 date: 2026-03-02T04:27:19.878Z
 tags: 
  - link roundup
  - links
-
 ---
 <p>I wish I had a better process for doing these link roundups. I usually have to scrounge for my links in the moment instead of slowly building this throughout the week, and I don't leave my thoughts as I'm reading them, so I end up needing to reread the articles to share them. I don't know what I should do about this. My hotly anticipated<sup><a href="https://en.wikipedia.org/wiki/Citation_needed">[citation needed]</a></sup> reblog feature might mean that the move is to share interesting posts as I find them, but I'll have to experiment.</p>
 
