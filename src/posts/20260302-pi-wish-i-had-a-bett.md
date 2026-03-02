@@ -1,7 +1,7 @@
 ---
 
 description: |
-  <p>I wish I had a better process for doing these link roundups. I usually have to scrounge for my li
+  I wish I had a better process for doing these link roundups. I usually have to scrounge for my li
 date: 2026-03-02T04:27:19.878Z
 tags: 
  - link roundup
