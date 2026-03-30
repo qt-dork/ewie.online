@@ -1,62 +1,47 @@
 {{ layout "layouts/base.vto" }}
+  <header class="header-logo">
+    {{ comp.logo({ url: url }) }}
+  </header>
 
-<header class="header-logo">
-  {{ comp.logo({ url: url }) }}
-	{{# <nav>
-		<ul class="nav">
-			<li class="nav-item">
-				<a href="#">Ask</a>
-			</li>
-			<li class="nav-item">
-				<a href="#">About</a>
-			</li>
-			<li class="nav-item">
-				<a href="#">Archive</a>
-			</li>
-		</ul>
-	</nav> #}}
-</header>
+  {{ set hash = url |> hash }}
+  
+  <!--
+    Set the hash for the view transition. Every post needs a unique
+    hash, so that way the browser knows to animate between pages.
 
-{{ set hash = url |> hash }}
-<style>
-  ::view-transition-group(post-{{hash}}) {
-    box-shadow: var(--shadow-elevation-medium);
-    z-index: 0;
-  }
-  ::view-transition-group(post-{{hash}})::before {
-    z-index: 1;
-  }
+    I still need to learn more about view transitions.
+  -->
+  <style>
+    ::view-transition-group(post-{{ hash }}) {
+      box-shadow: var(--shadow-elevation-medium);
+      z-index: 0;
+    }
+    ::view-transition-group(post-{{ hash }})::before {
+      z-index: 1;
+    }
 
-  ::view-transition-group(post-{{hash}})::after {
-    z-index: -1;
-  }
-</style>
-<div class="post-wrapper mouse" style="view-transition-name: post-{{hash}};">
-  <article class="post h-entry stack shadow-med">
-    {{ comp.posts.attribution({ author: { image: author_image, handle: author_handle }, url: url, date: date }) }}
-    {{ if title }}
-        {{ comp.title({ title: title, url: url }) }}
-    {{ /if }}
-    {{ if content }}
-        <div class="postbody e-content stack">
-        {{# if post.tags contains complete or something then show content without truncation #}}
-        {{ content }}
-        </div>
-    {{ /if }}
-    {{ if tags.length > 0 }}
-        {{ comp.tags({ tags: tags }) }}
-    {{ /if }}
-  </article>
-</div>
-
-<section class="post-wrapper stack shadow-med" style="view-transition-name: comment-box;">
-  <h2>Leave a comment</h2>
-
-  <div class="comments">
-    {{ comp.comments({ url: url }) }}
+    ::view-transition-group(post-{{ hash }})::after {
+      z-index: -1;
+    }
+  </style>
+  
+  <!-- The post itself -->
+  <div class="post-wrapper mouse" style="view-transition-name: post-{{ hash }};">
+    {{ comp.posts.index({ is_timeline: false, ...it}) }}
   </div>
-</section>
 
-<section class="stack">
-  {{ comp.comments_list({ url: url }) }}
-</section>
+  <section
+    class="post-wrapper stack shadow-med"
+    style="view-transition-name: comment-box"
+  >
+    <h2>Leave a comment</h2>
+
+    <div class="comments">
+      {{ comp.comments.form({ url: url }) }}
+    </div>
+  </section>
+
+  <section class="stack">
+    {{ comp.comments.list({ url: url }) }}
+  </section>
+{{ /layout }}

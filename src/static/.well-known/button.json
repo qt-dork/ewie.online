@@ -1,0 +1,15 @@
+{
+  "$schema": "https://codeberg.org/LunarEclipse/well-known-button/raw/branch/main/drafts/button-2024-06.schema.json",
+  "default": "ewie.online",
+  "buttons": [
+    {
+      "id": "ewie.online",
+      // TODO
+      "uri": "https://arch.dog/arch.dog.png",
+      "alt": "Button to Evie On-Line!",
+      "link": "https://ewie.online/",
+      // TODO
+      "sha256": "66a421c7e726e9de99eeb88c57b93b49278d64b2a4602a6f90f7d64baee154cf"
+    }
+  ]
+}

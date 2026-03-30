@@ -1,12 +1,12 @@
 class ThemePicker extends HTMLElement {
   constructor() {
     super();
-    let initialAppearance = globalThis.theme.appearance.get();
+    const initialAppearance = globalThis.theme.appearance.get();
     document
       .querySelector(`input[name=appearance][value=${initialAppearance}]`)
       ?.setAttribute("checked", "");
 
-    let initialColor = globalThis.theme.color.get();
+    const initialColor = globalThis.theme.color.get();
     document
       .querySelector(`input[name=color][value=${initialColor}]`)
       ?.setAttribute("checked", "");

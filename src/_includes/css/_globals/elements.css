@@ -1,0 +1,12 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  text-box: trim-both cap alphabetic;
+  font-weight: var(--display-font-weight);
+  font-stretch: 90%;
+  font-variation-settings: "opsz" 72;
+}

@@ -1,4 +1,4 @@
-export const layout = "layouts/posts.vto";
+export const layout = "layouts/timeline.vto";
 
 /**
  * Paginates posts

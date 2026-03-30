@@ -24,6 +24,7 @@ inlayHints.enumMemberValues.enabled = true
 name = "vento"
 auto-format = true
 language-servers = ["deno-lsp"]
+indent = { unit = "  ", tab-width = 2 }
 
 [language-server.vscode-json-language-server.config]
 json = { validate = { enable = true }, format = { enable = true } }
@@ -52,11 +53,11 @@ auto-format = true
 [[language]]
 name = "html"
 language-servers = [ "vscode-html-language-server", "emmet-ls" ]
-formatter = { command = 'prettier', args = ["--parser", "html"] }
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "html"] }
 auto-format = true
 
 [[language]]
 name = "css"
 language-servers = [ "vscode-css-language-server", "emmet-ls" ]
-formatter = { command = 'prettier', args = ["--parser", "css"] }
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "css"] }
 auto-format = true

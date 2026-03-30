@@ -1,0 +1,26 @@
+tag-list {
+  margin-block: var(--space-article-block);
+  color: var(--color-subtle);
+  font-size: var(--size-step--1);
+
+  ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-inline-end: var(--space-xs);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-subtle);
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

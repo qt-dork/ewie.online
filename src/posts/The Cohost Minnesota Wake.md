@@ -13,7 +13,7 @@ Also, just to let you know, this post is going to be mostly pictures, with some 
 .post figure {
   margin-inline: 0;
   display: grid;
-  gap: var(--space-s);
+  gap: var(--space-2xs);
   grid-template-areas: var(--areas);
 
   &:has(picture:nth-of-type(1)),
@@ -44,8 +44,7 @@ Also, just to let you know, this post is going to be mostly pictures, with some 
 
   figcaption {
     grid-area: f;
-    font-size: smaller;
-    color: var(--color-subtle);
+    --space-stack: 0;
   }
 }
 </style>

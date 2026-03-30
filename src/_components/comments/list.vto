@@ -1,0 +1,17 @@
+<comment-stack
+  hx-get="https://api.ewie.online{{url}}comments"
+  hx-trigger="load"
+  id="comments"
+>
+  <comment-loader
+    class="post-wrapper stack htmx-indicator shadow-med"
+    hx-indicator
+  >
+    <comment-mouse-animation>
+      {{ comp.comments.mouse_animation() }}
+    </comment-mouse-animation>
+    <comment-loading-text>
+      {{ comp.comments.text_animation() }}
+    </comment-loading-text>
+  </comment-loader>
+</comment-stack>

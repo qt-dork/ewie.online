@@ -1,0 +1,19 @@
+{{ layout "layouts/base.vto" }}
+  {{ set postlist = results }}
+
+  <header class="header-logo">
+    {{ comp.logo({ url: url }) }}
+  </header>
+
+  <ul class="blog-posts stack">
+    {{ for post of postlist }}
+      {{ set hash = post.url |> hash }}
+      <!-- deno-fmt-ignore -->
+      <li class="post-wrapper" style="view-transition-name: post-{{ hash }};">
+        {{ comp.posts.index({is_timeline: true, ...post}) }}
+      </li>
+    {{ /for }}
+  </ul>
+
+  {{ comp.navigation({ pagi: page.data.pagination }) }}
+{{ /layout }}

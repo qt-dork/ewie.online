@@ -30,7 +30,7 @@ The first time each turn a run begins, you may trash 1 of your other installed c
 
 </card-frame>
 
-<script type="module" src="/js/card-frame.js"></script>
+<script type="module" src="/assets/js/components/card-frame.js"></script>
 
 With all the FFG cards going out, there was one in particular that I desperately wanted to see get a great reprint. We're saying goodbye to the goat, the OG, a piece of cardboard that my heart can't live without. [Aesop’s Pawnshop](https://netrunnerdb.com/en/card/31035) is, in this girl's eyes, just the best. A real and true mf. Everything from mechanics and viability, to character, vibes and soul—this 1 credit Shaper staple is cut above everything. My absolute favorite card in the entire game.
 

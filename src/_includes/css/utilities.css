@@ -1,11 +1,11 @@
 .stack {
   --stack-space: var(--space-m, 1.5rem);
 
-  &>*:first-child {
+  & > *:first-child {
     margin: 0;
   }
 
-  &>*+* {
+  & > * + * {
     margin-block-start: var(--stack-space);
   }
 }
@@ -51,4 +51,35 @@
   list-style-type: none;
 }
 
-/* flex */
+/*
+ * clamps the box to 1 line. you can change the number of lines
+ * by adjusting the `--line-clamp` variable from 1 to 2 or more
+ */
+.line-clamp {
+  --line-clamp: 1;
+
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: var(--line-clamp);
+  line-clamp: var(--line-clamp);
+  overflow: hidden;
+  text-overflow: ellpsis;
+  text-wrap: balance;
+}
+
+.spicy {
+  font-family: "Recursive", sans-serif;
+  font-variation-settings: "MONO" 0, "CASL" 1, "slnt" -13, "CRSV" 1;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

@@ -1,0 +1,13 @@
+{{# Variables: #}}
+{{# tags: string[] #}}
+
+<tag-list>
+  <ol>
+    {{ for tag of tags }}
+      <li>
+        <!-- `p-category`: https://microformats.org/wiki/h-entry#Core_Properties -->
+        <a class="p-category" href="/tags/{{ tag |> slugify }}">#{{ tag }}</a>
+      </li>
+    {{ /for }}
+  </ol>
+</tag-list>

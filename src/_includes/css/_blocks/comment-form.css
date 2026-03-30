@@ -1,0 +1,97 @@
+@supports (position-area: end) {
+  [popover] {
+    margin: 0;
+    position-area: end span-end;
+    position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+  }
+}
+
+textarea {
+  max-width: 100%;
+}
+
+#comment-form {
+  display: grid;
+  margin: 0;
+
+  &:has(:nth-child(1)) {
+    /*grid-template-columns: 1fr;*/
+  }
+
+  &:has(:nth-child(2)) {
+    grid-template-rows: auto auto max-content auto;
+    grid-template-columns: 2em auto;
+    grid-gap: var(--space-xs);
+    grid-template-areas:
+      "avatar attribution"
+      "avatar body"
+      ". body"
+      ". interactables";
+  }
+
+  & > *:not([popover]) {
+    display: block;
+  }
+
+  comment-avatar {
+    grid-area: avatar;
+    position: relative;
+    aspect-ratio: 1;
+    height: 2em;
+
+    &:has(button) {
+      cursor: pointer;
+    }
+
+    button {
+      all: unset;
+    }
+    img {
+      aspect-ratio: 1;
+      height: inherit;
+    }
+
+    comment-editable-icon {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      right: -2px;
+      bottom: -2px;
+      background-color: lightgray;
+      padding: 2px;
+      border-radius: 9999px;
+      display: grid;
+      place-content: center;
+    }
+
+    label {
+      font-size: var(--size-step--2);
+    }
+  }
+
+  comment-attribution {
+    grid-area: attribution;
+  }
+
+  comment-body {
+    grid-area: body;
+
+    textarea {
+      resize: vertical;
+      height: 4ex;
+      /* max-width: 100%; */
+      min-width: 100%;
+    }
+  }
+
+  comment-interactables {
+    grid-area: interactables;
+  }
+
+  avatar-popover {
+    border: 1px solid var(--color-border);
+    border-radius: var(--space-xs);
+    margin-block: calc(var(--space-xs) / 2);
+    margin-inline: var(--space-xs);
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "co.gwil.deno.config.formatOnSave" : "null",
+  "index.ignored_file_patterns" : [
+    "_site"
+  ],
+  "todo.workspace-ignore-names" : [
+
+  ],
+  "todo.workspace-ignore-paths" : [
+    "\/Users\/eviefinch\/gitstuffs\/ewie.online\/_site"
+  ],
+  "workspace.preview_type" : "custom",
+  "workspace.preview_url" : "http:\/\/localhost:3000\/"
+}
