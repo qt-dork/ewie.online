@@ -1,0 +1,143 @@
+:where(card-frame) * {
+  margin: 0;
+}
+
+@scope (card-frame) {
+  :scope,
+  *:where(:not(img, svg):not(svg *)),
+  *::before,
+  *::after {
+    all: unset;
+    display: revert;
+  }
+
+  nr-disclaim-interactivity {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    font-size: var(--size-step--1);
+    font-style: italic;
+    text-align: center;
+  }
+
+  :scope > * {
+    margin-block: var(--space-s);
+  }
+
+  nr-card-wrapper {
+    filter: drop-shadow(0.125rem 0.25rem 4px var(--color-shadow));
+  }
+
+  nr-card-flipper {
+    perspective: 1000px;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    all: unset;
+  }
+
+  #flipper {
+    display: grid;
+    place-items: center;
+
+    transition-duration: 0.6s;
+    transition-timing-function: ease-in-out;
+    transform-style: preserve-3d;
+
+    & > * {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
+
+  #flipper,
+  #flipper img {
+    aspect-ratio: 0.718;
+    border-radius: 4.55% / 3.5%;
+    width: 320px;
+  }
+
+  img {
+    overflow: hidden;
+  }
+
+  .back {
+    transform: rotateY(0deg);
+  }
+
+  .front {
+    transform: rotateY(180deg);
+  }
+
+  #flipper[flipped] {
+    transform: rotateY(180deg);
+  }
+
+  .side {
+    backface-visibility: hidden;
+  }
+
+  nr-star-counter {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+
+    nr-star {
+      text-box-trim: trim-both;
+
+      &[visible] {
+        animation: jumpin 0.9s
+          linear(
+            0,
+            0.03 1.5%,
+            0.121 3.2%,
+            0.851 13%,
+            0.99 16.4%,
+            1.063 20.2%,
+            1.076 22.3%,
+            1.075 24.8%,
+            1.013 35.9%,
+            0.995 43.4%,
+            1
+          ) backwards;
+        animation-delay: var(--delay, 0.5s);
+      }
+      &:not([visible]) {
+        opacity: 0;
+      }
+
+      &[accented] {
+        color: #dfa50f;
+      }
+      &:not([accented]) {
+        color: #171a1e;
+      }
+    }
+  }
+
+  @keyframes jumpin {
+    0% {
+      opacity: 0;
+      transform: scale(0.4);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}

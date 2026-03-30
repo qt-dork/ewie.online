@@ -13,3 +13,6 @@
 @import "./post-body.css";
 @import "./post-tags.css";
 /* @import "./post-interactibles.css"; */
+
+/* Components */
+@import "./card-frame.css";

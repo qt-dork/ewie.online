@@ -4,7 +4,7 @@
 @import "./_compositions/_compositions.css" layer(compositions);
 @import "./syntax-highlight.css" layer(compositions);
 @import "./utilities.css" layer(utilitie);
-@import "./_utilities/_utilities.css" layer(utilitie); 
+@import "./_utilities/_utilities.css" layer(utilities);
 @import "./_blocks/_blocks.css" layer(blocks);
 @import "./posts.css" layer(blocks);
 /* @import "./post.css" layer(block); */
