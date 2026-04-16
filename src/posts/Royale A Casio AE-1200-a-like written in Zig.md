@@ -1,7 +1,7 @@
 ---
 title: "Royale: A Casio AE-1200-a-like written in Zig"
 description: |
-  It's finally out! This watch face is my first time developing for the Pebble (or any embedded system for that matter), and went from concept to product in 12 days for the Pebble Spring 2026 Developer Contest. It's written entirely in the Zig programming language, which was a joy to work with except when the Pebble SDK gave me trouble. It features no AI code. All the bad code came straight from my own brain.
+  It is finally out! This watch face is my first time developing for the Pebble (or any embedded system for that matter), and went from concept to product in 12 days for the Pebble Spring 2026 Developer Contest. It's written entirely in the Zig programming language, which was a joy to work with except when the Pebble SDK gave me trouble. It features no AI code. All the bad code came straight from my own brain.
 date: 2026-04-16T14:47:38Z
 tags:
  - programming
