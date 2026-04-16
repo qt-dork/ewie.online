@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "npm:lit@^3.0.0";
+import { Elena, html } from "npm:@elenajs/core@^1.0.0-rc.8";
 
 /**
  * <social-embed>
@@ -13,23 +13,13 @@ import { css, html, LitElement } from "npm:lit@^3.0.0";
  * @cssproperty --color-background-lighter - The background of the conversation.
  * @cssproperty --color-border - The color of the conversation's border.
  */
-export class SocialMediaEmbedWrapper extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-
-      background-color: var(--color-background-lighter);
-      border: 1px solid var(--color-border);
-
-      margin-block: 1rem;
-      padding: 16px;
-      border-radius: 16px;
-    }
-  `;
-
+export default class SocialMediaEmbedWrapper extends Elena(HTMLElement) {
+  static tagName = "social-embed";
   render() {
     return html`
       <slot></slot>
     `;
   }
 }
+
+SocialMediaEmbedWrapper.define();

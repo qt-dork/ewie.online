@@ -1,4 +1,4 @@
-import { Elena, html } from "npm:@elenajs/core";
+import { Elena, html } from "npm:@elenajs/core@^1.0.0-rc.8";
 
 export default class CardFrame extends Elena(HTMLElement) {
   static tagName = "card-frame";

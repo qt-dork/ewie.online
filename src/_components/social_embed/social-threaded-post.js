@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "npm:lit@^3.0.0";
+import { Elena, html } from "npm:@elenajs/core@^1.0.0-rc.8";
 
 /**
  * <social-threaded-post>
@@ -15,92 +15,8 @@ import { css, html, LitElement } from "npm:lit@^3.0.0";
  * @cssproperty --color-subtle - The text color of subtle text elements.
  * @cssproperty --color-border - The color of the connecting line.
  */
-export class SocialMediaThreadedPost extends LitElement {
-  static styles = css`
-    .post {
-      display: grid;
-      column-gap: 1rem;
-      grid-template-columns: 36px minmax(0, 1fr);
-      grid-template-rows: 21px 19px max-content;
-      grid-template-areas: "avatar header" "avatar body" "line body";
-    }
-
-    .avatar {
-      grid-area: avatar;
-      padding-block-start: 4px;
-    }
-
-    .header {
-      grid-area: header;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-
-      & > span {
-        height: 1.2em;
-        align-self: start;
-      }
-    }
-
-    .header .name {
-      font-weight: bold;
-    }
-
-    .header .subtle {
-      color: var(--color-subtle);
-    }
-
-    .header .metadata {
-      white-space: nowrap;
-    }
-
-    .metadata {
-      line-height: 1.2;
-    }
-
-    * {
-      margin: 0;
-    }
-
-    .body {
-      font-size: 16px;
-      grid-area: body;
-    }
-
-    .line {
-      grid-area: line;
-      overflow: visible;
-      margin-block-start: 4px;
-      margin-inline-start: 1px;
-      color: var(--color-border);
-      height: 100%;
-    }
-
-    .line > * {
-      position: relative;
-
-      height: calc(100% + 4px);
-      color: var(--color-border);
-    }
-
-    .overflow-ellipsis {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    ::slotted(*) {
-      margin: unset;
-    }
-
-    slot[name="icon"] {
-      margin-inline-end: auto;
-
-      &:has(::slotted([data-source="mastodon"])) {
-        background-image: url("/mastodon.svg");
-      }
-    }
-  `;
+export default class SocialMediaThreadedPost extends Elena(HTMLElement) {
+  static tagName = "social-threaded-post";
   render() {
     return html`
       <article class="post">
@@ -143,3 +59,5 @@ export class SocialMediaThreadedPost extends LitElement {
     `;
   }
 }
+
+SocialMediaThreadedPost.define();

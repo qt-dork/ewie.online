@@ -1,4 +1,4 @@
-import plugins, { Options } from "./plugins.ts";
+import plugins, { defaults } from "./plugins.ts";
 
 import "lume/types.ts";
 

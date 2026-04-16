@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "npm:lit@^3.0.0";
+import { Elena, html } from "npm:@elenajs/core@^1.0.0-rc.8";
 
 /**
  * <social-media-scroller>
@@ -7,14 +7,8 @@ import { css, html, LitElement } from "npm:lit@^3.0.0";
  *
  * @slot - Any number of `<img>`.
  */
-export class SocialMediaMediaScroller extends LitElement {
-  static styles = css`
-    .image-wrapper {
-      display: flex;
-      overflow: scroll;
-      gap: 4px;
-    }
-  `;
+export default class SocialMediaMediaScroller extends Elena(HTMLElement) {
+  static tagName = "social-media-scroller";
   render() {
     return html`
       <div class="image-wrapper">
@@ -23,3 +17,5 @@ export class SocialMediaMediaScroller extends LitElement {
     `;
   }
 }
+
+SocialMediaMediaScroller.define();

@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "npm:lit@^3.0.0";
+import { Elena, html } from "npm:@elenajs/core@^1.0.0-rc.8";
 
 /**
  * <social-collapse-conversation>
@@ -12,96 +12,9 @@ import { css, html, LitElement } from "npm:lit@^3.0.0";
  * @cssproperty [--collapse-text-color] - The text color of the "Expand/Collapse Conversation" button.
  * @cssproperty --color-border - The color of the connecting line.
  */
-export class SocialMediaCollapseConversation extends LitElement {
-  static styles = css`
-    .divider {
-      display: grid;
-      column-gap: 1rem;
-      grid-template-columns: 36px minmax(0, 1fr);
-      grid-template-areas: "line body";
-    }
-
-    .notice {
-      font-size: 16px;
-      align-self: center;
-    }
-
-    details summary {
-      list-style: none;
-      height: 2rem;
-      margin-block-end: 2px;
-      padding-block: 4px;
-
-      cursor: pointer;
-    }
-    details summary::-webkit-details-marker,
-    details summary::marker {
-      display: none;
-    }
-
-    .line {
-      margin-block-start: 2px;
-      margin-inline-start: 1px;
-      width: 21px;
-
-      height: calc(100% + 8px);
-      color: var(--color-border);
-
-      .svg-line {
-        height: calc(100% - 24px);
-      }
-    }
-
-    .expanded {
-      display: none;
-    }
-
-    details[open] {
-      .collapsed {
-        display: none;
-      }
-
-      .expanded {
-        display: unset;
-      }
-
-      .svg-swirl {
-        display: none;
-      }
-
-      .svg-line {
-        height: calc(100% - 2px);
-      }
-    }
-
-    .notice-wrapper {
-      display: flex;
-    }
-
-    :host {
-      --collapse-border-color: orange;
-      --collapse-background-color: light-dark(
-        rgba(255, 166, 0, 0.12549),
-        rgba(255, 166, 0, 0.0902)
-      );
-      --collapse-text-color: light-dark(#b36200, orange);
-    }
-
-    .notice {
-      padding: 4px;
-      border: 1px solid var(--collapse-border-color);
-      border-radius: 4px;
-      color: var(--collapse-text-color);
-      background-image: repeating-linear-gradient(
-        -70deg,
-        transparent,
-        transparent 3px,
-        var(--collapse-background-color) 3px,
-        var(--collapse-background-color) 4px
-      );
-    }
-  `;
-
+export default class SocialMediaCollapseConversation
+  extends Elena(HTMLElement) {
+  static tagName = "social-collapse-conversation";
   render() {
     return html`
       <details>
@@ -161,3 +74,5 @@ export class SocialMediaCollapseConversation extends LitElement {
     `;
   }
 }
+
+SocialMediaCollapseConversation.define();

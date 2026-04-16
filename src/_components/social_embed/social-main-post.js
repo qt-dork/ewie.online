@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "npm:lit@^3.0.0";
+import { Elena, html } from "npm:@elenajs/core@^1.0.0-rc.8";
 
 /**
  * <social-main-post>
@@ -14,150 +14,10 @@ import { css, html, LitElement } from "npm:lit@^3.0.0";
  *
  * @cssproperty --color-subtle - The text color of subtle text elements.
  */
-export class SocialMediaMainPost extends LitElement {
-  static properties = {
-    _dataSource: {
-      state: true,
-    },
-  };
-
-  static styles = css`
-    .post {
-      display: grid;
-      grid-template-columns: 48px minmax(0, 1fr);
-      grid-template-rows: 36px 0 max-content max-content;
-      grid-template-areas:
-        "avatar header" "body body" "body body" "footer footer";
-      /* deno-fmt-ignore */
-    }
-
-    .avatar {
-      grid-area: avatar;
-      padding-block-start: 4px;
-    }
-
-    .header {
-      grid-area: header;
-
-      width: 100%;
-
-      display: grid;
-      grid-template-rows: 16px 16px;
-      grid-template-columns: 1fr;
-      grid-template-areas: "name" "handle";
-
-      gap: 4px;
-
-      .icon[data-visible="invisible"] {
-        display: none;
-      }
-
-      &:has(.icon[data-visible="visible"]) {
-        grid-template-columns: 1fr 24px;
-        /* deno-fmt-ignore */
-        grid-template-areas: "name icon" "handle icon";
-        import { css, html, LitElement } from "npm:lit@^3.0.0";
-        /* deno-fmt-ignore */
-      }
-
-      & > span {
-        height: 1.2em;
-        align-self: start;
-      }
-    }
-
-    .header, .footer {
-      font-size: 16px;
-    }
-
-    .header .name {
-      font-weight: bold;
-    }
-
-    span:has(> [name="name"]) {
-      grid-area: name;
-    }
-
-    span:has(> [name="handle"]) {
-      grid-area: handle;
-    }
-
-    .subtle {
-      color: var(--color-subtle);
-    }
-
-    .metadata {
-      white-space: nowrap;
-      line-height: 1.2;
-      align-content: center;
-    }
-
-    * {
-      margin: 0;
-    }
-
-    .body {
-      margin-block-start: 8px;
-      font-size: 18px;
-      grid-area: body;
-    }
-
-    .footer {
-      grid-area: footer;
-    }
-
-    ::slotted(time) {
-      display: block;
-      margin-block-start: 8px;
-    }
-
-    ::slotted(*) {
-      margin: unset;
-    }
-
-    .overflow-ellipsis {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .icon {
-      grid-area: icon;
-      width: 100%;
-      aspect-ratio: 1;
-      display: grid;
-      grid-template-areas: "a";
-      color: var(--color-subtle);
-
-      & > * {
-        grid-area: a;
-      }
-
-      svg {
-        fill: currentColor;
-      }
-
-      slot {
-        display: grid;
-        place-content: center;
-      }
-
-      slot::slotted(a) {
-        width: 100%;
-        aspect-ratio: 1;
-        overflow: hidden;
-        opacity: 0;
-        transform: scale(1.5);
-      }
-    }
-
-    svg[data-visible="visible"] {
-      display: unset;
-    }
-
-    svg[data-visible="invisible"] {
-      display: none;
-    }
-  `;
+export default class SocialMediaMainPost extends Elena(HTMLElement) {
+  static tagName = "social-main-post";
+  static props = ["_dataSource"];
+  _dataSource = true;
 
   firstUpdated() {
     const socials = ["mastodon", "bluesky", "twitter"];
@@ -232,3 +92,5 @@ export class SocialMediaMainPost extends LitElement {
     `;
   }
 }
+
+SocialMediaMainPost.define();
