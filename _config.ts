@@ -18,8 +18,8 @@ site.add("static", ".");
 site.add("styles");
 site.add("assets/js");
 
-import { rehypeLezer } from "./helpers/rehype-lezer/highlight.js";
-import { parser as javascriptParser } from "npm:@lezer/javascript@^1.0.0";
+// import { rehypeLezer } from "./helpers/rehype-lezer/highlight.js";
+import { parser as jsParser } from "npm:@lezer/javascript@^1.0.0";
 import { parser as cssParser } from "npm:@lezer/css@^1.0.0";
 import { parser as htmlParser } from "npm:@lezer/html@^1.0.0";
 import { parser as mdParser } from "npm:@lezer/markdown@^1.0.0";
@@ -28,22 +28,30 @@ import rehypeSlug from "https://esm.sh/rehype-slug@6";
 import rehypeAutolinkHeadings from "https://esm.sh/rehype-autolink-headings@7";
 
 const options: Options = {
-  // lezer: {},
+  lezer: {
+    parsers: {
+      html: htmlParser,
+      css: cssParser,
+      js: jsParser,
+      ts: jsParser,
+      md: mdParser,
+    },
+  },
   remark: {
     rehypePlugins: [
       [rehypeSlug],
-      [rehypeLezer, {
-        parsers: [
-          { lang: "js", parser: javascriptParser },
-          { lang: "css", parser: cssParser },
-          { lang: "html", parser: htmlParser },
-          { lang: "md", parser: mdParser },
-        ]
-      }],
+      // [rehypeLezer, {
+      //   parsers: [
+      //     { lang: "js", parser: jsParser },
+      //     { lang: "css", parser: cssParser },
+      //     { lang: "html", parser: htmlParser },
+      //     { lang: "md", parser: mdParser },
+      //   ],
+      // }],
       [rehypeAutolinkHeadings],
-    ]
+    ],
   },
-}
+};
 
 site.use(plugins(options));
 

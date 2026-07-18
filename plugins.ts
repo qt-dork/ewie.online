@@ -1,23 +1,23 @@
 import date, { Options as DateOptions } from "lume/plugins/date.ts";
 import esbuild from "lume/plugins/esbuild.ts";
-import feed, { Options as FeedOptions} from "lume/plugins/feed.ts";
-// import lezer, { Options as LezerOptions } from "./helpers/lezer/mod.ts";
+import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
+import lezer, { Options as LezerOptions } from "./helpers/lezer/mod.ts";
 import lightningCSS from "lume/plugins/lightningcss.ts";
 import metas from "lume/plugins/metas.ts";
 import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
-import remark, {Options as RemarkOptions} from "lume/plugins/remark.ts";
-import robots, { Options as RobotsOptions} from "lume/plugins/robots.ts";
+import remark, { Options as RemarkOptions } from "lume/plugins/remark.ts";
+import robots, { Options as RobotsOptions } from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 
-import {merge} from "lume/core/utils/object.ts";
+import { merge } from "lume/core/utils/object.ts";
 
 import "lume/types.ts";
 
 export interface Options {
   date?: DateOptions;
   feed?: FeedOptions;
-  // lezer: LezerOptions;
+  lezer: LezerOptions; // TODO: Make optional
   pagefind?: PagefindOptions;
   remark?: RemarkOptions;
   robots?: RobotsOptions;
@@ -49,9 +49,12 @@ export const defaults: Options = {
       // image: "=cover",
       authorName: "author.displayName",
       authorUrl: "https://ewie.online", // TODO: remove hard reference to site
-    }
+    },
   },
-}
+  lezer: {
+    parsers: {},
+  },
+};
 
 export default function (userOptions?: Options) {
   const options = merge(defaults, userOptions);
@@ -66,8 +69,8 @@ export default function (userOptions?: Options) {
       .use(feed(options.feed))
       .use(pagefind(options.pagefind))
       .use(remark(options.remark))
-      // .use(lezer(options.lezer))
+      .use(lezer(options.lezer))
       .use(robots())
-      .use(sitemap())
-  }
+      .use(sitemap());
+  };
 }
