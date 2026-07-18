@@ -1,7 +1,7 @@
 import lezerHast from "./lezer-hast.js";
 
-import { visit } from "npm:unist-util-visit";
-import { toText } from "npm:hast-util-to-text";
+import { visit } from "npm:unist-util-visit@5.1.0";
+import { toText } from "npm:hast-util-to-text@4.0.2";
 // import { toString } from "npm:hast-util-to-string";
 // using js manually cos fuck it
 
@@ -29,7 +29,7 @@ const emptyOptions = {};
 /** @type {ReadonlyArray<never>} */
 const emptyPlainText = [];
 
-let languagePrefix = "language-";
+const languagePrefix = "language-";
 
 /**
  * Apply syntax highlighting
@@ -230,6 +230,9 @@ function parsersToMap(parsers) {
   const map = new Map();
   for (const parser of parsers) {
     map.set(parser.lang, parser.parser);
+    if (parser.lang === "js") {
+      map.set("ts", parser.parser);
+    }
   }
   return map;
 }
