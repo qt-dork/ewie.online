@@ -65,7 +65,7 @@ export function lezer(userOptions: Options) {
             const parsedTree = parser.parse(element.textContent);
             fragment = fromLezer(element.textContent, parsedTree);
             element.innerHTML = toHtml(fragment);
-            log.info(`Successfully parsed ${page.sourcePath}`);
+            log.info(`Successfully parsed code blocks in ${page.sourcePath}`);
           } catch (err) {
             log.error(
               `Error highlighting code block in ${page.sourcePath}: ${err}`,
