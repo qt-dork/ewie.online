@@ -7,7 +7,7 @@ import truncate from "./helpers/truncate_html.ts";
 const site = lume(
   {
     src: "./src",
-    // location: new URL ("https://ewie.online/"),
+    location: new URL ("https://ewie.online/"),
     // server: {
     //   page404: "/404/",
     // },
