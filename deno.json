@@ -1,5 +1,7 @@
 {
   "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.19",
+    "@std/yaml": "jsr:@std/yaml@^1.1.2",
     "lume/": "https://deno.land/x/lume@v3.2.5/",
     "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@0.15.7/",
     "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.15/jsx-runtime.ts"
