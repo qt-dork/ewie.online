@@ -53,6 +53,28 @@ const options: Options = {
   },
 };
 
+import { extractMarkers } from "./helpers/parse-markers/mod.ts";
+site.preprocess([".md"], (pages) => {
+  for (const page of pages) {
+    const content = page.data.content;
+    if (content === undefined || content === null) {
+      continue;
+    }
+    const markers = extractMarkers(content as string);
+    if (markers.markers.length === 0) {
+      continue;
+    }
+    page.data.reblogs = markers.markers.map((marker) => {
+      return {
+        data: marker.data,
+        content: marker.value,
+      };
+    });
+
+    page.data.content = markers.postBody;
+  }
+});
+
 site.use(plugins(options));
 
 // Bad code here

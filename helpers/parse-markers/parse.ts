@@ -188,7 +188,7 @@ export function parseMetadata(state: ParserState): string[] | undefined {
     return end;
   };
   // There's only 3 possible states after gobbling the block attribute section:
-  // 1. There's another block attribute on the next line, which should be parsed.
+  // 1. There's another block attribute on the next line, which should also be parsed.
   // 2. The marker is on the next line, which means we're done with metadata.
   // 3. None of the above and this is actually some fucked up text.
   let newStart: number | undefined = undefined;
@@ -223,7 +223,7 @@ export function parseMetadata(state: ParserState): string[] | undefined {
   return undefined;
 }
 
-/// if you are at a newline and followed by a blank line, or eof, return true
+/// if you are at a newline and followed by a blank line, or eof, return true.
 function isEndOfBlock(state: ParserState): boolean {
   const restOfString = state.input.substring(state.pos.i);
   return /^\r?\n[\t\f\v ]*\r?\n*?/.test(restOfString) ||
@@ -299,7 +299,7 @@ export function consumeMarker(state: ParserState): Marker | undefined {
           continue;
         }
         consume(state);
-        marker.value = state.input.substring(contentsStart, contentsEnd);
+        marker.value = state.input.substring(contentsStart, contentsEnd!);
         marker.position = {
           // bogus data
           start: {
