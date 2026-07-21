@@ -1,0 +1,556 @@
+@scope (social-embed) {
+  :scope,
+  *:where(:not(img, svg):not(svg *)),
+  *::before,
+  *::after {
+    all: unset;
+    display: revert;
+  }
+
+  :scope {
+    display: block;
+    background-color: var(--color-background-lighter);
+    border: 1px solid var(--color-border);
+
+    margin-block: 1rem;
+    padding: 16px;
+    border-radius: 16px;
+  }
+  social-threaded-post,
+  social-main-post {
+    display: block;
+  }
+
+  social-threaded-post:not(:first-child),
+  social-main-post:not(:first-child),
+  social-collapse-conversation > *:first-child {
+    padding-top: 8px;
+  }
+
+  social-threaded-post [slot="avatar"],
+  social-main-post [slot="avatar"] {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    height: 36px;
+  }
+
+  social-embed a {
+    color: light-dark(
+      oklch(from var(--primary) 40% calc(c * 2) h),
+      oklch(from var(--primary) 70% calc(c * 2) h)
+    );
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    span.invisible {
+      display: none;
+    }
+
+    span.ellipsis::after {
+      content: "…";
+    }
+
+    &:visited {
+      --primary: #551a8b;
+    }
+  }
+
+  social-media-scroller {
+    display: block;
+
+    margin-block-start: 8px;
+
+    overflow: hidden;
+
+    & > * {
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+    }
+
+    &:has(:nth-child(1)) > * {
+      width: 80%;
+      height: auto;
+    }
+
+    &:has(:nth-child(2)) > * {
+      max-height: 400px;
+      width: auto;
+      max-width: unset;
+    }
+  }
+
+  @scope (social-threaded-post) {
+    .post {
+      display: grid;
+      column-gap: 1rem;
+      grid-template-columns: 36px minmax(0, 1fr);
+      grid-template-rows: 21px 19px max-content;
+      grid-template-areas: "avatar header" "avatar body" "line body";
+    }
+    .avatar {
+      grid-area: avatar;
+      padding-block-start: 4px;
+    }
+
+    .header {
+      grid-area: header;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      & > span {
+        height: 1.2em;
+        align-self: start;
+      }
+    }
+
+    .header .name {
+      font-weight: bold;
+    }
+
+    .header .subtle {
+      color: var(--color-subtle);
+    }
+
+    .header .metadata {
+      white-space: nowrap;
+    }
+
+    .metadata {
+      line-height: 1.2;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    .body {
+      font-size: 16px;
+      grid-area: body;
+    }
+
+    .line {
+      grid-area: line;
+      overflow: visible;
+      margin-block-start: 4px;
+      margin-inline-start: 1px;
+      color: var(--color-border);
+      height: 100%;
+    }
+
+    .line > * {
+      position: relative;
+
+      height: calc(100% + 4px);
+      color: var(--color-border);
+    }
+
+    .overflow-ellipsis {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    ::slotted(*) {
+      margin: unset;
+    }
+
+    slot[name="icon"] {
+      margin-inline-end: auto;
+
+      &:has(::slotted([data-source="mastodon"])) {
+        background-image: url("/mastodon.svg");
+      }
+    }
+  }
+
+  @scope (social-main-post) {
+    .post {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      grid-template-rows: 36px 0 max-content max-content;
+      grid-template-areas: "avatar header" "body body" "body body" "footer footer";
+      /* deno-fmt-ignore */
+    }
+
+    .avatar {
+      grid-area: avatar;
+      padding-block-start: 4px;
+    }
+
+    .header {
+      grid-area: header;
+
+      width: 100%;
+
+      display: grid;
+      grid-template-rows: 16px 16px;
+      grid-template-columns: 1fr;
+      grid-template-areas: "name" "handle";
+
+      gap: 4px;
+
+      .icon[data-visible="invisible"] {
+        display: none;
+      }
+
+      &:has(.icon[data-visible="visible"]) {
+        grid-template-columns: 1fr 24px;
+        grid-template-areas: "name icon" "handle icon";
+      }
+
+      & > span {
+        height: 1.2em;
+        align-self: start;
+      }
+    }
+
+    .header,
+    .footer {
+      font-size: 16px;
+    }
+
+    .header .name {
+      font-weight: bold;
+    }
+
+    span:has(> [name="name"]) {
+      grid-area: name;
+    }
+
+    span:has(> [name="handle"]) {
+      grid-area: handle;
+    }
+
+    .subtle {
+      color: var(--color-subtle);
+    }
+
+    .metadata {
+      white-space: nowrap;
+      line-height: 1.2;
+      align-content: center;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    .body {
+      margin-block-start: 8px;
+      font-size: 18px;
+      grid-area: body;
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+
+    ::slotted(time) {
+      display: block;
+      margin-block-start: 8px;
+    }
+
+    ::slotted(*) {
+      margin: unset;
+    }
+
+    .overflow-ellipsis {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .icon {
+      grid-area: icon;
+      width: 100%;
+      aspect-ratio: 1;
+      display: grid;
+      grid-template-areas: "a";
+      color: var(--color-subtle);
+
+      & > * {
+        grid-area: a;
+      }
+
+      svg {
+        fill: currentColor;
+      }
+
+      slot {
+        display: grid;
+        place-content: center;
+      }
+
+      slot::slotted(a) {
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(1.5);
+      }
+    }
+
+    svg[data-visible="visible"] {
+      display: unset;
+    }
+
+    svg[data-visible="invisible"] {
+      display: none;
+    }
+  }
+
+  @scope (social-link-card) {
+    :host {
+      display: block;
+      container-type: inline-size;
+    }
+    a.media-card {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      overflow: hidden;
+
+      container: inline-size;
+
+      border-radius: var(--space-s);
+      border: 1px solid var(--color-border);
+
+      text-decoration: none;
+      color: var(--color-text);
+      margin-block-start: 8px;
+    }
+
+    @container (width >= 430px) {
+      a.media-card {
+        max-width: 80%;
+      }
+    }
+
+    a:visited {
+      --primary: #551a8b;
+    }
+
+    a.media-card:hover,
+    a.media-card:focus {
+      --color-border: light-dark(
+        oklch(from var(--primary) 40% calc(c * 2) h),
+        oklch(from var(--primary) 70% calc(c * 2) h)
+      );
+      box-shadow: 0 0 0 2px
+        light-dark(
+          oklch(from var(--primary) 40% calc(c * 2) h / 0.33),
+          oklch(from var(--primary) 70% calc(c * 2) h / 0.33)
+        );
+    }
+
+    a.media-card > div:first-child {
+      border-block-end: 1px solid var(--color-border);
+    }
+
+    .meta-container {
+      padding: 8px;
+      min-width: 0;
+    }
+
+    p.meta {
+      margin: 0;
+    }
+
+    .subtle {
+      color: var(--color-subtle);
+      font-size: smaller;
+    }
+
+    [name="domain"] {
+      color: light-dark(
+        oklch(from var(--primary) 40% calc(c * 2) h),
+        oklch(from var(--primary) 70% calc(c * 2) h)
+      );
+    }
+
+    .body,
+    [name="title"] {
+      display: -webkit-box;
+      display: box;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: balance;
+    }
+
+    ::slotted(*) {
+      margin: 0;
+    }
+  }
+
+  @scope (social-media-scroller) {
+    .image-wrapper {
+      display: flex;
+      overflow: scroll;
+      gap: 4px;
+    }
+  }
+
+  @scope (social-collapse-conversation) {
+    .divider {
+      display: grid;
+      column-gap: 1rem;
+      grid-template-columns: 36px minmax(0, 1fr);
+      grid-template-areas: "line body";
+    }
+
+    .notice {
+      font-size: 16px;
+      align-self: center;
+    }
+
+    details summary {
+      list-style: none;
+      height: 2rem;
+      margin-block-end: 2px;
+      padding-block: 4px;
+
+      cursor: pointer;
+    }
+    details summary::-webkit-details-marker,
+    details summary::marker {
+      display: none;
+    }
+
+    .line {
+      margin-block-start: 2px;
+      margin-inline-start: 1px;
+      width: 21px;
+
+      height: calc(100% + 8px);
+      color: var(--color-border);
+
+      .svg-line {
+        height: calc(100% - 24px);
+      }
+    }
+
+    .expanded {
+      display: none;
+    }
+
+    details[open] {
+      .collapsed {
+        display: none;
+      }
+
+      .expanded {
+        display: unset;
+      }
+
+      .svg-swirl {
+        display: none;
+      }
+
+      .svg-line {
+        height: calc(100% - 2px);
+      }
+    }
+
+    .notice-wrapper {
+      display: flex;
+    }
+
+    :host {
+      --collapse-border-color: orange;
+      --collapse-background-color: light-dark(
+        rgba(255, 166, 0, 0.12549),
+        rgba(255, 166, 0, 0.0902)
+      );
+      --collapse-text-color: light-dark(#b36200, orange);
+    }
+
+    .notice {
+      padding: 4px;
+      border: 1px solid var(--collapse-border-color);
+      border-radius: 4px;
+      color: var(--collapse-text-color);
+      background-image: repeating-linear-gradient(
+        -70deg,
+        transparent,
+        transparent 3px,
+        var(--collapse-background-color) 3px,
+        var(--collapse-background-color) 4px
+      );
+    }
+  }
+
+  social-threaded-post,
+  social-main-post {
+    display: block;
+  }
+
+  social-threaded-post:not(:first-child),
+  social-main-post:not(:first-child),
+  social-collapse-conversation > *:first-child {
+    padding-top: 8px;
+  }
+
+  social-threaded-post [slot="avatar"],
+  social-main-post [slot="avatar"] {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    height: 36px;
+  }
+
+  social-embed a {
+    color: light-dark(
+      oklch(from var(--primary) 40% calc(c * 2) h),
+      oklch(from var(--primary) 70% calc(c * 2) h)
+    );
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    span.invisible {
+      display: none;
+    }
+
+    span.ellipsis::after {
+      content: "…";
+    }
+
+    &:visited {
+      --primary: #551a8b;
+    }
+  }
+
+  social-media-scroller {
+    display: block;
+
+    margin-block-start: 8px;
+
+    overflow: hidden;
+
+    & > * {
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+    }
+
+    &:has(:nth-child(1)) > * {
+      width: 80%;
+      height: auto;
+    }
+
+    &:has(:nth-child(2)) > * {
+      max-height: 400px;
+      width: auto;
+      max-width: unset;
+    }
+  }
+}
