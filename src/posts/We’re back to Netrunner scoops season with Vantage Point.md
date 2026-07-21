@@ -15,9 +15,9 @@ Welcome back to Netrunner scoops season! This one is gonna start low and slow, s
 
 {{> const dateTime = (timestamp) => (new Date(timestamp).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' })) }}
 
-{{ comp tweet_embed }}
+{{ comp social_embed }}
 
-<main-tweet>
+<social-main-post>
 <img slot="avatar" src="https://cdn.ewie.online/20251020031817-Image.jpeg">
 <span slot="name">Null Signal Games</span>
 <span slot="handle">@netrunner.nullsignal.games</span>
@@ -28,13 +28,13 @@ Welcome back to Netrunner scoops season! This one is gonna start low and slow, s
 Breaking news from [#NetrunnerWorlds25](https://bsky.app/hashtag/NetrunnerWorlds25) in Edinburgh, the next [#Netrunner](https://bsky.app/hashtag/Netrunner) set has been revealed!
 
 </div>
-<media-card href="https://nullsignal.games/blog/announcing-vantage-point/">
+<social-link-card href="https://nullsignal.games/blog/announcing-vantage-point/">
 <img slot="img" src="https://nullsignal.games/wp-content/uploads/2025/10/OWL_N10_Illustration.png">
 <span slot="domain">nullsignal.games</span>
 <p slot="title" title="Announcing Vantage Point - Null Signal Games">Announcing Vantage Point - Null Signal Games</p>
 <p title="Announcing Vantage Point, the next expansion compatible with Netrunner from Null Signal Games.">Announcing Vantage Point, the next expansion compatible with Netrunner from Null Signal Games.</p>
-</media-card>
-</main-tweet>
+</social-link-card>
+</social-main-post>
 
 {{ /comp }}
 

@@ -1,5 +1,5 @@
 /*deno-fmt-ignore*/
-@layer composition, utility, block, exception;
+@layer global, composition, utility, block, exception;
 
 @import "css/media.css" layer(composition);
 @import "css/fonts.css" layer(composition);
@@ -14,6 +14,7 @@
 @import "css/navigation.css" layer(block);
 @import "css/footer.css" layer(block);
 @import "css/header.css" layer(block);
+@import "css/_blocks/_blocks.css" layer(block);
 /* @import "css/theme-picker.css" layer(block); */
 /* Make search in exception block once i can layer the default styles */
 @import "css/search.css";
