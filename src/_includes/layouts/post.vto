@@ -6,34 +6,22 @@
 
 {{ set hash = url |> hash }}
 <style>
-  ::view-transition-group(post-{{hash}}) {
+  ::view-transition-group(post-{{ hash }}) {
     box-shadow: var(--shadow-elevation-medium);
     z-index: 0;
   }
-  ::view-transition-group(post-{{hash}})::before {
+  ::view-transition-group(post-{{ hash }})::before {
     z-index: 1;
   }
 
-  ::view-transition-group(post-{{hash}})::after {
+  ::view-transition-group(post-{{ hash }})::after {
     z-index: -1;
   }
 </style>
+
+<!-- The post itself -->
 <div class="post-wrapper mouse" style="view-transition-name: post-{{hash}};">
-  <article class="post h-entry stack shadow-med">
-    {{ comp.posts.attribution({ author: { image: author.avatar, handle: author.username }, url: url, date: date }) }}
-    {{ if title }}
-        {{ comp.title({ title: title, url: url }) }}
-    {{ /if }}
-    {{ if content }}
-        <div class="postbody e-content stack">
-        {{# if post.tags contains complete or something then show content without truncation #}}
-        {{ content }}
-        </div>
-    {{ /if }}
-    {{ if tags.length > 0 }}
-        {{ comp.tags({ tags: tags }) }}
-    {{ /if }}
-  </article>
+  {{ comp.reblog_post.index({ is_timeline: false, ...it}) }}
 </div>
 
 <section class="post-wrapper stack shadow-med" style="view-transition-name: comment-box;">
@@ -44,7 +32,7 @@
   </div>
 </section>
 
-<section class="stack">
+<section class="stack" id="comments">
   {{ comp.comments_list({ url: url }) }}
 </section>
 

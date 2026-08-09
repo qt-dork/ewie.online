@@ -14,7 +14,7 @@ article.post {
     padding-block-end: var(--space-article-block);
   }
 
-  margin-block: var(--space-m);
+  /*margin-block: var(--space-m);*/
   border-radius: var(--space-xs);
   background-color: var(--color-background-lighter);
 }

@@ -42,5 +42,5 @@
     {{ comp.reblog_post.tags({ tags }) }}
   {{ /if }}
   <hr />
-  {{ comp.reblog_post.interactibles(url) }}
+  {{ comp.reblog_post.interactibles({ url, is_timeline }) }}
 {{ /comp }}

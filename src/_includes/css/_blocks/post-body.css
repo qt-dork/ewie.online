@@ -56,6 +56,8 @@ read-more-button button {
   text-decoration: none;
   color: var(--color-subtle);
 
+  cursor: pointer;
+
   &:hover,
   &:focus {
     text-decoration: underline;

@@ -15,7 +15,7 @@ dependencies:
 <post-interactibles>
   {{# Comment count should be a web component #}}
   {{# TODO: Make work #}}
-  <comment-count><a href="{{ url }}#comments">View Comments</a></comment-count>
+  <comment-count><a href="{{ if is_timeline }}{{ url }}{{ /if }}#comments">View Comments</a></comment-count>
 
   {{# <post-buttons> #}}
     {{# TODO: Make work #}}

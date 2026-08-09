@@ -6,7 +6,6 @@ description: >
 author:
   avatar: "https://cdn.ewie.online/pfp-eris.png"
   displayName: Eris
-  username: eris
 date: 2025-04-27T00:52:47Z
 tags:
  - netrunner

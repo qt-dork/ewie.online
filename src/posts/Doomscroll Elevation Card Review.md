@@ -6,7 +6,6 @@ description: >
 author:
   avatar: "https://cdn.ewie.online/pfp-stwyde.png"
   displayName: Stwyde
-  username: stwyde
 date: 2025-04-24T10:37:52Z
 tags:
  - netrunner

@@ -7,7 +7,6 @@ date: 2025-04-19T06:13:43Z
 author:
   avatar: "https://cdn.ewie.online/pfp-notagain.jpeg"
   displayName: "NotAgain"
-  username: "NotAgain"
 tags:
  - netrunner
  - elevation
