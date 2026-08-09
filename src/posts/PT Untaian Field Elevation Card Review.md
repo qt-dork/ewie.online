@@ -3,8 +3,10 @@ title: "PT Untaian: Life's Building Blocks"
 description: >
   This Identity on its own is fine, but with Sericulture, Jinteki's new 3/2, this identity becomes wild. Having the clickless advance means you can score a Sericulture without needing the 3 credits and install click for La Costa Grid. From there the single counter on Sericulture can let you score out a 5/3 with minimal support. I think any PT Untaian will automatically have 3 Sericultures, and the Identity won't see much play otherwise. Can we appreciate the art though? It's my new Jnet background.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T09:31:24Z
 tags:
  - netrunner

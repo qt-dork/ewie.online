@@ -3,8 +3,10 @@ title: Mitra Aman
 description: >
   At the absolute worst, this is a click for 3 credits when you install it and leave it on a server. In a world where Doof at home is slightly weaker, but Corp economy has been gutted, that might be enough to have it see play. Being able to cycle Anemone and do other tricks might be worthwhile. That's fine, but it's odd that most of my thoughts around the Jinteki releases are "wow this works with Anemone" and not proactive reasons to be excited about the new card pool on its own.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T10:06:39Z
 tags:
  - netrunner

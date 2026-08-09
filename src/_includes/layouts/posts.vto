@@ -11,7 +11,7 @@
       {{set hash = post.url |> hash}}
       <li class="post-wrapper" style="view-transition-name: post-{{ hash }};">
         <article class="post h-entry stack shadow-med">
-          {{ comp.posts.attribution({ author: { image: post.author_image, handle: post.author_handle }, url: post.url, date: post.date }) }}
+          {{ comp.posts.attribution({ author: { image: post.author.avatar, handle: post.author.username }, url: post.url, date: post.date }) }}
           {{ if post.title }}
             {{ comp.title({ title: post.title, url: post.url}) }}
           {{ /if }}

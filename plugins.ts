@@ -47,7 +47,7 @@ export const defaults: Options = {
     items: {
       title: "=title",
       // image: "=cover",
-      authorName: "=author_handle",
+      authorName: "=author.username",
       authorUrl: "https://ewie.online", // TODO: remove hard reference to site
     },
   },

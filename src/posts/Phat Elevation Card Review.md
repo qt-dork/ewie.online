@@ -3,8 +3,10 @@ title: "Phật Gioan Baotixita"
 description: >
   Phat is PE at home as an asset. He'll see regular play in A Teia and Au Co. for sure. With a trash cost of 3, Phat is slightly above the curve when it comes to trash cost, but also isn't particularly scary until a turn or two has passed. Overall, Phat's fine, capably of generating flatlines out of odd angles, and otherwise a good way to hit runner tempo and be annoying.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T09:37:58Z
 tags:
  - netrunner

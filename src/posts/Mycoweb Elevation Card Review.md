@@ -3,8 +3,10 @@ title: Mycoweb
 description: >
   This ice is expensive, expensive enough that I don't think it'll see a lot of regular play. Vampyronassa is the code gate in faction to compare to, and Mycoweb can just genuinely be useless early. It's fine, it'll lead to funny Anemone flatlines from odd angles, and if you can get a Cloud Eater on the board, for the low low price of 18 credits, you too can do 3 net damage to a runner without a decoder. That's some value right there.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T09:40:54Z
 tags:
  - netrunner
