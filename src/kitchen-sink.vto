@@ -4,6 +4,72 @@ title: Kitchen Sink
 index: false
 ---
 
+{{>
+  const postlist = [
+    {
+      description: "test",
+      url: "#",
+      author: {
+        username: "ewie",
+        displayName: "Evie Finch",
+        avatar: "https://cdn.ewie.online/ewie-pfp.png",
+      },
+      date: new Date(),
+      content: "Testing",
+      tags: ["test"],
+    },
+    {
+      reblogs: [
+        {
+          data: {
+            description: "test",
+            url: "#",
+            title: "Test",
+            author: {
+              username: "ewie",
+              displayName: "Evie Finch",
+              avatar: "https://cdn.ewie.online/ewie-pfp.png",
+            },
+            date: new Date(),
+            tags: ["test", "testing"],
+          },
+          content: `I am an AI hater. This is considered rude, but I do not care, because I am a hater.
+          To speak politely about AI, you put disclaimers before criticism: of course I’m not against it entirely; perhaps in a few years when; maybe for other purposes, but. You are supposed to debate how and when it should be used. You are supposed to take for granted that it must be useful somewhere, to someone, for something, eventually. People who are rich and smart and respected are saying so, and it would be arrogant to disagree with such people.
+          But I am a hater, which is a kind of integrity. It means I am willing to disagree with anyone, even if it is rude. “But I only use it to–” “Actually if you just—” “The new models–” “I was making fun–” Stop. You’re embarrassing yourself. I am embarrassed for you.
+          Critics have already written thoroughly about the environmental harms, the reinforcement of bias and generation of racist output, the cognitive harms and AI supported suicides, the problems with consent and copyright, the way AI tech companies further the patterns of empire, how it’s a con that enables fraud and disinformation and harassment and surveillance, the exploitation of workers, as an excuse to fire workers and de-skill work, how they don’t actually reason and probability and association are inadequate to the goal of intelligence, how people think it makes them faster when it makes them slower, how it is inherently mediocre and fundamentally conservative, how it is at its core a fascist technology rooted in the ideology of supremacy, defined not by its technical features but by its political ones.
+          But I am more than a critic: I am a hater. I am not here to make a careful comprehensive argument, because people have already done that. If you’re pushing slop or eating it, you wouldn’t read it anyway. You’d ask a bot for a summary and forget what it told you, then proceed with your day, unchanged by words you did not read and ideas you did not consider.
+          I am here to be rude, because this is a rude technology, and it deserves a rude response. Miyazaki said, “ I strongly feel that this is an insult to life itself.” Scam Altman said we can surround the solar system with a Dyson Sphere to hold data centers. Miyazaki is right, and Altman is wrong. Miyazaki tells stories that blend the ordinary and the fantastic in ways people find deeply meaningful. Altman tells lies for money.
+          And I’m glad they’re lies. Because the makers of AI aren’t damned by their failures, they’re damned by their goals. They want to build a genie to grant them wishes, and their wish is that nobody ever has to make art again. They want to create a new kind of mind, so they can force it into mindless servitude. Their dream is to invent new forms of life to enslave.
+          And to what end? In a kind of nihilistic symmetry, their dream of the perfect slave machine drains the life of those who use it as well as those who turn the gears. What is life but what we choose, who we know, what we experience? Incoherent empty men want to sell me the chance to stop reading and writing and thinking, to stop caring for my kids or talking to my parents, to stop choosing what I do or knowing why I do it. Blissful ignorance and total isolation, warm in the womb of the algorithm, nourished by hungry machines.
+          And even as it consumes those who use it, even as the scammers become their own marks, even as it is sustained by exploited workers slotted in as human filters for algorithmic abuse – some people want to have a little, as a treat. As a joke. Just to make fun of it, just for the busywork, because it’s good enough, right? You understand.
+          I do understand: you want permission. There’s a machine in the corner wrapped in human skin that makes things out of shit and blood to look like whatever you want (as long as you don’t look too closely). You gave one to your teacher and they didn’t notice. Your boss told you to use it after they laid off half the team and it was fine. You fed one to your kids and they liked it. You want to know you can use it sometimes without me thinking less of you. You don’t need me to believe it’s useful, you just want me to be polite about it.
+          But I am a hater, and I will not be polite. The machine is disgusting and we should break it. The people who build it are vapid shit-eating cannibals glorifying ignorance. I strongly feel that this is an insult to life itself.
+          I became a hater by doing precisely those things AI cannot do: reading and understanding human language; thinking and reasoning about ideas; considering the meaning of my words and their context; loving people, making art, living in my body with its flaws and feelings and life. AI cannot be a hater, because AI does not feel, or know, or care. Only humans can be haters. I celebrate my humanity.`,
+        }
+      ],
+      description: "test",
+      url: "#",
+      title: "Test",
+      author: {
+        username: "ewie",
+        displayName: "Evie Finch",
+        avatar: "https://cdn.ewie.online/ewie-pfp.png",
+      },
+      date: new Date(),
+      content: "Testing",
+    }
+  ];
+}}
+
+<ul class="blog-posts stack">
+{{ for post of postlist }}
+  <li class="post-wrapper">
+    {{ comp.reblog_post.index({is_timeline: true, ...post }) }}
+  </li>
+{{ /for}}
+</ul>
+
+
 <script type="module" src="/assets/js/components/hue-shifter.js"></script>
 
 <script type="module" src="/assets/js/components/quote-back.js"></script>

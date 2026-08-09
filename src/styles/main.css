@@ -5,7 +5,10 @@
 @import "css/fonts.css" layer(composition);
 @import "css/reset.css" layer(composition.reset);
 @import "css/globals.css" layer(composition.globals);
+@import "css/_globals/_globals.css" layer(composition.globals);
 @import "css/elements.css" layer(composition);
+@import "css/_compositions/_compositions.css" layer(composition);
+
 @import "css/syntax-highlight.css" layer(composition);
 @import "css/utilities.css" layer(utility);
 @import "css/posts.css" layer(block);
@@ -14,6 +17,8 @@
 @import "css/navigation.css" layer(block);
 @import "css/footer.css" layer(block);
 @import "css/header.css" layer(block);
+@import "css/main.css" layer(block);
+
 /* @import "css/theme-picker.css" layer(block); */
 /* Make search in exception block once i can layer the default styles */
 @import "css/search.css";
