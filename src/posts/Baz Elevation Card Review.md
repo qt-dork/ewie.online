@@ -3,8 +3,10 @@ title: 'Barry “Baz” Wong'
 description: >
   This ID is absolutely bonkers good. I swear someone on the NSG team forgot the "Once per turn" flag when finalizing the text on this. But in all seriousness, Baz feels phenomenal to me. Fun fact: you can fit 3x Devil Charm and 3x Arruaceiras in a nice 15 influence. If they rez some ice, you either Boomerang it, or trash it. SDS isn't real, you don't need programs. 5/5 bringing the crime back to criminal was worth it.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T08:47:48Z
 tags:
  - netrunner

@@ -3,8 +3,10 @@ title: Principia
 description: >
   'Rising Tide is a Shaper card that shapers need to pay influence for. With DZMZ and breakers installed, Principia is functionally a "click to sell to knickknack later" card. Will I ever use this thing to break ice? Almost never, but I see it in a few decks for the econ aspect, being sold later when I don't need duplicate breakers to boost Echelon's base strength or something. That said, don't use this for breaking ice in a faction that has Propeller. It's not worth it. You deserve better.'
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T09:21:40Z
 tags:
  - netrunner

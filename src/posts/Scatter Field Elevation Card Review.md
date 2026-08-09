@@ -3,8 +3,10 @@ title: Scatter Field
 description: >
   This card is genuinely good. In wide decks having an incredibly cheap 4 Strength code gate can serve as an effective check on the runner, with the only breaker in the current format breaking it for less than 3 credits being a Buzzsaw that's boosted with GameDragon or Leech. And honestly, I'm okay with the runner spending two clicks and 6 credits to trivially break my 3 credit ice. The subroutines are also solid, and for my wider decks, this works great as central defense in a way that's just annoying enough to dissuade the runner from certain runs.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T09:24:48Z
 tags:
  - netrunner

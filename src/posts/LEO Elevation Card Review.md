@@ -4,8 +4,10 @@ description: >
    HB glacier in full swing and no longer restricted by 12 influence either! I’ve always felt Isaac was a very good card, it just needed a deck and this is where you slap in 3x and feel good about it. This is very much purple ag and knowing how busted and annoying ag was, this feels so much more with stegodon, triestes (and god forbid some prison build that no one is cooking certainly). This definitely needs more bioroid support though, the question is will we see it?.
 
 date: 2025-04-19T06:13:43Z
-author_handle: "NotAgain"
-author_image: "https://cdn.ewie.online/pfp-notagain.jpeg"
+author:
+  avatar: "https://cdn.ewie.online/pfp-notagain.jpeg"
+  displayName: "NotAgain"
+  username: "NotAgain"
 tags:
  - netrunner
  - elevation

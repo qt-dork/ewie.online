@@ -3,8 +3,10 @@ title: "BANGUN: When Disaster Strikes"
 description: >
   We got Argus at home, but this is just great. Toss in some End of the Lines, some Measured Responses, and an AMAZE amusements, and baby you got a stew going.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T11:28:27Z
 tags:
  - netrunner

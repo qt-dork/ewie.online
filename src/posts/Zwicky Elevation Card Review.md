@@ -3,8 +3,10 @@ title: "The Zwicky Group: Invisible Hands"
 description: >
   I've been shitposting to my local meta about how we're reprinting Building a Better World for Weyland, and I can finally reveal that I wasn't just shitposting. The card draw is just better than a credit in my opinion, and we'll probably see operation heavy decks using Zwicky much more often than we saw Building a Better World.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T10:39:20Z
 tags:
  - netrunner

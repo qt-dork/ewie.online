@@ -3,8 +3,10 @@ title: Doomscroll
 description: >
   This has numbers like Drafter but with more punishment if the runner goes tag-me. It's fine, the runner will almost certainly be okay with face checking this once or twice. The art is phenomenal, the name makes me somewhat uncomfortable in a good way, and it's probably going to fight F2P or Tsarevna for slots, but I don't see myself being really excited for this card.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T10:37:52Z
 tags:
  - netrunner

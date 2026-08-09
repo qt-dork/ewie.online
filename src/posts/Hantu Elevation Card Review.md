@@ -3,8 +3,10 @@ title: "Hantu"
 description: >
   Overall I think this is a fine and functional killer for Anarchs. While it's not a whole lot to write home about, being able to use GameDragon to get a base 3 strength killer will get you through a bunch of things like Drafter. Unfortunately, it also can guarantee that you eat a brutal sentry with a nicely timed Mavirus, which makes it hard to recommend on its own. Flyswatter and Mavirus being in the Standard format make it hard to recommend over its more reliable fire snake. Cookbook and Hantu would be a nice combo, but I think you'd almost always just rather prefer Audrey V2 as your breaker at that point.
 
-author_handle: Stwyde
-author_image: "https://cdn.ewie.online/pfp-stwyde.png"
+author:
+  avatar: "https://cdn.ewie.online/pfp-stwyde.png"
+  displayName: Stwyde
+  username: stwyde
 date: 2025-04-24T23:58:48Z
 tags:
  - netrunner
