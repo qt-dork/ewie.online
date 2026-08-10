@@ -1,0 +1,7 @@
+mark {
+  background-color: light-dark(
+    oklch(from var(--primary) 90% calc(c * 1) h),
+    oklch(from var(--primary) 35% calc(c * 1.5) h)
+  );
+  color: unset;
+}
