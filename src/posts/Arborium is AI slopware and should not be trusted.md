@@ -24,7 +24,7 @@ Last weekend while scrolling through some quieter feeds in my RSS reader, I came
 </media-card>
 <script type="module" src="/assets/js/components/media-card.js"></script>
 
-Arborium is a high-performance syntax highlighting tool powered by tree-sitter created by Amos Wenger. Amos (also known as fasterthanlime) is a long-time open source developer who I greatly respected. I learned Rust from his Advent of Code article series, and I appreciate his commitment to correctness and speed. I was especially excited to learn about Arborium because it was designed to work on the web using Javascript. I could use this!
+Arborium is a high-performance syntax highlighting tool powered by tree-sitter created by Amos Wenger. Amos (also known as fasterthanlime) is a long-time open source developer who I greatly respected. I learned Rust from their Advent of Code article series, and I appreciate their commitment to correctness and speed. I was especially excited to learn about Arborium because it was designed to work on the web using Javascript. I could use this!
 
 ---
 
@@ -98,7 +98,7 @@ So here I’m stuck. I try to work around the code that uses `window` and I run 
 
 ## Filing issues
 
-I file two issues, [one at Sunday night](https://github.com/bearcove/arborium/issues/148) and [the other on Monday morning](https://github.com/bearcove/arborium/issues/149). About an hour after the second issue, Amos responds saying he’s got a completed pull request[^5] that fixes all the problems I was running into. This seems like a quick turnaround for some environment-specific bugs, but he’s also a pretty good developer who’s been working on this for much longer than I have. Perhaps his experience meant he could quickly clock what the problem was and fix it, but I then open the PR and find my greatest fears realized.
+I file two issues, [one at Sunday night](https://github.com/bearcove/arborium/issues/148) and [the other on Monday morning](https://github.com/bearcove/arborium/issues/149). About an hour after the second issue, Amos responds saying they've got a completed pull request[^5] that fixes all the problems I was running into. This seems like a quick turnaround for some environment-specific bugs, but they're also a pretty good developer who’s been working on this for much longer than I have. Perhaps their experience meant they could quickly clock what the problem was and fix it, but I then open the PR and find my greatest fears realized.
 
 ![A GitHub pull request displaying a summary, code snippet, and test plan. Summary describes replacing window with globalThis and introduces a registerGrammar API, the code snippet shows the usage for registerGrammar, finally, there's a test plan to verify it works, and mentions my two issues as fixed. The text reads as strongly AI generated.](https://cdn.ewie.online/SCR-20260212-ioit.png)
 
