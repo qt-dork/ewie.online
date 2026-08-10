@@ -1,7 +1,6 @@
 ---
 title: Site update changelog 26-08-09 - Big update!
-description: |
-  So I have a major update, and I'd like to write a brief changelog talking about what's changed.
+description:
 date: 2026-08-09T21:22:00.000-05:00
 tags:
  - meta
