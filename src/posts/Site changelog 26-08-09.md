@@ -26,7 +26,7 @@ date: 2025-09-18T21:30:08.270+00:00
 - Add a like button. Don't add a like count.
 :::
 
-> Note: The site has had major changes and you might look incorrect unless you clear your cache.
+> Note: The site has had major changes and may look incorrect unless you clear your cache.
 
 So I have a major update, and I'd like to write a brief changelog talking about what's changed.
 
