@@ -1,0 +1,28 @@
+img[data-avatar-mask] {
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+[data-avatar-mask="roundrect"] {
+  border-radius: 12.5%;
+}
+
+[data-avatar-mask="squircle"] {
+   mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAweiIvPjwvc3ZnPg==);}
+
+[data-avatar-mask="circle"] {
+  border-radius: 9999px;
+}
+
+[data-avatar-mask="egg"] {
+  mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjM2NiIgdmlld0JveD0iMCAwIDUwMCAzNjYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI5OS4zNzUgMzQ3LjEycS02Ny44MjggMjAuMjc3LTEyOC40MyAxOC4zNzctNjAuNjAxLTEuOS0xMDMuOTg4LTI4LjYyNC00My4zODgtMjYuNzIxLTU5LjgxMS04MS42OTUtMTYuNTE4LTU1LjI4NyA1LjE0NC0xMDEuMjg1IDIxLjY2My00NiA3MS4zNzctODAuNTM3IDQ5LjcxNS0zNC41MzkgMTE3LjU0NC01NC44MTdRMjY4LjcyNi0xLjY0NSAzMjkuMTIzLjE0NnE2MC4zOTcgMS43OSAxMDMuODk0IDI4LjMwOXQ1OS45MjEgODEuNDkyLTUuMzQ5IDEwMS4xNzUtNzEuMjM1IDgxLjAwOHEtNDkuNDY0IDM0LjgwNi0xMTYuOTc5IDU0Ljk5IiBmaWxsPSIjZmZmOWYyIi8+PC9zdmc+);
+}
+
+[data-avatar-mask="capsule-big"] {
+  mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjIiPjxwYXRoIGQ9Ik00MTQgMTU4QzQxNCA3MC43OTcgMzQzLjIwMyAwIDI1NiAwUzk4IDcwLjc5NyA5OCAxNTh2MTk2YzAgODcuMjAzIDcwLjc5NyAxNTggMTU4IDE1OHMxNTgtNzAuNzk3IDE1OC0xNTh6IiBzdHlsZT0iZmlsbDojZmZmIi8+PC9zdmc+);
+}
+
+[data-avatar-mask="capsule-small"] {
+  mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjIiPjxwYXRoIGQ9Ik0zNTQgOThjMC01NC4wODgtNDMuOTEyLTk4LTk4LTk4cy05OCA0My45MTItOTggOTh2MzE2YzAgNTQuMDg4IDQzLjkxMiA5OCA5OCA5OHM5OC00My45MTIgOTgtOTh6IiBzdHlsZT0iZmlsbDojZmZmIi8+PC9zdmc+);
+}

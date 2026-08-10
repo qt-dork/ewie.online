@@ -39,15 +39,15 @@ export const defaults: Options = {
     sort: "date=desc",
     limit: 50,
     info: {
-      title: "=Evie On-Line", // TODO: Make metas.title
-      description: "Just some posts and stuff", // TODO: make metas.description
+      title: "=metas.title",
+      description: "=metas.description",
       authorName: "Evie Finch",
       authorUrl: "https://ewie.online", // TODO: remove hard reference to site name
     },
     items: {
       title: "=title",
       // image: "=cover",
-      authorName: "=author.username",
+      authorName: "=author.displayName",
       authorUrl: "https://ewie.online", // TODO: remove hard reference to site
     },
   },

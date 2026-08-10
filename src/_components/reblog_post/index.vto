@@ -1,0 +1,46 @@
+{{> let replying_to = undefined }}
+
+{{ comp reblog_post.wrapper }}
+
+  {{# Reblog content #}}
+  {{ if reblogs }}
+    {{ for reblog of reblogs }}
+      {{ comp.reblog_post.attribution({ author: reblog.data.author, url: reblog.data.url, date: reblog.data.date, replying_to }) }}
+      {{> replying_to = { action: "reblog", source: reblog.data.author.displayName } }}
+      <hr />
+      {{ if (reblog.data.title) }}
+        {{ comp reblog_post.title { url: reblog.data.url, is_timeline } }}
+          {{ reblog.data.title }}
+        {{ /comp }}
+      {{ /if }}
+      {{ if reblog.content }}
+        {{ comp reblog_post.body }}
+          {{ reblog.content |> md }}
+        {{ /comp }}
+      {{ /if }}
+      {{ if reblog.data.tags }}
+        {{ comp.reblog_post.tags({ tags: reblog.data.tags }) }}
+      {{ /if }}
+      <hr />
+    {{ /for }}
+  {{ /if }}
+
+  {{# Main post #}}
+  {{ comp.reblog_post.attribution({ author, url, date, replying_to }) }}
+  <hr />
+  {{ if title }}
+    {{ comp reblog_post.title { url, is_timeline } }}
+      {{ title }}
+    {{ /comp }}
+  {{ /if }}
+  {{ if content }}
+    {{ comp reblog_post.body }}
+      {{ content }}
+    {{ /comp }}
+  {{ /if }}
+  {{ if tags }}
+    {{ comp.reblog_post.tags({ tags }) }}
+  {{ /if }}
+  <hr />
+  {{ comp.reblog_post.interactibles({ url, is_timeline }) }}
+{{ /comp }}

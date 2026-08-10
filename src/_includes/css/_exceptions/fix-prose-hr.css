@@ -1,0 +1,4 @@
+/* TODO: work out a long term solution to this */
+.prose hr:not(:first-child) {
+  margin-block-start: var(--space-stack);
+}

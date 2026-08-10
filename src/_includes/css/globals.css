@@ -1,7 +1,7 @@
 :root {
-  /* ------------------------------------------------------------
-  color
-  ------------------------------------------------------------ */
+  /* ===========
+   *   color
+   * =========== */
   color-scheme: light dark;
 
   &[data-theme-appearance="light"] {
@@ -66,6 +66,39 @@
     oklch(from var(--primary) var(--500)),
     oklch(from var(--primary) var(--300))
   );
+
+  --color-text: light-dark(
+      oklch(from var(--primary) var(--800)),
+      oklch(from var(--primary) var(--100))
+    );
+    --color-background-lighter: light-dark(
+      oklch(from var(--primary) var(--50)),
+      oklch(from var(--primary) var(--800))
+    );
+    --color-background-darker: light-dark(
+      oklch(from var(--primary) var(--100)),
+      oklch(from var(--primary) var(--900))
+    );
+    --color-background-halftone: light-dark(
+      oklch(from var(--primary) var(--200)),
+      oklch(from var(--primary) var(--600))
+    );
+    --color-shadow: light-dark(
+      oklch(from var(--primary) var(--600)),
+      oklch(from var(--primary) var(--900))
+    );
+    --color-border: light-dark(
+      oklch(from var(--primary) var(--400)),
+      oklch(from var(--primary) var(--600))
+    );
+    --color-subtle: light-dark(
+      oklch(from var(--primary) var(--500)),
+      oklch(from var(--primary) var(--300))
+    );
+    --color-less-subtle: light-dark(
+      oklch(from var(--primary) var(--700)),
+      oklch(from var(--primary) var(--200))
+    );
 
   --font-base:
     "Lato", "Lucida Grande", Tahoma, -apple-system, system-ui, Sans-Serif;

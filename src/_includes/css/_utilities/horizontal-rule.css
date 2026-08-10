@@ -1,0 +1,5 @@
+hr {
+  border: unset;
+  border-top: 1px dashed var(--color-border);
+  margin: 0;
+}
