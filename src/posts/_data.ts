@@ -1,13 +1,13 @@
 import createSlugifier, { defaults as SlugifierDefaults } from "lume/core/slugifier.ts";
-import { format } from "lume/deps/date.ts";
 
 import { plainText } from "lume/deps/remove-markdown.ts";
 import { defaults as plainTextDefaults } from "lume/plugins/plaintext.ts";
 
 import type { MetaData } from "lume/plugins/metas.ts";
 
+import { log } from "lume/core/utils/log.ts";
+
 const slugify = createSlugifier(SlugifierDefaults);
-let postDescription: string | undefined = undefined;
 
 // TODO: make its own file
 interface PostData extends Lume.Data {
@@ -24,16 +24,15 @@ interface PostData extends Lume.Data {
 // TODO: Test this function because it feels like it's not working correctly
 /// If a post has no description, make one from the content. Strips out all the markdown and html to get only pure plain text.
 const generateDescriptionFromContent = ({ description, content }: PostData): string => {
-  // bro wtf is this
-  if (postDescription !== undefined) {
-    return postDescription;
-  }
-  if (description !== undefined) {
-    postDescription = plainText(content as string, plainTextDefaults);
+  if (typeof description === "string" && description.trim() !== "") {
+    log.debug(description);
+    return description;
   } else {
-    postDescription = description;
+    const plainContent = plainText(content as string, plainTextDefaults);
+
+    log.debug(plainContent);
+    return plainContent;
   }
-  return postDescription;
 }
 
 const ogIcon = (data: PostData): string => {
@@ -80,6 +79,7 @@ export default {
     type: "article",
     title: "=title",
     description: generateDescriptionFromContent,
+    "twitter:description": generateDescriptionFromContent,
     icon: ogIcon,
     image: ogIcon,
     "article:tag": "=tags",
