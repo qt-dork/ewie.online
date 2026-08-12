@@ -22,7 +22,7 @@ Since the start of season 2 of Blaseball,[^2] there has been a section of the we
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
+<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg" alt="">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
 <span slot="handle">@SIBROfficial</span>
 <time slot="time" datetime="2020-09-26T21:32:05.000Z">{{ date("2020-09-26T21:32:05.000Z") }}</time>
@@ -33,7 +33,7 @@ Since the start of season 2 of Blaseball,[^2] there has been a section of the we
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name"> BLASEBALL COMMISSIONER </span>
 <span slot="handle">@blaseball </span>
 <time slot="time" datetime="2020-09-26T21:58:27.000Z">{{ date("2020-09-26T21:32:05.000Z") }}</time>
@@ -44,7 +44,7 @@ what
 	
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
+<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg" alt="">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
 <span slot="handle">@SIBROfficial</span>
 <time slot="time" datetime="2020-09-26T22:00:07.000Z">{{ date("2020-09-26T22:00:07.000Z") }}</time>
@@ -59,7 +59,7 @@ what
 
 <main-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name"> BLASEBALL COMMISSIONER </span>
 <span slot="handle">@blaseball </span>
 <time slot="time" datetime="2020-09-26T21:58:27.000Z">{{ dateTime("2020-09-26T21:58:27.000Z") }}</time>
@@ -76,7 +76,7 @@ After some debate on whether or not Parker had ever actually read the Forbidden 
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826055716-Image.jpeg">
+<img slot="avatar" src="https://cdn.ewie.online/20250826055716-Image.jpeg" alt="">
 <span slot="name">BLASEBALL NEWS NETWORK</span>
 <span slot="handle">@BlaseballNews</span>
 <time slot="time" datetime="2020-09-26T22:01:00.000Z">{{ date("2020-09-26T22:01:00.000Z") }}</time>
@@ -89,7 +89,7 @@ PARKER, HAVE YOU READ THE BOOK.
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
+<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg" alt="">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
 <span slot="handle">@SIBROfficial</span>
 <time slot="time" datetime="2020-09-26T22:01:21.000Z">{{ date("2020-09-26T22:01:21.000Z") }}</time>
@@ -100,7 +100,7 @@ in fairness to parker, It is Forbidden
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
 <time slot="time" datetime="2020-09-26T22:02:22.000Z">{{ dateTime("2020-09-26T22:02:22.000Z") }}</time>
@@ -111,7 +111,7 @@ yea
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826061050-Image.jpeg">
+<img slot="avatar" src="https://cdn.ewie.online/20250826061050-Image.jpeg" alt="">
 <span slot="name">📱New York Millennials📱</span>
 <span slot="handle">@nymillenials</span>
 <time slot="time" datetime="2020-09-26T22:02:55.000Z">{{ date("2020-09-26T22:02:55.000Z") }}</time>
@@ -122,7 +122,7 @@ Yeah wait, you guys have read the book? You know that book is forbidden right?
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
 <time slot="time" datetime="2020-09-26T22:03:18.000Z">{{ date("2020-09-26T22:03:18.000Z") }}</time>
@@ -135,7 +135,7 @@ Yeah wait, you guys have read the book? You know that book is forbidden right?
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
+<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg" alt="">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
 <span slot="handle">@SIBROfficial</span>
 <time slot="time" datetime="2020-09-26T22:03:59.000Z">{{ date("2020-09-26T22:03:59.000Z") }}</time>
@@ -146,7 +146,7 @@ okay but that was pre-discipline era surely you peeked once we opened it
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg">
+<img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg" alt="">
 <span slot="name">Paula 🍳 📚Turnip</span>
 <span slot="handle">@TurnipOnBlase</span>
 <time slot="time" datetime="2020-09-26T22:05:51.000Z">{{ date("2020-09-26T22:05:51.000Z") }}</time>
@@ -155,7 +155,7 @@ parker has definitely read the book
 
 <tweet-embed>
 <main-tweet>
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
 <time slot="time" datetime="2020-09-25T06:05:52.000Z">{{ dateTime("2020-09-25T06:05:52.000Z") }}</time>
@@ -167,7 +167,7 @@ a. The game of Blaseball should be played between two teams.
 </shared-tweet>
 
 <shared-tweet>
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
 <time slot="time" datetime="2020-09-26T22:06:18.000Z">{{ date("2020-09-26T22:06:18.000Z") }}</time>
@@ -179,7 +179,7 @@ I mean I’ve looked at it since
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
+<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg" alt="">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
 <span slot="handle">@SIBROfficial</span>
 <time slot="time" datetime="2020-09-26T22:06:44.000Z">{{ date("2020-09-26T22:06:44.000Z") }}</time>
@@ -190,7 +190,7 @@ parker what do you think happens when a team, and Blaseball, ascends
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
 <time slot="time" datetime="2020-09-26T22:07:35.000Z">{{ date("2020-09-26T22:07:35.000Z") }}</time>
@@ -201,7 +201,7 @@ uh they go up or climb
 
 <main-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
 <time slot="time" datetime="2020-09-26T22:08:32.000Z">{{ dateTime("2020-09-26T22:08:32.000Z") }}</time>
@@ -218,7 +218,7 @@ Paula Turnip—a fan-run twitter account roleplaying as a blaseball player—not
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg">
+<img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg" alt="">
 <span slot="name">Paula 🍳 📚Turnip</span>
 <span slot="handle">@TurnipOnBlase</span>
 <time slot="time" datetime="2020-09-26T22:09:04.000Z">{{ date("2020-09-26T22:09:04.000Z") }}</time>
@@ -229,7 +229,7 @@ did you just google the definition of ascend?
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png">
+<img slot="avatar" src="https://cdn.ewie.online/20250826044622-Image.png" alt="">
 <span slot="name">BLASEBALL COMMISSIONER</span>
 <span slot="handle">@blaseball</span>
 <time slot="time" datetime="2020-09-26T22:10:04.000Z">{{ date("2020-09-26T22:10:04.000Z") }}</time>
@@ -240,7 +240,7 @@ no
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg">
+<img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg" alt="">
 <span slot="name">Paula 🍳 📚Turnip</span>
 <span slot="handle">@TurnipOnBlase</span>
 <time slot="time" datetime="2020-09-26T22:10:55.000Z">{{ date("2020-09-26T22:10:55.000Z") }}</time>
@@ -255,7 +255,7 @@ so this is just a coincidence
 
 <shared-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg">
+<img slot="avatar" src="https://cdn.ewie.online/sibr-logo.svg" alt="">
 <span slot="name">Society for Internet Blaseball Research 🔮</span>
 <span slot="handle">@SIBROfficial</span>
 <time slot="time" datetime="2020-09-26T22:11:21.000Z">{{ date("2020-09-26T22:11:21.000Z") }}</time>
@@ -266,7 +266,7 @@ oh I get it, the championship team becomes a credit union
 
 <main-tweet>
 
-<img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg">
+<img slot="avatar" src="https://cdn.ewie.online/20250826062236-Image.jpeg" alt="">
 <span slot="name">Paula 🍳 📚Turnip</span>
 <span slot="handle">@TurnipOnBlase</span>
 <time slot="time" datetime="2020-09-26T22:11:42.000Z">{{ dateTime("2020-09-26T22:11:42.000Z") }}</time>

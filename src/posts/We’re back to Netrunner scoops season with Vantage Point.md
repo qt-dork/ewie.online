@@ -18,7 +18,7 @@ Welcome back to Netrunner scoops season! This one is gonna start low and slow, s
 {{ comp tweet_embed }}
 
 <main-tweet>
-<img slot="avatar" src="https://cdn.ewie.online/20251020031817-Image.jpeg">
+<img slot="avatar" src="https://cdn.ewie.online/20251020031817-Image.jpeg" alt="">
 <span slot="name">Null Signal Games</span>
 <span slot="handle">@netrunner.nullsignal.games</span>
 <time slot="time" datetime="2025-10-17T18:36:00.000Z">{{ dateTime("2025-10-17T18:36:00.000Z") }}</time>
@@ -29,7 +29,7 @@ Breaking news from [#NetrunnerWorlds25](https://bsky.app/hashtag/NetrunnerWorlds
 
 </div>
 <media-card href="https://nullsignal.games/blog/announcing-vantage-point/">
-<img slot="img" src="https://nullsignal.games/wp-content/uploads/2025/10/OWL_N10_Illustration.png">
+<img slot="img" src="https://nullsignal.games/wp-content/uploads/2025/10/OWL_N10_Illustration.png" alt="An image of the art for the card Hype Machine, showing a crowd looking at a screen with a woman's face on it and a 'Teaser coming soon' timer. The timer is a minute and 37 seconds away from 0.">
 <span slot="domain">nullsignal.games</span>
 <p slot="title" title="Announcing Vantage Point - Null Signal Games">Announcing Vantage Point - Null Signal Games</p>
 <p title="Announcing Vantage Point, the next expansion compatible with Netrunner from Null Signal Games.">Announcing Vantage Point, the next expansion compatible with Netrunner from Null Signal Games.</p>

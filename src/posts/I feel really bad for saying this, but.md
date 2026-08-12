@@ -22,7 +22,7 @@ So I recently saw a post of yours—attached below—about a post from a lead de
 
 {{ comp tweet_embed }}
   <main-tweet>
-    <img slot="avatar" src="https://cdn.ewie.online/20250901015851-Image.jpeg" >
+    <img slot="avatar" src="https://cdn.ewie.online/20250901015851-Image.jpeg" alt="">
     <span slot="name">David Gerard</span>
     <span slot="handle">@davidgerard@circumstances.run</span>
     <time slot="time" datetime="2025-08-29T19:11:05.000Z">{{ dateTime("2025-08-29T19:11:05.000Z") }}</time>
@@ -38,7 +38,7 @@ the extremely bottlenecked project lead for the Julia language tries out Claude 
 </div>
 
 <media-card href="https://discourse.julialang.org/t/the-use-of-claude-code-in-sciml-repos/131009/8">
-  <img src="https://cdn.ewie.online/20250901021140-Image.jpeg" width="662" height="348" loading="lazy" slot="img" />
+  <img src="https://cdn.ewie.online/20250901021140-Image.jpeg" width="662" height="348" loading="lazy" slot="img" alt="The logo for the julia programming language. In the corner is a url for the julialang forums." />
   <span slot="domain">discourse.julialang.org</span>
   <time slot="time" datetime="2025-07-25T04:06:10.000Z" title="7/24/2025, 11:06:10 PM">{{ date("2025-07-25T04:06:10.000Z") }}</time>
   <p slot="title" title="The use of Claude Code in SciML repos">The use of Claude Code in SciML repos</p>

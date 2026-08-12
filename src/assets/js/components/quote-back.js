@@ -128,7 +128,7 @@ class QuoteBack extends LitElement {
         <blockquote><slot></slot></blockquote>
         <figcaption>
           <div class="favicon">
-            <div class="mini-favicon"><img src="${this.getSrc()}"></div>
+            <div class="mini-favicon"><img src="${this.getSrc()}" alt=""></div>
           </div>
           <div class="cite">
             <div><slot name="author"></slot></div>

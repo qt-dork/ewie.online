@@ -45,7 +45,7 @@ I go to all of these but this time I wanted to share some pictures of the games
 </style>
 
 <figure style="grid-template">
-<img src="https://cdn.ewie.online/20250811045055-IMG_2015.jpeg"/>
-<img src="https://cdn.ewie.online/20250811045148-IMG_2016.jpeg"/>
+<img src="https://cdn.ewie.online/20250811045055-IMG_2015.jpeg" alt="A Netrunner board state. Mercury vs. AU Co. The game appears to be moderately progressed. The Mercury player, me, has 3 points. The AU Co. player, and older man with a gray beard, is pondering his next move."/>
+<img src="https://cdn.ewie.online/20250811045148-IMG_2016.jpeg" alt="The same game but later on. The Runner appears to be accessing approximately 5 cards. Of that that, 1 is the agenda Sting. The AU Co. player is already shuffling his and and discard pile back into his deck, implying the game has ended."/>
 <figcaption>Mercury versus AU Co. I died.</figcaption>
 </figure>

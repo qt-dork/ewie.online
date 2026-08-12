@@ -15,7 +15,7 @@ system](https://cdn.ewie.online/20250805050612-IMG_1964.jpeg)
 
 i used to have a pretty nightmarish read later system, until kobo said they were going to integrate with instapaper due to the pocket shutdown. then i switched over to instapaper for everything.
 
-![](https://cdn.ewie.online/20250805051041-Image.jpeg)
+![A screenshot of a draft about content warnings vs. tags (text content below)](https://cdn.ewie.online/20250805051041-Image.jpeg)
 
 <details><summary>Alt text:</summary>
 
@@ -29,7 +29,7 @@ Something I've seen an amount of on Cohost is the refrain, "I hate it when posts
 
 i have no idea what the fuck i was cooking with here. this was written about a year and a half ago, while cohost still existed. reading the other paragraph i had here, right below the crop, it seems to have been a post on how you should just use tags or something. i think i was just annoyed at people using mastodon-style content warnings and wanted to write a big callout post complaining about it. probably for the best i didn't finish it.
 
-![](https://cdn.ewie.online/20250805051618-Image.jpeg)
+![A screenshot of a draft titled "Pocket on Kobo is the stuff of nightmares" (text content below)](https://cdn.ewie.online/20250805051618-Image.jpeg)
 
 <details><summary>Alt text:</summary>
 
@@ -43,7 +43,7 @@ And the monkey's paw curls.
 
 this could've been something maybe but then pocket shut down, showing i was right all along and pocket sucks really bad. i think the inspiration for this was me trying to upload an article from verso to pocket and i literally could not make it work.
 
-![](https://cdn.ewie.online/20250805051918-Image.jpeg)
+![A screenshot of a draft about Matter being hollowed out by AI (text content below)](https://cdn.ewie.online/20250805051918-Image.jpeg)
 
 <details><summary>Alt text:</summary>
 
