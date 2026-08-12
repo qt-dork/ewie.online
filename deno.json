@@ -13,15 +13,7 @@
     },
     "build": {
       "description": "Build the site for production",
-      "command": "deno task lume && deno task check-urls"
-    },
-    "check-urls": {
-      "description": "Fail the build if published URLs changed (checking for dead links)",
-      "command": "deno run -A scripts/check_urls.ts"
-    },
-    "update-urls": {
-      "description": "Regenerate the snapshot after intentional URL changes",
-      "command": "deno run -A scripts/check_urls.ts --update"
+      "command": "deno task lume"
     },
     "serve": {
       "description": "Run and serve the site for development",

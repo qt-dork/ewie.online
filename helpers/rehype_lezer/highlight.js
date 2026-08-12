@@ -1,4 +1,4 @@
-import lezerHast from "./lezer-hast.js";
+import lezerHast from "./lezer_hast.js";
 
 import { visit } from "npm:unist-util-visit@5.1.0";
 import { toText } from "npm:hast-util-to-text@4.0.2";

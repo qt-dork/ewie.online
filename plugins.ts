@@ -10,6 +10,8 @@ import remark, { Options as RemarkOptions } from "lume/plugins/remark.ts";
 import robots, { Options as RobotsOptions } from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
+import stableUrls, { Options as StableUrlsOptions } from "./helpers/stable_urls/mod.ts";
+
 
 import { merge } from "lume/core/utils/object.ts";
 
@@ -22,6 +24,7 @@ export interface Options {
   pagefind?: PagefindOptions;
   remark?: RemarkOptions;
   robots?: RobotsOptions;
+  stable_urls?: StableUrlsOptions;
 }
 
 export const defaults: Options = {
@@ -73,6 +76,7 @@ export default function (userOptions?: Options) {
       .use(remark(options.remark))
       .use(lezer(options.lezer))
       .use(robots())
-      .use(sitemap());
+      .use(sitemap())
+      .use(stableUrls(options.stable_urls))
   };
 }
