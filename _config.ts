@@ -18,7 +18,6 @@ site.add("static", ".");
 site.add("styles");
 site.add("assets/js");
 
-// import { rehypeLezer } from "./helpers/rehype-lezer/highlight.js";
 import { parser as jsParser } from "npm:@lezer/javascript@^1.0.0";
 import { parser as cssParser } from "npm:@lezer/css@^1.0.0";
 import { parser as htmlParser } from "npm:@lezer/html@^1.0.0";
@@ -40,20 +39,12 @@ const options: Options = {
   remark: {
     rehypePlugins: [
       [rehypeSlug],
-      // [rehypeLezer, {
-      //   parsers: [
-      //     { lang: "js", parser: jsParser },
-      //     { lang: "css", parser: cssParser },
-      //     { lang: "html", parser: htmlParser },
-      //     { lang: "md", parser: mdParser },
-      //   ],
-      // }],
       [rehypeAutolinkHeadings],
     ],
   },
 };
 
-import { extractMarkers } from "./helpers/parse-markers/mod.ts";
+import { extractMarkers } from "./helpers/parse_markers/mod.ts";
 site.preprocess([".md"], (pages) => {
   for (const page of pages) {
     const content = page.data.content;
@@ -76,31 +67,6 @@ site.preprocess([".md"], (pages) => {
 });
 
 site.use(plugins(options));
-
-// Bad code here
-// import createSlugifier, {
-//   defaults as slugifierDefaults,
-// } from "lume/core/slugifier.ts";
-// import { format } from "lume/deps/date.ts";
-// site.preprocess([".md"], (pages) => {
-//   const slugify = createSlugifier(slugifierDefaults);
-//   for (const page of pages) {
-//     if (page.data.type === "post") {
-//       const slugDate = format(new Date(page.data.date), "yyyyMMdd");
-//       const slugBody = slugify(
-//         page.data.title ??
-//           ((page.data.content as string | undefined) ?? "undefined").substring(
-//             0,
-//             40,
-//           ),
-//       ).substring(0, 20);
-//       page.data.url = `/posts/${slugDate}-${slugBody}/`;
-//       if (page.data.permalink) {
-//         page.data.url = page.data.permalink;
-//       }
-//     }
-//   }
-// });
 
 site.filter(
   "trimToLineBreak",
