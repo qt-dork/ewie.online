@@ -32,6 +32,6 @@ _Good design is invisible—but I’ll never settle for ‘good’._
 
 <script type="module" src="/assets/js/components/card-frame.js"></script>
 
-![“You can hack into OSEAN, and you’re using it to finish your building? With skills like that, you could reshape the city!” “But I don't want to reshape the city. I want to finish my space elevator.”](https://cdn.ewie.online/20250425001133-Image.jpeg)
+![A meme of Spider-Man talking to a pterodactyl scientist super villain. The original meme said something along the lines of "You can turn people into dinosaurs? With knowledge like that you could cure cancer!" and the dinosaur scientist says, "But I don't want to cure cancer. I want to turn people into dinosaurs." This one reads: “You can hack into OSEAN, and you’re using it to finish your building? With skills like that, you could reshape the city!” “But I don't want to reshape the city. I want to finish my space elevator.”](https://cdn.ewie.online/20250425001133-Image.jpeg)
 
 I love this ID. I love installing cards and I love the incentive to overdraw. A very Shaper ID through and through.

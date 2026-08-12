@@ -5,6 +5,7 @@ import lezer, { Options as LezerOptions } from "./helpers/lezer/mod.ts";
 import lightningCSS from "lume/plugins/lightningcss.ts";
 import metas from "lume/plugins/metas.ts";
 import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
+import redirects from "lume/plugins/redirects.ts";
 import remark, { Options as RemarkOptions } from "lume/plugins/remark.ts";
 import robots, { Options as RobotsOptions } from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
@@ -68,6 +69,7 @@ export default function (userOptions?: Options) {
       .use(metas())
       .use(feed(options.feed))
       .use(pagefind(options.pagefind))
+      .use(redirects())
       .use(remark(options.remark))
       .use(lezer(options.lezer))
       .use(robots())

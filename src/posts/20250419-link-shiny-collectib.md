@@ -8,7 +8,7 @@ tags:
  - netrunner
 ---
 
-![](https://belarius.neocities.org/bulletin-board-nonsense/media/posts/886/gallery/BulletinBoardNonsense-894.jpg)
+![An image of a bulletin board, with 2 items attached to it: The FFG Netrunner card PAD Campaign, and a small postcard of the 1927 Hotel deVille de Troyes Exposition Regionale de Timbres-Poste. On both of these items seem to be a number of holographic stickers of icons, like an envelope, and multiple X's.](https://belarius.neocities.org/bulletin-board-nonsense/media/posts/886/gallery/BulletinBoardNonsense-894.jpg)
 
 from https://belarius.neocities.org/bulletin-board-nonsense/post/shiny-collectables/
 

@@ -178,9 +178,10 @@ export class CardFrame extends LitElement {
         <div class="wrapper" id="transformer">
           <div class="card flipped-${watch(this.flipped)}" @click="${this
             ._flip}">
-            <img class="side front" src="${this.src}" />
+            <img class="side front" src="${this.src}" alt="">
             <img
               class="side back"
+              alt=""
               src="${this.back === ""
                 ? `https://cdn.ewie.online/nsg-${this.side}.png`
                 : this.back}"

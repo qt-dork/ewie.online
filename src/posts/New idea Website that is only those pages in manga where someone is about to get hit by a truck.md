@@ -9,4 +9,4 @@ tags:
 ---
 I’ll go first
 
-![](https://cdn.ewie.online/IMG_1095.jpeg)
+![A manga page. It shows a small panel of half of a high school anime-style girl's wide-eyed face with her saying "Eh?" on top of a large scene of that same girl walking across the street. There is a large truck speeding her way.](https://cdn.ewie.online/IMG_1095.jpeg)

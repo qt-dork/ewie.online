@@ -11,4 +11,4 @@ tags:
  - cohost archive
 ---
 
-![](https://cdn.ewie.online/Image.gif)
+![A gif of an infinite combo in Cobalt Core. The player appears to be playing one card repeatedly to gain a large amount of mana, which is spent on playing another card that deals damage repeatedly until the final boss of the game dies.](https://cdn.ewie.online/Image.gif)

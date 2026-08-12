@@ -23,7 +23,7 @@ At the end of [season 10](https://www.blaseball.wiki/w/Beta/Season_10) of Blaseb
 
 While their record was unfortunate, it helped stats nerds create a WAR-like statistic to figure out approximately how good a player was by comparing how many wins that player would give you compared to the historic winrate of the season 11 Tokyo Lift. This stat would be christened the name, “Wins (historical) Above Tokyo Lift” or [WhAT](https://www.blaseball.wiki/w/SIBR:Sibrmetrics). This name was also a reference to the catchphrase of the official Blaseball Twitter account[^7], “what”.[^8]
 
-![](https://cdn.ewie.online/20250807082126-IMG_1986.jpeg)
+![A Discord message from Sproutella about developing the WhAT stat, with a graph of the top 10 WhAT leaders in Season 11 (full text below)](https://cdn.ewie.online/20250807082126-IMG_1986.jpeg)
 
 <details><summary>Alt text:</summary>
 
@@ -37,7 +37,7 @@ Attached is a graph showing the 10 players with the highest WhAT, with first pla
 
 I think WhAT is an exceptionally funny stat. It checks all the boxes: it has a funny background, a funny name, it’s somehow actually useful, yet I have not seen extensive use of it across discussion of players, outside of arguments over which player is best and miscellaneous factoids. This is not a negative quality to me.
 
-![](https://cdn.ewie.online/20250808065444-SCR-20250808-bnyx.jpeg)
+![A discord message from deafhobbit about Lowe Forbes' WhAT numbers (full text below)](https://cdn.ewie.online/20250808065444-SCR-20250808-bnyx.jpeg)
 
 <details><summary>Alt text:</summary>
 
@@ -56,7 +56,7 @@ As a bonus little tidbit, years later, the stats nerd at SIBR have mostly finish
 
 While this would be exceptionally funny, I have been told that it would not actually be that much more valuable than WhAT as a stat. Somehow, the Lift was about as average as you could get.
 
-![](https://cdn.ewie.online/20250807082228-IMG_1988.jpeg)
+![A discord conversation between May and Erin (full text below)](https://cdn.ewie.online/20250807082228-IMG_1988.jpeg)
 
 <details><summary>Alt text:</summary>
 

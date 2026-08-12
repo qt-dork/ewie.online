@@ -7,7 +7,7 @@ tags:
  - netrunner
 ---
 
-![](https://belarius.neocities.org/bulletin-board-nonsense/media/posts/54/gallery/BulletinBoardNonsense-701.jpg)
+![A bulletin board showing 3 items on it: A classic Netrunner card titled "Vewy Vewy Quiet", a card from some other card game titled "Spy", and a postcard of Tintin.](https://belarius.neocities.org/bulletin-board-nonsense/media/posts/54/gallery/BulletinBoardNonsense-701.jpg)
 
 from <https://belarius.neocities.org/bulletin-board-nonsense/post/the-belgian-agent/>
 
