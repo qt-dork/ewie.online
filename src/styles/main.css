@@ -1,7 +1,6 @@
 /*deno-fmt-ignore*/
 @layer globals, compositions, utilities, blocks, exceptions;
 
-@import "css/globals.css" layer(globals);
 @import "css/reset.css" layer(globals);
 @import "css/_globals/_globals.css" layer(globals);
 @import "css/media.css" layer(compositions);
