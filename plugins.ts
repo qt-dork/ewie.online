@@ -1,11 +1,13 @@
 import date, { Options as DateOptions } from "lume/plugins/date.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
+import hash from "./helpers/hash/mod.ts";
 import lezer, { Options as LezerOptions } from "./helpers/lezer/mod.ts";
 import lightningCSS from "lume/plugins/lightningcss.ts";
 import metas from "lume/plugins/metas.ts";
 import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
 import redirects from "lume/plugins/redirects.ts";
+import reblogMarkers from "./helpers/reblog_markers/mod.ts";
 import remark, { Options as RemarkOptions } from "lume/plugins/remark.ts";
 import robots, { Options as RobotsOptions } from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
@@ -69,10 +71,12 @@ export default function (userOptions?: Options) {
       .use(esbuild())
       .use(lightningCSS())
       .use(slugifyUrls())
+      .use(hash())
       .use(metas())
       .use(feed(options.feed))
       .use(pagefind(options.pagefind))
       .use(redirects())
+      .use(reblogMarkers())
       .use(remark(options.remark))
       .use(lezer(options.lezer))
       .use(robots())

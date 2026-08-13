@@ -5,12 +5,12 @@
   {{# Reblog content #}}
   {{ if reblogs }}
     {{ for reblog of reblogs }}
-      {{ comp.reblog_post.attribution({ author: reblog.data.author, url: reblog.data.url, date: reblog.data.date, replying_to }) }}
-      {{> replying_to = { action: "reblog", source: reblog.data.author.displayName } }}
+      {{ comp.reblog_post.attribution({ author: reblog.author, url: reblog.url, date: reblog.date, replying_to }) }}
+      {{> replying_to = { action: "reblog", source: reblog.author.displayName } }}
       <hr />
-      {{ if (reblog.data.title) }}
-        {{ comp reblog_post.title { url: reblog.data.url, is_timeline } }}
-          {{ reblog.data.title }}
+      {{ if (reblog.title) }}
+        {{ comp reblog_post.title { url: reblog.url, is_timeline } }}
+          {{ reblog.title }}
         {{ /comp }}
       {{ /if }}
       {{ if reblog.content }}
@@ -18,8 +18,8 @@
           {{ reblog.content |> md }}
         {{ /comp }}
       {{ /if }}
-      {{ if reblog.data.tags }}
-        {{ comp.reblog_post.tags({ tags: reblog.data.tags }) }}
+      {{ if reblog.tags }}
+        {{ comp.reblog_post.tags({ tags: reblog.tags }) }}
       {{ /if }}
       <hr />
     {{ /for }}
