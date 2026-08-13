@@ -48,7 +48,7 @@ export function lezer(userOptions: Options) {
     });
 
     function lezer(page: Page) {
-      page.document.querySelectorAll(options.cssSelector)
+      page.document.querySelectorAll(options.cssSelector!)
         .forEach((element: Element) => {
           const lang = language(element);
           if (lang === null) {
@@ -65,10 +65,10 @@ export function lezer(userOptions: Options) {
             const parsedTree = parser.parse(element.textContent);
             fragment = fromLezer(element.textContent, parsedTree);
             element.innerHTML = toHtml(fragment);
-            log.info(`Successfully parsed code blocks in ${page.sourcePath}`);
+            log.info(`[lezer] Successfully parsed code blocks in ${page.sourcePath}`);
           } catch (err) {
             log.error(
-              `Error highlighting code block in ${page.sourcePath}: ${err}`,
+              `[lezer] Error highlighting code block in ${page.sourcePath}: ${err}`,
             );
           }
         });

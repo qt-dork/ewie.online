@@ -94,7 +94,7 @@ export default function (userOptions?: Options) {
       } catch {
         // No snapshot. Save one
         saveUrls(getBaseline(urls, redirects));
-        log.info(`[stable_urls plugin] Created ${options.file} (${urls.length} URLs). Please commit this file.`);
+        log.info(`[stable_urls] Created ${options.file} (${urls.length} URLs). Please commit this file.`);
         return;
       }
 
@@ -102,7 +102,7 @@ export default function (userOptions?: Options) {
 
       if (missing.length > 0) {
         const message =
-          `[stable_urls plugin] ${missing.length} previously published URL(s) have been removed or changed:\n` +
+          `[stable_urls] ${missing.length} previously published URL(s) have been removed or changed:\n` +
           missing.map((url) => `  - ${url}`).join("\n") +
           `\nIf this change is intentional, you may set it up as a redirect with the "redircts" plugin. ` +
           `Otherwise, you can delete ${options.file} and rebuild to update ` +
@@ -118,9 +118,9 @@ export default function (userOptions?: Options) {
       const baseline = getBaseline(urls, redirects);
       if (baseline.join("\n") !== previous.join("\n")) {
         saveUrls(baseline);
-        log.info(`[stable_urls plugin] Updated ${options.file} (${baseline.length} URLs). Please commit this change.`);
+        log.info(`[stable_urls] Updated ${options.file} (+${baseline.length - previous.length} URL(s)). Please commit this change.`);
       } else {
-        log.info(`[stable_urls plugin] All ${baseline.length} URLs are stable.`);
+        log.info(`[stable_urls] All ${baseline.length} URLs are stable.`);
       }
     }
 
