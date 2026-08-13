@@ -1,0 +1,18 @@
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.eightyeight-by-thirtyone img {
+  width: 88px;
+  height: 31px;
+  image-rendering: pixelated;
+}
+
+.eightyeight-by-thirtyone-button, .pixel {
+  width: 88px;
+  height: 31px;
+  image-rendering: pixelated;
+}

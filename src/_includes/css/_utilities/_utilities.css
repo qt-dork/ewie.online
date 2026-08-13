@@ -1,3 +1,21 @@
+/*
+ * _utilities.css is meant to contain a number of utility css files,
+ * focus on providing a single class (or small handful of classes) that's
+ * meant to do one thing.
+ *
+ * For example, the `.spicy` class gives text a "spicy" look with a different
+ * font and fancy cursive and stuff. Another example is avatar-mask.css, which
+ * has utility data attributes for giving avatars the different masks you could
+ * have on cohost.
+ */
+
 @import "./avatar-mask.css";
+@import "./center.css";
+@import "./eightyeight-by-thirtyone.css";
 @import "./horizontal-rule.css";
+@import "./line-clamp.css";
 @import "./mark.css";
+@import "./no-list.css";
+@import "./shadows.css";
+@import "./spicy.css";
+@import "./stack.css";

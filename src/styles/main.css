@@ -1,26 +1,27 @@
 /*deno-fmt-ignore*/
-@layer composition, utility, block, exception;
+@layer globals, compositions, utilities, blocks, exceptions;
 
-@import "css/media.css" layer(composition);
-@import "css/fonts.css" layer(composition);
-@import "css/reset.css" layer(composition.reset);
-@import "css/globals.css" layer(composition.globals);
-@import "css/_globals/_globals.css" layer(composition.globals);
-@import "css/elements.css" layer(composition);
-@import "css/_compositions/_compositions.css" layer(composition);
+@import "css/globals.css" layer(globals);
+@import "css/reset.css" layer(globals);
+@import "css/_globals/_globals.css" layer(globals);
+@import "css/media.css" layer(compositions);
+@import "css/fonts.css" layer(compositions);
+@import "css/elements.css" layer(compositions);
+@import "css/_compositions/_compositions.css" layer(compositions);
+@import "css/syntax-highlight.css" layer(compositions);
+@import "css/_utilities/_utilities.css" layer(utilities);
+@import "css/posts.css" layer(blocks);
+@import "css/post.css" layer(blocks);
+@import "css/comments.css" layer(blocks);
+@import "css/navigation.css" layer(blocks);
+@import "css/footer.css" layer(blocks);
+@import "css/header.css" layer(blocks);
+@import "css/main.css" layer(blocks);
+@import "css/_blocks/_blocks.css" layer(blocks);
 
-@import "css/syntax-highlight.css" layer(composition);
-@import "css/utilities.css" layer(utility);
-@import "css/posts.css" layer(block);
-@import "css/post.css" layer(block);
-@import "css/comments.css" layer(block);
-@import "css/navigation.css" layer(block);
-@import "css/footer.css" layer(block);
-@import "css/header.css" layer(block);
-@import "css/main.css" layer(block);
 
 /* @import "css/theme-picker.css" layer(block); */
 /* Make search in exception block once i can layer the default styles */
 @import "css/search.css";
-@import "css/loader.css" layer(exception);
-@import "css/_exceptions/_exceptions.css" layer(exception);
+@import "css/loader.css" layer(exceptions);
+@import "css/_exceptions/_exceptions.css" layer(exceptions);

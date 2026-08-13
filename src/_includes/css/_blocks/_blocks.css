@@ -1,3 +1,5 @@
+@import "./comments.css";
+
 /* Posts */
 @import "./post-wrapper.css";
 @import "./post-attribution.css";
