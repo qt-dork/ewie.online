@@ -3,7 +3,6 @@
 
 @import "css/reset.css" layer(globals);
 @import "css/_globals/_globals.css" layer(globals);
-@import "css/media.css" layer(compositions);
 @import "css/fonts.css" layer(compositions);
 @import "css/elements.css" layer(compositions);
 @import "css/_compositions/_compositions.css" layer(compositions);
@@ -11,7 +10,6 @@
 @import "css/_utilities/_utilities.css" layer(utilities);
 @import "css/posts.css" layer(blocks);
 @import "css/post.css" layer(blocks);
-@import "css/comments.css" layer(blocks);
 @import "css/navigation.css" layer(blocks);
 @import "css/footer.css" layer(blocks);
 @import "css/header.css" layer(blocks);
