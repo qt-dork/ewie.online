@@ -180,8 +180,10 @@
     {{# Manifest #}}
 
     {{# Canonical URL #}}
+    <link rel="canonical" href="https://{{links.domain}}{{url}}" />
 
     {{# Verification on Mastodon #}}
+    <link rel="me" href="https://{{links.fediverse}}">
 
     {{# Page description #}}
 
@@ -194,6 +196,8 @@
     {{# Author attribution #}}
 
     {{# General non-render-blocking JS #}}
+
+    {{# Color scheme #}}
     <meta content="light dark" name="supported-color-schemes">
 
     <link
@@ -202,7 +206,7 @@
       type="application/activity+json"
     >
 
-    <link rel="me" href="https://{{links.fediverse}}">
+
     <link
       rel="preload"
       as="fetch"
@@ -213,12 +217,6 @@
         <link rel="octo:octothorpes" href="{{ tag |> slugify }}">
       {{ /for }}
     {{ /if }}
-
-
-
-    <link rel="canonical" href="https://{{links.domain}}{{url}}" />
-
-
 
     <link rel="sitemap" href="/sitemap.xml" />
 
