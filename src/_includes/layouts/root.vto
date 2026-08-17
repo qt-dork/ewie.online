@@ -1,36 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="light dark" name="supported-color-schemes">
+    <meta name="viewport" content="width=device-width">
+    <!--
+      NOTE: If text scaling is broken on mobile for you, it's because of this.
+      Please email me about it at evie@ewie.online and give me some details so
+      I can fix it. My phone browser (Safari on mobile) doesn't support this
+      feature so I can't test if it does anything wrong.
+    -->
+    <meta name="text-scale" content="scale">
 
-    <link
-      href="https://{{links.domain}}{{url}}"
-      rel="alternate"
-      type="application/activity+json"
-    >
-    <title>{{ title }}</title>
-
-    <link rel="me" href="https://{{links.fediverse}}">
-    <link
-      rel="preload"
-      as="fetch"
-      href="https://octothorp.es/?uri=https://{{links.domain}}{{url}}"
-    >
-    {{ if tags }}
-      {{ for tag of tags }}
-        <link rel="octo:octothorpes" href="{{ tag |> slugify }}">
-      {{ /for }}
+    {{ if title }}
+      <title>{{ title }} - {{metas.site}}</title>
+    {{ else if content_title }}
+      <title>{{ content_title }} - {{metas.site}}</title>
+    {{ else }}
+      <title>{{ metas.site }}</title>
     {{ /if }}
 
-    <!-- TODO: Remember to add favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="32x32">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    {{# Render blocking js #}}
+    {{# <script src="/js/render-blocking-scripts.js"></script> #}}
 
-    <link rel="canonical" href="https://{{links.domain}}{{url}}" />
+    <script>
+      document.documentElement.classList.replace("no-js", "js");
+    </script>
 
+    {{# CSS #}}
     <!-- <link rel="stylesheet" href="/styles/critical.css" inline /> -->
     <link rel="stylesheet" href="/styles/main.css" />
 
@@ -39,8 +35,9 @@
       <link rel="stylesheet" href="/styles/pages/{{ page_css }}" />
     {{ /if }}
 
-    <link rel="sitemap" href="/sitemap.xml" />
+    {{# <link rel="stylesheet" href="/styles/print.css" media="print"> #}}
 
+    {{# Non-render blocking js #}}
     {{# TODO: This could probably check the page type instead of the url #}}
     {{ if (url.toString().includes("post")) }}
       <script
@@ -174,6 +171,54 @@
     {{ if it.page_script }}
       <script src="/js/{{ page_script }}" type="module" async></script>
     {{ /if }}
+
+    {{# Favicon #}}
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    {{# Manifest #}}
+
+    {{# Canonical URL #}}
+    <link rel="canonical" href="https://{{links.domain}}{{url}}" />
+
+    {{# Verification on Mastodon #}}
+    <link rel="me" href="https://{{links.fediverse}}">
+
+    {{# Page description #}}
+
+    {{# Preview image for social media, chats, etc. #}}
+
+    {{# Canonical URL for social media #}}
+
+    {{# Theme #}}
+
+    {{# Author attribution #}}
+
+    {{# General non-render-blocking JS #}}
+
+    {{# Color scheme #}}
+    <meta content="light dark" name="supported-color-schemes">
+
+    <link
+      href="https://{{links.domain}}{{url}}"
+      rel="alternate"
+      type="application/activity+json"
+    >
+
+
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://{{links.domain}}{{url}}"
+    >
+    {{ if tags }}
+      {{ for tag of tags }}
+        <link rel="octo:octothorpes" href="{{ tag |> slugify }}">
+      {{ /for }}
+    {{ /if }}
+
+    <link rel="sitemap" href="/sitemap.xml" />
 
     {{ it.extra_head?.join("\n") }}
   </head>

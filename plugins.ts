@@ -1,3 +1,4 @@
+import contentTitle, { Options as ContentTitleOptions } from "./helpers/content_title/mod.ts";
 import date, { Options as DateOptions } from "lume/plugins/date.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
@@ -20,6 +21,7 @@ import { merge } from "lume/core/utils/object.ts";
 import "lume/types.ts";
 
 export interface Options {
+  content_title?: ContentTitleOptions;
   date?: DateOptions;
   feed?: FeedOptions;
   lezer: LezerOptions; // TODO: Make optional
@@ -73,6 +75,7 @@ export default function (userOptions?: Options) {
       .use(slugifyUrls())
       .use(hash())
       .use(metas())
+      .use(contentTitle(options.content_title))
       .use(feed(options.feed))
       .use(pagefind(options.pagefind))
       .use(redirects())

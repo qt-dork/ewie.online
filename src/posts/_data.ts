@@ -25,7 +25,6 @@ interface PostData extends Lume.Data {
 /// If a post has no description, make one from the content. Strips out all the markdown and html to get only pure plain text.
 const generateDescriptionFromContent = ({ description, content }: PostData): string => {
   if (typeof description === "string" && description.trim() !== "") {
-    log.debug(description);
     return description;
   } else {
     const plainContent = plainText(content as string, plainTextDefaults);
@@ -77,7 +76,7 @@ export default {
   },
   metas: {
     type: "article",
-    title: "=title",
+    title: "=title || =content_title",
     description: generateDescriptionFromContent,
     "twitter:description": generateDescriptionFromContent,
     icon: ogIcon,
