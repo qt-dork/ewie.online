@@ -6,14 +6,14 @@
 </header>
 
 <div>
-  <ul class="blog-posts stack">
+  <div class="blog-posts stack">
     {{ for post of postlist }}
       {{set hash = post.url |> hash}}
-      <li class="post-wrapper" style="view-transition-name: post-{{ hash }};">
+      <div class="post-wrapper" style="view-transition-name: post-{{ hash }};">
         {{ comp.reblog_post.index({ is_timeline: true, ...post }) }}
-      </li>
+      </div>
     {{ /for }}
-  </ul>
+  </div>
 
   {{ comp.navigation({ pagi: page.data.pagination })}}
 </div>

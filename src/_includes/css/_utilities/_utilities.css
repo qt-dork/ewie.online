@@ -15,8 +15,10 @@
 @import "./horizontal-rule.css";
 @import "./line-clamp.css";
 @import "./mark.css";
+@import "./mouse-overhang.css";
 @import "./no-list.css";
 @import "./shadows.css";
 @import "./spicy.css";
 @import "./stack.css";
+@import "./syntax-highlight.css";
 @import "./visually-hidden.css";

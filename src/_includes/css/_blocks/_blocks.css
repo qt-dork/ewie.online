@@ -1,5 +1,7 @@
 @import "./comments.css";
 @import "./logo.css";
+@import "./pagination.css";
+
 
 /* Posts */
 @import "./post-wrapper.css";
