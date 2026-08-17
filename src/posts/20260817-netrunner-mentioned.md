@@ -1,6 +1,5 @@
 ---
 title: "Netrunner mentioned!"
-url: "https://belarius.neocities.org/bulletin
 date: 2026-08-17T22:32:19.973Z
 tags: 
  - netrunner
