@@ -10,7 +10,7 @@ tags:
 
 ![Page 1 of chapter 789 of the the manga "Hatarakanai Futari". It's been translated into toki pona. The full transcript is included below.](https://cdn.ewie.online/A%20Strong%20Person%20Page%201.png)
 
-![Page 2 of chapter 789 of the the manga "Hatarakanai Futari". It's been translated into toki pona. The full transcript is included below.](https://cdn.ewie.online/A%20Strong%20Person%20Page%201.png)
+![Page 2 of chapter 789 of the the manga "Hatarakanai Futari". It's been translated into toki pona. The full transcript is included below.](https://cdn.ewie.online/A%20Strong%20Person%20Page%202.png)
 
 <details>
 <summary>
