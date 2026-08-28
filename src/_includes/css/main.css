@@ -1,3 +1,7 @@
 @layer global, compositions, utilities, blocks, exceptions;
 
-@import "./_blocks/_blocks.css";
+@import "./_globals/_globals.css" layer(global);
+@import "./_compositions/_compositions.css" layer(compositions);
+@import "./_utilities/_utilities.css" layer(utilities);
+@import "./_blocks/_blocks.css" layer(blocks);
+@import "./_exceptions/_exceptions.css" layer(exceptions);

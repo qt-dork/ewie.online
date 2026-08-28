@@ -1,7 +1,14 @@
-@import "./comments.css";
+@import "./footer.css";
+@import "./header.css";
 @import "./logo.css";
 @import "./pagination.css";
 
+@import "./post-legacy.css" layer(legacy);
+@import "./timeline-legacy.css" layer(legacy);
+
+/* Comments */
+@import "./comments.css";
+@import "./comments-loader.css";
 
 /* Posts */
 @import "./post-wrapper.css";

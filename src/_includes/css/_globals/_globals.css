@@ -2,4 +2,5 @@
 @import "./fonts.css";
 @import "./uaplus.css";
 @import "./reset.css";
+@import "./reset-legacy.css" layer(legacy);
 @import "./elements.css";
