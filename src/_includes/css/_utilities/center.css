@@ -1,0 +1,9 @@
+.center {
+  --measure: 60ch;
+  --center-padding: var(--space-s);
+
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--measure);
+  padding-inline: var(--center-padding);
+}

@@ -9,9 +9,9 @@
 }
 
 /** cssremedy
- * Consistent line-spacing, even when inline elements have 
+ * Consistent line-spacing, even when inline elements have
  * different line-heights.
- * 
+ *
  * Note: This is a draft. It doesn't do anything yet.
  */
 html {
@@ -54,8 +54,8 @@ audio:not([controls]) {
 }
 
 /** cssremedy
- * Picture and source display inline by default, but that's not 
- * the expected behavior for either one. This can interfere with 
+ * Picture and source display inline by default, but that's not
+ * the expected behavior for either one. This can interfere with
  * proper layout and aspect-ratio handling.
  * 1. Remove the unnecessary wrapping `picture` while maintaining contents
  * 2. Source elements have nothing to display, so we hide them entirely
