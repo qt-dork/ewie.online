@@ -1,0 +1,27 @@
+mouse-bookworm {
+  display: grid;
+  grid-template-columns: auto max-content;
+  grid-template-areas: ". img";
+
+  block-size: 1px;
+
+  --space-offset: clamp(-10rem, 3rem - 12vi, 0rem);
+
+
+  img {
+    grid-area: img;
+    box-sizing: content-box;
+
+    /*margin-block-start: var(--space-offset);*/
+    transform: translateY(var(--space-offset));
+
+    inline-size: calc(4.5 * var(--space-3xl-4xl));
+    aspect-ratio: 1521/1615;
+    padding-inline: var(--space-s-m);
+    padding-block-end: var(--space-s-m);
+
+    z-index: -1;
+
+    mix-blend-mode: multiply;
+  }
+}
