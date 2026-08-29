@@ -25,3 +25,8 @@ mouse-bookworm {
     mix-blend-mode: multiply;
   }
 }
+
+[data-theme-appearance=dark] mouse-bookworm img {
+  filter: invert(100%);
+  mix-blend-mode: lighten;
+}
