@@ -70,7 +70,7 @@ export default function (userOptions?: Options) {
   return (site: Lume.Site) => {
     site
       .use(date(options.date))
-      .use(esbuild())
+      .use(esbuild({ options: { external: ["lit"] } }))
       .use(lightningCSS())
       .use(slugifyUrls())
       .use(hash())

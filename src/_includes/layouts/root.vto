@@ -37,6 +37,15 @@
 
     {{# <link rel="stylesheet" href="/styles/print.css" media="print"> #}}
 
+    {{# I'm trying to figure out this importmap stuff #}}
+    <script type="importmap">
+      {
+        "imports": {
+          "lit": "/assets/js/lit.js"
+        }
+      }
+    </script>
+
     {{# Non-render blocking js #}}
     {{ if (it.type === "post") }}
       <link rel="preconnect" href="https://api.ewie.online" crossorigin />

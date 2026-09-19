@@ -1,4 +1,4 @@
-import {html, css, LitElement} from 'npm:lit';
+import {html, css, LitElement} from 'lit';
 import 'https://cdn.jsdelivr.net/npm/range-slider-element@2/+esm';
 
 export class HueShifter extends LitElement {

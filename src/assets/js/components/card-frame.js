@@ -1,5 +1,4 @@
-import { css, html, LitElement } from "npm:lit";
-import { signal, watch } from "npm:@lit-labs/preact-signals";
+import { css, html, LitElement } from "lit";
 
 export class CardFrame extends LitElement {
   static properties = {
@@ -8,14 +7,14 @@ export class CardFrame extends LitElement {
     stars: { type: Number },
     side: { type: String },
     back: { type: String },
+    flipped: { state: true },
   };
-
-  flipped = signal(false);
 
   constructor() {
     super();
     this.stars = 0;
     this.back = "";
+    this.flipped = false;
   }
 
   static styles = css`
@@ -176,7 +175,7 @@ export class CardFrame extends LitElement {
       </span>
       <div aria-describedby="card-name-${this.name}" class="flip-card">
         <div class="wrapper" id="transformer">
-          <div class="card flipped-${watch(this.flipped)}" @click="${this
+          <div class="card flipped-${this.flipped}" @click="${this
             ._flip}">
             <img class="side front" src="${this.src}" alt="">
             <img
@@ -193,9 +192,7 @@ export class CardFrame extends LitElement {
         ${[...Array(5).keys()].map((x) => {
           return html`
             <div
-              class="star ${x < this.stars ? "gold" : "gray"} visible-${watch(
-                this.flipped,
-              )}"
+              class="star ${x < this.stars ? "gold" : "gray"} visible-${this.flipped}"
             >
               ★
             </div>
@@ -207,7 +204,7 @@ export class CardFrame extends LitElement {
   }
 
   _flip(_e) {
-    this.flipped.value = !this.flipped.value;
+    this.flipped = !this.flipped;
   }
 }
 

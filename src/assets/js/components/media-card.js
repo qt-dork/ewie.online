@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "npm:lit";
+import { css, html, LitElement } from "lit";
 
 class MediaCard extends LitElement {
   static properties = {
