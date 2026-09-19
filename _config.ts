@@ -12,7 +12,7 @@ const site = lume(
   },
 );
 
-site.add("static", ".");
+site.copy("static", ".");
 site.add("styles");
 site.add("assets/js");
 
