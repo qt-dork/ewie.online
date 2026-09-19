@@ -37,21 +37,30 @@
 
     {{# <link rel="stylesheet" href="/styles/print.css" media="print"> #}}
 
+    {{# I'm trying to figure out this importmap stuff #}}
+    <script type="importmap">
+      {
+        "imports": {
+          "lit": "/assets/js/lit.js"
+        }
+      }
+    </script>
+
     {{# Non-render blocking js #}}
-    {{# TODO: This could probably check the page type instead of the url #}}
-    {{ if (url.toString().includes("post")) }}
+    {{ if (it.type === "post") }}
+      <link rel="preconnect" href="https://api.ewie.online" crossorigin />
       <script
-        src="https://unpkg.com/htmx.org@2.0.4"
+        src="/js/htmx.min.js"
         integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
-        crossorigin="anonymous"
+        defer
       ></script>
       <meta name="htmx-config" content='{"selfRequestsOnly": false}' />
     {{ /if }}
 
-    <script src="https://neatstats.net/view.js"></script>
+    <script src="https://neatstats.net/view.js" async></script>
     <script type="module" src="/assets/js/components/relative-time.js"></script>
 
-    {{ if (!url.toString().includes("post")) }}
+    {{ if (it.type !== "post") }}
       <script type="module" src="/assets/js/components/read-more.js"></script>
     {{ /if }}
 
