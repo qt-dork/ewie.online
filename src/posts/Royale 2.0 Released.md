@@ -1,6 +1,6 @@
 ---
 title: Royale 2.0 Released
-date: 2026-10-07T22:20:00.000-05:00
+date: 2026-10-07T22:22:00.000-05:00
 tags: 
  - royale
  - pebble
