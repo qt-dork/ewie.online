@@ -1,4 +1,4 @@
-import lume from "lume/mod.ts";
+import lume from "@lumeland/lume";
 
 import plugins, { Options } from "./plugins.ts";
 
@@ -16,10 +16,10 @@ site.copy("static", ".");
 site.add("styles");
 site.add("assets/js");
 
-import { parser as jsParser } from "npm:@lezer/javascript@^1.0.0";
-import { parser as cssParser } from "npm:@lezer/css@^1.0.0";
-import { parser as htmlParser } from "npm:@lezer/html@^1.0.0";
-import { parser as mdParser } from "npm:@lezer/markdown@^1.0.0";
+import { parser as jsParser } from "@lezer/javascript";
+import { parser as cssParser } from "@lezer/css";
+import { parser as htmlParser } from "@lezer/html";
+import { parser as mdParser } from "@lezer/markdown";
 
 import rehypeSlug from "https://esm.sh/rehype-slug@6";
 import rehypeAutolinkHeadings from "https://esm.sh/rehype-autolink-headings@7";

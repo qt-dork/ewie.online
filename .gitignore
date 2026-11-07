@@ -5,3 +5,4 @@ _cache
 .zed
 .vscode
 deno.lock
+node_modules
