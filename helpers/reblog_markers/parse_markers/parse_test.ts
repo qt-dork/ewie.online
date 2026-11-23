@@ -1,6 +1,7 @@
 import type { ParserPos, ParserState } from "./types.ts";
 
 import { assert, assertEquals } from "@std/assert";
+import { test } from "node:test";
 
 import {
   consumeCode,
@@ -22,7 +23,7 @@ const DEFAULT_POS: ParserPos = {
  * Metadata parsing
  */
 
-Deno.test("block metadata parse", () => {
+test("block metadata parse", () => {
   const testString = `{ metadata_one: "value" }
 ::: reblog
 content
@@ -36,7 +37,7 @@ content
   assertEquals(out, ['{ metadata_one: "value" }']);
 });
 
-Deno.test("multi block metadata parse", () => {
+test("multi block metadata parse", () => {
   const testString = `{ metadata_one: value }
 { metadata_two: value }
 ::: reblog
@@ -51,7 +52,7 @@ content
   assertEquals(out, ["{ metadata_one: value }", "{ metadata_two: value }"]);
 });
 
-Deno.test("long block metadata parse", () => {
+test("long block metadata parse", () => {
   const testString = `{
   a: a
   b: b
@@ -77,7 +78,7 @@ content
   ]);
 });
 
-Deno.test("block metadata parse should fail", () => {
+test("block metadata parse should fail", () => {
   const testString = `{ metadata_one: "value" }
 content
 :::`;
@@ -90,7 +91,7 @@ content
   assertEquals(out, undefined);
 });
 
-Deno.test("parse metadata", () => {
+test("parse metadata", () => {
   const test_1 = "{ a: a }";
   const test_2 = `{
   a: a
@@ -119,7 +120,7 @@ Deno.test("parse metadata", () => {
   });
 });
 
-Deno.test("marker block", () => {
+test("marker block", () => {
   const testString = `:::
 testing
 :::
@@ -140,7 +141,7 @@ testing
   });
 });
 
-Deno.test("text block", () => {
+test("text block", () => {
   const testString =
     `And I’m glad they’re lies. Because the makers of AI aren’t damned by their failures, they’re damned by their goals. They want to build a genie to grant them wishes, and their wish is that nobody ever has to make art again. They want to create a new kind of mind, so they can force it into mindless servitude. Their dream is to invent new forms of life to enslave.
 
@@ -173,7 +174,7 @@ And to what end? In a kind of nihilistic symmetry, their dream of the perfect sl
   });
 });
 
-Deno.test("code block", () => {
+test("code block", () => {
   const testString_1 = `\`\`\`
 testing
 \`\`\`
@@ -212,12 +213,12 @@ testing
   assertEquals(out_3, undefined);
 });
 
-Deno.test("parse", () => {
+test("parse", () => {
   const out = parse(rawInput);
   assert(out.children.length > 0);
 });
 
-Deno.test("the whole dang thing", () => {
+test("the whole dang thing", () => {
   const tree = parse(rawInput);
   const fixedString = deleteMarkers(rawInput, tree);
   console.log(tree);

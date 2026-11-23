@@ -1,10 +1,10 @@
-import { merge } from "lume/core/utils/object.ts";
-import { log } from "lume/core/utils/log.ts";
+import { merge } from "@lumeland/core/utils/object.ts";
+import { log } from "@lumeland/core/utils/log.ts";
 
-import type Site from "lume/core/site.ts";
-import type { Page } from "lume/core/file.ts";
+import type Site from "@lumeland/core/site.ts";
+import type { Page } from "@lumeland/core/file.ts";
 
-import type { LRParser } from "npm:@lezer/lr@1.4.10";
+import type { LRParser } from "@lezer/lr";
 
 import { fromLezer, toHtml } from "./lezer.ts";
 

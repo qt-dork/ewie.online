@@ -1,9 +1,9 @@
-import { classHighlighter, highlightTree } from "npm:@lezer/highlight@1.2.3";
+import { classHighlighter, highlightTree } from "@lezer/highlight";
 
-import type { Tree } from "npm:@lezer/common@1.5.2";
-import type { Element, Root, Text } from "npm:hast@1.0.0";
+import type { Tree } from "@lezer/common";
+import type { Element, Root, Text } from "hast";
 
-export { toHtml } from "npm:hast-util-to-html@9.0.5";
+export { toHtml } from "hast-util-to-html";
 
 export function fromLezer(source: string, tree: Tree): Root {
   // deno-lint-ignore prefer-const -- children contents is modified

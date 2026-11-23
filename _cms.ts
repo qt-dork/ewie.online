@@ -1,11 +1,14 @@
-import lumeCMS from "lume/cms/mod.ts";
-import { load } from "jsr:@std/dotenv";
-const cms = lumeCMS();
+import createCms from "@lumeland/cms";
+const cms = createCms();
 
-const env = await load();
+try {
+  process.loadEnvFile();
+} catch {
 
-const user = env.CMS_USER ?? "admin";
-const pass = env.CMS_PASSWORD ?? "";
+}
+
+const user = process.env.CMS_USER ?? "admin";
+const pass = process.env.CMS_PASSWORD ?? "";
 
 cms.auth({
   [user]: pass,
