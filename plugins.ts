@@ -1,26 +1,28 @@
+import contentDescription, { Options as ContentDescriptionOptions } from "./helpers/content_description/mod.ts";
 import contentTitle, { Options as ContentTitleOptions } from "./helpers/content_title/mod.ts";
-import date, { Options as DateOptions } from "lume/plugins/date.ts";
-import esbuild from "lume/plugins/esbuild.ts";
-import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
+import date, { Options as DateOptions } from "@lumeland/plugin-date";
+import esbuild from "@lumeland/plugin-esbuild";
+import feed, { Options as FeedOptions } from "@lumeland/plugin-feed";
 import hash from "./helpers/hash/mod.ts";
 import lezer, { Options as LezerOptions } from "./helpers/lezer/mod.ts";
-import lightningCSS from "lume/plugins/lightningcss.ts";
-import metas from "lume/plugins/metas.ts";
-import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
-import redirects from "lume/plugins/redirects.ts";
+import lightningCSS from "@lumeland/plugin-lightningcss";
+import metas from "@lumeland/plugin-metas";
+import pagefind, { Options as PagefindOptions } from "@lumeland/plugin-pagefind";
+import redirects from "@lumeland/plugin-redirects";
 import reblogMarkers from "./helpers/reblog_markers/mod.ts";
-import remark, { Options as RemarkOptions } from "lume/plugins/remark.ts";
-import robots, { Options as RobotsOptions } from "lume/plugins/robots.ts";
-import sitemap from "lume/plugins/sitemap.ts";
-import slugifyUrls from "lume/plugins/slugify_urls.ts";
+import remark, { Options as RemarkOptions } from "@lumeland/plugin-remark";
+import robots, { Options as RobotsOptions } from "@lumeland/plugin-robots";
+import sitemap from "@lumeland/plugin-sitemap";
+import slugifyUrls from "@lumeland/plugin-slugify-urls";
 import stableUrls, { Options as StableUrlsOptions } from "./helpers/stable_urls/mod.ts";
 
 
-import { merge } from "lume/core/utils/object.ts";
+import { merge } from "@lumeland/core/utils/object.ts";
 
-import "lume/types.ts";
+import "@lumeland/core/types.ts";
 
 export interface Options {
+  content_description?: ContentDescriptionOptions,
   content_title?: ContentTitleOptions;
   date?: DateOptions;
   feed?: FeedOptions;
@@ -70,16 +72,17 @@ export default function (userOptions?: Options) {
   return (site: Lume.Site) => {
     site
       .use(date(options.date))
-      .use(esbuild({ options: { external: ["lit"] } }))
+      .use(esbuild())
       .use(lightningCSS())
       .use(slugifyUrls())
       .use(hash())
       .use(metas())
-      .use(contentTitle(options.content_title))
       .use(feed(options.feed))
       .use(pagefind(options.pagefind))
       .use(redirects())
       .use(reblogMarkers())
+      .use(contentTitle(options.content_title))
+      .use(contentDescription(options.content_description))
       .use(remark(options.remark))
       .use(lezer(options.lezer))
       .use(robots())

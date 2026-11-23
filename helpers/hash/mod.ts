@@ -1,4 +1,4 @@
-import type Site from "lume/core/site.ts";
+import type Site from "@lumeland/core/site.ts";
 
 /**
  * Plugin that provides a unique hash from an input string.

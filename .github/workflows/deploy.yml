@@ -2,8 +2,15 @@ name: Deploy to Cloudflare Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   deploy:
@@ -13,23 +20,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v2
+      - uses: pnpm/action-setup@v4
         with:
-          deno-version: v2.x
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
 
       - name: Install Dependencies
-        run: deno install --allow-scripts
+        run: pnpm install --frozen-lockfile
 
       - name: Build Website
-        run: deno task build
-
-      - name: Install Wrangler
-        run: deno install --global --allow-scripts npm:wrangler@latest
+        run: pnpm build
 
       - name: Deploy Website to Cloudflare
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./_site --project-name=ewie-online --branch=main --commit-dirty=true
+          command: pages deploy ./_site --project-name=ewie-online --branch=${{ github.ref_name }} --commit-dirty=true

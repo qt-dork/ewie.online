@@ -1,8 +1,9 @@
-import { merge } from "lume/core/utils/object.ts";
-import { log } from "lume/core/utils/log.ts";
-import { matchExtension, type Extensions } from "lume/core/utils/path.ts";
+import { merge } from "@lumeland/core/utils/object.ts";
+import { log } from "@lumeland/core/utils/log.ts";
+import { matchExtension, type Extensions } from "@lumeland/core/utils/path.ts";
+import { readFileSync, writeFileSync } from "node:fs";
 
-import type Site from "lume/core/site.ts";
+import type Site from "@lumeland/core/site.ts";
 
 export interface Options {
   /** Path to the JSON snapshot of urls that need to remain stable. */
@@ -80,7 +81,7 @@ export default function (userOptions?: Options) {
     }
 
     function saveUrls(urls: string[]): void {
-      Deno.writeTextFileSync(options.file, JSON.stringify(urls, null, 2) + "\n");
+      writeFileSync(options.file, JSON.stringify(urls, null, 2) + "\n");
     }
 
     function checkUrls({ pages }: { pages: PageLike[] }): void {
@@ -90,7 +91,7 @@ export default function (userOptions?: Options) {
 
       let previous: string[] = [];
       try {
-        previous = JSON.parse(Deno.readTextFileSync(options.file));
+        previous = JSON.parse(readFileSync(options.file, "utf8"));
       } catch {
         // No snapshot. Save one
         saveUrls(getBaseline(urls, redirects));

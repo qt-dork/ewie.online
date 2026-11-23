@@ -1,5 +1,6 @@
-import { rehypeStringify, unified } from "lume/deps/remark.ts";
-import rehypeParse from "https://esm.sh/rehype-parse@9.0.1";
+import { unified } from "unified";
+import rehypeStringify from "rehype-stringify";
+import rehypeParse from "rehype-parse";
 
 interface RehypeTruncateParameters {
   disable?: boolean;
@@ -63,7 +64,7 @@ export default function truncate(
   value: string,
   ellipses = "\u2026",
 ): string {
-  const engine = unified.unified();
+  const engine = unified();
   return (engine
     .use(rehypeParse)
     .use(rehypeTruncate, {

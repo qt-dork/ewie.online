@@ -1,8 +1,8 @@
 import lezerHast from "./lezer_hast.js";
 
-import { visit } from "npm:unist-util-visit@5.1.0";
-import { toText } from "npm:hast-util-to-text@4.0.2";
-// import { toString } from "npm:hast-util-to-string";
+import { visit } from "unist-util-visit";
+import { toText } from "hast-util-to-text";
+// import { toString } from "hast-util-to-string";
 // using js manually cos fuck it
 
 /**

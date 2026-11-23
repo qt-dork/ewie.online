@@ -1,7 +1,8 @@
-import { plainText } from "lume/deps/remove-markdown.ts";
-import { defaults as plainTextDefaults } from "lume/plugins/plaintext.ts";
+import { defaults as plainTextDefaults } from "@lumeland/plugin-plaintext";
 
-import type Site from "lume/core/site.ts";
+import removeMd from "remove-markdown";
+
+import type Site from "@lumeland/core/site.ts";
 
 export interface Options {
   type?: string;
@@ -28,8 +29,8 @@ export function contentTitle(userOptions?: Options) {
           continue;
         }
 
-        const generated = plainText(content, plainTextDefaults)
-          .replace(/\s+/g, " ")
+        const generated = removeMd(content as string, plainTextDefaults)
+          .replaceAll(/\s+/g, " ")
           .trim()
           .substring(0, options.maxLength);
 

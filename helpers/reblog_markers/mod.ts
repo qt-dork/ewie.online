@@ -1,5 +1,5 @@
-import type Site from "lume/core/site.ts";
-import { merge } from "lume/core/utils/object.ts";
+import type Site from "@lumeland/core/site.ts";
+import { merge } from "@lumeland/core/utils/object.ts";
 
 import { extractMarkers } from "./parse_markers/mod.ts";
 
