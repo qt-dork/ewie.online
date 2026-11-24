@@ -1,7 +1,13 @@
 ---
 layout: "layouts/base.vto"
 menu_open: true
+extra_head:
+  - '<link rel="stylesheet" href="/style.css">'
+  - '<script type="module" src="/script.js"></script>'
 ---
-<!-- <div class="center"> -->
-  <div id="search"></div>
-<!-- </div> -->
+
+<div class="search-page stack">
+  <pagefind-input autofocus placeholder="Search my posts!"></pagefind-input>
+  <pagefind-summary default-message="Type to search posts"></pagefind-summary>
+  <pagefind-results max-results="50"></pagefind-results>
+</div>

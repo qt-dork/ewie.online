@@ -20,7 +20,11 @@
 </style>
 
 <!-- The post itself -->
-<div class="post-wrapper mouse" style="view-transition-name: post-{{hash}};">
+<div
+  class="post-wrapper mouse"
+  data-pagefind-body
+  style="view-transition-name: post-{{hash}};"
+>
   {{ comp.reblog_post.index({ is_timeline: false, ...it}) }}
 </div>
 
