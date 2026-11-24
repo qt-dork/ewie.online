@@ -40,7 +40,7 @@ export const defaults: Options = {
     formats: {
       "ISO": "yyyy-MM-dd'T'HH:mm:ss.SSSxxx",
       "TITLE": "iiii, MMMM d, y, ppp",
-      "HUMAN": "MMMM d, y 'at h:mm aaa'",
+      "HUMAN": "MMMM d, y 'at' h:mm aaa",
     },
   },
   feed: {
